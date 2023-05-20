@@ -19,7 +19,7 @@
                 <div class="my-5">
                     <h4>
                         <a href="{% url 'menu' %}" class="menu-button btn btn-lg text-uppercase py-3">
-                            <p class="my-5">Menu</p>
+                            <p class="my-5 pt-1 jumbotron-heading">Menu</p>
                         </a>
                     </h4>
                 </div>
@@ -27,7 +27,7 @@
         </div>
     </section>
 
-    <section class="container about-section">
+    <section class="container my-5 about-section" id="about-us">
         <div class="row">
             <div class="col-12 g-0">
                 <h2 class="text-center mt-3 mb-1 jumbotron-heading">About us</h2>
@@ -80,19 +80,33 @@
         </div>
     </section>
 
-    <section class="container featured-section">
+    <section class="container my-5 featured-section">
+        <div class="row">
+            <div class="col-12 g-0">
+                <h2 class="text-center mt-3 mb-1 jumbotron-heading">Featured pizzas</h2>
+                <hr>
+            </div>
+        </div>
         <div class="row">
             {% for featured_pizza in featured_pizzas %}
             <div class="col-3">
-                <div class="card">
+                <div class="card mb-5">
                     <div class="card-body">
-                        <img>
-                        <h2></h2>
+                        {% if featured_pizza.image %}
+                        <img src="{{ featured_pizza.image.url }}">
+                        {% endif %}
+                        <h2>{{ featured_pizza.name }}</h2>
                         <hr>
-                        <p></p>
+                        <p>{{ featured_pizza.description }} <small class="float-end">({{ featured_pizza.calories }})</small></p>
+                        <hr>
+                    </div>
+                    <div class="card-footer">
+                        <small class="float-start">Starting from €{{ featured_pizza.price }}</small>
+                        <a href="#" class="btn btn-lg order-button float-end">Order now</a>
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
 
     </section>
