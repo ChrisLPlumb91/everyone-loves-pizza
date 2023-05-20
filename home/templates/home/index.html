@@ -10,18 +10,91 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-7 col-md-6 my-auto">
-                <h1 class="display-4 logo-font text-black">
-                    The new collections are here
+    <section class="container my-5 py-5 jumbotron">
+        <div class="row">
+            <div class="col-12 text-center g-0">
+                <h1 class="display-4 logo-font jumbotron-heading my-0 pt-2">
+                    The pizza of the future
                 </h1>
                 <div class="my-5">
                     <h4>
-                        <a href="{% url 'menu' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
+                        <a href="{% url 'menu' %}" class="menu-button btn btn-lg text-uppercase py-3">
+                            <p class="my-5">Menu</p>
+                        </a>
                     </h4>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="container about-section">
+        <div class="row">
+            <div class="col-12 g-0">
+                <h2 class="text-center mt-3 mb-1 jumbotron-heading">About us</h2>
+                <hr>
+            </div>
+        </div>
+        
+        <div class="row mb-3">
+        
+            <div class="col-6 photo">
+                <div class="d-inline-block photo-and-map-containers photo-container">
+                    <img src="media/pizza-restaurant-photo.jpg" class="photo-and-map">
+                </div>  
+            </div>
+
+            <div class="col-6 blurb">
+                <div class="photo-and-map-containers blurb-container">
+                    <div class="jumbotron-heading">
+                        <p class="px-3">everyone.loves(pizza); is a pizza place.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row mb-3">
+
+            <div class="col-6 information">
+                <div class="photo-and-map-containers text-center">
+
+                    <div class="jumbotron-heading">
+                        <p class="ms-4 mt-5 mb-0">Opening hours: 1pm - 11pm</p>
+                        <p class="ms-4 mb-0">1 Pie Street, Dublin</p>
+                        <p class="ms-4 mb-0">Phone: 01 987 6543</p>
+                        <p class="ms-4 mb-0">Delivery: 5pm to 10:30pm</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="photo-and-map-containers map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.8782446737746!2d-6.266868683965103!3d53.34543568248024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e9cb559ea73%3A0x2600c7a819c83012!2sTemple%20Bar%2C%20Dublin!5e0!3m2!1sen!2sie!4v1658604787994!5m2!1sen!2sie"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        class="photo-and-map"></iframe>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container featured-section">
+        <div class="row">
+            {% for featured_pizza in featured_pizzas %}
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img>
+                        <h2></h2>
+                        <hr>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
 {% endblock %}
