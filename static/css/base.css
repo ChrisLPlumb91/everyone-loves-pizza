@@ -155,6 +155,10 @@ footer a {
     border: 2px solid black !important;
 }
 
+.search-results-num {
+    font-size: 2.5rem !important;
+}
+
 .btn-black {
     background: black;
     color: white;
