@@ -135,8 +135,8 @@ footer a {
     background-size: contain;
 }
 
-.col-3 > .card {
-    border: 3px solid #f19832;
+.col-3 > .card, div > .card {
+    border: 3px solid #f19832 !important;
 }
 
 .card-body > p {

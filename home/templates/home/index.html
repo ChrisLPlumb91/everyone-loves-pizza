@@ -86,15 +86,23 @@
                 <h2 class="text-center mt-3 mb-1 jumbotron-heading">Featured pizzas</h2>
                 <hr>
             </div>
-        </div>
+        </div> 
         <div class="row">
             {% for featured_pizza in featured_pizzas %}
             <div class="col-3">
                 <div class="card mb-5">
                     <div class="card-body">
+                        
                         {% if featured_pizza.image %}
-                        <img src="{{ featured_pizza.image.url }}">
+                        <a href="{% url 'menu_item_detail' featured_pizza.id %}">
+                            <img src="{{ featured_pizza.image.url }}" alt="{{ featured_pizza.name }}">
+                        </a>
+                        {% else %}
+                        <a href="{% url 'menu_item_detail' featured_pizza.id %}">
+                            <img src="{{ MEDIA_URL }}noimage.png" alt="{{ featured_pizza.name }}">
+                        </a>
                         {% endif %}
+
                         <h2>{{ featured_pizza.name }}</h2>
                         <hr>
                         <p>{{ featured_pizza.description }} <small class="float-end">({{ featured_pizza.calories }})</small></p>
