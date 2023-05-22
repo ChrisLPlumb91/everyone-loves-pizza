@@ -163,6 +163,11 @@ footer a {
     width: 98% !important;
 }
 
+p.jumbotron-heading {
+    font-size: 2.5rem;
+    font-family: 'Mogra', cursive;
+}
+
 .btn-black {
     background: black;
     color: white;
