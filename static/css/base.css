@@ -168,6 +168,26 @@ p.jumbotron-heading {
     font-family: 'Mogra', cursive;
 }
 
+.outer-ring {
+    width: 570px;
+    height: 570px;
+    border-radius: 50% !important; 
+    background: #cc0000;
+}
+
+.image-container {
+    width: 550px;
+    height: 550px;
+    border-radius: 50% !important;
+    border: 15px solid #38761d;
+    box-sizing: border-box;
+}
+
+.item-description {
+    line-height: 30px !important;
+    font-size: 2.5rem !important;
+}
+
 .btn-black {
     background: black;
     color: white;

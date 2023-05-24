@@ -13,20 +13,22 @@
     <!-- <div class="overlay"></div> -->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-                <div class="image-container my-5">
-                    {% if menu_item.image %}
-                    <a href="{{ menu_item.image.url }}" target="_blank">
-                        <img class="card-img-top img-fluid" src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}">
-                    </a>
-                    {% else %}
-                    <a href="">
-                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ menu_item.name }}">
-                    </a>
-                    {% endif %}
+            <div class="col-4 offset-2">
+                <div class="outer-ring text-center my-5 d-flex align-items-center">
+                    <div class="image-container bg-white mx-3 overflow-hidden text-center">
+                        {% if menu_item.image %}
+                        <a href="{{ menu_item.full_image.url }}" target="_blank">
+                            <img src="{{ menu_item.full_image.url }}" alt="{{ menu_item.name }}" class="mt-4">
+                        </a>
+                        {% else %}
+                        <a href="">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ menu_item.name }}">
+                        </a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 g-0">
+            <div class="col-4 g-0 me-5">
                 <div class="product-details-container mb-5 mt-md-5 bg-white">
                     <p class="ps-3 mb-0 jumbotron-heading">{{ menu_item.name }}</p>
                     <p class="lead mb-0 text-left font-weight-bold">${{ menu_item.price }}</p>
@@ -107,6 +109,11 @@
                         </div>
                     </form>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 offset-3 jumbotron-heading py-5 px-5">
+                <p class="item-description">{{ menu_item.description }}</p>
             </div>
         </div>
     </div>
