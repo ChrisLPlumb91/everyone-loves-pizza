@@ -38,8 +38,6 @@ footer a {
     align-items: center;
     display: inline-flex;
     justify-content: center;
-    height: 2.5rem;
-    width: 2.5rem;
 }
 
 .social-media-icons {
@@ -240,6 +238,32 @@ p.jumbotron-heading {
 .item-description {
     line-height: 30px !important;
     font-size: 2.5rem !important;
+}
+
+#id_menu_item_size, #id_menu_item_size > option {
+    font-size: 1.5rem !important;
+    line-height: 30px !important;
+}
+
+.form-group {
+    width: 35% !important;
+    border: 2px solid #f19832;
+}
+
+.input-group-prepend, .input-group-prepend:active {
+    background: #cc0000;
+    color:#f5f5f5;
+}
+
+.input-group-append, .input-group-append:active {
+    background: #38761d;
+    color:#f5f5f5;
+}
+
+.qty_input {
+    font-size: 2rem !important;
+    text-align: center !important;
+    line-height: 1px !important;
 }
 
 .btn-black {

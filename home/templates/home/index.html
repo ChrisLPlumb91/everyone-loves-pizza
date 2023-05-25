@@ -110,7 +110,7 @@
                     </div>
                     <div class="card-footer">
                         <small class="float-start">Starting from €{{ featured_pizza.price }}</small>
-                        <a href="#" class="btn btn-lg order-button float-end">Order now</a>
+                        <a href="{% url 'menu_item_detail' featured_pizza.id %}" class="btn btn-lg order-button float-end">Order now</a>
                     </div>
                 </div>
             </div>
