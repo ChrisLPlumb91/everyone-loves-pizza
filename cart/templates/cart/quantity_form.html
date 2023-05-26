@@ -1,32 +1,40 @@
 <form class="form update-form" method="POST" action="{% url 'adjust_cart' item.item_id %}">
     {% csrf_token %}
-    <div class="form-group">
-        <div class="input-group">
+    <div class="form-group cart-form-group">
+        <div class="input-group cart-input-group">
+
             <div class="input-group-prepend">
-                <button class="decrement-qty btn btn-sm btn-black rounded-0" 
+                <button class="decrement-qty btn rounded-0" 
                     data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
-                    <span>
-                        <i class="fas fa-minus fa-sm"></i>
+                    <span class="icon">
+                        <i class="fas fa-minus"></i>
                     </span>
                 </button>
             </div>
-            <input class="form-control form-control-sm qty_input" type="number"
+
+            <input class="form-control qty_input py-0 ps-4" type="number"
                 name="quantity" value="{{ item.quantity }}" min="1" max="99"
                 data-item_id="{{ item.item_id }}"
                 id="id_qty_{{ item.item_id }}">
+
             <div class="input-group-append">
-                <button class="increment-qty btn btn-sm btn-black rounded-0"
+                <button class="increment-qty btn rounded-0"
                     data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
-                    <span>
-                        <i class="fas fa-plus fa-sm"></i>
+                    <span class="icon">
+                        <i class="fas fa-plus"></i>
                     </span>
                 </button>
             </div>
+
             {% if item.menu_item.has_sizes %}
                 <input type="hidden" name="menu_item_size" value="{{ item.size }}">
             {% endif %}
+
         </div>
     </div>
 </form>
-<a class="update-link text-info"><small>Update</small></a>
-<a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-menu_item_size="{{ item.size }}"><small>Remove</small></a>
+<div class="text-end superuser-zone position-relative w-50 px-1">
+    <a class="update-link cart-update-link superuser-option float-start"><small>Update</small></a>
+    <span class="text-dark position-relative pe-1"> | </span>
+    <a class="remove-item cart-remove-item superuser-option" id="remove_{{ item.item_id }}" data-menu_item_size="{{ item.size }}"><small>Remove</small></a>
+</div>

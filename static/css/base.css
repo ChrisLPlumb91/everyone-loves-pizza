@@ -104,15 +104,15 @@ footer a {
     font-family: 'Mogra', cursive !important;
 }
 
-.about-section, .featured-section {
+.about-section, .featured-section, .cart-container {
     border: 5px solid #f5f5f5;
     box-shadow: -10px -10px 10px #202020, 10px 10px 10px #202020, 0 0 32px #f5f5f5 inset;
     color: #f5f5f5 !important;
 }
 
 .about-section {
-    background: url('/media/about-section-bg.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background: url('/media/wood-surface.jpg') no-repeat center center fixed;
+    background-size: cover; 
 }
 
 .information, .photo {
@@ -125,7 +125,6 @@ footer a {
 }
 
 .photo-and-map-containers {
-    box-shadow: -10px -10px 10px #202020;
     width: 620px;
     height: 400px;
     display: inline-block;
@@ -137,8 +136,8 @@ footer a {
 }
 
 .featured-section {
-    background: url('/media/jumbotron-bg.jpg') no-repeat center center fixed;
-    background-size: contain;
+    background: url('/media/wood-surface.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
 .col-3 > .card, div > .card {
@@ -233,6 +232,7 @@ p.jumbotron-heading {
 .superuser-option {
     color: #f5f5f5 !important;
     text-shadow:0 2px #000;
+    text-decoration: none;
 }
 
 .item-description {
@@ -264,6 +264,90 @@ p.jumbotron-heading {
     font-size: 2rem !important;
     text-align: center !important;
     line-height: 1px !important;
+}
+
+.cart-container {
+    background: url('/media/wood-surface.jpg') no-repeat center center fixed;
+    background-size: cover; 
+    border-radius: 10px !important;
+}
+
+th {
+    font-size: 2rem !important;
+    color: #f19832;
+    text-shadow: 0 2px #cc0000;
+}
+
+.item-info-heading {
+    padding-left: 200px !important;
+}
+
+.item-qty-heading {
+    padding-left: 60px !important;
+}
+
+td {
+    border-top: 2px solid #915c1f !important;
+}
+
+.cart-image-container {
+    height: 220px !important;
+    width: 220px !important;
+    background: #cc0000;
+    border: 5px solid #f19832;
+    border-radius: 50% !important;
+}
+
+.cart-image {
+    height: 200px !important;
+    width: 200px !important;
+    border: 10px solid #38761d;
+    border-radius: 50% !important;
+    z-index: 1;
+}
+
+.colour-band {
+    width: 310px;
+    height: 55px;
+    background: #38761d;
+    border-top: 10px solid #cc0000;
+    border-bottom: 10px solid #cc0000;
+    top: 16px;
+    z-index: 0;
+}
+
+.info-name {
+    font-size: 3.5rem !important;
+    color: #f19832 !important;
+    text-shadow: 0 2px #cc0000;
+    background-color: #38761d;
+    box-shadow: 0 10px #cc0000 inset, 0 -10px #cc0000 inset;
+    line-height: 55px !important;
+    z-index: 2;
+}
+
+.info-size, .info-price {
+    font-size: 2rem !important;
+}
+
+.info-subtotal {
+    font-size: 2.5rem !important;
+}
+
+.info-price, .info-subtotal {
+    margin-top: 3.5rem !important;
+}
+
+.update-form {
+    margin-top: 3.5rem !important;
+}
+
+.cart-form-group {
+    width: 50% !important;
+}
+
+.cart-input-group {
+    flex-wrap: nowrap !important;
 }
 
 .btn-black {
@@ -333,6 +417,10 @@ a.category-badge > span.badge:hover {
 .update-link,
 .remove-item {
     cursor: pointer;
+}
+
+.cart-update-link, .cart-remove-item {
+    font-size: 1.8rem !important;
 }
 
 input[name='q']::placeholder {
