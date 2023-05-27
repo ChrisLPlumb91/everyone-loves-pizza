@@ -41,8 +41,8 @@
                                     {% include "cart/menu_item_info.html" %}
                                 </div>
                                 <div class="col-12 col-sm-6 order-sm-last">
-                                    <p class="my-0">Price Each: ${{ item.menu_item.price }}</p>
-                                    <p><strong>Subtotal: </strong>${{ item.menu_item.price | calc_subtotal:item.quantity }}</p>
+                                    <p class="my-0">Price Each: €{{ item.menu_item.price }}</p>
+                                    <p><strong>Subtotal: </strong>€{{ item.menu_item.price | calc_subtotal:item.quantity }}</p>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     {% include "cart/quantity_form.html" %}
@@ -69,7 +69,7 @@
                             </thead>
 
                             {% for item in cart_items %}
-                                <tr>
+                                <tr class="item-row">
                                     <td class="p-3 w-25 position-relative">
                                         {% include "cart/menu_item_image.html" %}
                                     </td>
@@ -77,28 +77,30 @@
                                         {% include "cart/menu_item_info.html" %}
                                     </td>
                                     <td class="py-3">
-                                        <p class="mb-0 info-price">${{ item.menu_item.price }}</p>
+                                        <p class="mb-0 info-price">€{{ item.menu_item.price }}</p>
                                     </td>
                                     <td class="py-3 w-25">
                                         {% include "cart/quantity_form.html" %}
                                     </td>
                                     <td class="py-3">
-                                        <p class="mb-0 info-subtotal">${{ item.menu_item.price | calc_subtotal:item.quantity }}</p>
+                                        <p class="mb-0 info-subtotal">€{{ item.menu_item.price | calc_subtotal:item.quantity }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}
-                            <tr>
-                                <td colspan="5" class="pt-5 text-right">
-                                    {% include "cart/cart_total.html" %}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="5" class="text-right">
-                                    {% include "cart/checkout_buttons.html" %}
-                                </td>
-                            </tr>
                         </table>
                     </div>
+                    <div class="row text-center">
+                        <div class="col-6 offset-3 py-3 jumbotron-heading">
+                            {% include "cart/cart_total.html" %}
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row mb-2">
+                        <div class="col-12">
+                            {% include "cart/checkout_buttons.html" %}
+                        </div>
+                    </div>
+                    
                 {% else %}
                     <p class="lead mb-5">Your cart is empty.</p>
                     <a href="{% url 'menu' %}" class="btn btn-outline-black rounded-0 btn-lg">
@@ -125,7 +127,7 @@
 <script type="text/javascript">
     // Update quantity on click
     $('.update-link').click(function(e) {
-        var form = $(this).prev('.update-form');
+        var form = $(this).parent().prev('.update-form');
         form.submit();
     })
 
@@ -142,5 +144,21 @@
              location.reload();
          });
     })
+
+    var itemRows = $('.item-row');
+
+    for (let i = 0; i < itemRows.length; i++) {
+        console.log(itemRows[i]);
+
+        var itemSizeText = $(itemRows[i]).find('.info-size').text();
+        var itemSize = parseInt(itemSizeText.slice(6));
+
+        $(itemRows[i]).find('.info-price').text(`€${itemSize}.00`);
+
+        var qtyVal = $(itemRows[i]).find('.qty_input').val();
+        var subtotalInt = parseInt(qtyVal) * parseInt(itemSize);
+        
+        $(itemRows[i]).find('.info-subtotal').text(`€${subtotalInt}.00`);     
+    }
 </script>
 {% endblock %}
