@@ -333,7 +333,8 @@ td {
 }
 
 .info-name {
-    font-size: 3.5rem !important;
+    font-family: 'Mogra', cursive;
+    font-size: 2.5rem !important;
     color: #f19832 !important;
     text-shadow: 0 2px #cc0000;
     background-color: #38761d;
