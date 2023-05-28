@@ -148,17 +148,25 @@
     var itemRows = $('.item-row');
 
     for (let i = 0; i < itemRows.length; i++) {
-        console.log(itemRows[i]);
+        if ($(itemRows[i]).find('.info-size').text() !== 'Size: N/A') {
 
-        var itemSizeText = $(itemRows[i]).find('.info-size').text();
-        var itemSize = parseInt(itemSizeText.slice(6));
+            var itemSizeText = $(itemRows[i]).find('.info-size').text();
+            var itemSizeInt = parseInt(itemSizeText.slice(6));
 
-        $(itemRows[i]).find('.info-price').text(`€${itemSize}.00`);
+            $(itemRows[i]).find('.info-price').text(`€${itemSizeInt}.00`);
 
-        var qtyVal = $(itemRows[i]).find('.qty_input').val();
-        var subtotalInt = parseInt(qtyVal) * parseInt(itemSize);
-        
-        $(itemRows[i]).find('.info-subtotal').text(`€${subtotalInt}.00`);     
+            var qtyVal = $(itemRows[i]).find('.qty_input').val();
+            var subtotalInt = parseInt(qtyVal) * itemSizeInt;
+            
+            $(itemRows[i]).find('.info-subtotal').text(`€${subtotalInt}.00`);  
+        }
+
+        console.log($(itemRows[i]).find('.info-name').innerHeight());
+
+        if ($(itemRows[i]).find('.info-name').innerHeight() > 55) {
+            console.log('entering if');
+            $(itemRows[i]).find('.info-name').addClass('js-added-font-size-decrease');
+        }
     }
 </script>
 {% endblock %}

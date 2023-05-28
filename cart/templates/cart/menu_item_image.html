@@ -1,8 +1,8 @@
-{% if item.menu_item.image %}
 <div class="cart-image-container d-flex align-items-center">
-    <img class="img-fluid cart-image ms-1" src="{{ item.menu_item.full_image.url }}" alt="{{ item.menu_item.name }}">
+    {% if item.menu_item.image %}
+    <img class="img-fluid cart-image ms-1" src="{{ item.menu_item.full_image.url }}" alt="{{ item.menu_item.name }}">   
+    {% else %}
+    <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.menu_item.name }}">
+    {% endif %}
 </div>
 <div class="position-absolute colour-band"></div>
-{% else %}
-<img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.menu_item.name }}">
-{% endif %}

@@ -223,7 +223,7 @@ p.jumbotron-heading {
     font-size: 2.5rem;
 }
 
-.keep-shopping-btn, .add-to-cart-btn {
+.keep-shopping-btn, .add-to-cart-btn, .complete-order-btn, .adjust-bag-btn {
     font-size: 1.5rem !important;
     border: 2px solid #f19832 !important;
     color: #f5f5f5 !important;
@@ -261,6 +261,11 @@ p.jumbotron-heading {
 }
 
 .form-group {
+    width: 100% !important;
+    margin: 12px 0 !important
+}
+
+.form-group-override-2 {
     width: 35% !important;
     border: 2px solid #f19832;
 }
@@ -287,7 +292,7 @@ p.jumbotron-heading {
     border-radius: 10px !important;
 }
 
-th {
+th, .summary-headings, .totals, legend {
     font-size: 2rem !important;
     color: #f19832;
     text-shadow: 0 2px #cc0000;
@@ -314,12 +319,26 @@ td {
     border-radius: 50% !important;
 }
 
+.cart-image-container-small {
+    height: 140px !important;
+    width: 140px !important;
+}
+
+.item-page-link-image {
+    z-index: 1 !important;
+}
+
 .cart-image {
     height: 200px !important;
     width: 200px !important;
     border: 10px solid #38761d;
     border-radius: 50% !important;
     z-index: 1;
+}
+
+.cart-image-small {
+    height: 120px !important;
+    width: 120px !important;
 }
 
 .colour-band {
@@ -332,6 +351,14 @@ td {
     z-index: 0;
 }
 
+.colour-band-small {
+    width: 130px;
+    height: 25px;
+    border-top: 5px solid #cc0000;
+    border-bottom: 5px solid #cc0000;
+    top: 0;
+}
+
 .info-name {
     font-family: 'Mogra', cursive;
     font-size: 2.5rem !important;
@@ -341,6 +368,12 @@ td {
     box-shadow: 0 10px #cc0000 inset, 0 -10px #cc0000 inset;
     line-height: 55px !important;
     z-index: 2;
+}
+
+.info-name-small {
+    box-shadow: 0 5px #cc0000 inset, 0 -5px #cc0000 inset;
+    font-size: 1.5rem !important;
+    line-height: 25px !important;
 }
 
 .info-size, .info-price {
@@ -365,6 +398,34 @@ td {
 
 .cart-input-group {
     flex-wrap: nowrap !important;
+}
+
+.checkout-headings {
+    font-size: 2rem !important;
+    color: #f5f5f5;
+    text-shadow: 0 2px #000000;
+}
+
+.costs {
+    line-height: 20px !important;
+}
+
+.form-check-label {
+    font-size: 1.5rem !important;
+    text-shadow: 0 2px #000;
+}
+
+.charge-warning {
+    font-size: 1.8rem !important;
+    text-shadow: 0 2px #000000;
+}
+
+.big-icon {
+    font-size: 2.2rem !important;
+}
+
+.js-added-font-size-decrease {
+    font-size: 2rem !important;
 }
 
 .btn-black {
@@ -450,21 +511,21 @@ input[name='q']::placeholder {
     color: #f5f5f5 !important;
 }
 
-.keep-shopping-btn, .cart-keep-shopping-button {
+.keep-shopping-btn, .cart-keep-shopping-button, .adjust-bag-btn {
     background: #cc0000 !important;
 }
 
-.keep-shopping-btn:hover, .cart-keep-shopping-button:hover {
+.keep-shopping-btn:hover, .cart-keep-shopping-button:hover, .adjust-bag-btn:hover {
     background: #fa5050 !important;
     color:#000 !important;
     border: 2px solid #000 !important;
 }
 
-.add-to-cart-btn, .secure-checkout-button {
+.add-to-cart-btn, .secure-checkout-button, .complete-order-btn {
     background: #38761d !important;
 }
 
-.add-to-cart-btn:hover, .secure-checkout-button:hover {
+.add-to-cart-btn:hover, .secure-checkout-button:hover, .complete-order-btn:hover {
     background: #2dc250 !important;
     color:#000 !important;
     border: 2px solid #000 !important;
