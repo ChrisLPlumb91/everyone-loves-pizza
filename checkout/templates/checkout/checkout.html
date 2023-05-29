@@ -34,30 +34,34 @@
                         <p class="mb-1 mt-0 summary-headings">Subtotal</p>
                     </div>
                 </div>
-                {% for item in cart_items %}
-                    <div class="row item-row">
-                        <div class="col-2 mb-1 position-relative">
-                            <div class="cart-image-container cart-image-container-small d-flex align-items-center">
-                                <a href="{% url 'menu_item_detail' item.menu_item.id %}" class="item-page-link-image">
-                                    {% if item.menu_item.image %}
-                                        <img class="img-fluid cart-image cart-image-small ms-1" src="{{ item.menu_item.full_image.url }}" alt="{{ menu_item.name }}">
-                                    {% else %}
-                                        <img class="img-fluid cart-image cart-image-small ms-1" src="{{ MEDIA_URL }}noimage.png" alt="{{ menu_item.name }}">
-                                    {% endif %}
-                                </a>
+                <div class="row">
+                    <div class="col-12 order-scroll">
+                        {% for item in cart_items %}
+                        <div class="row item-row">
+                            <div class="col-2 mb-1 position-relative">
+                                <div class="cart-image-container cart-image-container-small d-flex align-items-center">
+                                    <a href="{% url 'menu_item_detail' item.menu_item.id %}" class="item-page-link-image">
+                                        {% if item.menu_item.image %}
+                                            <img class="img-fluid cart-image cart-image-small ms-1" src="{{ item.menu_item.full_image.url }}" alt="{{ menu_item.name }}">
+                                        {% else %}
+                                            <img class="img-fluid cart-image cart-image-small ms-1" src="{{ MEDIA_URL }}noimage.png" alt="{{ menu_item.name }}">
+                                        {% endif %}
+                                    </a>
+                                </div>
+                                <div class="position-absolute colour-band colour-band-small"></div>
                             </div>
-                            <div class="position-absolute colour-band colour-band-small"></div>
+                            <div class="col-7">
+                                <p class="my-0 info-name info-name-small text-center">{{ item.menu_item.name }}</p>
+                                <p class="ms-5 my-0 small info-size">Size: {% if item.menu_item.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+                                <p class="ms-5 my-0 info-qty">Qty: {{ item.quantity }}</p>
+                            </div>
+                            <div class="col-3">
+                                <p class="mb-0 mt-5 info-price">€{{ item.menu_item.price | calc_subtotal:item.quantity }}</p>
+                            </div>
                         </div>
-                        <div class="col-7">
-                            <p class="my-0 info-name info-name-small text-center">{{ item.menu_item.name }}</p>
-                            <p class="ms-5 my-0 small info-size">Size: {% if item.menu_item.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
-                            <p class="ms-5 my-0 info-qty">Qty: {{ item.quantity }}</p>
-                        </div>
-                        <div class="col-3">
-                            <p class="mb-0 mt-5 info-price">${{ item.menu_item.price | calc_subtotal:item.quantity }}</p>
-                        </div>
+                        {% endfor %}
                     </div>
-                {% endfor %}
+                </div>
                 <hr class="my-2">
                 <div class="row text-end jumbotron-heading py-2 me-5">
                     <div class="col-7 offset-2 mt-3">
@@ -72,6 +76,9 @@
                     </div>
                 </div>
             </div>
+
+            
+
             <div class="col-12 col-lg-6 my-3">
                 <p class="text-center checkout-headings">Please enter your details so we can deliver your order!</p>
                 <hr>
@@ -113,7 +120,7 @@
                         <input type="hidden" value="{{ client_secret }}" name="client_secret">
                     </fieldset>
 
-                    <div class="submit-button text-start mt-5 mb-2 ms-5">                    
+                    <div class="submit-button text-start mt-2 mb-2 ms-5">                    
 						<a href="{% url 'view_cart' %}" class="btn adjust-bag-btn ms-3">
 							<span class="icon">
 								<i class="fas fa-chevron-left"></i>
@@ -126,7 +133,7 @@
 								<i class="fas fa-lock"></i>
 							</span>
 						</button>
-						<p class="my-0 text-end charge-warning">
+						<p class="mt-3 mb-0 me-3 text-end charge-warning">
 							<span class="icon">
 								<i class="text-danger big-icon fas fa-exclamation-circle"></i>
 							</span>

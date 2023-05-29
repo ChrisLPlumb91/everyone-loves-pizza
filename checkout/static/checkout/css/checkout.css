@@ -25,6 +25,15 @@
     color: #aab7c4;
 }
 
+.stripe-style-input {
+    font-size: 1.8rem !important;
+}
+
+select.stripe-style-input {
+    padding-top: 0;
+    padding-bottom: 0px;
+}
+
 .fieldset-label {
     position: relative;
     right: .5rem;
