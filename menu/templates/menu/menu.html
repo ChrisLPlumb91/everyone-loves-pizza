@@ -10,13 +10,11 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid">
 
-    <div class="row jumbotron-heading mt-3">
-        <div class="col text-center">
-            <h2 class="mt-3">Menu</h2>
-        </div>
-    </div>
+<hr>
+<h2 class="logo-font jumbotron-heading"><span class="ms-5">Menu</span></h2>
+
+<div class="container-fluid">
 
     <div class="row">
         <div class="col text-center">
@@ -61,9 +59,9 @@
                 <div class="col-12 order-md-first {% if search_term %}col-md-7{% else %}col-md-6{% endif %}">
                     <p class="search-results-num mt-3 text-center text-md-left jumbotron-heading d-inline-block px-2">
                         {% if search_term or current_categories or current_sorting != 'None_None' %}
-                        <span class="small"><a href="{% url 'menu' %}">Menu Home</a> | </span>
+                        <span><a href="{% url 'menu' %}" class="menu-home-link">Menu Home</a> | </span>
                         {% endif %}
-                        {{ menu_items|length }} menu items{% if search_term %} found for
+                        {{ menu_items|length }} menu item{% if not search_term %}s{% elif search_term %}(s) found for
                         "{{ search_term }}"{% endif %}
                     </p>
                 </div>
@@ -87,7 +85,7 @@
                                         {% if menu_item.image %}
                                         <a href="{% url 'menu_item_detail' menu_item.id %}"
                                             class="d-inline-block float-end">
-                                            <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}">
+                                            <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}" {% if menu_item.category.name == 'sides'%}class="mb-3 ms-4"{% endif %}>
                                         </a>
                                         {% else %}
                                         <a href="{% url 'menu_item_detail' menu_item.id %}">

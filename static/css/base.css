@@ -157,6 +157,18 @@ footer a {
     line-height: 25px;
 }
 
+.menu-home-link {
+    color:#f19832 !important;
+}
+
+.menu-home-link:hover {
+    color:#2dc250 !important;
+}
+
+.custom-select, .custom-select > option {
+    font-size: 1.7rem !important;
+}
+
 .order-button {
     background: #38761d !important;
     color:#f5f5f5 !important;
