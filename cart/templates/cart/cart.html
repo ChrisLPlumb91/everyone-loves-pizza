@@ -12,7 +12,7 @@
 
 {% block content %}
     <hr>
-    <h2 class="logo-font mb-4 jumbotron-heading"><span class="ms-5">Shopping Cart</span></h2>
+    <h2 class="logo-font mb-4 jumbotron-heading shopping-cart-heading"><span class="ms-5">Shopping Cart</span></h2>
     <hr>
 
     <div class="container mb-2">
@@ -21,28 +21,37 @@
             <div class="col">
                 {% if cart_items %}
                     <div class="d-block d-md-none">
-                        <div class="row">
-                            <div class="col">
+
+                        <div class="row text-center my-4 d-md-none d-flex">
+                            <div class="col-10 offset-1 py-3 jumbotron-heading">
                                 {% include "cart/cart_total.html" %}
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                {% include "cart/checkout_buttons.html" %}
-                                <p class="text-muted mb-5">A summary of your cart contents is below</p>
+
+                        <div class="row mb-2 d-md-none d-flex">
+                            <div class="col-12 checkout-buttons-col">
+                                {% include "cart/checkout_buttons.html" %}                                
+                            </div>                            
+                        </div>
+
+                        <div class="row d-md-none d-flex text-center">
+                            <div class="col-12">
+                                <p class="mt-3 cart-below">A summary of your cart contents is below</p>
+                                <hr>
                             </div>
                         </div>
+
                         {% for item in cart_items %}
-                            <div class="row">
-                                <div class="col-12 col-sm-6 mb-2">
+                            <div class="row cart-contents position-relative">
+                                <div class="col-6 mb-2 image-container-cart">
                                     {% include "cart/menu_item_image.html" %}
                                 </div>
-                                <div class="col-12 col-sm-6 mb-2">
+                                <div class="col-6 info-container-cart">
                                     {% include "cart/menu_item_info.html" %}
                                 </div>
-                                <div class="col-12 col-sm-6 order-sm-last">
-                                    <p class="my-0">Price Each: €{{ item.menu_item.price }}</p>
-                                    <p><strong>Subtotal: </strong>€{{ item.menu_item.price | calc_subtotal:item.quantity }}</p>
+                                <div class="col-12 col-sm-6 order-sm-last info-subtotal-grid">
+                                    <span><strong>Subtotal: </strong></span>
+                                    <p class="d-inline">€{{ item.menu_item.price | calc_subtotal:item.quantity }}</p>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     {% include "cart/quantity_form.html" %}
@@ -56,15 +65,18 @@
                             </a>	
                         </div>
                     </div>
+
+
                     <div class="table-responsive rounded d-none d-md-block">
                         <table class="table table-sm">
                             <thead class="text-black">
-                                <tr>
+                                <tr class="order-table-headings">
                                     <th scope="col" class="item-info-heading">Item Info</th>
                                     <th scope="col"></th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col" class="item-qty-heading">Qty</th>
-                                    <th scope="col">Subtotal</th>
+                                    <th scope="col" class="d-lg-table-cell d-none">Price</th>
+                                    <th scope="col" class="d-lg-none d-table-cell">Subtotal</th>
+                                    <th scope="col" class="item-qty-heading d-lg-table-cell d-none">Qty</th>
+                                    <th scope="col" class="d-lg-table-cell d-none">Subtotal</th>
                                 </tr>
                             </thead>
 
@@ -77,25 +89,26 @@
                                         {% include "cart/menu_item_info.html" %}
                                     </td>
                                     <td class="py-3">
-                                        <p class="mb-0 info-price">€{{ item.menu_item.price }}</p>
+                                        <p class="mb-0 info-price d-lg-block d-none">€{{ item.menu_item.price }}</p>
+                                        <p class="mb-0 info-subtotal d-lg-none">€{{ item.menu_item.price | calc_subtotal:item.quantity }}</p>
                                     </td>
-                                    <td class="py-3 w-25">
+                                    <td class="py-3 w-25 d-lg-table-cell d-none">
                                         {% include "cart/quantity_form.html" %}
                                     </td>
-                                    <td class="py-3">
-                                        <p class="mb-0 info-subtotal">€{{ item.menu_item.price | calc_subtotal:item.quantity }}</p>
+                                    <td class="py-3 d-lg-table-cell d-none">
+                                        <p class="mb-0 info-subtotal d-lg-block d-none">€{{ item.menu_item.price | calc_subtotal:item.quantity }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}
                         </table>
                     </div>
-                    <div class="row text-center">
+                    <div class="row text-center d-md-block d-none">
                         <div class="col-6 offset-3 py-3 jumbotron-heading">
                             {% include "cart/cart_total.html" %}
                         </div>
                     </div>
                     <hr>
-                    <div class="row mb-2">
+                    <div class="row mb-2 d-md-block d-none">
                         <div class="col-12">
                             {% include "cart/checkout_buttons.html" %}
                         </div>

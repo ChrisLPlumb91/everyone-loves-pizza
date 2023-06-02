@@ -1,4 +1,4 @@
-<form class="form update-form" method="POST" action="{% url 'adjust_cart' item.item_id %}">
+<form class="form update-form d-lg-block d-none" method="POST" action="{% url 'adjust_cart' item.item_id %}">
     {% csrf_token %}
     <div class="form-group-override-2 cart-form-group">
         <div class="input-group cart-input-group">
@@ -33,7 +33,7 @@
         </div>
     </div>
 </form>
-<div class="text-end superuser-zone position-relative w-50 px-1">
+<div class="text-end superuser-zone position-relative w-50 px-1 d-lg-block d-none">
     <a class="update-link cart-update-link superuser-option float-start"><small>Update</small></a>
     <span class="text-dark position-relative pe-1"> | </span>
     <a class="remove-item cart-remove-item superuser-option" id="remove_{{ item.item_id }}" data-menu_item_size="{{ item.size }}"><small>Remove</small></a>
