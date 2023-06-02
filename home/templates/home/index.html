@@ -39,9 +39,11 @@
         
             <div class="col-6 photo">
                 <div class="d-inline-block photo-and-map-containers photo-container">
-                    <img src="media/pizza-restaurant-photo.jpg" class="photo-and-map">
+                    <img src="media/pizza-restaurant-photo.jpg" class="photo-and-map img-fluid">
                 </div>  
             </div>
+
+            <div class="d-sm-none d-block"></div>
 
             <div class="col-6 blurb">
                 <div class="photo-and-map-containers blurb-container">
@@ -56,7 +58,7 @@
         <div class="row mb-3">
 
             <div class="col-6 information">
-                <div class="photo-and-map-containers text-center">
+                <div class="photo-and-map-containers text-center info-container">
 
                     <div class="jumbotron-heading">
                         <p class="ms-4 mt-5 mb-0">Opening hours: 1pm - 11pm</p>
@@ -67,6 +69,8 @@
 
                 </div>
             </div>
+
+            <div class="d-sm-none d-block"></div>
 
             <div class="col-6">
                 <div class="photo-and-map-containers map-container">
@@ -83,34 +87,34 @@
     <section class="container my-5 featured-section">
         <div class="row">
             <div class="col-12 g-0">
-                <h2 class="text-center mt-3 mb-1 jumbotron-heading">Featured pizzas</h2>
+                <h2 class="text-center mt-3 mb-1 jumbotron-heading featured-heading">Featured pizzas</h2>
                 <hr>
             </div>
         </div> 
-        <div class="row">
+        <div class="row pizzas-container">
             {% for featured_pizza in featured_pizzas %}
-            <div class="col-3">
+            <div class="col-6 col-lg-3">
                 <div class="card mb-5">
                     <div class="card-body">
                         
                         {% if featured_pizza.image %}
                         <a href="{% url 'menu_item_detail' featured_pizza.id %}">
-                            <img src="{{ featured_pizza.image.url }}" alt="{{ featured_pizza.name }}">
+                            <img src="{{ featured_pizza.image.url }}" alt="{{ featured_pizza.name }}" class="img-fluid">
                         </a>
                         {% else %}
                         <a href="{% url 'menu_item_detail' featured_pizza.id %}">
-                            <img src="{{ MEDIA_URL }}noimage.png" alt="{{ featured_pizza.name }}">
+                            <img src="{{ MEDIA_URL }}noimage.png" alt="{{ featured_pizza.name }}" class="img-fluid">
                         </a>
                         {% endif %}
 
-                        <h3>{{ featured_pizza.name }}</h3>
+                        <h3 class="name-text">{{ featured_pizza.name }}</h3>
                         <hr>
-                        <p>{{ featured_pizza.ingredients }} <small class="float-end">({{ featured_pizza.calories }})</small></p>
+                        <p class="ingredients-text">{{ featured_pizza.ingredients }} <small class="float-end">({{ featured_pizza.calories }})</small></p>
                         <hr>
                     </div>
                     <div class="card-footer">
-                        <small class="float-start">Starting from €{{ featured_pizza.price }}</small>
-                        <a href="{% url 'menu_item_detail' featured_pizza.id %}" class="btn btn-lg order-button float-end">Order now</a>
+                        <small class="price-text">Starting from €{{ featured_pizza.price }}</small>
+                        <a href="{% url 'menu_item_detail' featured_pizza.id %}" class="btn btn-lg order-button">Order now</a>
                     </div>
                 </div>
             </div>

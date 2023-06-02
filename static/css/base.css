@@ -64,7 +64,7 @@ footer a {
 
 .jumbotron {
     background: url('/media/jumbotron-bg.jpg') no-repeat center center fixed;
-    background-size: contain;
+    background-size: cover;
     border: 5px solid #f5f5f5;
     box-shadow: -10px -10px 10px #202020, 10px 10px 10px #202020, 0 0 32px #f5f5f5 inset;
 }
@@ -157,12 +157,20 @@ footer a {
     line-height: 25px;
 }
 
+.price-text {
+    float: left !important;
+}
+
 .menu-home-link {
     color:#f19832 !important;
 }
 
 .menu-home-link:hover {
     color:#2dc250 !important;
+}
+
+.line-break {
+    display: none;
 }
 
 .custom-select, .custom-select > option {
@@ -173,6 +181,7 @@ footer a {
     background: #38761d !important;
     color:#f5f5f5 !important;
     border: 2px solid black !important;
+    float: right !important;
 }
 
 .order-button:hover {
@@ -715,6 +724,54 @@ input[name='q']::placeholder {
 }
 
 
+@media screen and (max-width: 1399px) {
+    .photo-container, .blurb-container, .info-container {
+        width: auto !important;
+        height: auto !important;
+    }
+    
+    .blurb-container, .info-container {
+        display: block !important;
+    }
+
+    .map-container {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    .name-text {
+        font-size: 1.75rem !important;
+        margin-top: 1rem !important;
+    }
+
+    .ingredients-text {
+        font-size: 1.3rem !important;
+    }
+
+    .order-button {
+        float: none !important;
+        margin-top: 0.5rem !important;
+    }
+
+    .price-text {
+        float: none !important;
+    }
+
+    .card-footer {
+        text-align: center !important;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    div.col-lg-3 > .card {
+        height: 595.844px !important;
+    }
+
+    div.col-lg-3 .card-body {
+        height: 451.656px !important;
+    }
+}
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
@@ -761,6 +818,41 @@ input[name='q']::placeholder {
         font-size: .9rem;
     }
 
+    .blurb p, .information p {
+        font-size: 2rem !important;
+        line-height: 30px !important;
+    }
+
+    .information {
+        text-align: center !important;
+    }
+
+    .information p {
+        margin: 0 !important;
+    }
+
+    div.col-lg-3 > .card {
+        height: 677.234px !important;
+    }
+
+    .name-text {
+        font-size: 2.2rem !important;
+        margin-top: 0 !important;
+    }
+
+    .ingredients-text {
+        font-size: 1.5rem !important;
+    }
+
+    .order-button {
+        float: right !important;
+        margin-top: auto !important;
+    }
+
+    .price-text {
+        float: left !important;
+    }
+
     .btn.btn-outline-black.rounded-0,
     .btn.btn-black.rounded-0 {
         padding: .375rem .375rem;
@@ -774,5 +866,210 @@ input[name='q']::placeholder {
 
     .increment-qty, .decrement-qty {
         padding: .25rem .5rem !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .blurb p, .information p {
+        font-size: 1.8rem !important;
+    }
+
+    .blurb p {
+        padding-right: 0.7rem!important;
+        padding-left: 0.7rem!important;
+    }
+    
+    div.col-lg-3 > .card {
+        height: 625px !important;
+    }
+
+    .order-button {
+        float: none !important;
+        margin-top: 0.5rem !important;
+    }
+
+    .price-text {
+        float: none !important;
+    }
+
+    .card-footer {
+        text-align: center !important;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .about-section .col-6 {
+        width: 100% !important;
+        padding-right: 1rem!important;
+        padding-left: 1rem!important;
+        margin-top: 1rem!important;
+        margin-bottom: 1rem!important;
+    }
+}
+
+@media screen and (max-width: 537px) {
+    .name-text {
+        font-size: 1.75rem !important;
+        margin-top: 1rem !important;
+    }
+
+    .ingredients-text {
+        font-size: 1.3rem !important;
+    }
+
+    div.col-lg-3 > .card {
+        height: 610px !important;
+    }
+
+    div.col-lg-3 hr {
+        margin: 0.5rem 0 !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    div.col-lg-3 > .card {
+        height: 560px !important;
+    }  
+
+    div.col-lg-3 .card-body {
+        height: 419px !important;
+    }
+}
+
+@media screen and (max-width: 458px) {
+    .featured-heading {
+        font-size: 2.1rem !important;
+    }
+    
+    .name-text {
+        font-size: 1.5rem !important;
+    }
+}
+
+@media screen and (max-width: 435px) {
+    div.col-lg-3 > .card {
+        height: 590px !important;
+    }
+    
+    div.col-lg-3 .card-body {
+        height: 440px !important;
+    }
+
+    .ingredients-text {
+        font-size: 1.2rem !important;
+    }
+
+    .price-text {
+        font-size: .700em !important;
+    }
+
+    .order-button {
+        padding: 0.25rem 0.10rem !important;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .blurb p, .information p {
+        font-size: 1.5rem !important;
+        line-height: 25px !important;
+    }
+    
+    .name-text {
+        font-size: 1.3rem !important;
+    }
+
+    div.col-lg-3 > .card {
+        height: 530px !important;
+    }
+    
+    div.col-lg-3 .card-body {
+        height: 420px !important;
+    }
+}
+
+@media screen and (max-width: 379px) {
+    .name-text {
+        font-size: 1.1rem !important;
+    }
+    
+    .ingredients-text {
+        font-size: 1rem !important;
+    }
+
+    div.col-lg-3 > .card {
+        height: 510px !important;
+    }
+    
+    div.col-lg-3 .card-body {
+        height: 400px !important;
+    }
+}
+
+@media screen and (max-width: 345px) {
+    div.col-lg-3 > .card {
+        height: 510px !important;
+    }
+    
+    div.col-lg-3 .card-body {
+        height: 342.625px !important;
+    }
+
+    .name-text {
+        font-size: 1rem !important;
+    }
+
+    .ingredients-text {
+        line-height: 20px !important;
+    }
+
+    .price-text {
+        line-height: 10px !important;
+    }
+}
+
+@media screen and (max-width: 326px) {
+    .pizzas-container > div {
+        width: 100% !important;
+    }
+
+    div.col-lg-3 > .card {
+        height: auto !important;
+    }
+    
+    div.col-lg-3 .card-body {
+        height: auto !important;
+    }
+
+    .featured-heading {
+        font-size: 1.8rem !important;
+        line-height: 40px !important;
+    }
+
+    .name-text {
+        font-size: 1.5rem !important;
+    }
+
+    .ingredients-text {
+        line-height: 20px !important;
+    }
+
+    .price-text {
+        line-height: 50px !important;
+        float: left !important;
+    }
+
+    .order-button {
+        float: right !important;
+    }
+}
+
+@media screen and (max-width: 290px) {
+    .price-text {
+        line-height: 10px !important;
+        float: none !important;
+    }
+
+    .order-button {
+        float: none !important;
     }
 }
