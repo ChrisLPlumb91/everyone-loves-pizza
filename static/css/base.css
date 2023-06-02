@@ -177,7 +177,7 @@ footer a {
     font-size: 1.7rem !important;
 }
 
-.order-button {
+.order-button, .featured-order-button {
     background: #38761d !important;
     color:#f5f5f5 !important;
     border: 2px solid black !important;
@@ -723,6 +723,13 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
+@media screen and (max-width: 1455px) {
+    .order-button {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+        font-size: 1rem !important;
+    }
+}
 
 @media screen and (max-width: 1399px) {
     .photo-container, .blurb-container, .info-container {
@@ -748,7 +755,13 @@ input[name='q']::placeholder {
         font-size: 1.3rem !important;
     }
 
-    .order-button {
+    h2.ms-3 {
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+
+    .featured-order-button {
         float: none !important;
         margin-top: 0.5rem !important;
     }
@@ -759,6 +772,23 @@ input[name='q']::placeholder {
 
     .card-footer {
         text-align: center !important;
+    }
+}
+
+@media screen and (max-width: 1380px) {
+    .menu-name-text {
+        font-size: 2rem !important;
+    }
+}
+
+@media screen and (max-width: 1242px) {
+    .edit-delete-options {
+        flex: 1 0 100% !important;
+        margin-bottom: 0.7rem !important;
+    }
+    
+    .order-button {
+        float: none !important;
     }
 }
 
@@ -844,7 +874,7 @@ input[name='q']::placeholder {
         font-size: 1.5rem !important;
     }
 
-    .order-button {
+    .featured-order-button {
         float: right !important;
         margin-top: auto !important;
     }
@@ -883,7 +913,7 @@ input[name='q']::placeholder {
         height: 625px !important;
     }
 
-    .order-button {
+    .featured-order-button {
         float: none !important;
         margin-top: 0.5rem !important;
     }
@@ -895,6 +925,27 @@ input[name='q']::placeholder {
     .card-footer {
         text-align: center !important;
     }
+
+    .custom-select, .custom-select > option {
+        font-size: 1.5rem !important;
+    }
+
+    .search-results-container {
+        text-align: center !important;
+    }
+}
+
+@media screen and (max-width: 645px) {
+    .menu-name-text {
+        font-size: 1.9rem !important;
+    }
+}
+
+@media screen and (max-width: 578px) {
+    .search-results-with-link {
+        font-size: 1.7rem !important;
+        line-height: 55px !important;
+    }
 }
 
 @media screen and (max-width: 575px) {
@@ -904,6 +955,12 @@ input[name='q']::placeholder {
         padding-left: 1rem!important;
         margin-top: 1rem!important;
         margin-bottom: 1rem!important;
+    }
+
+    .order-button {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        font-size: 1.25rem !important;
     }
 }
 
@@ -923,6 +980,12 @@ input[name='q']::placeholder {
 
     div.col-lg-3 hr {
         margin: 0.5rem 0 !important;
+    }
+}
+
+@media screen and (max-width: 501px) {
+    .search-results-with-link {
+        font-size: 1.5rem !important;
     }
 }
 
@@ -946,6 +1009,12 @@ input[name='q']::placeholder {
     }
 }
 
+@media screen and (max-width: 449px) {
+    .search-results-with-link {
+        line-height: 35px !important;
+    }
+}
+
 @media screen and (max-width: 435px) {
     div.col-lg-3 > .card {
         height: 590px !important;
@@ -963,7 +1032,7 @@ input[name='q']::placeholder {
         font-size: .700em !important;
     }
 
-    .order-button {
+    .featured-order-button {
         padding: 0.25rem 0.10rem !important;
     }
 }
@@ -1027,6 +1096,12 @@ input[name='q']::placeholder {
     }
 }
 
+@media screen and (max-width: 337px) {
+    .menu-name-text {
+        font-size: 2rem !important;
+    } 
+}
+
 @media screen and (max-width: 326px) {
     .pizzas-container > div {
         width: 100% !important;
@@ -1058,8 +1133,33 @@ input[name='q']::placeholder {
         float: left !important;
     }
 
-    .order-button {
+    .featured-order-button {
         float: right !important;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .menu-name-text {
+        font-size: 1.8rem !important;
+    }
+
+    .menu-ingredients-text {
+        font-size: 1.3rem !important;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .menu-name-text {
+        font-size: 1.6rem !important;
+        margin-bottom: 0.2rem !important;
+    }
+
+    .name-ingredients-divider {
+        margin-top: 0.2rem !important;
+    }
+
+    .menu-ingredients-text {
+        font-size: 1.2rem !important;
     }
 }
 
@@ -1069,7 +1169,7 @@ input[name='q']::placeholder {
         float: none !important;
     }
 
-    .order-button {
+    .featured-order-button {
         float: none !important;
     }
 }

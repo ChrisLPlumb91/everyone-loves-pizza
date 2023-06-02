@@ -32,7 +32,7 @@
         <div class="menu-container col-10 offset-1">
             <div class="row mt-1 mb-2">
                 <div class="col-12 my-auto order-md-last d-flex justify-content-center justify-content-md-end {% if search_term %}col-md-5{% else %}col-md-6{% endif %}">
-                    <div class="sort-select-wrapper w-50 text-end">
+                    <div class="sort-select-wrapper text-end">
                         <select id="sort-selector"
                             class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                             <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
@@ -56,8 +56,8 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-12 order-md-first {% if search_term %}col-md-7{% else %}col-md-6{% endif %}">
-                    <p class="search-results-num mt-3 text-center text-md-left jumbotron-heading d-inline-block px-2">
+                <div class="col-12 search-results-container order-md-first {% if search_term %}col-md-7{% else %}col-md-6{% endif %}">
+                    <p class="search-results-num mt-3 text-center text-md-left jumbotron-heading d-inline-block px-2 {% if search_term or current_categories or current_sorting != 'None_None' %}search-results-with-link{%endif%}">
                         {% if search_term or current_categories or current_sorting != 'None_None' %}
                         <span><a href="{% url 'menu' %}" class="menu-home-link">Menu Home</a> | </span>
                         {% endif %}
@@ -70,7 +70,7 @@
             <div class="row">
 
                 {% if not search_term and not current_categories and current_sorting == 'None_None' %}
-                <h2 class="jumbotron-heading py-2 menu-heading ms-3">Pizzas</h2>
+                <h2 class="jumbotron-heading py-2 ms-3 menu-heading">Pizzas</h2>
                 {% endif %}
 
                 {% for menu_item in menu_items %}
@@ -85,20 +85,20 @@
                                         {% if menu_item.image %}
                                         <a href="{% url 'menu_item_detail' menu_item.id %}"
                                             class="d-inline-block float-end">
-                                            <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}" {% if menu_item.category.name == 'sides'%}class="mb-3 ms-4"{% endif %}>
+                                            <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}" class="img-fluid {% if menu_item.category.name == 'sides'%}mb-3{% endif %}">
                                         </a>
                                         {% else %}
                                         <a href="{% url 'menu_item_detail' menu_item.id %}">
-                                            <img src="{{ MEDIA_URL }}noimage.png" alt="{{ menu_item.name }}">
+                                            <img src="{{ MEDIA_URL }}noimage.png" alt="{{ menu_item.name }}" class="img-fluid">
                                         </a>
                                         {% endif %}
 
-                                        <h3 class="d-inline-block float-start">{{ menu_item.name }}</h3>
+                                        <h3 class="d-inline-block float-start menu-name-text">{{ menu_item.name }}</h3>
                                     </div>
                                 </div>
                                 
-                                <hr>
-                                <p class="d-inline-block mb-0">{{ menu_item.ingredients }} <small class="float-end">({{ menu_item.calories }})</small></p>
+                                <hr class="name-ingredients-divider">
+                                <p class="d-inline-block mb-0 menu-ingredients-text">{{ menu_item.ingredients }} <small class="float-end">({{ menu_item.calories }})</small></p>
                                 <hr>
 
                             </div>
@@ -140,14 +140,14 @@
 
                                     {% if not request.user.is_superuser %}
                                     <div class="col">
-                                        <a href="{% url 'menu_item_detail' menu_item.id %}" class="btn btn-lg order-button float-end">Order now</a>
+                                        <a href="{% url 'menu_item_detail' menu_item.id %}" class="btn btn-lg order-button">Order now</a>
                                     </div>
                                     {% endif %}
                                 </div>
                                 
                                 {% if request.user.is_superuser %}
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col edit-delete-options">
                                         <small class="ml-3">
                                             <a href="{% url 'edit_menu_item' menu_item.id %}">Edit</a> |
                                             <a class="text-danger"
@@ -157,7 +157,7 @@
                                     </div>
 
                                     <div class="col">
-                                        <a href="{% url 'menu_item_detail' menu_item.id %}" class="btn btn-lg order-button float-end">Order now</a>
+                                        <a href="{% url 'menu_item_detail' menu_item.id %}" class="btn btn-lg order-button">Order now</a>
                                     </div>
                                 </div>
                                 {% endif %}
@@ -198,20 +198,20 @@
                                         {% if menu_item.image %}
                                         <a href="{% url 'menu_item_detail' menu_item.id %}"
                                             class="d-inline-block float-end">
-                                            <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}">
+                                            <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}" class="img-fluid">
                                         </a>
                                         {% else %}
                                         <a href="{% url 'menu_item_detail' menu_item.id %}">
-                                            <img src="{{ MEDIA_URL }}noimage.png" alt="{{ menu_item.name }}">
+                                            <img src="{{ MEDIA_URL }}noimage.png" alt="{{ menu_item.name }}" class="img-fluid">
                                         </a>
                                         {% endif %}
 
-                                        <h3 class="d-inline-block float-start">{{ menu_item.name }}</h3>
+                                        <h3 class="d-inline-block float-start menu-name-text">{{ menu_item.name }}</h3>
                                     </div>
                                 </div>
                                 
-                                <hr>
-                                <p class="d-inline-block mb-0">{{ menu_item.ingredients }} <small class="float-end">({{ menu_item.calories }})</small></p>
+                                <hr class="name-ingredients-divider">
+                                <p class="d-inline-block mb-0 menu-ingredients-text">{{ menu_item.ingredients }} <small class="float-end">({{ menu_item.calories }})</small></p>
                                 <hr>
 
                             </div>
@@ -249,14 +249,14 @@
 
                                     {% if not request.user.is_superuser %}
                                     <div class="col">
-                                        <a href="{% url 'menu_item_detail' menu_item.id %}" class="btn btn-lg order-button float-end">Order now</a>
+                                        <a href="{% url 'menu_item_detail' menu_item.id %}" class="btn btn-lg order-button">Order now</a>
                                     </div>
                                     {% endif %}
                                 </div>
                                 
                                 {% if request.user.is_superuser %}
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col edit-delete-options">
                                         <small class="ml-3">
                                             <a href="{% url 'edit_menu_item' menu_item.id %}">Edit</a> |
                                             <a class="text-danger"
@@ -266,7 +266,7 @@
                                     </div>
 
                                     <div class="col">
-                                        <a href="{% url 'menu_item_detail' menu_item.id %}" class="btn btn-lg order-button float-end">Order now</a>
+                                        <a href="{% url 'menu_item_detail' menu_item.id %}" class="btn btn-lg order-button">Order now</a>
                                     </div>
                                 </div>
                                 {% endif %}
@@ -304,7 +304,7 @@
             <div class="row">
 
                 {% if not search_term and not current_categories and current_sorting == 'None_None' %}
-                <h2 class="jumbotron-heading py-2 menu-heading ms-3">Sides</h2>
+                <h2 class="jumbotron-heading py-2 ms-3 menu-heading">Sides</h2>
                 {% endif %}
 
                 {% for menu_item in menu_items %}
@@ -319,20 +319,20 @@
                                         {% if menu_item.image %}
                                         <a href="{% url 'menu_item_detail' menu_item.id %}"
                                             class="d-inline-block float-end">
-                                            <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}" class="mb-3 ms-4">
+                                            <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}" class="img-fluid mb-3">
                                         </a>
                                         {% else %}
                                         <a href="{% url 'menu_item_detail' menu_item.id %}">
-                                            <img src="{{ MEDIA_URL }}noimage.png" alt="{{ menu_item.name }}" class="mb-3 ms-4">
+                                            <img src="{{ MEDIA_URL }}noimage.png" alt="{{ menu_item.name }}" class="mb-3">
                                         </a>
                                         {% endif %}
 
-                                        <h3 class="d-inline-block float-start">{{ menu_item.name }}</h3>
+                                        <h3 class="d-inline-block float-start menu-name-text">{{ menu_item.name }}</h3>
                                     </div>
                                 </div>
                                 
-                                <hr>
-                                <p class="d-inline-block mb-0">{{ menu_item.ingredients }} <small class="float-end">({{ menu_item.calories }})</small></p>
+                                <hr class="name-ingredients-divider">
+                                <p class="d-inline-block mb-0 menu-ingredients-text">{{ menu_item.ingredients }} <small class="float-end">({{ menu_item.calories }})</small></p>
                                 <hr>
 
                             </div>
@@ -370,14 +370,14 @@
 
                                     {% if not request.user.is_superuser %}
                                     <div class="col">
-                                        <a href="{% url 'menu_item_detail' menu_item.id %}" class="btn btn-lg order-button float-end">Order now</a>
+                                        <a href="{% url 'menu_item_detail' menu_item.id %}" class="btn btn-lg order-button">Order now</a>
                                     </div>
                                     {% endif %}
                                 </div>
                                 
                                 {% if request.user.is_superuser %}
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col edit-delete-options">
                                         <small class="ml-3">
                                             <a href="{% url 'edit_menu_item' menu_item.id %}">Edit</a> |
                                             <a class="text-danger"
@@ -387,7 +387,7 @@
                                     </div>
 
                                     <div class="col">
-                                        <a href="{% url 'menu_item_detail' menu_item.id %}" class="btn btn-lg order-button float-end">Order now</a>
+                                        <a href="{% url 'menu_item_detail' menu_item.id %}" class="btn btn-lg order-button">Order now</a>
                                     </div>
                                 </div>
                                 {% endif %}
