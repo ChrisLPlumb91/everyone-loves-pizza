@@ -42,7 +42,7 @@
                         </div>
 
                         {% for item in cart_items %}
-                            <div class="row cart-contents position-relative">
+                            <div class="row cart-contents position-relative item-row">
                                 <div class="col-6 mb-2 image-container-cart">
                                     {% include "cart/menu_item_image.html" %}
                                 </div>
@@ -174,12 +174,20 @@
             $(itemRows[i]).find('.info-subtotal').text(`€${subtotalInt}.00`);  
         }
 
-        console.log($(itemRows[i]).find('.info-name').innerHeight());
-
         if ($(itemRows[i]).find('.info-name').innerHeight() > 55) {
-            console.log('entering if');
+            $(itemRows[i]).find('.info-name').addClass('name-ellipsis');
             $(itemRows[i]).find('.info-name').addClass('js-added-font-size-decrease');
         }
     }
+
+    $(window).resize(function() {
+        if ($('body').innerWidth() <= 1382) {
+            for (let i = 0; i < itemRows.length; i++) {
+                if ($(itemRows[i]).find('.info-name').innerHeight() > 55);
+                    $(itemRows[i]).find('.info-name').addClass('name-ellipsis');
+                    $(itemRows[i]).find('.info-name').addClass('js-added-font-size-decrease');  
+            }
+        }
+    })
 </script>
 {% endblock %}

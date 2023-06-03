@@ -313,6 +313,20 @@ p.jumbotron-heading {
     border-radius: 10px !important;
 }
 
+.name-ellipsis {
+    display: -webkit-box;
+
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+p.js-added-font-size-decrease-alt {
+    font-size: 1.3rem !important;
+}
+
 th, .summary-headings, .totals, legend, .email-notification, .cart-below {
     font-size: 2rem !important;
     color: #f19832;
@@ -414,7 +428,7 @@ td {
     line-height: 25px !important;
 }
 
-.info-size, .info-price {
+.info-size, .info-price, .info-price-lead {
     font-size: 2rem !important;
 }
 
@@ -793,6 +807,23 @@ input[name='q']::placeholder {
     .colour-band {
         width: 265px !important;
     }
+
+    div.colour-band-small {
+        width: 125px !important;
+    }
+
+    p.info-name-small {
+        padding-left: 0.9rem !important;
+    }
+
+    p.enter-details {
+        font-size: 1.5rem !important;
+        line-height: 48px !important;
+    }
+
+    p.info-size-cart, p.info-qty {
+        padding-left: 1rem !important;
+    }
 }
 
 @media screen and (max-width: 1380px) {
@@ -836,6 +867,27 @@ input[name='q']::placeholder {
 
     td > div.superuser-zone {
         width: 70% !important;
+    }
+
+    p.info-name-small {
+        padding-left: 3rem !important;
+    }
+
+    .info-container-cart.info-size {
+        padding-left: 1rem !important;
+    }
+
+    p.info-size-cart, p.info-qty {
+        padding-left: 2rem !important;
+    }
+
+    p.enter-details {
+        font-size: 1.3rem !important;
+        line-height: 48px !important;
+    }
+
+    label.form-check-label {
+        font-size: 1.2rem !important;
     }
 }
 
@@ -955,6 +1007,24 @@ input[name='q']::placeholder {
     .cart-remove-item {
         float: none !important;
     }
+
+    p.enter-details {
+        font-size: 2rem !important;
+        line-height: 48px !important;
+    }
+
+    label.form-check-label {
+        font-size: 1.5rem !important;
+    }
+
+    div.totals-container {
+        margin-right: 0 !important;
+        text-align: center !important;
+    }
+
+    .payment-form > fieldset, div.submit-button {
+        margin-left: 0 !important;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -996,7 +1066,7 @@ input[name='q']::placeholder {
         width: 70% !important;
     }
 
-    .info-size, .info-price, .info-subtotal-grid {
+    .info-size, .info-price, .info-subtotal-grid, .info-price-lead {
         color: #212529;
     }
 
@@ -1011,6 +1081,14 @@ input[name='q']::placeholder {
     .colour-band {
         width: 265px !important;
         top: 0 !important;
+    }
+
+    p.enter-details {
+        line-height: 25px !important;
+    }
+
+    p.info-price-cart, p.info-size-cart {
+        color: #f5f5f5 !important;
     }
 }
 
@@ -1052,6 +1130,31 @@ input[name='q']::placeholder {
 
     .info-subtotal-grid {
         text-align: center !important;
+    }
+
+    p.info-name-small {
+        position: absolute !important;
+        top: 0;
+        right: 0;
+        width: 100%;
+        z-index: 0 !important;
+    }
+
+    p.info-size-cart, p.info-qty-cart, p.info-price-cart {
+        position: absolute !important;
+        right: 30px;
+    }
+
+    p.info-size-cart {
+        top: 30px;
+    }
+
+    p.info-qty-cart {
+        top: 60px;
+    }
+
+    p.info-price-cart {
+        top: 50px;
     }
 }
 
@@ -1109,6 +1212,14 @@ input[name='q']::placeholder {
     .cart-form-group {
         width: 100% !important;
     }
+
+    p.info-name-small {
+        font-size: 1.5rem !important;
+    }
+
+    div.colour-band-small {
+        display: block !important;
+    }
 }
 
 @media screen and (max-width: 529px) {
@@ -1129,9 +1240,24 @@ input[name='q']::placeholder {
     }
 }
 
+@media screen and (max-width: 507px) {
+    label.form-check-label {
+        font-size: 1.3rem !important;
+        line-height: 25px !important;
+    }
+}
+
 @media screen and (max-width: 501px) {
     .search-results-with-link {
         font-size: 1.5rem !important;
+    }
+
+    .order-scroll .col-7 {
+        text-align: right !important;
+    }
+
+    p.info-name-small {
+        text-align: right !important;
     }
 }
 
@@ -1185,6 +1311,10 @@ input[name='q']::placeholder {
     .featured-order-button {
         padding: 0.25rem 0.10rem !important;
     }
+
+    .charge-warning {
+        font-size: 1.5rem !important;
+    }
 }
 
 @media screen and (max-width: 414px) {
@@ -1203,6 +1333,34 @@ input[name='q']::placeholder {
     
     div.col-lg-3 .card-body {
         height: 420px !important;
+    }
+
+    div.submit-button {
+        text-align: center !important;
+    }
+
+    a.adjust-bag-btn, button.complete-order-btn {
+        margin: 0 !important;
+        width: 190px !important;
+    }
+
+    button.complete-order-btn {
+        float: none !important;
+    }
+
+    a.adjust-bag-btn {
+        margin-bottom: 0.5rem !important;
+    }
+
+    p.charge-warning {
+        text-align: center !important;
+        margin-right: 0 !important;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    input.stripe-style-input, select.stripe-style-input {
+        font-size: 1.4rem !important;
     }
 }
 
@@ -1253,6 +1411,13 @@ input[name='q']::placeholder {
 
     .price-text {
         line-height: 10px !important;
+    }
+
+    .checkout-headings {
+        font-size: 1.7rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        line-height: 25px !important;
     }
 }
 
@@ -1316,6 +1481,18 @@ input[name='q']::placeholder {
         width: 100% !important;
         font-size: 2rem !important;
     }
+
+    p.info-size-cart, p.info-qty-cart, p.info-price-cart {
+        right: 10px;
+    }
+
+    p.info-size-cart, p.info-price-cart {
+        font-size: 1.7rem !important;
+    }
+
+    p.info.qty-cart {
+        font-size: 1.2rem !important;
+    }
 }
 
 @media screen and (max-width: 300px) {
@@ -1330,6 +1507,14 @@ input[name='q']::placeholder {
 
     .menu-ingredients-text {
         font-size: 1.2rem !important;
+    }
+
+    p.charge-warning {
+        font-size: 1.2rem !important;
+    }
+
+    strong.final-charge {
+        font-size: 1.5rem !important;
     }
 }
 
