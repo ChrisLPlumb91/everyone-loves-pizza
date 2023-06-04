@@ -113,13 +113,13 @@ footer a {
     font-family: 'Mogra', cursive !important;
 }
 
-.about-section, .featured-section, .cart-container {
+.about-section, .featured-section, .cart-container, .summary-section {
     border: 5px solid #f5f5f5;
     box-shadow: -10px -10px 10px #202020, 10px 10px 10px #202020, 0 0 32px #f5f5f5 inset;
     color: #f5f5f5 !important;
 }
 
-.about-section {
+.about-section, .summary-section {
     background: url('/media/wood-surface.jpg') no-repeat center center fixed;
     background-size: cover; 
 }
@@ -327,6 +327,13 @@ p.js-added-font-size-decrease-alt {
     font-size: 1.3rem !important;
 }
 
+.email-notification-row {
+    background: #28a746ad;
+    border: 2px solid #f19832;
+    box-shadow: 0 5px #cc0000;
+}
+
+
 th, .summary-headings, .totals, legend, .email-notification, .cart-below {
     font-size: 2rem !important;
     color: #f19832;
@@ -342,6 +349,7 @@ th, .summary-headings, .totals, legend, .email-notification, .cart-below {
     background: #f19832 !important;
     font-size: 2rem !important;
     border: 3px solid #212529 !important;
+    line-height: 20px !important;
 }
 
 .deals-btn:hover {
@@ -1114,6 +1122,12 @@ input[name='q']::placeholder {
         margin-bottom: 1rem!important;
     }
 
+    .order-confirmation-wrapper .col-6 {
+        width: 50% !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }   
+
     .order-button {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
@@ -1261,6 +1275,29 @@ input[name='q']::placeholder {
     }
 }
 
+@media screen and (max-width: 485px) {
+    .order-confirmation-wrapper div.col-6, .order-confirmation-wrapper div.col-4, .order-confirmation-wrapper div.col-8 {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .order-confirmation-wrapper p.text-black, .order-confirmation-wrapper p.text-muted {
+        line-height: 15px !important;
+    }
+
+    div.text-end > p {
+        margin-bottom: 0.7rem !important;
+    }
+
+    div.mt-5, .order-confirmation-wrapper > .top-heading {
+        margin-bottom: 2.5rem !important;
+    }
+
+    div.summary-section {
+        padding-bottom: 2.3rem !important;
+    }
+}
+
 @media screen and (max-width: 480px) {
     div.col-lg-3 > .card {
         height: 560px !important;
@@ -1389,6 +1426,19 @@ input[name='q']::placeholder {
     
     div.col-lg-3 .card-body {
         height: 400px !important;
+    }
+
+    div.order-number-col {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    p.order-number-summary {
+        font-size: 1.1rem !important;
+    }
+
+    p.email-notification {
+        font-size: 1.5rem !important;
     }
 }
 
