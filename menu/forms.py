@@ -12,6 +12,9 @@ class MenuItemForm(forms.ModelForm):
     image = forms.ImageField(label='Image', required=False,
                              widget=CustomClearableFileInput)
 
+    full_image = forms.ImageField(label='Full Image', required=False,
+                                  widget=CustomClearableFileInput)
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         categories = Category.objects.all()
