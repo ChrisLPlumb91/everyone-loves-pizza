@@ -18,11 +18,13 @@
 
     <div class="container">
         
+        {% if not from_profile %}
         <div class="row email-notification-row mb-3">
             <div class="col text-center">
                 <p class="email-notification pt-3">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
             </div>
         </div>
+        {% endif %}
 
         <div class="row">
             <div class="col-12 col-lg-6 offset-lg-3 about-section py-3 px-0 summary-section">
@@ -212,7 +214,7 @@
                         <span class="text-uppercase">Back to Profile</span>
                     </a>
                 {% else %}
-                    <a href="{% url 'menu' %}?category=new_arrivals,deals,clearance" class="btn mt-2 mb-4 deals-btn py-3">
+                    <a href="{% url 'menu' %}" class="btn mt-2 mb-4 deals-btn py-3">
                         <span class="icon mr-2">
                             <i class="fas fa-gifts"></i>
                         </span>

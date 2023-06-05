@@ -1,0 +1,180 @@
+.profile-page-headings h2.text-end {
+    font-size: 2rem !important;
+    line-height: 48px !important;
+}
+
+.user-username-text {
+    color: #2dc250 !important;
+}
+
+.superuser-username-text {
+    text-shadow: 0 2px #d9534f !important;
+}
+
+.profile-info-heading {
+    font-size: 1.8rem !important;
+    line-height: 50px !important;
+}
+
+.update-info-btn {
+    border: 2px solid #000 !important;
+    background: #2dc250 !important;
+    color:#000 !important;
+    font-size: 1.5rem !important;
+}
+
+.update-info-btn:hover {
+    background: #38761d !important;
+    color:#f5f5f5 !important;
+    border: 2px solid #f5f5f5 !important;
+}
+
+.order-history-container {
+    background: url('/media/wood-surface.jpg') no-repeat center center fixed;
+    background-size: cover;
+    border: 5px solid #f5f5f5;
+    box-shadow: -10px -10px 10px #202020, 10px 10px 10px #202020, 0 0 32px #f5f5f5 inset;
+    color: #f5f5f5 !important;
+    padding: 5px 10px !important;
+}
+
+.order-history-container tr {
+    vertical-align: middle !important;
+}
+
+.order-history-container tr {
+    color: #f5f5f5 !important;
+    text-shadow: 0 2px #000;
+}
+
+.order-history-container td {
+    line-height: 15px !important;
+}
+
+a.order-number-link {
+    font-size: 2.5rem !important;
+    color: #2dc250 !important;
+    text-shadow: 0 2px #000;
+    text-decoration: none;
+}
+
+a.order-number-link:hover {
+    color: #2dc250 !important;
+    text-shadow: 0 2px #000;
+    text-decoration: underline;
+}
+
+.order-history-container ul {
+    margin: 10px 0 !important;
+}
+
+.order-history-container th {
+    line-height: 25px !important;
+}
+
+.order-history-heading {
+    line-height: 50px !important;
+}
+
+.order-history {
+    max-height: 416px; /* height of profile form + submit button */
+    overflow-y: auto;
+}
+
+#profile-update-form .form-control {
+    color: #000;
+    font-size: 1.45rem !important;
+}
+
+#profile-update-form input::placeholder {
+    color: #aab7c4;
+}
+
+#id_default_country,
+#id_default_country option:not(:first-child) {
+    color: #000;
+}
+
+#id_default_country option:first-child {
+    color: #aab7c4;
+}
+
+@media screen and (max-width: 991px) {
+    .profile-row-one > div.col-6 {
+        width: 100% !important;
+    }
+
+    div.delivery-info-col {
+        margin-bottom: 2rem !important;
+    }
+}
+
+@media screen and (max-width: 749px) {
+    .profile-page-headings > div.col-6 {
+        width: 100% !important;
+    }
+
+    .profile-info-heading, .order-history-heading {
+        text-align: center !important;
+        padding-left: 0 !important;
+    }
+
+    .profile-page-headings h2 {
+        margin: 0 0 !important;
+        text-align: center !important;
+        padding: 0 !important;
+    }
+
+    .my-profile-text {
+        box-shadow: 0 10px #cc0000 inset, 0 0 #cc0000 inset !important;
+    }
+
+    .logged-in-as-text {
+        box-shadow: 0 0 #cc0000 inset, 0 -10px #cc0000 inset !important;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    div.order-history-container tr {
+        text-align: center !important;
+    }
+
+    div.order-history-container th {
+        padding: 20px 0 !important;
+    }
+
+    div.order-history-container td {
+        padding: 10px 0 !important;
+    }
+}
+
+@media screen and (max-width: 454px) {
+    .profile-info-heading {
+        line-height: 30px !important;
+    }
+
+    .items-heading {
+        text-align: center !important;
+    } 
+
+    #profile-update-form {
+        text-align: center !important;
+    }
+
+    button.update-info-btn {
+        float: none !important;
+        text-align: center !important;
+    }
+}
+
+@media screen and (max-width: 395px) {
+    a.order-number-link {
+        font-size: 2rem !important;
+    }
+}
+
+@media screen and (max-width: 305px) {
+    .order-history-heading {
+        line-height: 40px !important;
+    }
+}

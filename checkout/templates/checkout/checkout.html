@@ -77,21 +77,21 @@
                     </div>
                 </div>
                 <hr class="my-2">
-                <div class="row text-end jumbotron-heading py-2 totals-container g-0">
+                <div class="row text-end jumbotron-heading py-2 totals-container g-0 me-3">
                     <div class="col-lg-7 offset-lg-2 mt-3 col-12">
                         <p class="my-0 totals costs d-lg-block d-inline">Order Total:</p>
-                        <p class="my-0 totals costs d-lg-none d-inline">${{ total | floatformat:2 }}</p>
+                        <p class="my-0 totals costs d-lg-none d-inline">€{{ total | floatformat:2 }}</p>
                         <br class="d-lg-none d-block">
                         <p class="my-0 totals costs d-lg-block d-inline">Delivery:</p>
-                        <p class="my-0 totals costs d-lg-none d-inline">${{ delivery | floatformat:2 }}</p>
+                        <p class="my-0 totals costs d-lg-none d-inline">€{{ delivery | floatformat:2 }}</p>
                         <br class="d-lg-none d-block">
                         <p class="my-1 totals d-lg-block d-inline"><strong>Grand Total:</strong></p>
-                        <p class="my-0 totals d-lg-none d-inline"><strong>${{ grand_total | floatformat:2 }}</strong></p>
+                        <p class="my-0 totals d-lg-none d-inline"><strong>€{{ grand_total | floatformat:2 }}</strong></p>
                     </div>
                     <div class="col-lg-3 mt-3 ps-4 text-start d-lg-block d-none">
-                        <p class="my-0 totals costs">${{ total | floatformat:2 }}</p>
-                        <p class="my-0 totals costs">${{ delivery | floatformat:2 }}</p>
-                        <p class="my-0 totals"><strong>${{ grand_total | floatformat:2 }}</strong></p>
+                        <p class="my-0 totals costs">€{{ total | floatformat:2 }}</p>
+                        <p class="my-0 totals costs">€{{ delivery | floatformat:2 }}</p>
+                        <p class="my-0 totals"><strong>€{{ grand_total | floatformat:2 }}</strong></p>
                     </div>
                 </div>
             </div>
@@ -103,12 +103,12 @@
                 <hr>
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form" class="payment-form">
                     {% csrf_token %}
-                    <fieldset class="rounded px-3 mb-3 ms-5">
+                    <fieldset class="rounded px-3 mb-3 ms-1">
                         <legend class="fieldset-label px-2 w-auto">Details</legend>
                         {{ order_form.full_name | as_crispy_field }}
                         {{ order_form.email | as_crispy_field }}
                     </fieldset>
-                    <fieldset class="rounded px-3 mb-3 ms-5">
+                    <fieldset class="rounded px-3 mb-3 ms-1">
                         <legend class="fieldset-label px-2 w-auto">Delivery</legend>
                         {{ order_form.phone_number | as_crispy_field }}
                         {{ order_form.street_address1 | as_crispy_field }}
@@ -129,7 +129,7 @@
 							{% endif %}
 						</div>
                     </fieldset>
-                    <fieldset class="px-3 ms-5">
+                    <fieldset class="px-3 ms-1">
                         <legend class="fieldset-label px-2 w-auto">Payment</legend>
                         <!-- A Stripe card element will go here -->
                         <div class="mb-3" id="card-element"></div>
@@ -139,26 +139,24 @@
                         <input type="hidden" value="{{ client_secret }}" name="client_secret">
                     </fieldset>
 
-                    <div class="submit-button text-start mt-2 mb-2 ms-5">                    
+                    <div class="submit-button text-start mt-2 mb-2 ms-1">                    
 						<a href="{% url 'view_cart' %}" class="btn adjust-bag-btn ms-3">
 							<span class="icon">
 								<i class="fas fa-chevron-left"></i>
 							</span>
 							<span class="font-weight-bold">Adjust Bag</span>
 						</a>
-                        <!-- <br class="d-none"> -->
 						<button id="submit-button" class="btn complete-order-btn me-3 float-end">
 							<span class="font-weight-bold">Complete Order</span>
 							<span class="icon">
 								<i class="fas fa-lock"></i>
 							</span>
 						</button>
-                        <!-- <br class="d-none"> -->
 						<p class="mt-3 mb-0 me-3 text-end charge-warning">
 							<span class="icon">
 								<i class="text-danger big-icon fas fa-exclamation-circle"></i>
 							</span>
-							<span>Your card will be charged <strong class="text-danger final-charge">${{ grand_total|floatformat:2 }}</strong></span>
+							<span>Your card will be charged <strong class="text-danger final-charge">€{{ grand_total|floatformat:2 }}</strong></span>
 						</p>
 					</div>
                 </form>
