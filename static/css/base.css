@@ -113,13 +113,13 @@ footer a {
     font-family: 'Mogra', cursive !important;
 }
 
-.about-section, .featured-section, .cart-container, .summary-section {
+.about-section, .featured-section, .cart-container, .summary-section, .menu-manage-container {
     border: 5px solid #f5f5f5;
     box-shadow: -10px -10px 10px #202020, 10px 10px 10px #202020, 0 0 32px #f5f5f5 inset;
     color: #f5f5f5 !important;
 }
 
-.about-section, .summary-section {
+.about-section, .summary-section, .featured-section, .menu-manage-container {
     background: url('/media/wood-surface.jpg') no-repeat center center fixed;
     background-size: cover; 
 }
@@ -142,11 +142,6 @@ footer a {
 .photo-and-map {
     height: 100%;
     width: 100%;
-}
-
-.featured-section {
-    background: url('/media/wood-surface.jpg') no-repeat center center fixed;
-    background-size: cover;
 }
 
 .col-3 > .card, div > .card {
@@ -265,10 +260,17 @@ p.jumbotron-heading {
     font-size: 1.5rem !important;
 }
 
-.superuser-option {
+div.superuser-zone > a.superuser-option {
     color: #f5f5f5 !important;
     text-shadow:0 2px #000;
     text-decoration: none;
+    z-index: 1 !important;
+    position: relative;
+}
+
+div.superuser-zone > span {
+    z-index: 1 !important;
+    position: relative;
 }
 
 .item-description {
@@ -651,6 +653,79 @@ input[name='q']::placeholder {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+.superuser-heading {
+    color: #54B4D3 !important;
+    text-shadow: 0 2px #DC4C64 !important;
+    background-color: #3B71CA !important;
+    box-shadow: 0 10px #DC4C64 inset, 0 -10px #DC4C64 inset !important;
+}
+
+form.menu-manage-form label, form.menu-manage-form p {
+    font-size: 2rem !important;
+    color: #54B4D3;
+    text-shadow: 0 2px #000;
+}
+
+form.menu-manage-form select, form.menu-manage-form input, form.menu-manage-form textarea {
+    font-size: 1.7rem !important;
+    line-height: 25px !important;
+}
+
+form.menu-manage-form p {
+    margin-bottom: 0 !important;
+    margin-top: 1rem !important;
+    line-height: 30px;
+}
+
+form.menu-manage-form .custom-checkbox {
+    margin-top: 0 !important;
+    line-height: 30px;
+}
+
+form.menu-manage-form span.btn-file {
+    background: #3B71CA;
+    color: #f5f5f5;
+    border: 2px solid #000;
+    font-size: 1.3rem !important;
+}
+
+form.menu-manage-form span.btn-file:hover {
+    background: #54B4D3;
+    color: #000;
+    border: 2px solid #f5f5f5;
+}
+
+#div_id_image_url, #div_id_full_image_url {
+    margin-top: 2rem !important;
+}
+
+.cancel-btn, .update-or-add-btn {
+    color: #f5f5f5 !important;
+    border: 2px solid #000 !important;
+    font-size: 1.5rem !important; 
+}
+
+.cancel-btn {
+    background: #DC4C64 !important;
+}
+
+.update-or-add-btn {
+    background: #14A44D !important;
+}
+
+.cancel-btn:hover, .update-or-add-btn:hover {
+    color: #000 !important;
+    border: 2px solid #f5f5f5 !important;
+}
+
+.cancel-btn:hover {
+    background: #ff5975 !important;
+}
+
+.update-or-add-btn:hover {
+    background: #1eec71 !important;
 }
 
 /* -------------------------------- Media Queries */
@@ -1158,11 +1233,6 @@ input[name='q']::placeholder {
         text-align: right !important;
     }
 
-    .superuser-zone > a, .superuser-zone > span {
-        z-index: 1 !important;
-        position: relative;
-    }
-
     div.description-container {
         width: 83.33333333% !important;
         margin-left: 8.33333333% !important;
@@ -1207,11 +1277,6 @@ input[name='q']::placeholder {
         max-width: 100% !important;
         height: auto !important;
     }
-
-    /* div.pizza-image-container > img {
-        margin-bottom: 2rem !important;
-    } */
-
 }
 
 @media screen and (max-width: 767px) {
