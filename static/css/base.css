@@ -37,6 +37,24 @@ p {
     font-size: 1.5rem;
 }
 
+#topnav > div.col-12 {
+    margin-top: 1rem !important;
+}
+
+form.search-form input, form.search-form button {
+    font-size: 1.5rem !important;
+}
+
+.collapse > hr {
+    margin-bottom: 0 !important;
+}
+
+ul.navbar-nav > .nav-item {
+    font-size: 2rem !important;
+    line-height: 20px !important;
+    margin: 0 1rem !important;
+}
+
 footer a {
     text-decoration: none !important;
     color:#f19832 !important;
@@ -53,10 +71,6 @@ footer a {
     font-size: 2.5rem !important;
     text-shadow: 0 2px #f19832;
 }
-
-/* .logo-font {
-    text-transform: uppercase;
-} */
 
 .main-logo-link {
     width: fit-content;
@@ -824,6 +838,25 @@ form.menu-manage-form span.btn-file:hover {
     border-radius: 0;
 }
 
+@media screen and (max-width: 1500px) {
+    div.search-form-container {
+        display: flex !important;
+        justify-content: center !important
+    }
+
+    div.search-form-container form.search-form {
+        width: 75% !important;
+    }
+
+    form.search-form > div.input-group {
+        width: 100% !important;
+    }
+
+    div.input-group > input.search-bar {
+        width: 80% !important;
+    }
+}
+
 @media screen and (max-width: 1455px) {
     .order-button {
         padding-left: 12px !important;
@@ -949,6 +982,12 @@ form.menu-manage-form span.btn-file:hover {
     }
 }
 
+@media screen and (max-width: 1300px) {
+    div.search-form-container {
+        justify-content: end !important
+    }
+}
+
 @media screen and (max-width: 1242px) {
     .edit-delete-options {
         flex: 1 0 100% !important;
@@ -1018,10 +1057,6 @@ form.menu-manage-form span.btn-file:hover {
         height: 430px !important;
     }
 
-    /* .pizza-image-container > img {
-        margin-top: 0 !important;
-    } */
-
     div.description-container {
         width: 66.66666667% !important;
         margin-left: 16.66666667% !important;
@@ -1040,6 +1075,20 @@ form.menu-manage-form span.btn-file:hover {
 
     div.product-details-container-sides {
         margin-right: 1rem !important;
+    }
+}
+
+@media screen and (max-width: 1130px) {
+    div.search-form-container form.search-form {
+        width: 60% !important;
+    }
+
+    form.search-form > div.input-group {
+        width: 100% !important;
+    }
+
+    div.input-group > input.search-bar {
+        width: 80% !important;
     }
 }
 
@@ -1087,6 +1136,25 @@ form.menu-manage-form span.btn-file:hover {
 
     #delivery-banner h4 {
         font-size: .9rem;
+    }
+
+    nav.navbar {
+        justify-content: center !important;
+    }
+    
+    ul.navbar-nav > .nav-item {
+        text-align: center !important;
+        font-size: 2rem !important;
+        line-height: 10px !important;
+        margin: 0 !important;
+    }
+    
+    div.categories-container > a {
+        font-size: 1.5rem !important;
+    }
+
+    li.mobile-search, li.mobile-profile, li.mobile-cart {
+        margin: 0 3rem !important;
     }
 
     .blurb p, .information p {
