@@ -1,27 +1,19 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
-</div>
-{% endblock %}
-
 {% block content %}
 
 <hr>
-<h2 class="logo-font jumbotron-heading"><span class="ms-5">Menu</span></h2>
+<h2 class="logo-font jumbotron-heading main-menu-heading ps-4">Menu</h2>
 
 <div class="container-fluid">
 
-    <div class="row">
+    <div class="row mt-1">
         <div class="col text-center">
             {% for c in current_categories %}
             <a class="category-badge text-decoration-none" href="{% url 'menu' %}?category={{ c.name }}">
                 <span
-                    class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
+                    class="p-2 mt-2 text-black rounded-0 border border-dark category-badge">{{ c.friendly_name }}</span>
             </a>
             {% endfor %}
             <hr class="mb-1" style="color:#f19832;">
@@ -68,12 +60,14 @@
             </div>
             <hr class="mt-0" style="color:#f19832;">
             <div class="row">
-
+                <!-- Displaying heading for pizza section if no search term, no category selected, or no sort applied -->
                 {% if not search_term and not current_categories and current_sorting == 'None_None' %}
                 <h2 class="jumbotron-heading py-2 ms-3 menu-heading">Pizzas</h2>
                 {% endif %}
 
+                <!-- Iterating through menu items -->
                 {% for menu_item in menu_items %}
+                    <!-- This if executes if sorting has been applied, and iterates through and displays each menu item in the order of the applied sort. -->
                     {% if current_sorting != 'None_None' %}
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 {% if search_term or current_categories or current_sorting != 'None_None' %}mt-4{% endif %}">
                         <div class="card h-100 border-0">
@@ -84,8 +78,8 @@
                                     <div class="col">
                                         {% if menu_item.image %}
                                         <a href="{% url 'menu_item_detail' menu_item.id %}"
-                                            class="d-inline-block float-end">
-                                            <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}" class="img-fluid {% if menu_item.category.name == 'sides'%}mb-3{% endif %}">
+                                            class="d-inline-block float-end {% if menu_item.category.name == 'pizzas' %}pizza-image-link{% else %}side-image-link{% endif %}">
+                                            <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}" class="img-fluid {% if menu_item.category.name == 'sides' %}mb-3{% endif %}">
                                         </a>
                                         {% else %}
                                         <a href="{% url 'menu_item_detail' menu_item.id %}">
@@ -187,6 +181,7 @@
                     </div>
                     {% endif %}
 
+                    <!-- This elif executes if no sort has been applied, and if the category name of the current menu item is pizzas. They will display below the pizzas heading. -->
                     {% elif menu_item.category.name == 'pizzas' and current_sorting == 'None_None' %}
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 {% if search_term or current_categories or current_sorting != 'None_None' %}mt-4{% endif %}">
                         <div class="card h-100 border-0">
@@ -197,7 +192,7 @@
                                     <div class="col">
                                         {% if menu_item.image %}
                                         <a href="{% url 'menu_item_detail' menu_item.id %}"
-                                            class="d-inline-block float-end">
+                                            class="d-inline-block float-end pizza-image-link">
                                             <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}" class="img-fluid">
                                         </a>
                                         {% else %}
@@ -302,12 +297,13 @@
             </div>
 
             <div class="row mb-5">
-
+                <!-- Displaying heading for sides section if no search term, no category selected, or no sort applied -->
                 {% if not search_term and not current_categories and current_sorting == 'None_None' %}
                 <h2 class="jumbotron-heading py-2 ms-3 menu-heading">Sides</h2>
                 {% endif %}
 
                 {% for menu_item in menu_items %}
+                    <!-- Iterating through the menu items and only displaying those items whose category is sides, because this is the sides section. -->
                     {% if menu_item.category.name == 'sides' and current_sorting == 'None_None' %}
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 {% if search_term or current_categories or current_sorting != 'None_None' %}mt-4{% endif %}">
                         <div class="card h-100 border-0">
@@ -318,7 +314,7 @@
                                     <div class="col">
                                         {% if menu_item.image %}
                                         <a href="{% url 'menu_item_detail' menu_item.id %}"
-                                            class="d-inline-block float-end">
+                                            class="d-inline-block float-end side-image-link">
                                             <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}" class="img-fluid mb-3">
                                         </a>
                                         {% else %}

@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block page_header %}
-    <div class="container header-container">
+    <div class="container header-container my-sm-3 my-5">
         <div class="row">
             <div class="col"></div>
         </div>
@@ -17,8 +17,7 @@
 
 {% block content %}
 
-    <hr>
-    <h2 class="logo-font mb-4 jumbotron-heading"><span class="ms-5">Checkout</span></h2>
+    <h2 class="logo-font mb-4 jumbotron-heading checkout-heading ps-4">Checkout</h2>
     <hr>
 
     <div class="container">
@@ -216,6 +215,18 @@
                     $(itemSize).text('S: N/A');
                 }
             }
+
+            var itemQty = $(itemRows[i]).find('.info-qty');
+
+            if ($(itemName).innerHeight() >= 50 && $(window).innerWidth() <= 334) {
+                $(itemSize).addClass('mt-3');
+                $(itemQty).addClass('mt-2');
+                $(itemQty).addClass('mb-1');
+            } else {
+                $(itemSize).removeClass('mt-3');
+                $(itemQty).removeClass('mt-2');
+                $(itemQty).removeClass('mb-1');
+            }
         }
 
         $(window).resize(function() {
@@ -237,6 +248,18 @@
                     }
                 } else if ($('body').innerWidth() > 326 && $(itemSize).text() === 'S: N/A') {
                     $(itemSize).text('Size: N/A');
+                }
+
+                var itemQty = $(itemRows[i]).find('.info-qty');
+
+                if ($(itemName).innerHeight() >= 50 && $(window).innerWidth() <= 334) {
+                    $(itemSize).addClass('mt-3');
+                    $(itemQty).addClass('mt-2');
+                    $(itemQty).addClass('mb-1');
+                } else {
+                    $(itemSize).removeClass('mt-3');
+                    $(itemQty).removeClass('mt-2');
+                    $(itemQty).removeClass('mb-1');
                 }
             }        
         })

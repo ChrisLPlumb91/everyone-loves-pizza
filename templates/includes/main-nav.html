@@ -2,13 +2,13 @@
     <hr>
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
+            <a class="logo-font font-weight-bold nav-link mr-5" href="{% url 'home' %}" id="home-link"><i class="fas fa-home small"></i>
                 Home
             </a>
         </li>
         <li class="nav-item dropdown full-menu-dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="full-menu-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Full Menu
+            <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="full-menu-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-map"></i> Full Menu
             </a>
             <div class="dropdown-menu border-0 text-center categories-container" aria-labelledby="full-menu-link">
                 <a href="{% url 'menu' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
@@ -19,14 +19,14 @@
         </li>
 
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'menu' %}?category=pizzas" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Pizza
+            <a class="logo-font font-weight-bold nav-link mr-5" href="{% url 'menu' %}?category=pizzas" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-pizza-slice"></i> Pizza
             </a>
         </li>
 
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'menu' %}?category=sides" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Sides
+            <a class="logo-font font-weight-bold nav-link mr-5" href="{% url 'menu' %}?category=sides" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa-solid fa-bowl-food"></i> Sides
             </a>
         </li>
     

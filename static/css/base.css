@@ -38,21 +38,70 @@ p {
 }
 
 #topnav > div.col-12 {
-    margin-top: 1rem !important;
+    margin: 1rem 0 !important;
 }
 
 form.search-form input, form.search-form button {
     font-size: 1.5rem !important;
 }
 
+button.search-btn {
+    background: #f19832;
+    color: #cc0000;
+    text-shadow: 0 2px #000;
+}
+
+button.search-btn:hover {
+    background: #f19832;
+    color: #f5f5f5;
+    text-shadow: 0 2px #000;
+}
+
 .collapse > hr {
     margin-bottom: 0 !important;
 }
 
-ul.navbar-nav > .nav-item {
+nav.navbar {
+    background: #f19832 !important;
+    color: #cc0000 !important;
+}
+
+ul.navbar-nav > li.nav-item {
     font-size: 2rem !important;
     line-height: 20px !important;
     margin: 0 1rem !important;
+}
+
+.full-menu-dropdown > div.dropdown-menu {
+    font-size: 1.5rem !important;
+}
+
+div.user-options-dropdown, div.user-options-dropdown-mobile {
+    text-shadow: none !important;
+    font-size: 1.4rem !important;
+}
+
+a.menu-management-link, a.menu-management-link-mobile {
+    background: #3B71CA;
+    color: #54B4D3;
+    box-shadow: 0 5px #DC4C64 inset, 0 -5px #DC4C64 inset;
+}
+
+a.menu-management-link:hover, a.menu-management-link-mobile:hover {
+    background: #54B4D3;
+    color: #3B71CA;
+    box-shadow: 0 5px #DC4C64 inset, 0 -5px #DC4C64 inset;
+}
+
+.full-menu-dropdown {
+    font-size: 1;
+}
+
+#delivery-banner {
+    box-shadow: 0 5px #cc0000 inset, 0 -5px #cc0000 inset !important;
+    background: #f5f5f5;
+    color:#cc0000;
+    padding-top: 0.3rem;
 }
 
 footer a {
@@ -83,7 +132,7 @@ footer a {
     box-shadow: -10px -10px 10px #202020, 10px 10px 10px #202020, 0 0 32px #f5f5f5 inset;
 }
 
-.jumbotron-heading, .order-summary-heading {
+.jumbotron-heading, .order-summary-heading, #topnav {
     color: #f19832 !important;
     text-shadow: 0 2px #cc0000 !important;
     background-color: #38761d !important;
@@ -212,6 +261,20 @@ p.jumbotron-heading {
     font-family: 'Mogra', cursive;
 }
 
+span.category-badge {
+    background: #f19832 !important;
+    font-size: 1.5rem !important;
+}
+
+span.category-badge:hover {
+    background:#cc0000 !important;
+    color: #f5f5f5 !important;
+}
+
+h2.main-menu-heading {
+    margin-top: 12.5rem !important;
+}
+
 .outer-ring {
     width: 570px;
     height: 570px;
@@ -327,6 +390,10 @@ div.superuser-zone > span {
     background: url('/media/wood-surface.jpg') no-repeat center center fixed;
     background-size: cover; 
     border-radius: 10px !important;
+}
+
+h2.shopping-cart-heading {
+    margin-top: 3rem !important;
 }
 
 .name-ellipsis {
@@ -473,6 +540,10 @@ td {
 
 .cart-input-group {
     flex-wrap: nowrap !important;
+}
+
+h2.checkout-heading {
+    margin-top: 3rem !important;
 }
 
 .checkout-headings {
@@ -667,6 +738,10 @@ input[name='q']::placeholder {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+div.manage-page-headings {
+    margin-top: 2rem !important;
 }
 
 .superuser-heading {
@@ -1129,31 +1204,50 @@ form.menu-manage-form span.btn-file:hover {
         font-size: 1rem;
     }
 
-    .navbar-toggler {
-        padding: .6rem .6rem;
-        font-size: 1rem;
+    section.first-section {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
     }
 
-    #delivery-banner h4 {
-        font-size: .9rem;
+    nav.navbar {
+        background: #38761d !important;
+        color: #f19832 !important;
+        text-shadow: 0 2px #cc0000;
+        box-shadow: 0 5px #cc0000 inset;
+    }
+
+    nav.navbar > button.navbar-toggler {
+        padding: .6rem .6rem;
+        font-size: 1rem;
+        background: #f19832 !important;
+        color: #cc0000 !important;
+    }
+
+    ul.navbar-nav {
+        background: #f19832;
+    }
+
+    #delivery-banner h4.free-delivery-banner-text {
+        font-size: 1.7rem !important;
     }
 
     nav.navbar {
         justify-content: center !important;
     }
     
-    ul.navbar-nav > .nav-item {
+    ul.navbar-nav > li.nav-item {
         text-align: center !important;
-        font-size: 2rem !important;
+        font-size: 1.5rem !important;
         line-height: 10px !important;
         margin: 0 !important;
+        text-shadow: none;
     }
     
     div.categories-container > a {
         font-size: 1.5rem !important;
     }
 
-    li.mobile-search, li.mobile-profile, li.mobile-cart {
+    li.mobile-search, li.mobile-profile, li.mobile-cart, nav.navbar > button.navbar-toggler {
         margin: 0 3rem !important;
     }
 
@@ -1172,6 +1266,19 @@ form.menu-manage-form span.btn-file:hover {
 
     div.col-lg-3 > .card {
         height: 677.234px !important;
+    }
+
+    div.item-container {
+        margin-top: 2rem !important;
+    }
+
+    div.image-container-col-sides {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    div.sides-details-col, div.image-container-col-sides {
+        width: 100% !important;
     }
 
     .name-text {
@@ -1203,6 +1310,10 @@ form.menu-manage-form span.btn-file:hover {
         font-size: .75rem;
     }
 
+    h2.main-menu-heading {
+        margin-top: 7rem !important;
+    }
+
     .increment-qty, .decrement-qty {
         padding: .25rem .5rem !important;
     }
@@ -1218,6 +1329,10 @@ form.menu-manage-form span.btn-file:hover {
 
     div.superuser-zone {
         text-align: center !important;
+    }
+
+    h2.shopping-cart-heading {
+        margin-top: 1rem !important;
     }
 
     a.cart-update-link {
@@ -1349,6 +1464,14 @@ form.menu-manage-form span.btn-file:hover {
     div.pizza-image-container {
         max-width: 100% !important;
         height: auto !important;
+    }
+
+    div.manage-page-headings {
+        margin-top: 0 !important;
+    }
+
+    h2.checkout-heading, h2.thank-you-heading {
+        margin-top: 1rem !important;
     }
 }
 
@@ -1483,6 +1606,12 @@ form.menu-manage-form span.btn-file:hover {
     }
 }
 
+@media screen and (max-width: 650px) {
+    li.mobile-search, li.mobile-profile, li.mobile-cart, nav.navbar > button.navbar-toggler {
+        margin: 0 1rem !important;
+    }
+}
+
 @media screen and (max-width: 645px) {
     .menu-name-text {
         font-size: 1.9rem !important;
@@ -1497,6 +1626,15 @@ form.menu-manage-form span.btn-file:hover {
 }
 
 @media screen and (max-width: 575px) {
+    div.header-container {
+        margin-bottom: 1rem !important;
+        margin-top: 1rem !important;
+    }
+    
+    #delivery-banner h4.free-delivery-banner-text {
+        font-size: 1.5rem !important;
+    }
+    
     .about-section .col-6 {
         width: 100% !important;
         padding-right: 1rem!important;
@@ -1517,8 +1655,19 @@ form.menu-manage-form span.btn-file:hover {
         font-size: 1.25rem !important;
     }
 
+    h2.main-menu-heading, h2.menu-heading {
+        text-align: center !important;
+        padding-left: 0 !important;
+    }
+
     .colour-band {
         width: 278px !important;
+    }
+
+    a.side-image-link {
+        float: none !important;
+        justify-content: center;
+        display: flex !important;
     }
 
     .info-container-cart {
@@ -1600,6 +1749,11 @@ form.menu-manage-form span.btn-file:hover {
 
     div.manage-btns-container {
         text-align: center !important;
+    }
+
+    h2.order-details-heading, h2.checkout-heading, h2.thank-you-heading {
+        text-align: center !important;
+        padding-left: 0 !important;
     }
 }
 
@@ -1797,6 +1951,16 @@ form.menu-manage-form span.btn-file:hover {
     }
 }
 
+@media screen and (max-width: 424px) {
+    h2.main-menu-heading {
+        margin-top: 8.5rem !important;
+    }
+
+    div.manage-page-headings {
+        margin-top: 2rem !important;
+    }
+}
+
 @media screen and (max-width: 419px) {
     div.col-6 > h2.menu-management-text, div.col-6 > h2.text-end {
         font-size: 2rem !important;
@@ -1865,6 +2029,12 @@ form.menu-manage-form span.btn-file:hover {
 
     .product-details-container-sides .form-group-override-2 {
         width: 50% !important;
+    }
+}
+
+@media screen and (max-width: 394px) {
+    li.mobile-search, li.mobile-profile, li.mobile-cart, nav.navbar > button.navbar-toggler {
+        margin: 0 0.7rem !important;
     }
 }
 
@@ -2054,6 +2224,29 @@ form.menu-manage-form span.btn-file:hover {
 
     p.info.qty-cart {
         font-size: 1.2rem !important;
+    }
+}
+
+@media screen and (max-width: 317px) {
+    li.mobile-search, li.mobile-profile, li.mobile-cart, nav.navbar > button.navbar-toggler {
+        margin: 0 2rem !important;
+    }
+
+    h2.main-menu-heading {
+        margin-top: 13rem !important;
+    }
+
+    div.item-container {
+        margin-top: 7rem !important;
+    }
+
+    hr.top-hr-profile {
+        margin-top: 3rem !important;
+        margin-bottom: 3rem !important;
+    }
+
+    h2.order-details-heading, div.manage-page-headings, h2.shopping-cart-heading, h2.checkout-heading, h2.thank-you-heading {
+        margin-top: 6rem !important;
     }
 }
 

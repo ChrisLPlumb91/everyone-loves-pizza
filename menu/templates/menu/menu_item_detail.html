@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
+    <div class="container header-container my-sm-3 my-5">
         <div class="row">
             <div class="col"></div>
         </div>
@@ -39,7 +39,7 @@
             </div>
             {% endif %}
 
-            <div class="col-6 g-0 pizza-details-col {% if menu_item.category.name == 'sides' %} sides-details-col {% endif %}">
+            <div class="col-6 g-0 {% if menu_item.category.name == 'sides' %} sides-details-col {% else %}pizza-details-col{% endif %}">
                 <div class="product-details-container mb-5 mt-5 bg-white me-5 {% if menu_item.category.name == 'sides'%}product-details-container-sides{% endif %}">
                     <p class="ps-3 mb-0 jumbotron-heading">{{ menu_item.name }}</p>
 
