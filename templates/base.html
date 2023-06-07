@@ -117,13 +117,13 @@
             {% for message in messages %}
                 {% with message.level as level %}
                     {% if level == 40 %}
-                        <!-- include for toast_error -->
+                    {% include 'includes/toasts/toast_error.html' %}
                     {% elif level == 30 %}
-                        <!-- include for toast_warning -->
+                    {% include 'includes/toasts/toast_warning.html' %}
                     {% elif level == 25 %}
-                        <!-- include for toast_success -->
+                    {% include 'includes/toasts/toast_success.html' %}
                     {% else %}
-                        <!-- include for toast_info -->
+                    {% include 'includes/toasts/toast_info.html' %}
                     {% endif %}
                 {% endwith %}
             {% endfor %}
@@ -156,6 +156,11 @@
     </footer>
     
     {% block postloadjs %}
+    <script type="text/javascript">
+        var toastElement = $('.toast');
+        var toast = new bootstrap.Toast(toastElement);
+        toast.show();
+    </script>
     {% endblock %}
     
   </body>

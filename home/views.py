@@ -8,7 +8,7 @@ from menu.models import MenuItem
 def index(request):
     """ A view to return the index page """
     template = 'home/index.html'
-    
+
     featured_pizzas = []
 
     for number in range(1, 5):
@@ -19,3 +19,4 @@ def index(request):
     }
 
     return render(request, template, context)
+
