@@ -80,7 +80,7 @@
                     <li class="list-inline-item">
                         <a class="{% if grand_total %}text-info font-weight-bold{% endif %} nav-link" href="{% url 'view_cart' %}">
                             <div class="text-center">
-                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                <div><i class="fa-solid fa-cart-shopping"></i></div>
                                 <p class="my-0">
                                     {% if grand_total %}
                                         ${{ grand_total|floatformat:2 }}
@@ -138,7 +138,7 @@
 
     <footer class="container-fluid jumbotron-heading mt-auto">
 
-        <div class="text-center row pt-lg-2 d-none d-lg-flex">
+        <div class="text-center row pt-2 d-flex footer-text-container">
             <div class="col-12">
                 <p class="mb-1"><a href="#">Contact us</a> | <a href="{% url 'home'%}#about-us">About us</a></p>
             </div>

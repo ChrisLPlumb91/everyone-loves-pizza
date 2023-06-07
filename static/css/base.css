@@ -41,11 +41,11 @@ p {
     margin: 1rem 0 !important;
 }
 
-form.search-form input, form.search-form button {
+form.search-form input, form.search-form button, form.mobile-search-form input, form.mobile-search-form button {
     font-size: 1.5rem !important;
 }
 
-button.search-btn {
+button.search-btn, button.search-btn:focus {
     background: #f19832;
     color: #cc0000;
     text-shadow: 0 2px #000;
@@ -55,6 +55,18 @@ button.search-btn:hover {
     background: #f19832;
     color: #f5f5f5;
     text-shadow: 0 2px #000;
+}
+
+button.mobile-search-btn, button.mobile-search-btn:focus {
+    background: #38761d;
+    color: #cc0000;
+    text-shadow: 0 1px #f5f5f5;
+}
+
+button.mobile-search-btn:hover {
+    background: #38761d;
+    color: #f19832;
+    text-shadow: 0 1px #f5f5f5;
 }
 
 .collapse > hr {
@@ -95,6 +107,10 @@ a.menu-management-link:hover, a.menu-management-link-mobile:hover {
 
 .full-menu-dropdown {
     font-size: 1;
+}
+
+li.mobile-search > div.mobile-search-dropdown {
+    background: #f19832;
 }
 
 #delivery-banner {
@@ -316,10 +332,18 @@ h2.main-menu-heading {
     font-size: 2.5rem;
 }
 
+.form-row select {
+    width: 35% !important;
+}
+
 .keep-shopping-btn, .add-to-cart-btn, .complete-order-btn, .adjust-bag-btn {
     font-size: 1.5rem !important;
     border: 2px solid #f19832 !important;
     color: #f5f5f5 !important;
+}
+
+div.edit-delete-options {
+    justify-content: end;
 }
 
 .superuser-zone {
@@ -327,22 +351,31 @@ h2.main-menu-heading {
     box-shadow: 0 10px #dc3545 inset, 0 -10px #dc3545 inset;
 }
 
-.superuser-zone > h3 {
+div.superuser-zone > h3, .row.superuser-zone h3 {
     font-size: 2.2rem !important;
     opacity: 0.5;
     width: 100%;
+}
+
+.row.superuser-zone h3 {
+    left: 5px !important;
+    top: 0 !important;
 }
 
 .superuser-option, .chevron-icon, .keep-shopping-text {
     font-size: 1.5rem !important;
 }
 
-div.superuser-zone > a.superuser-option {
+div.superuser-zone > a.superuser-option, div.superuser-zone a.superuser-option {
     color: #f5f5f5 !important;
     text-shadow:0 2px #000;
     text-decoration: none;
     z-index: 1 !important;
     position: relative;
+}
+
+.row.superuser-zone a.superuser-option {
+    line-height: 50px !important;
 }
 
 div.superuser-zone > span {
@@ -365,9 +398,12 @@ div.superuser-zone > span {
     margin: 12px 0 !important
 }
 
-.form-group-override-2 {
-    width: 35% !important;
+.detail-page-form-group, .cart-form-group {
     border: 2px solid #f19832;
+}
+
+.detail-page-form-group {
+    width: 35% !important;
 }
 
 .input-group-prepend, .input-group-prepend:active {
@@ -630,6 +666,30 @@ a.category-badge > span.badge:hover {
     position: fixed;
     bottom: 10px;
     right: 10px;
+    background-color: #3b72cab2;
+    text-decoration: none !important;
+    border: 1px solid #000;
+    z-index: 999 !important;
+}
+
+.btt-button:hover {
+    background-color: #3b72ca;
+    border: 1px solid #f5f5f5;
+}
+
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+.btt-link {
+    text-decoration: none !important;
+    color: #000;
+}
+
+.btt-link:hover {
+    color: #f5f5f5;
 }
 
 .btt-link,
@@ -913,6 +973,12 @@ form.menu-manage-form span.btn-file:hover {
     border-radius: 0;
 }
 
+@media screen and (max-width: 1520px) {
+    .row.superuser-zone {
+        overflow: hidden !important;
+    }
+}
+
 @media screen and (max-width: 1500px) {
     div.search-form-container {
         display: flex !important;
@@ -981,6 +1047,10 @@ form.menu-manage-form span.btn-file:hover {
 
     .card-footer {
         text-align: center !important;
+    }
+
+    a.order-button {
+        float: none !important;
     }
 
     th.item-info-heading {
@@ -1066,11 +1136,6 @@ form.menu-manage-form span.btn-file:hover {
 @media screen and (max-width: 1242px) {
     .edit-delete-options {
         flex: 1 0 100% !important;
-        margin-bottom: 0.7rem !important;
-    }
-    
-    .order-button {
-        float: none !important;
     }
 }
 
@@ -1151,6 +1216,10 @@ form.menu-manage-form span.btn-file:hover {
     div.product-details-container-sides {
         margin-right: 1rem !important;
     }
+
+    .detail-page-form-group {
+        width: 43% !important;
+    }
 }
 
 @media screen and (max-width: 1130px) {
@@ -1204,9 +1273,13 @@ form.menu-manage-form span.btn-file:hover {
         font-size: 1rem;
     }
 
-    section.first-section {
+    section.first-section, section.about-section {
         margin-top: 1.5rem !important;
         margin-bottom: 1.5rem !important;
+    }
+
+    section.featured-section {
+        margin-top: 1.5rem !important;
     }
 
     nav.navbar {
@@ -1229,6 +1302,10 @@ form.menu-manage-form span.btn-file:hover {
 
     #delivery-banner h4.free-delivery-banner-text {
         font-size: 1.7rem !important;
+    }
+
+    p.free-delivery-message {
+        line-height: 20px !important;
     }
 
     nav.navbar {
@@ -1395,15 +1472,15 @@ form.menu-manage-form span.btn-file:hover {
         padding-left: 0 !important;
     }
 
-    .form-row select, .form-group-override-2 {
+    .form-row select, .detail-page-form-group, .cart-form-group {
         display: inline-block;
     }
 
-    .form-group-override-2 {
-        width: 50% !important;
+    .form-row select {
+        width: 30% !important;
     }
 
-    .product-details-container-sides .form-group-override-2 {
+    .detail-page-form-group {
         width: 30% !important;
     }
 
@@ -1413,7 +1490,7 @@ form.menu-manage-form span.btn-file:hover {
 
     .product-details-container .add-to-cart-btn {
         margin-right: 0 !important;
-        margin-top: 0 !important;
+        /* margin-top: 0 !important; */
         float: none !important;
     }
 
@@ -1572,8 +1649,16 @@ form.menu-manage-form span.btn-file:hover {
         overflow: hidden !important;
     }
 
-    .form-row select, .form-group-override-2 {
+    .cart-form-group {
         width: 70% !important;
+    }
+
+    .form-row select {
+        width: 45% !important;
+    }
+
+    .detail-page-form-group {
+        width: 45% !important;
     }
 
     div.description-container {
@@ -1603,6 +1688,11 @@ form.menu-manage-form span.btn-file:hover {
         margin-left: 1rem !important;
         margin-right: 1rem !important;
         margin-top: 0 !important;
+    }
+
+    h2.shopping-cart-heading {
+        padding-left: 0 !important;
+        text-align: center !important;
     }
 }
 
@@ -1703,7 +1793,7 @@ form.menu-manage-form span.btn-file:hover {
         top: 50px;
     }
 
-    .form-row select, .form-group-override-2,  .product-details-container-sides .form-group-override-2 {
+    .form-row select, .detail-page-form-group {
         width: 40% !important;
     }
 
@@ -1779,10 +1869,6 @@ form.menu-manage-form span.btn-file:hover {
         font-size: 1.5rem !important;
     }
 
-    .cart-form-group {
-        width: 80% !important;
-    }
-
     div.col-6 > div.superuser-zone {
         width: 180px !important;
     }
@@ -1836,6 +1922,10 @@ form.menu-manage-form span.btn-file:hover {
         display: inline-block !important;
         float: none !important;
         width: 245px !important;
+    }
+
+    .col-12 > .secure-checkout-button {
+        margin-top: 0.5rem !important;
     }
 }
 
@@ -1959,6 +2049,10 @@ form.menu-manage-form span.btn-file:hover {
     div.manage-page-headings {
         margin-top: 2rem !important;
     }
+
+    h2.shopping-cart-heading {
+        margin-top: 2rem !important;
+    }
 }
 
 @media screen and (max-width: 419px) {
@@ -2007,7 +2101,7 @@ form.menu-manage-form span.btn-file:hover {
         margin-right: 0 !important;
     }
 
-    .form-row select, .form-group-override-2 {
+    .form-row select {
         width: 50% !important;
     }
 }
@@ -2027,7 +2121,7 @@ form.menu-manage-form span.btn-file:hover {
         margin-top: 0 !important;
     }
 
-    .product-details-container-sides .form-group-override-2 {
+    .detail-page-form-group {
         width: 50% !important;
     }
 }
@@ -2124,6 +2218,14 @@ form.menu-manage-form span.btn-file:hover {
         line-height: 10px !important;
     }
 
+    .detail-page-form-group {
+        width: 70% !important;
+    }
+
+    .form-row select {
+        width: 70% !important;
+    }
+
     .checkout-headings {
         font-size: 1.7rem !important;
         padding-left: 1rem !important;
@@ -2135,13 +2237,10 @@ form.menu-manage-form span.btn-file:hover {
 @media screen and (max-width: 337px) {
     .menu-name-text {
         font-size: 2rem !important;
-    } 
-
-    .form-row select, .form-group-override-2 {
-        width: 70% !important;
     }
-    .product-details-container-sides .form-group-override-2 {
-        width: 60% !important;
+
+    div.footer-text-container a {
+        font-size: 2rem !important;
     }
 }
 
@@ -2245,7 +2344,7 @@ form.menu-manage-form span.btn-file:hover {
         margin-bottom: 3rem !important;
     }
 
-    h2.order-details-heading, div.manage-page-headings, h2.shopping-cart-heading, h2.checkout-heading, h2.thank-you-heading {
+    section.first-section, h2.order-details-heading, div.manage-page-headings, h2.shopping-cart-heading, h2.checkout-heading, h2.thank-you-heading {
         margin-top: 6rem !important;
     }
 }

@@ -1,11 +1,11 @@
-<h6 class="ms-2 mt-1"><strong>Total: ${{ total|floatformat:2 }}</strong></h6>
+<h6 class="mt-1"><strong>Total: ${{ total|floatformat:2 }}</strong></h6>
 
-<h6 class="ms-2">Delivery: ${{ delivery|floatformat:2 }}</h6>
+<h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
 
-<h4 class="mt-4 ms-2"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+<h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
 
 {% if free_delivery_delta > 0 %}
-    <p class="mb-1 ms-2 free-delivery-message">
+    <p class="mb-1 free-delivery-message">
         Spend <strong>${{ free_delivery_delta }}</strong> more to be entitled to free delivery!
     </p>
 {% endif %}
