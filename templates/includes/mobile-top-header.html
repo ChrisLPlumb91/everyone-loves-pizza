@@ -48,7 +48,7 @@
 
 </li>
 
-<li class="list-inline-item mobile-cart">
+<li class="list-inline-item mobile-cart position-relative">
 
     <a class="{% if grand_total %}text-info font-weight-bold{% endif %} nav-link d-block d-lg-none" href="{% url 'view_cart' %}">
         <div class="text-center">
@@ -62,5 +62,23 @@
             </p>
         </div>
     </a>
+
+    {% if messages %}
+    <div class="message-container-mobile">
+    {% for message in messages %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+            {% include 'includes/toasts/toast_error_mobile.html' %}
+        {% elif level == 30 %}
+            {% include 'includes/toasts/toast_warning_mobile.html' %}
+        {% elif level == 25 %}
+            {% include 'includes/toasts/toast_success_mobile.html' %}
+        {% else %}
+            {% include 'includes/toasts/toast_info.html_mobile' %}
+        {% endif %}
+        {% endwith %}
+    {% endfor %}
+    </div>
+    {% endif %}
 
 </li>

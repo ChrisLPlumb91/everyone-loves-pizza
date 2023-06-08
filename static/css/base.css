@@ -734,19 +734,86 @@ input[name='q']::placeholder {
 
 /* ------------------------------- bootstrap toasts */
 
-.message-container {
-    position: fixed;
-    top: 72px;
-    right: 15px;
+.message-container, .message-container-mobile {
+    position: absolute !important;
+    top: 70px;
+    right: 0;
     z-index: 99999999999;
+    text-align: left !important;
+    color: #000 !important;
+    text-shadow: none !important;
 }
 
 .custom-toast {
-    overflow: visible;
+    border: 2px solid #212529 !important;
 }
 
-.toast-capper {
-    height: 2px;
+.toast-header {
+    font-size: 2rem !important;
+    color: #f5f5f5 !important;
+    line-height: 25px !important;
+}
+
+.toast-header.success {
+    background: #14A44D !important;
+}
+
+.toast-header.info {
+    background: #54B4D3 !important;
+}
+
+.toast-header.warning {
+    background: #E4A11B !important;
+}
+
+.toast-header.error {
+    background: #DC4C64 !important;
+}
+
+.close {
+    border: none !important;
+    color: #f5f5f5 !important;
+    background: none !important;
+}
+
+.close:hover {
+    color: #000 !important;
+}
+
+div.message-col {
+    font-size: 1.2rem !important;
+    color: #000 !important;
+}
+
+hr.message-hr {
+    margin-top: 1rem !important;
+    margin-bottom: 0 !important;
+}
+
+p.cart-count {
+    margin-bottom: 0 !important;
+}
+
+hr.message-count-hr {
+    margin-top: 0 !important;
+}
+
+.toast-size, .toast-qty {
+    line-height: 15px !important;
+    font-size: 1.2rem !important;
+}
+
+.toast-free-delivery-text {
+    line-height: 25px !important;
+}
+
+a.toast-secure-checkout-btn {
+    background: #28a745 !important;
+}
+
+a.toast-secure-checkout-btn:hover {
+    background: #1eec71 !important;
+    color: #000 !important;
 }
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
@@ -755,10 +822,11 @@ input[name='q']::placeholder {
     height: 0; 
     border-left: 4px solid transparent;
     border-right: 4px solid transparent; 
-    border-bottom: 10px solid black;
+    border-bottom: 10px solid #212529;
     position: absolute;
     top: -10px;
-    right: 36px;
+    right: 23px;
+    color: #212529 !important;
 }
 
 /* Convenience classes - colors copied from Bootstrap */
@@ -1550,6 +1618,10 @@ form.menu-manage-form span.btn-file:hover {
     h2.checkout-heading, h2.thank-you-heading {
         margin-top: 1rem !important;
     }
+
+    .message-container-mobile {
+        width: 350px !important;
+    }
 }
 
 @media screen and (max-width: 804px) {
@@ -2005,6 +2077,10 @@ form.menu-manage-form span.btn-file:hover {
     .search-results-with-link {
         line-height: 35px !important;
     }
+
+    .message-container-mobile {
+        width: 300px !important;
+    }
 }
 
 @media screen and (max-width: 435px) {
@@ -2232,6 +2308,14 @@ form.menu-manage-form span.btn-file:hover {
         padding-right: 1rem !important;
         line-height: 25px !important;
     }
+
+    .message-container-mobile {
+        width: 250px !important;
+    }
+
+    .message-container-mobile div.message-col {
+        line-height: 15px !important;
+    }
 }
 
 @media screen and (max-width: 337px) {
@@ -2259,6 +2343,10 @@ form.menu-manage-form span.btn-file:hover {
 }
 
 @media screen and (max-width: 326px) {
+    .message-container, .message-container-mobile {
+        width: 230px !important;
+    }
+    
     .pizzas-container > div {
         width: 100% !important;
     }
@@ -2299,6 +2387,16 @@ form.menu-manage-form span.btn-file:hover {
     }
 }
 
+@media screen and (max-width: 322px) {
+    li.mobile-search, li.mobile-profile, li.mobile-cart, nav.navbar > button.navbar-toggler {
+        margin: 0 2rem !important;
+    }
+
+    .message-container-mobile {
+        width: 210px !important;
+    }
+}
+
 @media screen and (max-width: 320px) {
     .menu-name-text {
         font-size: 1.8rem !important;
@@ -2327,10 +2425,6 @@ form.menu-manage-form span.btn-file:hover {
 }
 
 @media screen and (max-width: 317px) {
-    li.mobile-search, li.mobile-profile, li.mobile-cart, nav.navbar > button.navbar-toggler {
-        margin: 0 2rem !important;
-    }
-
     h2.main-menu-heading {
         margin-top: 13rem !important;
     }

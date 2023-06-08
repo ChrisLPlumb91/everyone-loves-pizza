@@ -77,7 +77,8 @@
                             {% endif %}
                         </div>
                     </li>
-                    <li class="list-inline-item">
+                    <li class="list-inline-item position-relative">
+                        
                         <a class="{% if grand_total %}text-info font-weight-bold{% endif %} nav-link" href="{% url 'view_cart' %}">
                             <div class="text-center">
                                 <div><i class="fa-solid fa-cart-shopping"></i></div>
@@ -90,6 +91,24 @@
                                 </p>
                             </div>
                         </a>
+
+                        {% if messages %}
+                        <div class="message-container">
+                        {% for message in messages %}
+                            {% with message.level as level %}
+                            {% if level == 40 %}
+                                {% include 'includes/toasts/toast_error.html' %}
+                            {% elif level == 30 %}
+                                {% include 'includes/toasts/toast_warning.html' %}
+                            {% elif level == 25 %}
+                                {% include 'includes/toasts/toast_success.html' %}
+                            {% else %}
+                                {% include 'includes/toasts/toast_info.html' %}
+                            {% endif %}
+                            {% endwith %}
+                        {% endfor %}
+                        </div>
+                        {% endif %}
                     </li>
                 </ul>
             </div>
@@ -112,23 +131,7 @@
         </div>
     </header>
  
-    {% if messages %}
-        <div class="message-container">
-            {% for message in messages %}
-                {% with message.level as level %}
-                    {% if level == 40 %}
-                    {% include 'includes/toasts/toast_error.html' %}
-                    {% elif level == 30 %}
-                    {% include 'includes/toasts/toast_warning.html' %}
-                    {% elif level == 25 %}
-                    {% include 'includes/toasts/toast_success.html' %}
-                    {% else %}
-                    {% include 'includes/toasts/toast_info.html' %}
-                    {% endif %}
-                {% endwith %}
-            {% endfor %}
-        </div>
-    {% endif %}
+    
 
     {% block page_header %}
     {% endblock %}
@@ -157,9 +160,32 @@
     
     {% block postloadjs %}
     <script type="text/javascript">
-        var toastElement = $('.toast');
-        var toast = new bootstrap.Toast(toastElement);
-        toast.show();
+        
+        if ($(window).outerWidth() >= 992) {
+            var toastElement = $('.toast')[0];
+            var toast = new bootstrap.Toast(toastElement);
+            toast.show();
+        } else {
+            var toastElement = $('.toast')[1];
+            var toast = new bootstrap.Toast(toastElement);
+            toast.show();
+        }
+
+        var toastElementNormal = $('.toast')[0];
+        var toastElementMobile = $('.toast')[1];
+        var toastNormal = new bootstrap.Toast(toastElementNormal);
+        var toastMobile = new bootstrap.Toast(toastElementMobile);
+
+        $(window).resize(function() {   
+            if ($(window).outerWidth() === 992) {
+                toastNormal.show();
+                toastMobile.hide();
+            } else if ($(window).outerWidth() === 991) {
+                toastMobile.show();
+                toastNormal.hide();
+            }
+        })
+        
     </script>
     {% endblock %}
     
