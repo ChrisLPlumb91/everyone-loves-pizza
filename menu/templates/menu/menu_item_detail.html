@@ -111,14 +111,14 @@
 
                             <div class="col{% if s %}-12 mt-2{% endif %}">
 
-                                <a href="{% url 'menu' %}" class="btn mt-3 mb-2 keep-shopping-btn ms-3 {% if menu_item.category.name == 'sides' %}ks-btn-sides{% endif %}">
+                                <a href="{% url 'menu' %}" class="btn shadow mt-3 mb-2 keep-shopping-btn ms-3 {% if menu_item.category.name == 'sides' %}ks-btn-sides{% endif %}">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left chevron-icon"></i>
                                     </span>
                                     <span class="text-uppercase keep-shopping-text">Keep Shopping</span>
                                 </a>
 
-                                <input type="submit" class="btn text-uppercase mt-3 mb-2 me-3 add-to-cart-btn float-end {% if menu_item.category.name == 'sides' %}atc-btn-sides{% endif %}" value="Add to Cart">
+                                <input type="submit" class="btn shadow text-uppercase mt-3 mb-2 me-3 add-to-cart-btn float-end {% if menu_item.category.name == 'sides' %}atc-btn-sides{% endif %}" value="Add to Cart">
 
                                 {% if request.user.is_superuser %}
                                 <div class="text-end superuser-zone position-relative">

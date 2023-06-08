@@ -252,16 +252,17 @@ footer a {
 }
 
 .order-button, .featured-order-button {
-    background: #38761d !important;
+    background: #14A44D !important;
     color:#f5f5f5 !important;
-    border: 2px solid black !important;
+    text-shadow: 0 1px #000 !important;
     float: right !important;
 }
 
-.order-button:hover {
-    background: #54b12d !important;
-    color:black !important;
-    border: 2px solid black !important;
+.order-button:hover, .featured-order-button:hover {
+    background: #1eec71 !important;
+    color:#000 !important;
+    text-shadow: none !important;
+    font-weight: bolder;
 }
 
 .search-results-num {
@@ -338,7 +339,6 @@ h2.main-menu-heading {
 
 .keep-shopping-btn, .add-to-cart-btn, .complete-order-btn, .adjust-bag-btn {
     font-size: 1.5rem !important;
-    border: 2px solid #f19832 !important;
     color: #f5f5f5 !important;
 }
 
@@ -570,8 +570,8 @@ td {
     margin-top: 3.5rem !important;
 }
 
-.cart-form-group {
-    width: 50% !important;
+.cart-form-group, .superuser-zone-cart {
+    width: 55% !important;
 }
 
 .cart-input-group {
@@ -708,28 +708,32 @@ input[name='q']::placeholder {
 
 .cart-keep-shopping-button, .secure-checkout-button {
     font-size: 1.8rem !important;
-    border: 2px solid #f19832 !important;
-    color: #f5f5f5 !important;
 }
 
 .keep-shopping-btn, .cart-keep-shopping-button, .adjust-bag-btn {
-    background: #cc0000 !important;
+    background: #E4A11B !important;
+    color:#f5f5f5 !important;
+    text-shadow: 0 2px #000;
 }
 
 .keep-shopping-btn:hover, .cart-keep-shopping-button:hover, .adjust-bag-btn:hover {
-    background: #fa5050 !important;
-    color:#000 !important;
-    border: 2px solid #000 !important;
+    background: #fbff21 !important;
+    color: #000 !important;
+    text-shadow: none;
+    font-weight: bolder;
 }
 
 .add-to-cart-btn, .secure-checkout-button, .complete-order-btn {
-    background: #38761d !important;
+    background: #14A44D !important;
+    color:#f5f5f5 !important;
+    text-shadow: 0 2px #000;
 }
 
 .add-to-cart-btn:hover, .secure-checkout-button:hover, .complete-order-btn:hover {
-    background: #2dc250 !important;
+    background: #1eec71 !important;
     color:#000 !important;
-    border: 2px solid #000 !important;
+    text-shadow: none;
+    font-weight: bolder;
 }
 
 /* ------------------------------- bootstrap toasts */
@@ -809,11 +813,14 @@ hr.message-count-hr {
 
 a.toast-secure-checkout-btn {
     background: #28a745 !important;
+    text-shadow: 0 1px #000 !important;
 }
 
 a.toast-secure-checkout-btn:hover {
     background: #1eec71 !important;
     color: #000 !important;
+    text-shadow: none !important;
+    font-weight: bolder !important;
 }
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
