@@ -160,31 +160,13 @@
     
     {% block postloadjs %}
     <script type="text/javascript">
-        
-        if ($(window).outerWidth() >= 992) {
-            var toastElement = $('.toast')[0];
-            var toast = new bootstrap.Toast(toastElement);
-            toast.show();
-        } else {
-            var toastElement = $('.toast')[1];
-            var toast = new bootstrap.Toast(toastElement);
-            toast.show();
-        }
 
         var toastElementNormal = $('.toast')[0];
-        var toastElementMobile = $('.toast')[1];
         var toastNormal = new bootstrap.Toast(toastElementNormal);
+        var toastElementMobile = $('.toast')[1];
         var toastMobile = new bootstrap.Toast(toastElementMobile);
-
-        $(window).resize(function() {   
-            if ($(window).outerWidth() === 992) {
-                toastNormal.show();
-                toastMobile.hide();
-            } else if ($(window).outerWidth() === 991) {
-                toastMobile.show();
-                toastNormal.hide();
-            }
-        })
+        toastNormal.show();
+        toastMobile.show();
         
     </script>
     {% endblock %}
