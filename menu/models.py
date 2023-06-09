@@ -1,4 +1,8 @@
 from django.db import models
+from django.contrib.auth.models import User
+
+RATING = ((0, 'Niente...'), (1, 'Disgustoso!'), (2, 'Brutto!'),
+          (3, 'Bene!'), (4, 'Eccellente!'), (5, 'Fantastico!'))
 
 
 class Category(models.Model):
@@ -34,3 +38,19 @@ class MenuItem(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Review(models.Model):
+    menu_item = models.ForeignKey('MenuItem', null=False, blank=False,
+                                  on_delete=models.CASCADE,
+                                  related_name='item_reviews')
+    poster = models.ForeignKey(User, on_delete=models.CASCADE,
+                               related_name='user_reviews')
+    review = models.TextField(max_length=255)
+    created_on = models.DateTimeField(auto_now_add=True)
+    rating = models.IntegerField(choices=RATING, default=0)
+
+    def __str__(self):
+        return (f'This {self.rating}-star review was posted by ' +
+                f'{self.poster} on {self.created_on}, ' +
+                f'reads as follows: "{self.review}".')

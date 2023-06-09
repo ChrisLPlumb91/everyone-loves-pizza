@@ -1,8 +1,15 @@
 from django.contrib import admin
-from .models import MenuItem, Category
+from .models import MenuItem, Category, Review
+
+
+class ReviewAdminInline(admin.TabularInline):
+    model = Review
+    extra = 0
 
 
 class MenuItemAdmin(admin.ModelAdmin):
+    inlines = (ReviewAdminInline,)
+
     list_display = (
         'name',
         'category',

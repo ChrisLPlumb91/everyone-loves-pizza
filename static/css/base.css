@@ -354,7 +354,7 @@ h2.main-menu-heading {
     box-sizing: border-box;
 }
 
-.item-container {
+.item-container, .reviews-container {
     background: url('/media/wood-surface.jpg') no-repeat center center fixed;
     background-size: cover;    
 }
@@ -771,6 +771,110 @@ input[name='q']::placeholder {
     font-size: 2rem !important;
     line-height: 35px !important;
     border: none !important;
+}
+
+.review-words {
+    font-size: 1.7rem !important;
+}
+
+.default-star-colour {
+    color:#c6cace !important;
+    -webkit-text-stroke: 3px #929292 !important;
+}   
+
+.lit-star-colour {
+    color: #fbff21 !important;
+    -webkit-text-stroke: 3px #E4A11B;
+}
+
+.reviews-container span.fantastico {
+    color:#71eca2 !important;
+    text-shadow: 0 2px #14A44D
+}
+
+div.card.rating-border-5 {
+    border: 3px solid #14A44D !important;
+}
+
+div.rating-border-5 > div.card-header, div.rating-border-5 > div.card-footer {
+    background: #71eca2 !important;
+}
+
+div.card.rating-border-5 h2 {
+    color: #14A44D !important;
+    text-shadow: 0 2px #000;
+}
+
+.reviews-container span.eccellente {
+    color: #71ece2 !important;
+    text-shadow: 0 2px #54B4D3;
+}
+
+div.card.rating-border-4 {
+    border: 3px solid #54B4D3 !important;
+}
+
+div.rating-border-4 > div.card-header, div.rating-border-4 > div.card-footer {
+    background: #71ece2 !important;
+}
+
+div.card.rating-border-4 h2 {
+    color: #54B4D3 !important;
+    text-shadow: 0 2px #000;
+}
+
+.reviews-container span.bene {
+    color: #94c2e9 !important;
+    text-shadow: 0 2px #3B71CA;
+}
+
+div.card.rating-border-3 {
+    border: 3px solid #3B71CA !important;
+}
+
+div.rating-border-3 > div.card-header, div.rating-border-3 > div.card-footer {
+    background: #71b5ec !important;
+}
+
+div.card.rating-border-3 h2 {
+    color: #3B71CA !important;
+    text-shadow: 0 2px #000;
+}
+
+.reviews-container span.brutto {
+    color: #ecd971 !important;
+    text-shadow: 0 2px #E4A11B; 
+}
+
+div.card.rating-border-2 {
+    border: 3px solid #E4A11B !important;
+}
+
+div.rating-border-2 > div.card-header, div.rating-border-2 > div.card-footer {
+    background: #ecd971 !important;
+}
+
+div.card.rating-border-2 h2 {
+    color: #E4A11B !important;
+    text-shadow: 0 2px #000;
+}
+
+.reviews-container span.disgustoso {
+    color: #fdb2cb !important;
+    text-shadow: 0 2px #DC4C64;
+}
+
+div.card.rating-border-1 {
+    border: 3px solid #DC4C64 !important;
+}
+
+div.rating-border-1 > div.card-header, div.rating-border-1 > div.card-footer {
+    background: #f794b5 !important;
+}
+
+div.card.rating-border-1 h2 {
+    color: #DC4C64 !important;
+    text-shadow: 0 2px #000;
 }
 
 /* ------------------------------- bootstrap toasts */

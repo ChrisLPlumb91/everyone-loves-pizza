@@ -3,9 +3,10 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.core.paginator import Paginator
 
-from .models import MenuItem, Category
-from .forms import MenuItemForm
+from .models import MenuItem, Category, Review
+from .forms import MenuItemForm, ReviewForm
 
 
 def menu(request):
@@ -63,13 +64,54 @@ def menu(request):
 def menu_item_detail(request, menu_item_id):
     """ A view to show individual menu_item details """
 
-    menu_item = get_object_or_404(MenuItem, pk=menu_item_id)
+    if request.method == 'POST':
+        review_form = ReviewForm(request.POST)
 
-    context = {
-        'menu_item': menu_item,
-    }
+        if review_form.is_valid():
+            review = form.save()
+            messages.success(request, f'Successfully added review! ' +
+                             f'Thanks for your feedback on the '
+                             f'{review.menu_item.name}!')
+            return redirect(reverse('menu_item_detail',
+                                    args=[review.menu_item.id]))
+        else:
+            messages.error(request, 'Failed to add your review...')
+    else:
+        menu_item = get_object_or_404(MenuItem, pk=menu_item_id)
+        reviews = (Review.objects.filter(menu_item=menu_item)
+                   .order_by('-rating'))
 
-    return render(request, 'menu/menu_item_detail.html', context)
+        review_counts = {}
+        total_rating = 0
+
+        for review in reviews:
+            if review_counts.get(review.get_rating_display()[:-1]):
+                review_counts[review.get_rating_display()[:-1]] += 1
+            else:
+                review_counts[review.get_rating_display()[:-1]] = 1
+
+            total_rating += review.rating
+
+        average_rating = total_rating / reviews.count()
+
+        reviews = (Review.objects.filter(menu_item=menu_item)
+                   .order_by('created_on'))
+
+        paginated_reviews = Paginator(reviews, 9)
+        page_number = request.GET.get("page")
+        page_obj = paginated_reviews.get_page(page_number)
+
+        review_form = ReviewForm()
+
+        context = {
+            'menu_item': menu_item,
+            'reviews': page_obj,
+            'review_form': review_form,
+            'review_counts': review_counts,
+            'rating': average_rating,
+        }
+
+        return render(request, 'menu/menu_item_detail.html', context)
 
 
 @login_required
