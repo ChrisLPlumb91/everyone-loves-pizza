@@ -65,17 +65,26 @@ def menu_item_detail(request, menu_item_id):
     """ A view to show individual menu_item details """
 
     if request.method == 'POST':
-        review_form = ReviewForm(request.POST)
+        if request.user.is_authenticated:
+            menu_item = get_object_or_404(MenuItem, pk=menu_item_id)
+            review_form = ReviewForm(request.POST)
 
-        if review_form.is_valid():
-            review = form.save()
-            messages.success(request, f'Successfully added review! ' +
-                             f'Thanks for your feedback on the '
-                             f'{review.menu_item.name}!')
-            return redirect(reverse('menu_item_detail',
-                                    args=[review.menu_item.id]))
-        else:
-            messages.error(request, 'Failed to add your review...')
+            if review_form.is_valid():
+                review = review_form.save(commit=False)
+                review.menu_item = menu_item
+                review.poster = request.user
+                review.save()
+                print(review)
+                messages.success(request, 'Successfully added review! ' +
+                                 'Thanks for your feedback on the ' +
+                                 f'{review.menu_item.name}!' +
+                                 'Please wait for us to approve it!')
+                return redirect(reverse('menu_item_detail',
+                                        args=[menu_item_id]))
+            else:
+                messages.error(request, 'Failed to add your review...')
+                return redirect(reverse('menu_item_detail',
+                                        args=[menu_item_id]))
     else:
         menu_item = get_object_or_404(MenuItem, pk=menu_item_id)
         reviews_rating_order = (Review.objects.filter(menu_item=menu_item)

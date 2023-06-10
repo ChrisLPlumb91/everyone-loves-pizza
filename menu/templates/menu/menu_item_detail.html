@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block page_header %}
     <div class="container header-container my-sm-3 my-5">
@@ -55,7 +56,7 @@
                     </p>
                     {% endif %}
 
-                    <p class="text-muted ps-3">Rating: {{ rating }}/5</p>
+                    <p class="text-muted ps-3">Rating: {{ rating | floatformat:1 }}/5</p>
 
                     <form class="form" action="{% url 'add_to_cart' menu_item.id %}" method="POST">
                         {% csrf_token %}
@@ -139,7 +140,7 @@
             </div>
         </div>
     </div>
-    <div class="container reviews-container mb-5 jumbotron">
+    <section class="container reviews-container mb-5 jumbotron">
         <h2 class="jumbotron-heading ps-sm-4 mt-3 text-sm-start text-center ps-0 reviews-heading">Reviews</h2>
 
         <div class="text-center mb-2">
@@ -236,12 +237,61 @@
 
             </ul>
         </nav>
+    </section>
+
+    {% if request.user.is_authenticated %}
+    <section class="review-form-section container mb-5">
+        <div class="row">
+            <div class="col-4 offset-4">
+
+                <form method="POST" action="{% url 'menu_item_detail' menu_item.id %}" class="review-form">
+                    {% csrf_token %}
+
+                    <div class="card">
+                        {% for field in review_form %}
+                            {% if field.name == 'rating' %}
+                            <div class="card-header text-center">
+                                <i class="fas fa-star lit-star-colour me-1"></i>
+                                <h2 class="d-inline-block mt-2 mb-0">Write a review!</h2>
+                                <i class="fas fa-star lit-star-colour ms-1"></i>
+                                {{ field | as_crispy_field }}
+                            </div>
+                            {% elif field.name == 'review' %}
+                            <div class="card-body text-center">
+                                {{ field | as_crispy_field }}
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                        <div class="card-footer text-center">
+                            <i class="fas fa-star lit-star-colour me-1"></i>
+                            <button type="submit" class="btn review-submit-btn">Post review</button>
+                            <i class="fas fa-star lit-star-colour ms-1"></i>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <div class="btt-button shadow-sm rounded-0">
+        <a class="btt-link d-flex h-100">
+            <i class="fas fa-arrow-up mx-auto my-auto"></i>
+        </a>
     </div>
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
 {% include 'menu/includes/quantity_input_script.html' %}
+
+<script type="text/javascript">
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0)
+    })
+</script>
 
 <script type="text/javascript">
     $('#id_menu_item_size').change(function(e) {
@@ -262,6 +312,47 @@
             $(stars[n]).addClass('lit-star-colour');
 
             $(reviews[i]).addClass(`rating-border-${starRating}`);
+        }
+    }
+</script>
+
+<script>
+    let ratingSelected = $('#id_rating').val();
+    
+    if (!ratingSelected) {
+        $('#id_rating').css('color', '#929292');
+        $('#id_rating option').css('color', '#000');
+        $('#id_rating option:first-child').css('color', '#929292');
+    } else {
+        $('#id_rating').css('color', '#000');
+        $('#id_rating option').css('color', '#000');
+        $('#id_rating option:first-child').css('color', '#929292');
+    }
+        
+    $('#id_rating').change(function() {
+        ratingSelected = $(this).val();
+    
+        if(!ratingSelected) {
+            $(this).css('color', '#929292');
+        } else {
+            $(this).css('color', '#000');
+        }
+    });
+
+    var ratingOptions = $('#id_rating>option');
+    console.log(ratingOptions)
+
+    for(x = 0; x < ratingOptions.length; x++) {
+        if (x === 0) {
+            continue;
+        }
+
+        var ratingText = $(ratingOptions[x]).text();
+
+        if (x === 1) {
+            $(ratingOptions[x]).text(`${ratingText} (${x} star)`);
+        } else {
+            $(ratingOptions[x]).text(`${ratingText} (${x} stars)`);
         }
     }
 </script>

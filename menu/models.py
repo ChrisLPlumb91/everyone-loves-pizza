@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-RATING = ((0, 'Niente...'), (1, 'Disgustoso!'), (2, 'Brutto!'),
+RATING = (('', 'Niente...'), (1, 'Disgustoso!'), (2, 'Brutto!'),
           (3, 'Bene!'), (4, 'Eccellente!'), (5, 'Fantastico!'))
 
 

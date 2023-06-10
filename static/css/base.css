@@ -205,7 +205,7 @@ footer a {
     color: #f5f5f5 !important;
 }
 
-.about-section, .summary-section, .featured-section, .menu-manage-container, .account-col, .error-page-col {
+.about-section, .summary-section, .featured-section, .menu-manage-container, .account-col, .error-page-col, form.review-form > div.card {
     background: url('/media/wood-surface.jpg') no-repeat center center fixed;
     background-size: cover; 
 }
@@ -741,6 +741,10 @@ input[name='q']::placeholder {
     font-size: 1.8rem !important;
 }
 
+button.review-submit-btn {
+    font-size: 1.5rem !important;
+}
+
 .keep-shopping-btn, .cart-keep-shopping-button, .adjust-bag-btn, .deals-btn {
     background: #E4A11B !important;
     color:#f5f5f5 !important;
@@ -754,13 +758,13 @@ input[name='q']::placeholder {
     font-weight: bolder;
 }
 
-.add-to-cart-btn, .secure-checkout-button, .complete-order-btn, .update-info-btn, .login-btn, .signup-btn, .logout-btn, .update-or-add-btn, a.functioning-btn {
+.add-to-cart-btn, .secure-checkout-button, .complete-order-btn, .update-info-btn, .login-btn, .signup-btn, .logout-btn, .update-or-add-btn, a.functioning-btn, button.review-submit-btn {
     background: #14A44D !important;
     color:#f5f5f5 !important;
     text-shadow: 0 2px #000;
 }
 
-.add-to-cart-btn:hover, .secure-checkout-button:hover, .complete-order-btn:hover, .update-info-btn:hover, .login-btn:hover, button.signup-btn:hover, .logout-btn:hover, .update-or-add-btn:hover, a.functioning-btn:hover {
+.add-to-cart-btn:hover, .secure-checkout-button:hover, .complete-order-btn:hover, .update-info-btn:hover, .login-btn:hover, button.signup-btn:hover, .logout-btn:hover, .update-or-add-btn:hover, a.functioning-btn:hover, button.review-submit-btn:hover {
     background: #1eec71 !important;
     color:#000 !important;
     text-shadow: none;
@@ -1132,6 +1136,41 @@ a.page-link, span.page-link {
 span.non-functioning-btn {
     color: #aab7c4 !important;
     text-shadow: none;
+}
+
+form.review-form label {
+    font-size: 1.8rem !important;
+    color: #f5f5f5 !important;
+    text-shadow: 0 2px #000 !important;
+}
+
+form.review-form textarea, form.review-form select, form.review-form option {
+    font-size: 1.5rem !important;
+    line-height: 20px !important;
+}
+
+form.review-form textarea {
+    color: #000 !important;
+}
+
+form.review-form textarea::placeholder {
+    color: #929292 !important;
+}
+
+form.review-form textarea {
+    resize: none !important;
+}
+
+form.review-form div.card-header {
+    background-color: #cc00006c;
+}
+
+form.review-form div.card-body {
+    background-color: #f198326c;
+}
+
+form.review-form div.card-footer {
+    background-color: #38761d6c;
 }
 
 /* -------------------------------- Media Queries */

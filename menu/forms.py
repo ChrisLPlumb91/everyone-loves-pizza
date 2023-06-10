@@ -28,13 +28,14 @@ class MenuItemForm(forms.ModelForm):
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
-        fields = ('review', 'rating',)
+        fields = ('rating', 'review',)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        placeholders = {
-            'review': 'How was the pizza? We would love to know!',
-        }
-
         self.fields['review'].widget.attrs['autofocus'] = True
+        self.fields['review'].widget.attrs['rows'] = 7
+        self.fields['review'].widget.attrs['placeholder'] = ("How was " +
+                                                             "the pizza? " +
+                                                             "We'd love " +
+                                                             "to know!")
