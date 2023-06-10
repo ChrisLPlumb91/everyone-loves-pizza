@@ -67,7 +67,7 @@
 
                 <!-- Iterating through menu items -->
                 {% for menu_item in menu_items %}
-                    <!-- This if executes if sorting has been applied, and iterates through and displays each menu item in the order of the applied sort. -->
+                    <!-- This if executes if sorting has been applied, and iterates through and displays each and every menu item (pizzas and sides) in the order of the applied sort. -->
                     {% if current_sorting != 'None_None' %}
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 {% if search_term or current_categories or current_sorting != 'None_None' %}mt-4{% endif %}">
                         <div class="card h-100 border-0">
@@ -153,22 +153,22 @@
                         </div>
                     </div>
 
-                    {% if forloop.counter|divisibleby:1 and not search_term and not current_categories and current_sorting == 'None_None' %}
+                    {% if forloop.counter|divisibleby:1 and current_sorting != 'None_None' %}
                     <div class="col-12 d-sm-none">
                         <hr style="color:#f19832;">
                     </div>
                     {% endif %}
-                    {% if forloop.counter|divisibleby:2 and not search_term and not current_categories and current_sorting == 'None_None' %}
+                    {% if forloop.counter|divisibleby:2 and current_sorting != 'None_None' %}
                     <div class="col-12 d-none d-sm-block d-md-block d-lg-none">
                         <hr style="color:#f19832;">
                     </div>
                     {% endif %}
-                    {% if forloop.counter|divisibleby:3 and not search_term and not current_categories and current_sorting == 'None_None' %}
+                    {% if forloop.counter|divisibleby:3 and current_sorting != 'None_None' %}
                     <div class="col-12 d-none d-lg-block d-xl-none">
                         <hr style="color:#f19832;">
                     </div>
                     {% endif %}
-                    {% if forloop.counter|divisibleby:4 and not search_term and not current_categories and current_sorting == 'None_None' %}
+                    {% if forloop.counter|divisibleby:4 and current_sorting != 'None_None' %}
                     <div class="col-12 d-none d-xl-block">
                         <hr style="color:#f19832;">
                     </div>

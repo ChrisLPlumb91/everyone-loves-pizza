@@ -754,13 +754,13 @@ input[name='q']::placeholder {
     font-weight: bolder;
 }
 
-.add-to-cart-btn, .secure-checkout-button, .complete-order-btn, .update-info-btn, .login-btn, .signup-btn, .logout-btn, .update-or-add-btn {
+.add-to-cart-btn, .secure-checkout-button, .complete-order-btn, .update-info-btn, .login-btn, .signup-btn, .logout-btn, .update-or-add-btn, a.functioning-btn {
     background: #14A44D !important;
     color:#f5f5f5 !important;
     text-shadow: 0 2px #000;
 }
 
-.add-to-cart-btn:hover, .secure-checkout-button:hover, .complete-order-btn:hover, .update-info-btn:hover, .login-btn:hover, button.signup-btn:hover, .logout-btn:hover, .update-or-add-btn:hover {
+.add-to-cart-btn:hover, .secure-checkout-button:hover, .complete-order-btn:hover, .update-info-btn:hover, .login-btn:hover, button.signup-btn:hover, .logout-btn:hover, .update-or-add-btn:hover, a.functioning-btn:hover {
     background: #1eec71 !important;
     color:#000 !important;
     text-shadow: none;
@@ -775,6 +775,7 @@ input[name='q']::placeholder {
 
 .review-words {
     font-size: 1.7rem !important;
+    text-decoration: none !important;
 }
 
 .default-star-colour {
@@ -787,9 +788,14 @@ input[name='q']::placeholder {
     -webkit-text-stroke: 3px #E4A11B;
 }
 
-.reviews-container span.fantastico {
-    color:#71eca2 !important;
-    text-shadow: 0 2px #14A44D
+.reviews-container a.all {
+    color:#f5f5f5 !important;
+    text-shadow: 0 2px #000;
+}
+
+.reviews-container a.fantastico {
+    color:#88f0b2 !important;
+    text-shadow: 0 2px #14A44D;
 }
 
 div.card.rating-border-5 {
@@ -797,7 +803,7 @@ div.card.rating-border-5 {
 }
 
 div.rating-border-5 > div.card-header, div.rating-border-5 > div.card-footer {
-    background: #71eca2 !important;
+    background: #88f0b2 !important;
 }
 
 div.card.rating-border-5 h2 {
@@ -805,8 +811,8 @@ div.card.rating-border-5 h2 {
     text-shadow: 0 2px #000;
 }
 
-.reviews-container span.eccellente {
-    color: #71ece2 !important;
+.reviews-container a.eccellente {
+    color: #9af1ea !important;
     text-shadow: 0 2px #54B4D3;
 }
 
@@ -815,7 +821,7 @@ div.card.rating-border-4 {
 }
 
 div.rating-border-4 > div.card-header, div.rating-border-4 > div.card-footer {
-    background: #71ece2 !important;
+    background: #9af1ea !important;
 }
 
 div.card.rating-border-4 h2 {
@@ -823,8 +829,8 @@ div.card.rating-border-4 h2 {
     text-shadow: 0 2px #000;
 }
 
-.reviews-container span.bene {
-    color: #94c2e9 !important;
+.reviews-container a.bene {
+    color: #c5dbf0 !important;
     text-shadow: 0 2px #3B71CA;
 }
 
@@ -833,7 +839,7 @@ div.card.rating-border-3 {
 }
 
 div.rating-border-3 > div.card-header, div.rating-border-3 > div.card-footer {
-    background: #71b5ec !important;
+    background: #c5dbf0 !important;
 }
 
 div.card.rating-border-3 h2 {
@@ -841,7 +847,7 @@ div.card.rating-border-3 h2 {
     text-shadow: 0 2px #000;
 }
 
-.reviews-container span.brutto {
+.reviews-container a.brutto {
     color: #ecd971 !important;
     text-shadow: 0 2px #E4A11B; 
 }
@@ -859,7 +865,7 @@ div.card.rating-border-2 h2 {
     text-shadow: 0 2px #000;
 }
 
-.reviews-container span.disgustoso {
+.reviews-container a.disgustoso {
     color: #fdb2cb !important;
     text-shadow: 0 2px #DC4C64;
 }
@@ -869,7 +875,7 @@ div.card.rating-border-1 {
 }
 
 div.rating-border-1 > div.card-header, div.rating-border-1 > div.card-footer {
-    background: #f794b5 !important;
+    background: #fdb2cb !important;
 }
 
 div.card.rating-border-1 h2 {
@@ -1057,18 +1063,34 @@ form.menu-manage-form .custom-checkbox {
     line-height: 30px;
 }
 
-form.menu-manage-form span.btn-file {
+form.menu-manage-form span.btn-file, a.functioning-btn-alt {
     background: #3B71CA;
     color: #f5f5f5;
     text-shadow: 0 1px #000;
+}
+
+form.menu-manage-form span.btn-file {
     font-size: 1.3rem !important;
 }
 
-form.menu-manage-form span.btn-file:hover {
+a.functioning-btn, span.non-functioning-btn, a.functioning-btn-alt {
+    font-size: 1.5rem !important;
+    border: 2px solid #f5f5f5 !important;
+}
+
+span.non-functioning-btn {
+    border: 2px solid #aab7c4 !important;
+}
+
+form.menu-manage-form span.btn-file:hover, a.functioning-btn-alt:hover {
     background: #3fcfff;
-    color: #000;
+    color: #000 !important;
     text-shadow: none !important;
     font-weight: bolder;
+}
+
+a.functioning-btn:hover, a.functioning-btn-alt:hover {
+    border: 2px solid #000 !important;
 }
 
 #div_id_image_url, #div_id_full_image_url {
@@ -1085,6 +1107,11 @@ form.menu-manage-form span.btn-file:hover {
     background: #DC4C64 !important;
 }
 
+span.non-functioning-btn {
+    background: #6c757d !important;
+    color:#343a40 !important;
+}
+
 .cancel-btn:hover {
     background: #ff728a !important;
     color:#000 !important;
@@ -1095,6 +1122,16 @@ form.menu-manage-form span.btn-file:hover {
 #filename-image, #filename-full_image {
     background: #DC4C64 !important;
     color: #f5f5f5 !important;
+}
+
+a.page-link, span.page-link {
+    color: #f5f5f5 !important;
+    text-shadow: 0 1px #000;
+}
+
+span.non-functioning-btn {
+    color: #aab7c4 !important;
+    text-shadow: none;
 }
 
 /* -------------------------------- Media Queries */
@@ -1435,6 +1472,10 @@ form.menu-manage-form span.btn-file:hover {
     .detail-page-form-group {
         width: 43% !important;
     }
+
+    p.poster-text, strong.poster {
+        line-height: 15px !important;
+    }
 }
 
 @media screen and (max-width: 1130px) {
@@ -1769,6 +1810,15 @@ form.menu-manage-form span.btn-file:hover {
         width: 350px !important;
         right: 0px;
     }
+
+    h2.rating-word {
+        font-size: 1.9rem !important;
+    }
+
+    p.review-text {
+        font-size: 1.3rem !important;
+        line-height: 20px !important;
+    }
 }
 
 @media screen and (max-width: 804px) {
@@ -1912,6 +1962,10 @@ form.menu-manage-form span.btn-file:hover {
     h2.shopping-cart-heading {
         padding-left: 0 !important;
         text-align: center !important;
+    }
+
+    span.review-words {
+        font-size: 1.3rem !important;
     }
 }
 
@@ -2064,6 +2118,11 @@ form.menu-manage-form span.btn-file:hover {
         text-align: center !important;
         padding-left: 0 !important;
     }
+
+    h2.reviews-heading {
+        padding-left: 0 !important;
+        text-align: center !important;
+    }
 }
 
 @media screen and (max-width: 537px) {
@@ -2203,6 +2262,12 @@ form.menu-manage-form span.btn-file:hover {
 
     .cart-below {
         line-height: 25px !important;
+    }
+}
+
+@media screen and (max-width: 465px) {
+    a.page-link, span.page-link {
+        font-size: 1rem !important;
     }
 }
 
@@ -2597,6 +2662,12 @@ form.menu-manage-form span.btn-file:hover {
 
     section.first-section, h2.order-details-heading, div.manage-page-headings, h2.shopping-cart-heading, h2.checkout-heading, h2.thank-you-heading {
         margin-top: 6rem !important;
+    }
+}
+
+@media screen and (max-width: 302px) {
+    h2.rating-word {
+        font-size: 1.7rem !important;
     }
 }
 

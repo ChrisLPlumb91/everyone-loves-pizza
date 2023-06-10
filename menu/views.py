@@ -78,13 +78,14 @@ def menu_item_detail(request, menu_item_id):
             messages.error(request, 'Failed to add your review...')
     else:
         menu_item = get_object_or_404(MenuItem, pk=menu_item_id)
-        reviews = (Review.objects.filter(menu_item=menu_item)
-                   .order_by('-rating'))
+        reviews_rating_order = (Review.objects.filter(menu_item=menu_item)
+                                .order_by('-rating'))
 
         review_counts = {}
+        review_counts['All'] = reviews_rating_order.count()
         total_rating = 0
 
-        for review in reviews:
+        for review in reviews_rating_order:
             if review_counts.get(review.get_rating_display()[:-1]):
                 review_counts[review.get_rating_display()[:-1]] += 1
             else:
@@ -92,10 +93,22 @@ def menu_item_detail(request, menu_item_id):
 
             total_rating += review.rating
 
-        average_rating = total_rating / reviews.count()
+        average_rating = total_rating / reviews_rating_order.count()
 
-        reviews = (Review.objects.filter(menu_item=menu_item)
-                   .order_by('created_on'))
+        if 'rating_word' in request.GET:
+            if request.GET['rating_word'] != 'All':
+                for review in reviews_rating_order:
+                    if request.GET['rating_word'] == (review.
+                                                      get_rating_display()):
+                        reviews = (Review.objects.filter(rating=review.rating)
+                                   .order_by('-created_on'))
+                        break
+            else:
+                reviews = (Review.objects.filter(menu_item=menu_item)
+                           .order_by('-created_on'))
+        else:
+            reviews = (Review.objects.filter(menu_item=menu_item)
+                       .order_by('-created_on'))
 
         paginated_reviews = Paginator(reviews, 9)
         page_number = request.GET.get("page")
