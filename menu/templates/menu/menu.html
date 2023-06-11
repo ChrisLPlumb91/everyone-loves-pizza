@@ -257,7 +257,7 @@
                     </div>
 
                     {% if forloop.counter|divisibleby:1 and not search_term and not current_categories and current_sorting == 'None_None' %}
-                    <div class="col-12 d-sm-none">
+                    <div class="col-12 d-sm-none d-block">
                         <hr style="color:#f19832;">
                     </div>
                     {% endif %}
@@ -288,9 +288,9 @@
                 <h2 class="jumbotron-heading py-2 ms-3 menu-heading">Sides</h2>
                 {% endif %}
 
-                {% for menu_item in menu_items %}
-                    <!-- Iterating through the menu items and only displaying those items whose category is sides, because this is the sides section. -->
-                    {% if menu_item.category.name == 'sides' and current_sorting == 'None_None' %}
+                <!-- Iterating through the menu items and only displaying those items whose category is sides, because this is the sides section. -->
+                {% for side in sides %}   
+                    {% if current_sorting == 'None_None' %}
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 {% if search_term or current_categories or current_sorting != 'None_None' %}mt-4{% endif %}">
                         <div class="card h-100 border-0">
 
@@ -298,23 +298,23 @@
 
                                 <div class="row">
                                     <div class="col">
-                                        {% if menu_item.image %}
-                                        <a href="{% url 'menu_item_detail' menu_item.id %}"
+                                        {% if side.image %}
+                                        <a href="{% url 'menu_item_detail' side.id %}"
                                             class="d-inline-block float-end side-image-link">
-                                            <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}" class="img-fluid mb-3">
+                                            <img src="{{ side.image.url }}" alt="{{ side.name }}" class="img-fluid mb-3">
                                         </a>
                                         {% else %}
-                                        <a href="{% url 'menu_item_detail' menu_item.id %}">
-                                            <img src="{{ MEDIA_URL }}noimage.png" alt="{{ menu_item.name }}" class="mb-3">
+                                        <a href="{% url 'menu_item_detail' side.id %}">
+                                            <img src="{{ MEDIA_URL }}noimage.png" alt="{{ side.name }}" class="mb-3">
                                         </a>
                                         {% endif %}
 
-                                        <h3 class="d-inline-block float-start menu-name-text">{{ menu_item.name }}</h3>
+                                        <h3 class="d-inline-block float-start menu-name-text">{{ side.name }}</h3>
                                     </div>
                                 </div>
                                 
                                 <hr class="name-ingredients-divider">
-                                <p class="d-inline-block mb-0 menu-ingredients-text">{{ menu_item.ingredients }} <small class="float-end">({{ menu_item.calories }})</small></p>
+                                <p class="d-inline-block mb-0 menu-ingredients-text">{{ side.ingredients }} <small class="float-end">({{ side.calories }})</small></p>
                                 <hr>
 
                             </div>
@@ -323,17 +323,17 @@
 
                                 <div class="row">
                                     <div class="col">
-                                        <small>€{{ menu_item.price }} each</small>
+                                        <small>€{{ side.price }} each</small>
                                     </div>
                                 </div>
                                 
                                 <div class="row">
                                     <div class="col">
-                                        {% if menu_item.category %}
+                                        {% if side.category %}
                                         <p class="small mt-1 mb-0">
                                             <a class="text-muted"
-                                                href="{% url 'menu' %}?category={{ menu_item.category.name }}">
-                                                <i class="fas fa-tag mr-1"></i>{{ menu_item.category.friendly_name }}
+                                                href="{% url 'menu' %}?category={{ side.category.name }}">
+                                                <i class="fas fa-tag mr-1"></i>{{ side.category.friendly_name }}
                                             </a>
                                         </p>
                                         {% endif %}
@@ -342,8 +342,8 @@
                                         
                                 <div class="row">
                                     <div class="col">
-                                        {% if menu_item.rating %}
-                                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ menu_item.rating }} /
+                                        {% if side.rating %}
+                                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ side.rating }} /
                                             5</small>
                                         {% else %}
                                         <small class="text-muted">No Rating</small>
@@ -353,7 +353,7 @@
                                 
                                 <div class="row">
                                     <div class="col">
-                                        <a href="{% url 'menu_item_detail' menu_item.id %}" class="btn btn-lg order-button shadow">Order now</a>
+                                        <a href="{% url 'menu_item_detail' side.id %}" class="btn btn-lg order-button shadow">Order now</a>
                                     </div>
                                 </div>
 
@@ -361,8 +361,8 @@
                                 <div class="row mt-2 superuser-zone position-relative">
                                     <div class="col edit-delete-options d-flex align-items-center">
                                         <h3 class="text-info text-start position-absolute mt-1">Superuser zone</h3>
-                                        <a href="{% url 'edit_menu_item' menu_item.id %}" class="superuser-option pe-1">Edit</a> |
-                                        <a class="text-danger superuser-option ps-1" href="{% url 'delete_menu_item' menu_item.id %}">Delete</a>  
+                                        <a href="{% url 'edit_menu_item' side.id %}" class="superuser-option pe-1">Edit</a> |
+                                        <a class="text-danger superuser-option ps-1" href="{% url 'delete_menu_item' side.id %}">Delete</a>  
                                     </div>
                                 </div>
                                 {% endif %}
@@ -372,7 +372,7 @@
                     </div>
 
                     {% if forloop.counter|divisibleby:1 and not search_term and not current_categories and current_sorting == 'None_None' %}
-                    <div class="col-12 d-sm-none">
+                    <div class="col-12 d-sm-none d-block">
                         <hr style="color:#f19832;">
                     </div>
                     {% endif %}
@@ -382,7 +382,7 @@
                     </div>
                     {% endif %}
                     {% if forloop.counter|divisibleby:3 and not search_term and not current_categories and current_sorting == 'None_None' %}
-                    <div class="col-12 d-none d-lg-block d-xl-none">
+                    <div class="col-12 d-none d-lg-block">
                         <hr style="color:#f19832;">
                     </div>
                     {% endif %}

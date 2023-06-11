@@ -251,9 +251,9 @@
                         {% for field in review_form %}
                             {% if field.name == 'rating' %}
                             <div class="card-header text-center">
-                                <i class="fas fa-star lit-star-colour me-1"></i>
+                                <i class="fas fa-star lit-star-colour me-1 left-star"></i>
                                 <h2 class="d-inline-block mt-2 mb-0">Write a review!</h2>
-                                <i class="fas fa-star lit-star-colour ms-1"></i>
+                                <i class="fas fa-star lit-star-colour ms-1 right-star"></i>
                                 {{ field | as_crispy_field }}
                             </div>
                             {% elif field.name == 'review' %}

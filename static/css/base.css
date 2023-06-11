@@ -1410,6 +1410,11 @@ form.review-form div.card-footer {
         margin-top: 0.4rem !important;
         margin-bottom: 0.2rem !important;
     }
+
+    section.review-form-section div.col-4 {
+        width: 50% !important;
+        margin-left: 25% !important;
+    }
 }
 
 @media screen and (max-width: 1380px) {
@@ -1858,6 +1863,11 @@ form.review-form div.card-footer {
         font-size: 1.3rem !important;
         line-height: 20px !important;
     }
+
+    section.review-form-section div.col-4 {
+        width: 66.66666667% !important;
+        margin-left: 16.66666667% !important;
+    }
 }
 
 @media screen and (max-width: 804px) {
@@ -2005,6 +2015,11 @@ form.review-form div.card-footer {
 
     span.review-words {
         font-size: 1.3rem !important;
+    }
+
+    section.review-form-section div.col-4 {
+        width: 83.33333333% !important;
+        margin-left: 8.33333333% !important;
     }
 }
 
@@ -2244,6 +2259,15 @@ form.review-form div.card-footer {
     .col-12 > .secure-checkout-button {
         margin-top: 0.5rem !important;
     }
+
+    section.review-form-section > div.row {
+        justify-content: center !important;
+    }
+
+    section.review-form-section div.col-4 {
+        min-width: 420px !important;
+        margin-left: 0 !important;
+    }
 }
 
 @media screen and (max-width: 507px) {
@@ -2385,6 +2409,22 @@ form.review-form div.card-footer {
 @media screen and (max-width: 419px) {
     div.col-6 > h2.menu-management-text, div.col-6 > h2.text-end {
         font-size: 2rem !important;
+    }
+
+    section.review-form-section div.col-4 {
+        min-width: 100% !important;
+    }
+
+    section.review-form-section h2 {
+        width: 60% !important;
+    }
+
+    i.left-star {
+        margin-right: 7% !important;
+    }
+
+    i.right-star {
+        margin-left: 7% !important;
     }
 }
 
@@ -2701,6 +2741,20 @@ form.review-form div.card-footer {
 
     section.first-section, h2.order-details-heading, div.manage-page-headings, h2.shopping-cart-heading, h2.checkout-heading, h2.thank-you-heading {
         margin-top: 6rem !important;
+    }
+}
+
+@media screen and (max-width: 312px) {
+    i.left-star {
+        margin-right: 0 !important;
+    }
+
+    i.right-star {
+        margin-left: 0 !important;
+    }
+
+    section.review-form-section h2 {
+        width: 70% !important;
     }
 }
 

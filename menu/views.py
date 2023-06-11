@@ -13,6 +13,7 @@ def menu(request):
     """ A view to show the full menu, including sorting and search queries """
 
     menu_items = MenuItem.objects.all()
+    sides = MenuItem.objects.filter(category__name='sides')
     query = None
     categories = None
     sort = None
@@ -53,6 +54,7 @@ def menu(request):
 
     context = {
         'menu_items': menu_items,
+        'sides': sides,
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
