@@ -76,7 +76,6 @@ def menu_item_detail(request, menu_item_id):
                 review.menu_item = menu_item
                 review.poster = request.user
                 review.save()
-                print(review)
                 messages.success(request, 'Successfully added review! ' +
                                  'Thanks for your feedback on the ' +
                                  f'{review.menu_item.name}!' +
