@@ -121,7 +121,12 @@ def menu_item_detail(request, menu_item_id):
                        .order_by('-created_on'))
 
         paginated_reviews = Paginator(reviews, 9)
-        page_number = request.GET.get("page")
+
+        if not request.GET.get("page"):
+            page_number = '1'
+        else:
+            page_number = request.GET.get("page")
+
         page_obj = paginated_reviews.get_page(page_number)
 
         review_form = ReviewForm()

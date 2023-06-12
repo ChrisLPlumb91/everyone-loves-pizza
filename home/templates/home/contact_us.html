@@ -14,7 +14,7 @@
 <div class="container contact-form-container mb-5">
     <div class="row">
         <div class="col-8 offset-2">
-            <form method="POST" action="{% url 'contact_us' %}">
+            <form method="POST" action="{% url 'contact_us' %}" class="contact-form">
                 {{ form | crispy }}
                 <button type="submit" class="btn review-submit-btn">Send message</button>
             </form>

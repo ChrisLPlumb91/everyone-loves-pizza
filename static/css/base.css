@@ -1157,7 +1157,7 @@ form.review-form textarea::placeholder {
     color: #929292 !important;
 }
 
-form.review-form textarea {
+form.review-form textarea, form.contact-form textarea {
     resize: none !important;
 }
 
