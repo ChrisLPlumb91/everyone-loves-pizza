@@ -26,7 +26,7 @@
 
 <li class="list-inline-item dropdown mobile-profile">
 
-    <a class="nav-link d-block d-lg-none" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a class="nav-link d-block d-lg-none nav-link-user" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
             <div><i class="fas fa-user fa-lg"></i></div>
             <p class="my-0">{% if request.user.is_authenticated %}{{ request.user.username }}{% else %}My Account{% endif %}</p>
@@ -50,7 +50,7 @@
 
 <li class="list-inline-item mobile-cart position-relative">
 
-    <a class="{% if grand_total %}text-info font-weight-bold{% endif %} nav-link d-block d-lg-none" href="{% url 'view_cart' %}">
+    <a class="{% if grand_total %}text-info font-weight-bold{% endif %} nav-link d-block d-lg-none nav-link-cart" href="{% url 'view_cart' %}">
         <div class="text-center">
             <div><i class="fa-solid fa-cart-shopping"></i></div>
             <p class="my-0">

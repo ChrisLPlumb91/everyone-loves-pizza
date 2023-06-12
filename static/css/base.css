@@ -120,6 +120,10 @@ li.mobile-search > div.mobile-search-dropdown {
     background: #f19832;
 }
 
+a.nav-link-user:hover, a.nav-link-cart:hover, a.footer-link:hover {
+    color:#1eec71 !important;
+}
+
 #delivery-banner {
     box-shadow: 0 5px #cc0000 inset, 0 -5px #cc0000 inset !important;
     background: #f5f5f5;
@@ -142,6 +146,22 @@ footer a {
 .social-media-icons {
     font-size: 2.5rem !important;
     text-shadow: 0 2px #f19832;
+}
+
+i.fa-facebook:hover {
+    text-shadow: 2px 2px 8px #82beff;
+}
+
+i.fa-twitter-square:hover {
+    text-shadow: 2px 2px 8px #acf4ff;
+}
+
+i.fa-instagram-square:hover {
+    text-shadow: 2px 2px 8px #fa92c1;
+}
+
+i.fa-youtube-square:hover {
+    text-shadow: 2px 2px 8px #ff8383;
 }
 
 .main-logo-link {
@@ -199,13 +219,13 @@ footer a {
     font-family: 'Mogra', cursive !important;
 }
 
-.about-section, .featured-section, .cart-container, .summary-section, .menu-manage-container {
+.about-section, .featured-section, .cart-container, .summary-section, .menu-manage-container, div.customer-msg-col {
     border: 5px solid #f5f5f5;
     box-shadow: -10px -10px 10px #202020, 10px 10px 10px #202020, 0 0 32px #f5f5f5 inset;
     color: #f5f5f5 !important;
 }
 
-.about-section, .summary-section, .featured-section, .menu-manage-container, .account-col, .error-page-col, form.review-form > div.card {
+.about-section, .summary-section, .featured-section, .menu-manage-container, .account-col, .error-page-col, form.review-form > div.card, div.contact-form-container div.customer-msg-col {
     background: url('/media/wood-surface.jpg') no-repeat center center fixed;
     background-size: cover; 
 }
@@ -741,7 +761,7 @@ input[name='q']::placeholder {
     font-size: 1.8rem !important;
 }
 
-button.review-submit-btn {
+button.review-submit-btn, button.msg-submit-btn {
     font-size: 1.5rem !important;
 }
 
@@ -758,13 +778,13 @@ button.review-submit-btn {
     font-weight: bolder;
 }
 
-.add-to-cart-btn, .secure-checkout-button, .complete-order-btn, .update-info-btn, .login-btn, .signup-btn, .logout-btn, .update-or-add-btn, a.functioning-btn, button.review-submit-btn {
+.add-to-cart-btn, .secure-checkout-button, .complete-order-btn, .update-info-btn, .login-btn, .signup-btn, .logout-btn, .update-or-add-btn, a.functioning-btn, button.review-submit-btn, button.msg-submit-btn {
     background: #14A44D !important;
     color:#f5f5f5 !important;
     text-shadow: 0 2px #000;
 }
 
-.add-to-cart-btn:hover, .secure-checkout-button:hover, .complete-order-btn:hover, .update-info-btn:hover, .login-btn:hover, button.signup-btn:hover, .logout-btn:hover, .update-or-add-btn:hover, a.functioning-btn:hover, button.review-submit-btn:hover {
+.add-to-cart-btn:hover, .secure-checkout-button:hover, .complete-order-btn:hover, .update-info-btn:hover, .login-btn:hover, button.signup-btn:hover, .logout-btn:hover, .update-or-add-btn:hover, a.functioning-btn:hover, button.review-submit-btn:hover, button.msg-submit-btn:hover {
     background: #1eec71 !important;
     color:#000 !important;
     text-shadow: none;
@@ -1138,13 +1158,13 @@ span.non-functioning-btn {
     text-shadow: none;
 }
 
-form.review-form label {
+form.review-form label, form.contact-form label {
     font-size: 1.8rem !important;
     color: #f5f5f5 !important;
     text-shadow: 0 2px #000 !important;
 }
 
-form.review-form textarea, form.review-form select, form.review-form option {
+form.review-form textarea, form.review-form select, form.review-form option, form.contact-form textarea, form.contact-form select, form.contact-form option {
     font-size: 1.5rem !important;
     line-height: 20px !important;
 }
@@ -1171,6 +1191,10 @@ form.review-form div.card-body {
 
 form.review-form div.card-footer {
     background-color: #38761d6c;
+}
+
+#div_id_reason, #div_id_user_msg {
+    text-align: start !important;
 }
 
 /* -------------------------------- Media Queries */
@@ -2047,6 +2071,20 @@ form.review-form div.card-footer {
         margin-bottom: 1rem !important;
         margin-top: 1rem !important;
     }
+
+    div.contact-header-container {
+        margin-bottom: 0.50rem !important;
+        margin-top: 0.50rem !important;
+    }
+
+    #div_id_reason, #div_id_user_msg, #id_reason {
+        text-align: center !important;
+    }
+
+    h2.contact-us-heading {
+        padding-left: 0 !important;
+        text-align: center !important;
+    }
     
     #delivery-banner h4.free-delivery-banner-text {
         font-size: 1.5rem !important;
@@ -2268,6 +2306,14 @@ form.review-form div.card-footer {
         min-width: 420px !important;
         margin-left: 0 !important;
     }
+
+    form.contact-form label {
+        font-size: 1.5rem !important;
+    }
+
+    #id_reason, #id_reason > option, #id_user_msg {
+        font-size: 1.2rem !important;
+    }
 }
 
 @media screen and (max-width: 507px) {
@@ -2470,6 +2516,13 @@ form.review-form div.card-footer {
 
     .form-row select {
         width: 50% !important;
+    }
+}
+
+@media screen and (max-width: 408px) {
+    div.contact-header-container {
+        margin-bottom: 1.25rem !important;
+        margin-top: 1.25rem !important;
     }
 }
 
@@ -2695,6 +2748,15 @@ form.review-form div.card-footer {
 
     .message-container-mobile {
         width: 210px !important;
+    }
+
+    div.contact-header-container {
+        margin-bottom: 2rem !important;
+        margin-top: 2rem !important;
+    }
+
+    h2.contact-us-heading {
+        margin-top: 2.75rem !important;
     }
 }
 

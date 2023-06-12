@@ -11,7 +11,7 @@ class CustomerMessage(models.Model):
     customer = models.ForeignKey(User, on_delete=models.CASCADE,
                                  related_name='customer_messages')
     reason = models.IntegerField(choices=REASONS, default=0)
-    message = models.TextField(max_length=512, null=False, blank=False)
+    user_msg = models.TextField(max_length=512, null=False, blank=False)
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

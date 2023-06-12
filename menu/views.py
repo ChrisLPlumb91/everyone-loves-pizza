@@ -94,6 +94,7 @@ def menu_item_detail(request, menu_item_id):
         review_counts = {}
         review_counts['All'] = reviews_rating_order.count()
         total_rating = 0
+        average_rating = 0
 
         for review in reviews_rating_order:
             if review_counts.get(review.get_rating_display()[:-1]):
@@ -103,7 +104,8 @@ def menu_item_detail(request, menu_item_id):
 
             total_rating += review.rating
 
-        average_rating = total_rating / reviews_rating_order.count()
+        if reviews_rating_order.count() > 0:
+            average_rating = total_rating / reviews_rating_order.count()
 
         if 'rating_word' in request.GET:
             if request.GET['rating_word'] != 'All':

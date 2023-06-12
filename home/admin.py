@@ -6,7 +6,7 @@ class CustomerMessageAdmin(admin.ModelAdmin):
     list_display = (
         'customer',
         'reason',
-        'message',
+        'user_msg',
         'created_on',
     )
 

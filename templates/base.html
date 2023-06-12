@@ -60,7 +60,7 @@
             <div class="col-12 col-lg-2 py-1 py-lg-0 align-self-center">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
-                        <a class="nav-link" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                        <a class="nav-link nav-link-user" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg"></i></div>
                                 <p class="my-0">{% if request.user.is_authenticated %}{{ request.user.username }}{% else %}My Account{% endif %}</p>
@@ -81,7 +81,7 @@
                     </li>
                     <li class="list-inline-item position-relative">
                         
-                        <a class="{% if grand_total %}text-info font-weight-bold{% endif %} nav-link" href="{% url 'view_cart' %}">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% endif %} nav-link nav-link-cart" href="{% url 'view_cart' %}">
                             <div class="text-center">
                                 <div><i class="fa-solid fa-cart-shopping"></i></div>
                                 <p class="my-0">
@@ -145,7 +145,7 @@
 
         <div class="text-center row pt-2 d-flex footer-text-container">
             <div class="col-12">
-                <p class="mb-1"><a href="{% url 'contact_us' %}">Contact us</a> | <a href="{% url 'home'%}#about-us">About us</a></p>
+                <p class="mb-1"><a href="{% url 'contact_us' %}" class="footer-link">Contact us</a> | <a href="{% url 'home'%}#about-us" class="footer-link">About us</a></p>
             </div>
         </div>
             
@@ -153,8 +153,8 @@
             <div class="col-12">
                 <a href="https://www.facebook.com/" aria-label="Go to our facebook page (opens in new tab)" target="_blank"><i class="fab fa-facebook icon social-media-icons" style="color:#1877f2;"></i></a>
                 <a href="https://www.twitter.com" aria-label="Go to our twitter page (opens in new tab)" target="_blank"><i class="fab fa-twitter-square icon social-media-icons" style="color:#00acee;"></i></a>
-                <a href="https://www.youtube.com" aria-label="Go to our instagram page (opens in new tab)" target="_blank"><i class="fab fa-instagram-square icon social-media-icons" style="color:#FF0000;"></i></a>
-                <a href="https://www.instagram.com" aria-label="Go to our youtube channel (opens in new tab)" target="_blank"><i class="fab fa-youtube-square icon social-media-icons" style="color:#d62976;"></i></a>
+                <a href="https://www.youtube.com" aria-label="Go to our instagram page (opens in new tab)" target="_blank"><i class="fab fa-instagram-square icon social-media-icons" style="color:#d62976;"></i></a>
+                <a href="https://www.instagram.com" aria-label="Go to our youtube channel (opens in new tab)" target="_blank"><i class="fab fa-youtube-square icon social-media-icons" style="color:#FF0000;"></i></a>
             </div>
         </div>
 
@@ -166,8 +166,8 @@
         var toastElementNormal = $('.toast')[0];
         var toastNormal = new bootstrap.Toast(toastElementNormal);
         var toastElementMobile = $('.toast')[1];
-        var toastMobile = new bootstrap.Toast(toastElementMobile);
-        toastNormal.show();
+        var toastMobile = new bootstrap.Toast(toastElementMobile); 
+        toastNormal.show(); 
         toastMobile.show();
         
     </script>

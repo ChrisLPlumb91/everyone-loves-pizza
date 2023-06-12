@@ -8,6 +8,7 @@ from django.core.paginator import Paginator
 from .models import UserProfile
 from .forms import UserProfileForm
 
+from home.models import CustomerMessage
 from menu.models import Review
 from checkout.models import Order
 
@@ -68,13 +69,27 @@ def profile(request):
 
     page_obj_profile = paginated_reviews_profile.get_page(page_number)
 
+    user_messages = (CustomerMessage.objects.filter(customer=request.user)
+                     .order_by('-created_on'))
+
+    paginated_messages_profile = Paginator(user_messages, 5)
+
+    if not request.GET.get("msg_page"):
+        page_number = '1'
+    else:
+        page_number = request.GET.get("msg_page")
+
+    page_obj_messages = paginated_messages_profile.get_page(page_number)
+
     orders = profile.orders.all()
 
     template = 'profiles/profile.html'
+
     context = {
         'form': form,
         'reviews': page_obj_profile,
         'review_counts': review_counts,
+        'user_messages': page_obj_messages,
         'orders': orders,
         'on_profile_page': True
     }

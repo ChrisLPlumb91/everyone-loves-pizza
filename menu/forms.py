@@ -33,7 +33,6 @@ class ReviewForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.fields['review'].widget.attrs['autofocus'] = True
         self.fields['review'].widget.attrs['rows'] = 7
         self.fields['review'].widget.attrs['placeholder'] = ("How was " +
                                                              "the pizza? " +

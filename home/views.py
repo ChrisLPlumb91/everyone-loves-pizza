@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -37,22 +37,21 @@ def customer_contact(request):
         form = CustomerMessageForm(request.POST)
 
         if form.is_valid():
-            message = form.save(commit=False)
-            message.customer = request.user
-            message.save()
+            user_message = form.save(commit=False)
+            user_message.customer = request.user
+            user_message.save()
 
-            messages.success(request, 'Thank you for your message. ' +
-                             'A member of staff will reply to you via ' +
+            messages.success(request, 'Thank you for your message. '
+                             'A member of staff will reply to you via '
                              'email in the next 1-2 working days.')
-
-            return redirect(reverse('home'))
         else:
             messages.error(request, 'Error: Message not sent.')
-    else:
-        form = CustomerMessageForm()
 
-        context = {
-            'form': form,
-        }
+    form = CustomerMessageForm()
 
-        return render(request, template, context)
+    context = {
+        'form': form,
+        'on_contact_page': True
+    }
+
+    return render(request, template, context)
