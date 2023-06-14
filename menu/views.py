@@ -5,7 +5,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from django.core.paginator import Paginator
 
-from .models import MenuItem, Category, Review
+from .models import MenuItem, Category, Review, RATING
 from .forms import MenuItemForm, ReviewForm
 
 
@@ -13,7 +13,7 @@ def menu(request):
     """ A view to show the full menu, including sorting and search queries """
 
     menu_items = MenuItem.objects.all()
-    sides = MenuItem.objects.filter(category__name='sides')
+    sides = MenuItem.objects.filter(category__name='sides').order_by('name')
     query = None
     categories = None
     sort = None
@@ -78,8 +78,7 @@ def menu_item_detail(request, menu_item_id):
                 review.save()
                 messages.success(request, 'Successfully added review! ' +
                                  'Thanks for your feedback on the ' +
-                                 f'{review.menu_item.name}!' +
-                                 'Please wait for us to approve it!')
+                                 f'{review.menu_item.name}!')
                 return redirect(reverse('menu_item_detail',
                                         args=[menu_item_id]))
             else:
@@ -107,6 +106,17 @@ def menu_item_detail(request, menu_item_id):
         if reviews_rating_order.count() > 0:
             average_rating = total_rating / reviews_rating_order.count()
 
+        for rating_pair in RATING:
+            if rating_pair[1] == 'Niente...':
+                continue
+
+            if rating_pair[1][:-1] in review_counts.keys():
+                continue
+            else:
+                review_counts[rating_pair[1][:-1]] = 0
+
+        reviews = 0
+
         if 'rating_word' in request.GET:
             if request.GET['rating_word'] != 'All':
                 for review in reviews_rating_order:
@@ -122,14 +132,31 @@ def menu_item_detail(request, menu_item_id):
             reviews = (Review.objects.filter(menu_item=menu_item)
                        .order_by('-created_on'))
 
-        paginated_reviews = Paginator(reviews, 9)
+        if reviews:
+            paginated_reviews = Paginator(reviews, 9)
 
-        if not request.GET.get("page"):
-            page_number = '1'
+            if not request.GET.get("page"):
+                page_number = '1'
+            else:
+                page_number = request.GET.get("page")
+
+            page_obj = paginated_reviews.get_page(page_number)
         else:
-            page_number = request.GET.get("page")
+            if request.GET.get('rating_word'):
+                messages.info(request, 'You have not left any '
+                              'reviews with this rating.')
 
-        page_obj = paginated_reviews.get_page(page_number)
+            reviews = (Review.objects.filter(menu_item=menu_item)
+                       .order_by('-created_on'))
+
+            paginated_reviews = Paginator(reviews, 9)
+
+            if not request.GET.get("page"):
+                page_number = '1'
+            else:
+                page_number = request.GET.get("page")
+
+            page_obj = paginated_reviews.get_page(page_number)
 
         review_form = ReviewForm()
 

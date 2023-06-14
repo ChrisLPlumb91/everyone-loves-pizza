@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load crispy_forms_tags %}
+{% load reason_tools %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
@@ -178,15 +179,33 @@
         </nav>
     </section>
 
-    <section class="container user_messages_container mb-5 jumbotron">
+    <section class="container user-messages-container mb-5 jumbotron">
         <h2 class="jumbotron-heading ps-sm-4 mt-3 text-sm-start text-center ps-0 reviews-heading">Your message history</h2>
+
+        <div class="text-center mb-2">
+            {% for key, value in user_message_counts.items %}
+            <a href="{% url 'profile' %}?reason_words={{ key|replace_spaces }}" class="{{ key|replace_spaces|lower }} reason-words">{{ key }} ({{ value }}){% if forloop.counter != 5 %},{% endif %}</a>
+            {% if forloop.counter|divisibleby:2 %}
+            <div class="d-lg-none d-md-block my-0 mx-0 h-0"></div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:3 %}
+            <div class="d-md-none d-sm-block my-0 mx-0 h-0"></div>
+            {% endif %}
+            {% endfor %}          
+        </div>
+
         {% for user_message in user_messages %}
         <div class="row">
-            <div class="col">
-                <div class="card">
-                    <div class="card-header"><h2>{{ user_message.get_reason_display }}</h2></div>
-                    <div class="card-body"><a href=""></a></div>
-                    <div class="card-footer">{{ user_message.created_on }}</div>
+            <div class="col my-2">
+                <div class="card user-message-card">
+                    <div class="card-header">
+                        <h2 class="my-0 reason-word" data-number="{{ user_message.reason }}">{{ user_message.get_reason_display }}</h2>
+                    </div>
+                    <div class="card-body px-4">
+                        <p class="name-ellipsis-alt my-0">{{ user_message.user_msg }}</p>
+                        <a href="" class="text-end inline-block">(go to message page) <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="card-footer text-end">{{ user_message.created_on }}</div>
                 </div>
             </div>
         </div>
@@ -287,6 +306,16 @@
             $(stars[n]).addClass('lit-star-colour');
 
             $(reviews[i]).addClass(`rating-border-${starRating}`);
+        }
+    }
+
+    var userMessages = $('.user-message-card');
+
+    for (j = 0; j < userMessages.length; j++) {
+        var reasonNumber = $(userMessages[j]).find('h2').data('number');
+
+        for (o = 0; o < starRating; o++) {
+            $(userMessages[j]).addClass(`message-border-${reasonNumber}`);
         }
     }
 </script>

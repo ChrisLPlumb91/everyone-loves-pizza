@@ -1,15 +1,15 @@
 from django.shortcuts import render
 
 
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from .models import UserProfile
 from .forms import UserProfileForm
 
-from home.models import CustomerMessage
-from menu.models import Review
+from home.models import CustomerMessage, REASONS
+from menu.models import Review, RATING
 from checkout.models import Order
 
 
@@ -43,7 +43,16 @@ def profile(request):
         else:
             review_counts[review.get_rating_display()[:-1]] = 1
 
-        total_rating += review.rating
+    for rating_pair in RATING:
+        if rating_pair[1] == 'Niente...':
+            continue
+
+        if rating_pair[1][:-1] in review_counts.keys():
+            continue
+        else:
+            review_counts[rating_pair[1][:-1]] = 0
+
+    reviews = 0
 
     if 'rating_word' in request.GET:
         if request.GET['rating_word'] != 'All':
@@ -60,26 +69,100 @@ def profile(request):
         reviews = (Review.objects.filter(poster=profile.user)
                    .order_by('-created_on'))
 
-    paginated_reviews_profile = Paginator(reviews, 9)
+    if reviews:
+        paginated_reviews_profile = Paginator(reviews, 9)
 
-    if not request.GET.get("page"):
-        page_number = '1'
+        if not request.GET.get("page"):
+            page_number = '1'
+        else:
+            page_number = request.GET.get("page")
+
+        page_obj_profile = paginated_reviews_profile.get_page(page_number)
     else:
-        page_number = request.GET.get("page")
+        if request.GET.get('rating_word'):
+            messages.info(request, 'You have not left any '
+                          'reviews with this rating.')
 
-    page_obj_profile = paginated_reviews_profile.get_page(page_number)
+        reviews = (Review.objects.filter(poster=profile.user)
+                   .order_by('-created_on'))
 
-    user_messages = (CustomerMessage.objects.filter(customer=request.user)
-                     .order_by('-created_on'))
+        paginated_reviews_profile = Paginator(reviews, 9)
 
-    paginated_messages_profile = Paginator(user_messages, 5)
+        if not request.GET.get("page"):
+            page_number = '1'
+        else:
+            page_number = request.GET.get("page")
 
-    if not request.GET.get("msg_page"):
-        page_number = '1'
+        page_obj_profile = paginated_reviews_profile.get_page(page_number)
+
+    messages_reason_order = (CustomerMessage.objects.filter
+                             (customer=profile.user)
+                             .order_by('reason'))
+
+    user_message_counts = {}
+    user_message_counts['All'] = messages_reason_order.count()
+
+    for message in messages_reason_order:
+        if user_message_counts.get(message.get_reason_display()):
+            user_message_counts[message.get_reason_display()] += 1
+        else:
+            user_message_counts[message.get_reason_display()] = 1
+
+    for reason_pair in REASONS:
+        if reason_pair[1] == 'Choose a reason':
+            continue
+
+        if reason_pair[1] in user_message_counts.keys():
+            continue
+        else:
+            user_message_counts[reason_pair[1]] = 0
+
+    user_messages = 0
+
+    if 'reason_words' in request.GET:
+        if request.GET['reason_words'] != 'All':
+            for message in messages_reason_order:
+                if (request.GET['reason_words'].replace('-', ' ')
+                        == message.get_reason_display()):
+                    user_messages = (CustomerMessage.objects.filter
+                                     (reason=message.reason)
+                                     .order_by('-created_on'))
+                    break
+        else:
+            user_messages = (CustomerMessage.objects.filter
+                             (customer=profile.user)
+                             .order_by('-created_on'))
     else:
-        page_number = request.GET.get("msg_page")
+        user_messages = (CustomerMessage.objects.filter
+                         (customer=profile.user)
+                         .order_by('-created_on'))
 
-    page_obj_messages = paginated_messages_profile.get_page(page_number)
+    if user_messages:
+        paginated_messages_profile = Paginator(user_messages, 5)
+
+        if not request.GET.get("msg_page"):
+            page_number = '1'
+        else:
+            page_number = request.GET.get("msg_page")
+
+        page_obj_messages = paginated_messages_profile.get_page(page_number)
+    else:
+        if request.GET.get('reason_words'):
+            messages.info(request, 'You have not sent any messages '
+                          'of this type.')
+
+        user_messages = (CustomerMessage.objects.filter
+                         (customer=profile.user)
+                         .order_by('-created_on'))
+
+        paginated_messages_profile = Paginator(user_messages, 5)
+
+        if not request.GET.get("msg_page"):
+            page_number = '1'
+        else:
+            page_number = request.GET.get("msg_page")
+
+        page_obj_messages = paginated_messages_profile.get_page(page_number)
 
     orders = profile.orders.all()
 
@@ -90,6 +173,7 @@ def profile(request):
         'reviews': page_obj_profile,
         'review_counts': review_counts,
         'user_messages': page_obj_messages,
+        'user_message_counts': user_message_counts,
         'orders': orders,
         'on_profile_page': True
     }

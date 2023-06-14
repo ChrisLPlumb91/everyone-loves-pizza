@@ -290,7 +290,7 @@
 
                 <!-- Iterating through the menu items and only displaying those items whose category is sides, because this is the sides section. -->
                 {% for side in sides %}   
-                    {% if current_sorting == 'None_None' %}
+                    {% if side.category.name == 'sides' and current_sorting == 'None_None' %}
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 {% if search_term or current_categories or current_sorting != 'None_None' %}mt-4{% endif %}">
                         <div class="card h-100 border-0">
 
@@ -382,7 +382,7 @@
                     </div>
                     {% endif %}
                     {% if forloop.counter|divisibleby:3 and not search_term and not current_categories and current_sorting == 'None_None' %}
-                    <div class="col-12 d-none d-lg-block">
+                    <div class="col-12 d-none d-lg-block d-xl-none">
                         <hr style="color:#f19832;">
                     </div>
                     {% endif %}

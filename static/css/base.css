@@ -225,7 +225,9 @@ i.fa-youtube-square:hover {
     color: #f5f5f5 !important;
 }
 
-.about-section, .summary-section, .featured-section, .menu-manage-container, .account-col, .error-page-col, form.review-form > div.card, div.contact-form-container div.customer-msg-col {
+.about-section, .summary-section, .featured-section, .menu-manage-container, 
+.account-col, .error-page-col, form.review-form > div.card, 
+div.contact-form-container div.customer-msg-col, .user-messages-container {
     background: url('/media/wood-surface.jpg') no-repeat center center fixed;
     background-size: cover; 
 }
@@ -494,6 +496,19 @@ h2.shopping-cart-heading {
 
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+
+.name-ellipsis-alt {
+    display: -webkit-inline-box;
+
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    max-width: 80% !important;
 }
 
 p.js-added-font-size-decrease-alt {
@@ -797,7 +812,7 @@ button.review-submit-btn, button.msg-submit-btn {
     border: none !important;
 }
 
-.review-words {
+.review-words, .reason-words {
     font-size: 1.7rem !important;
     text-decoration: none !important;
 }
@@ -812,61 +827,64 @@ button.review-submit-btn, button.msg-submit-btn {
     -webkit-text-stroke: 3px #E4A11B;
 }
 
-.reviews-container a.all {
+.reviews-container a.all, .user-messages-container a.all {
     color:#f5f5f5 !important;
     text-shadow: 0 2px #000;
 }
 
-.reviews-container a.fantastico {
+.reviews-container a.fantastico, .user-messages-container a.giving-feedback {
     color:#88f0b2 !important;
     text-shadow: 0 2px #14A44D;
 }
 
-div.card.rating-border-5 {
+div.card.rating-border-5, div.card.message-border-1 {
     border: 3px solid #14A44D !important;
 }
 
-div.rating-border-5 > div.card-header, div.rating-border-5 > div.card-footer {
+div.rating-border-5 > div.card-header, div.rating-border-5 > div.card-footer,
+div.message-border-1 > div.card-header, div.message-border-1 > div.card-footer {
     background: #88f0b2 !important;
 }
 
-div.card.rating-border-5 h2 {
+div.card.rating-border-5 h2, div.card.message-border-1 h2 {
     color: #14A44D !important;
     text-shadow: 0 2px #000;
 }
 
-.reviews-container a.eccellente {
+.reviews-container a.eccellente, .user-messages-container a.looking-for-information {
     color: #9af1ea !important;
     text-shadow: 0 2px #54B4D3;
 }
 
-div.card.rating-border-4 {
+div.card.rating-border-4, div.card.message-border-2 {
     border: 3px solid #54B4D3 !important;
 }
 
-div.rating-border-4 > div.card-header, div.rating-border-4 > div.card-footer {
+div.rating-border-4 > div.card-header, div.rating-border-4 > div.card-footer,
+div.message-border-2 > div.card-header, div.message-border-2 > div.card-footer {
     background: #9af1ea !important;
 }
 
-div.card.rating-border-4 h2 {
+div.card.rating-border-4 h2, div.card.message-border-2 h2 {
     color: #54B4D3 !important;
     text-shadow: 0 2px #000;
 }
 
-.reviews-container a.bene {
+.reviews-container a.bene, .user-messages-container a.other {
     color: #c5dbf0 !important;
     text-shadow: 0 2px #3B71CA;
 }
 
-div.card.rating-border-3 {
+div.card.rating-border-3, div.card.message-border-4 {
     border: 3px solid #3B71CA !important;
 }
 
-div.rating-border-3 > div.card-header, div.rating-border-3 > div.card-footer {
+div.rating-border-3 > div.card-header, div.rating-border-3 > div.card-footer,
+div.message-border-4 > div.card-header, div.message-border-4 > div.card-footer {
     background: #c5dbf0 !important;
 }
 
-div.card.rating-border-3 h2 {
+div.card.rating-border-3 h2, div.card.message-border-4 h2 {
     color: #3B71CA !important;
     text-shadow: 0 2px #000;
 }
@@ -889,20 +907,21 @@ div.card.rating-border-2 h2 {
     text-shadow: 0 2px #000;
 }
 
-.reviews-container a.disgustoso {
+.reviews-container a.disgustoso, .user-messages-container a.making-a-complaint {
     color: #fdb2cb !important;
     text-shadow: 0 2px #DC4C64;
 }
 
-div.card.rating-border-1 {
+div.card.rating-border-1, div.card.message-border-3 {
     border: 3px solid #DC4C64 !important;
 }
 
-div.rating-border-1 > div.card-header, div.rating-border-1 > div.card-footer {
+div.rating-border-1 > div.card-header, div.rating-border-1 > div.card-footer,
+div.message-border-3 > div.card-header, div.message-border-3 > div.card-footer {
     background: #fdb2cb !important;
 }
 
-div.card.rating-border-1 h2 {
+div.card.rating-border-1 h2, div.card.message-border-3 h2 {
     color: #DC4C64 !important;
     text-shadow: 0 2px #000;
 }

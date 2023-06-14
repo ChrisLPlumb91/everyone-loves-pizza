@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 
 REASONS = (('', 'Choose a reason'), (1, 'Giving feedback'),
-           (2, 'Making a complaint'), (3, 'Looking for information'),
+           (2, 'Looking for information'), (3, 'Making a complaint'),
            (4, 'Other'),)
 
 
