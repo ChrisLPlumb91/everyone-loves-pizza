@@ -202,8 +202,9 @@
                         <h2 class="my-0 reason-word" data-number="{{ user_message.reason }}">{{ user_message.get_reason_display }}</h2>
                     </div>
                     <div class="card-body px-4">
-                        <p class="name-ellipsis-alt my-0">{{ user_message.user_msg }}</p>
-                        <a href="" class="text-end inline-block">(go to message page) <i class="fa-solid fa-arrow-right"></i></a>
+                        <p class="name-ellipsis-alt my-0 message-preview">{{ user_message.user_msg }}</p>
+                        <p class="collapse" id="collapse-message-{{ user_message.id }}">{{ user_message.user_msg }}</p>
+                        <a class="text-end inline-block message-expand-link" data-bs-toggle="collapse" href="#collapse-message-{{ user_message.id }}" role="button" aria-expanded="false" aria-controls="collapse-message-{{ user_message.id }}">Full message &raquo;</a>
                     </div>
                     <div class="card-footer text-end">{{ user_message.created_on }}</div>
                 </div>
@@ -294,29 +295,99 @@
         })
     </script>
 
-<script type="text/javascript">
-    var reviews = $('.review-card');
+    <script type="text/javascript">
+        var reviews = $('.review-card');
 
-    for (i = 0; i < reviews.length; i++) {
-        var starRating = $(reviews[i]).find('h2').data('stars');
-        var stars = $(reviews[i]).find('i');
+        for (i = 0; i < reviews.length; i++) {
+            var starRating = $(reviews[i]).find('h2').data('stars');
+            var stars = $(reviews[i]).find('i');
 
-        for (n = 0; n < starRating; n++) {
-            $(stars[n]).removeClass('default-star-colour');
-            $(stars[n]).addClass('lit-star-colour');
+            for (n = 0; n < starRating; n++) {
+                $(stars[n]).removeClass('default-star-colour');
+                $(stars[n]).addClass('lit-star-colour');
 
-            $(reviews[i]).addClass(`rating-border-${starRating}`);
+                $(reviews[i]).addClass(`rating-border-${starRating}`);
+            }
         }
-    }
 
-    var userMessages = $('.user-message-card');
+        var userMessages = $('.user-message-card');
 
-    for (j = 0; j < userMessages.length; j++) {
-        var reasonNumber = $(userMessages[j]).find('h2').data('number');
+        for (j = 0; j < userMessages.length; j++) {
+            var reasonNumber = $(userMessages[j]).find('h2').data('number');
 
-        for (o = 0; o < starRating; o++) {
-            $(userMessages[j]).addClass(`message-border-${reasonNumber}`);
+            for (o = 0; o < starRating; o++) {
+                $(userMessages[j]).addClass(`message-border-${reasonNumber}`);
+            }
         }
-    }
-</script>
+    </script>
+
+    <script>
+        var msgExpandLinks = $('.message-expand-link');
+
+        for (a = 0; a < msgExpandLinks.length; a++) {
+            var msgExpandLink = $(msgExpandLinks[a]);
+            var msgPreview = $(msgExpandLinks[a]).prev().prev();
+            var cardBody = $(msgPreview).parent();
+            
+            $(msgExpandLink).click(generateHandler(msgPreview, msgExpandLink));
+
+            var msgWidth = msgPreview.innerWidth();
+
+            var cardBodyWidth = cardBody.innerWidth();
+
+            var eightyPercent = (cardBodyWidth - 48) * .80;
+
+            if (Math.round(msgWidth) < Math.round(eightyPercent)) {
+                msgExpandLink.addClass('d-none');
+            }
+        }
+
+        function generateHandler(msgPreview, msgExpandLink) {
+            return function(event) {
+                togglePreview(msgPreview, msgExpandLink);
+            };
+        }
+
+        function togglePreview(msgPreview, msgExpandLink) {
+            if (msgPreview.hasClass('name-ellipsis-alt')) {
+                console.log('has name-ellipsis-alt. Removing.')
+                msgPreview.removeClass('name-ellipsis-alt');
+                msgPreview.addClass('d-none')
+            } else {
+                console.log('does not have name-ellipsis-alt. Adding.')
+                msgPreview.removeClass('d-none');
+                msgPreview.addClass('name-ellipsis-alt');
+            }
+
+            if (msgPreview.is(':hidden')) {
+                console.log('hidden. Text changed to Collapse.');
+                msgExpandLink.text('« Collapse');    
+            } else {
+                console.log('not hidden. Text changed to Full message');
+                msgExpandLink.text('Full message »');
+            }
+        }
+
+        $(window).resize(function() {
+            var msgExpandLinks = $('.message-expand-link');
+
+            for (a = 0; a < msgExpandLinks.length; a++) {
+                var msgExpandLink = $(msgExpandLinks[a]);
+                var msgPreview = $(msgExpandLinks[a]).prev().prev();
+                var cardBody = $(msgPreview).parent();
+
+                var msgWidth = msgPreview.innerWidth();
+
+                var cardBodyWidth = cardBody.innerWidth();
+
+                var eightyPercent = (cardBodyWidth - 48) * .80;
+
+                if (Math.round(msgWidth) < Math.round(eightyPercent)) {
+                    msgExpandLink.addClass('d-none');
+                } else {
+                    msgExpandLink.removeClass('d-none');
+                }
+            }    
+        })
+    </script>
 {% endblock %}
