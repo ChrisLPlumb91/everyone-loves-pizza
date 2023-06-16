@@ -7,6 +7,7 @@ from django.core.paginator import Paginator
 
 from .models import MenuItem, Category, Review, RATING
 from .forms import MenuItemForm, ReviewForm
+from profiles.models import UserProfile
 
 
 def menu(request):
@@ -169,6 +170,31 @@ def menu_item_detail(request, menu_item_id):
         }
 
         return render(request, 'menu/menu_item_detail.html', context)
+
+
+@login_required
+def favourite_item(request, menu_item_id):
+    user_profile = get_object_or_404(UserProfile, user=request.user)
+    current_favourite = user_profile.favourite_menu_item
+    menu_item = get_object_or_404(MenuItem, pk=menu_item_id)
+
+    if user_profile.favourite_menu_item == menu_item:
+        user_profile.favourite_menu_item = None
+        user_profile.save()
+        messages.info(request, f'You un-favourited the {menu_item.name}.')
+    else:
+        if not current_favourite:
+            user_profile.favourite_menu_item = menu_item
+            user_profile.save()
+            messages.success(request, f'You favourited the {menu_item.name}!')
+        else:
+            user_profile.favourite_menu_item = menu_item
+            user_profile.save()
+            messages.success(request, f'You favourited the {menu_item.name},' +
+                             f'which has un-favourited ' +
+                             f'the {current_favourite}')
+
+    return redirect(reverse('menu_item_detail', args=[menu_item_id]))
 
 
 @login_required

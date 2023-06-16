@@ -381,6 +381,33 @@ h2.main-menu-heading {
     background-size: cover;    
 }
 
+.favourite-btn-container, .favourite-btn-container-alt {
+    width: 200px !important;
+    height: 200px !important;
+    transform: rotate(45deg);
+    top: -45px !important;
+    right: -100px !important;
+}
+
+.favourite-btn-container {
+    background: #f19832;
+    border: 8px solid #cc0000;
+}
+
+.favourite-btn-container-alt {
+    background: gold;
+    border: 8px solid #E4A11B;
+}
+
+.favourite-btn-container > a {
+    right: 111px;
+    top: 120px;
+}
+
+.favourite-star {
+    font-size: 3rem !important;
+}
+
 .ingredients {
     line-height: 25px !important;
 }
@@ -550,12 +577,21 @@ td {
     border-bottom: 2px solid #915c1f !important;
 }
 
-.cart-image-container {
+.cart-image-container, .favourite-image-container {
     height: 220px !important;
     width: 220px !important;
+   
+    border-radius: 50% !important;
+}
+
+.cart-image-container {
     background: #cc0000;
     border: 5px solid #f19832;
-    border-radius: 50% !important;
+}
+
+.favourite-image-container {
+    background: #fbff21;
+    border: 5px solid gold;
 }
 
 .cart-image-container-small {
@@ -567,12 +603,27 @@ td {
     z-index: 1 !important;
 }
 
-.cart-image {
+.cart-image, .fave-image {
     height: 200px !important;
     width: 200px !important;
-    border: 10px solid #38761d;
     border-radius: 50% !important;
     z-index: 1;
+}
+
+.cart-image {
+    border: 10px solid #38761d;
+}
+
+.fave-image {
+    border: 10px solid #E4A11B;
+}
+
+.fave-text {
+    color: gold;
+    background: #E4A11B;
+    box-shadow: 0 10px gold inset, 0 -10px gold inset;
+    line-height: 50px;
+    text-shadow: 0 2px rgb(139, 119, 2);
 }
 
 .cart-image-small {
@@ -822,9 +873,26 @@ button.review-submit-btn, button.msg-submit-btn {
     -webkit-text-stroke: 3px #929292 !important;
 }   
 
+.default-fave-star-colour {
+    color:#38761d !important;
+    -webkit-text-stroke: 5px #cc0000 !important;
+}
+
 .lit-star-colour {
     color: #fbff21 !important;
     -webkit-text-stroke: 3px #E4A11B;
+}
+
+.lit-fave-star-colour {
+    color: #fbff21 !important;
+    -webkit-text-stroke: 5px #E4A11B;
+}
+
+.lit-fave-star-colour-profile {
+    font-size: 2rem !important;
+    color: #fbff21 !important;
+    -webkit-text-stroke: 5px gold;
+    text-shadow: 0 5px #8b7702;
 }
 
 .reviews-container a.all, .user-messages-container a.all {
@@ -1914,14 +1982,18 @@ form.review-form div.card-footer {
 }
 
 @media screen and (max-width: 804px) {
-    .manage-page-headings > div.col-6 {
+    .manage-page-headings > div.col-6, .profile-page-headings > div.col-6 {
         width: 100% !important;
+    }
+
+    .my-profile-heading-container {
+        margin-top: 1rem !important;
     }
 
     div.col-6 > h2.text-end {
         text-align: center !important;
         margin-top: 0 !important;
-        box-shadow: 0 0 #DC4C64 inset, 0 -10px #DC4C64 inset !important;
+        box-shadow: 0 0 #cc0000 inset, 0 -10px #cc0000 inset !important;
         padding: 0 1rem !important;
     }
 
@@ -1930,6 +2002,20 @@ form.review-form div.card-footer {
         box-shadow: 0 10px #DC4C64 inset, 0 0px #DC4C64 inset !important;
         padding: 0 1rem !important;
         text-align: center !important;
+    }
+
+    div.col-6 > h2.add-item-text, div.col-6 > h2.edit-item-text {
+        box-shadow: 0 0 #DC4C64 inset, 0 -10px #DC4C64 inset !important;
+    }
+
+    .profile-page-headings h2 {
+        margin: 0 0 !important;
+        text-align: center !important;
+        padding: 0 !important;
+    }
+
+    .my-profile-text {
+        box-shadow: 0 10px #cc0000 inset, 0 0 #cc0000 inset !important;
     }
 }
 
@@ -2064,6 +2150,41 @@ form.review-form div.card-footer {
         width: 83.33333333% !important;
         margin-left: 8.33333333% !important;
     }
+
+    .user-messages-container > h2 {
+        text-align: center !important;
+        padding-left: 0 !important;
+    }
+
+    .reason-words {
+        font-size: 1.4rem !important;
+        line-height: 20px !important;
+    }
+
+    h2.reason-word {
+        font-size: 2rem !important;
+        text-align: center !important;
+    }
+
+    .message-expand-link {
+        display: block !important;
+    }
+
+    .message-preview, p.collapse {
+        font-size: 1.3rem !important;
+        line-height: 20px !important;
+    }
+
+    .fave-text {
+        font-size: 2rem !important;
+        line-height: 37px !important;
+    }
+
+    .lit-fave-star-colour-profile {
+        font-size: 1.5rem !important;
+        -webkit-text-stroke: 3px gold;
+        text-shadow: 0 3px #8b7702;
+    }
 }
 
 @media screen and (max-width: 650px) {
@@ -2089,6 +2210,10 @@ form.review-form div.card-footer {
     div.header-container {
         margin-bottom: 1rem !important;
         margin-top: 1rem !important;
+    }
+
+    div.header-container-profile {
+        margin-bottom: 0 !important;
     }
 
     div.contact-header-container {
@@ -2233,6 +2358,28 @@ form.review-form div.card-footer {
     h2.reviews-heading {
         padding-left: 0 !important;
         text-align: center !important;
+    }
+
+    .user-messages-container > h2 {
+        text-align: center !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        font-size: 2.2rem !important;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .fave-text {
+        font-size: 1.5rem !important;
+        line-height: 27px !important;
+        padding-top: 0.7rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+    
+    .lit-fave-star-colour-profile {
+        font-size: 1.3rem !important;
+        -webkit-text-stroke: 3px gold;
+        text-shadow: 0 3px #8b7702;
     }
 }
 
@@ -2413,6 +2560,12 @@ form.review-form div.card-footer {
     }
 }
 
+@media screen and (max-width: 456px) {
+    .user-messages-container > h2 {
+        line-height: 35px !important;
+    }
+}
+
 @media screen and (max-width: 449px) {
     .search-results-with-link {
         line-height: 35px !important;
@@ -2455,6 +2608,10 @@ form.review-form div.card-footer {
     .product-details-container > p.ingredients {
         padding: 0 1rem !important;
     }
+
+    .user-message-card > .card-footer {
+        font-size: 1.1rem !important;
+    }
 }
 
 @media screen and (max-width: 424px) {
@@ -2468,6 +2625,10 @@ form.review-form div.card-footer {
 
     h2.shopping-cart-heading {
         margin-top: 2rem !important;
+    }
+
+    div.header-container-profile {
+        margin-top: 2.5rem !important;
     }
 }
 
@@ -2624,6 +2785,11 @@ form.review-form div.card-footer {
     .product-details-container > .jumbotron-heading {
         line-height: 40px !important;
     }
+
+    div.profile-page-headings h2.text-end {
+        font-size: 1.8rem !important;
+        line-height: 30px !important;
+    }
 }
 
 @media screen and (max-width: 368px) {
@@ -2777,6 +2943,14 @@ form.review-form div.card-footer {
     h2.contact-us-heading {
         margin-top: 2.75rem !important;
     }
+
+    div.header-container-profile {
+        margin-top: 7rem !important;
+    }
+
+    div.manage-page-headings {
+        margin-top: 6rem !important;
+    }
 }
 
 @media screen and (max-width: 320px) {
@@ -2820,7 +2994,7 @@ form.review-form div.card-footer {
         margin-bottom: 3rem !important;
     }
 
-    section.first-section, h2.order-details-heading, div.manage-page-headings, h2.shopping-cart-heading, h2.checkout-heading, h2.thank-you-heading {
+    section.first-section, h2.order-details-heading, h2.shopping-cart-heading, h2.checkout-heading, h2.thank-you-heading {
         margin-top: 6rem !important;
     }
 }
@@ -2836,6 +3010,11 @@ form.review-form div.card-footer {
 
     section.review-form-section h2 {
         width: 70% !important;
+    }
+
+    .review-words {
+        font-size: 1.4rem !important;
+        line-height: 20px !important;
     }
 }
 
@@ -2866,6 +3045,11 @@ form.review-form div.card-footer {
     strong.final-charge {
         font-size: 1.5rem !important;
     }
+
+    p.profile-info-heading {
+        padding: 0 1rem !important;
+    }
+    
 }
 
 @media screen and (max-width: 290px) {
@@ -2876,5 +3060,15 @@ form.review-form div.card-footer {
 
     .featured-order-button {
         float: none !important;
+    }
+}
+
+@media screen and (max-width: 285px) {
+    h2.reason-word {
+        font-size: 1.8rem !important;
+    }
+
+    .update-info-btn {
+        font-size: 1.5rem !important;
     }
 }

@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block page_header %}
-    <div class="container header-container my-sm-3 my-5">
+    <div class="container header-container header-container-profile mt-sm-3 mb-0 my-lg-4 mb-0 mt-3">
         <div class="row">
             <div class="col"></div>
         </div>
@@ -16,15 +16,50 @@
 {% endblock %}
 
 {% block content %}
-
-    <hr class="top-hr-profile">
     <div class="row g-0 profile-page-headings">
-        <div class="col-6"><h2 class="logo-font mt-4 mb-4 jumbotron-heading ps-4 my-profile-text">My Profile</h2></div>
+        <div class="col-6 my-profile-heading-container"><h2 class="logo-font mt-4 mb-4 jumbotron-heading ps-4 my-profile-text">My Profile</h2></div>
         <div class="col-6"><h2 class="logo-font mt-4 mb-4 jumbotron-heading text-end pe-4 logged-in-as-text">Logged in as <span class="{% if request.user.is_superuser %}text-info superuser-username-text{% else %}user-username-text{% endif %}">{{ request.user.username }}</span></h2></div>  
     </div>
     <hr>
 
     <div class="container">
+
+        {% if request.user.user_profile.favourite_menu_item %}
+        <div class="row mb-5">
+
+            <div class="col-12 d-flex justify-content-center">
+                <div class="favourite-image-container d-flex align-items-center">
+                    {% if request.user.user_profile.favourite_menu_item.image %}
+                    <img class="img-fluid fave-image ms-1" src="{{ request.user.user_profile.favourite_menu_item.full_image.url }}" alt="{{ request.user.user_profile.favourite_menu_item.name }}">   
+                    {% else %}
+                    <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ request.user.user_profile.favourite_menu_item.name }}">
+                    {% endif %}
+                </div>
+                <div class="position-absolute colour-band"></div>
+            </div>
+
+            <div class="col-12">
+                <h2 class="fave-text pt-2 px-3 text-center">Your current favourite is the 
+                    <br>
+                    <i class="fas fa-star lit-fave-star-colour-profile"></i>
+                    {{ request.user.user_profile.favourite_menu_item }}
+                    <i class="fas fa-star lit-fave-star-colour-profile"></i>
+                </h2>
+            </div>
+
+            <div class="d-none d-flex justify-content-center">
+                <div class="favourite-image-container d-flex align-items-center">
+                    {% if request.user.user_profile.favourite_menu_item.image %}
+                    <img class="img-fluid fave-image ms-1" src="{{ request.user.user_profile.favourite_menu_item.full_image.url }}" alt="{{ request.user.user_profile.favourite_menu_item.name }}">   
+                    {% else %}
+                    <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ request.user.user_profile.favourite_menu_item.name }}">
+                    {% endif %}
+                </div>
+                <div class="position-absolute colour-band"></div>
+            </div>
+        </div>
+        {% endif %}
+
         <div class="row mb-5 profile-row-one">
 
             <div class="col-6 delivery-info-col">
@@ -124,10 +159,10 @@
                 </li>
                 <li class="page-item mx-1">
                     <a href="?page={{ reviews.previous_page_number }}" class="page-link btn functioning-btn d-sm-block d-none"
-                        aria-label="Go to the previous page of bulletins.">&laquo; PREV
+                        aria-label="Go to the previous page of reviews.">&laquo; PREV
                     </a>
                     <a href="?page={{ reviews.previous_page_number }}" class="page-link btn functioning-btn d-sm-none d-block"
-                        aria-label="Go to the previous page of bulletins.">&laquo;
+                        aria-label="Go to the previous page of reviews.">&laquo;
                     </a>
                 </li>
                 {% else %}
@@ -136,10 +171,10 @@
                     <span href="?page=1" class="page-link btn non-functioning-btn d-sm-none d-block">&laquo;&laquo;</span>
                 </li>
                 <li class="page-item mx-1">
-                    <span class="page-link btn non-functioning-btn d-sm-block d-none" aria-label="Go to the previous page of bulletins.">
+                    <span class="page-link btn non-functioning-btn d-sm-block d-none" aria-label="Go to the previous page of reviews.">
                         &laquo; PREV
                     </span>
-                    <span class="page-link btn non-functioning-btn d-sm-none d-block" aria-label="Go to the previous page of bulletins.">
+                    <span class="page-link btn non-functioning-btn d-sm-none d-block" aria-label="Go to the previous page of reviews.">
                         &laquo;
                     </span>
                 </li>
@@ -148,11 +183,11 @@
                 {% if reviews.has_next %}
                 <li class="page-item mx-1">
                     <a href="?page={{ reviews.next_page_number }}" class="page-link btn functioning-btn d-sm-block d-none"
-                        aria-label="Go to the next page of bulletins.">
+                        aria-label="Go to the next page of reviews.">
                         NEXT &raquo;
                     </a>
                     <a href="?page={{ reviews.next_page_number }}" class="page-link btn functioning-btn d-sm-none d-block"
-                        aria-label="Go to the next page of bulletins.">
+                        aria-label="Go to the next page of reviews.">
                         &raquo;
                     </a>
                 </li>
@@ -222,10 +257,10 @@
                 </li>
                 <li class="page-item mx-1">
                     <a href="?msg_page={{ user_messages.previous_page_number }}" class="page-link btn functioning-btn d-sm-block d-none"
-                        aria-label="Go to the previous page of bulletins.">&laquo; PREV
+                        aria-label="Go to the previous page of messages.">&laquo; PREV
                     </a>
                     <a href="?msg_page={{ user_messages.previous_page_number }}" class="page-link btn functioning-btn d-sm-none d-block"
-                        aria-label="Go to the previous page of bulletins.">&laquo;
+                        aria-label="Go to the previous page of messages.">&laquo;
                     </a>
                 </li>
                 {% else %}
@@ -234,10 +269,10 @@
                     <span href="?msg_page=1" class="page-link btn non-functioning-btn d-sm-none d-block">&laquo;&laquo;</span>
                 </li>
                 <li class="page-item mx-1">
-                    <span class="page-link btn non-functioning-btn d-sm-block d-none" aria-label="Go to the previous page of bulletins.">
+                    <span class="page-link btn non-functioning-btn d-sm-block d-none" aria-label="Go to the previous page of messages.">
                         &laquo; PREV
                     </span>
-                    <span class="page-link btn non-functioning-btn d-sm-none d-block" aria-label="Go to the previous page of bulletins.">
+                    <span class="page-link btn non-functioning-btn d-sm-none d-block" aria-label="Go to the previous page of messages.">
                         &laquo;
                     </span>
                 </li>
@@ -246,11 +281,11 @@
                 {% if user_messages.has_next %}
                 <li class="page-item mx-1">
                     <a href="?msg_page={{ user_messages.next_page_number }}" class="page-link btn functioning-btn d-sm-block d-none"
-                        aria-label="Go to the next page of bulletins.">
+                        aria-label="Go to the next page of messages.">
                         NEXT &raquo;
                     </a>
                     <a href="?msg_page={{ user_messages.next_page_number }}" class="page-link btn functioning-btn d-sm-none d-block"
-                        aria-label="Go to the next page of bulletins.">
+                        aria-label="Go to the next page of messages.">
                         &raquo;
                     </a>
                 </li>
@@ -350,20 +385,16 @@
 
         function togglePreview(msgPreview, msgExpandLink) {
             if (msgPreview.hasClass('name-ellipsis-alt')) {
-                console.log('has name-ellipsis-alt. Removing.')
                 msgPreview.removeClass('name-ellipsis-alt');
                 msgPreview.addClass('d-none')
             } else {
-                console.log('does not have name-ellipsis-alt. Adding.')
                 msgPreview.removeClass('d-none');
                 msgPreview.addClass('name-ellipsis-alt');
             }
 
             if (msgPreview.is(':hidden')) {
-                console.log('hidden. Text changed to Collapse.');
                 msgExpandLink.text('« Collapse');    
             } else {
-                console.log('not hidden. Text changed to Full message');
                 msgExpandLink.text('Full message »');
             }
         }

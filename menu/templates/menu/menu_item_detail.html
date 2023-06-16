@@ -41,10 +41,24 @@
             {% endif %}
 
             <div class="col-6 g-0 {% if menu_item.category.name == 'sides' %} sides-details-col {% else %}pizza-details-col{% endif %}">
-                <div class="product-details-container mb-5 mt-5 bg-white me-5 {% if menu_item.category.name == 'sides'%}product-details-container-sides{% endif %}">
-                    <p class="ps-3 mb-0 jumbotron-heading">{{ menu_item.name }}</p>
+                
+                <div class="product-details-container b-5 position-relative z-1 overflow-hidden mt-5 bg-white me-5 {% if menu_item.category.name == 'sides'%}product-details-container-sides{% endif %}">
+                    <div class="position-absolute z-2 favourite-btn-container {% if request.user.user_profile.favourite_menu_item == menu_item %} favourite-btn-container-alt {% endif %}">
+                        {% if request.user.user_profile.favourite_menu_item != menu_item %}
+                        <a href="{% url 'favourite_item' menu_item.id %}" class="position-absolute">
+                            <i class="fas fa-star default-fave-star-colour z-2 position-absolute favourite-star" id="favourite-star"></i>
+                        </a>
+                        {% else %}
+                        <a href="{% url 'favourite_item' menu_item.id %}" class="position-absolute">
+                            <i class="fas fa-star lit-fave-star-colour z-2 position-absolute favourite-star" id="favourite-star"></i>
+                        </a>
+                        {% endif %}
+                        {{ request.user.favourite_menu_item }}
+                    </div>
 
-                    <p class="mt-3 ps-3 mb-0 ingredients">{{ menu_item.ingredients }}</p>
+                    <p class="ps-3 mb-0 jumbotron-heading position-relative z-3">{{ menu_item.name }}</p>
+
+                    <p class="mt-3 ps-3 mb-0 ingredients w-75">{{ menu_item.ingredients }}</p>
 
                     <p class="mb-2 ps-3 text-left font-weight-bold price">€{{ menu_item.price }}</p>
 
@@ -355,6 +369,30 @@
             $(ratingOptions[x]).text(`${ratingText} (${x} stars)`);
         }
     }
+</script>
+
+<script>
+    const STAR_HOVER_ANIMATION = { duration: 50, fill: 'forwards', direction: 'normal', };
+    const STAR_HOVER_ANIMATION_REVERSE = { duration: 50, fill: 'forwards', direction: 'reverse', };
+    
+    const STAR_HOVER_ANIMATION_KEYFRAMES = [
+        {
+            transform: 'rotate(0deg)',
+        },
+        {
+            transform: 'rotate(-45deg)',
+        },
+    ]
+
+    var favouriteStar = document.getElementById('favourite-star');
+
+    favouriteStar.addEventListener('mouseover', function() {
+        this.animate(STAR_HOVER_ANIMATION_KEYFRAMES, STAR_HOVER_ANIMATION);
+    })
+
+    favouriteStar.addEventListener('mouseout', function() {
+        this.animate(STAR_HOVER_ANIMATION_KEYFRAMES, STAR_HOVER_ANIMATION_REVERSE);
+    })
 </script>
 
 {% endblock %}
