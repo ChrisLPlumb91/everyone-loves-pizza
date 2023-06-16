@@ -694,7 +694,7 @@ h2.checkout-heading {
     margin-top: 3rem !important;
 }
 
-.checkout-headings {
+.checkout-headings, .no-reviews-text {
     font-size: 2rem !important;
     color: #f5f5f5;
     text-shadow: 0 2px #000000;
@@ -1375,6 +1375,22 @@ form.review-form div.card-footer {
     border-radius: 0;
 }
 
+h2.current-fave-lead {
+    font-size: 2rem !important;
+}
+
+i.small-star {
+    font-size: 1rem !important;
+}
+
+i.medium-star {
+    font-size: 2rem !important;
+}
+
+i.big-star {
+    font-size: 3rem !important;
+}
+
 @media screen and (max-width: 1520px) {
     .row.superuser-zone {
         overflow: hidden !important;
@@ -1525,6 +1541,10 @@ form.review-form div.card-footer {
     section.review-form-section div.col-4 {
         width: 50% !important;
         margin-left: 25% !important;
+    }
+
+    div.description-container {
+        margin-top: 2rem !important;
     }
 }
 
@@ -1875,6 +1895,16 @@ form.review-form div.card-footer {
         padding-left: 0 !important;
     }
 
+    .product-details-container > p.ingredients {
+        width: 60% !important;
+        margin-right: auto!important;
+        margin-left: auto!important;
+    }
+
+    .favourite-btn-container, .favourite-btn-container-alt {
+        top: -50px !important;
+    }
+
     .product-details-container .form-row {
         text-align: center !important;
     } 
@@ -1978,6 +2008,11 @@ form.review-form div.card-footer {
     section.review-form-section div.col-4 {
         width: 66.66666667% !important;
         margin-left: 16.66666667% !important;
+    }
+
+    .default-fave-star-colour, .lit-fave-star-colour {
+        top: 0 !important;
+        right: -49px !important;
     }
 }
 
@@ -2175,15 +2210,8 @@ form.review-form div.card-footer {
         line-height: 20px !important;
     }
 
-    .fave-text {
-        font-size: 2rem !important;
-        line-height: 37px !important;
-    }
-
-    .lit-fave-star-colour-profile {
-        font-size: 1.5rem !important;
-        -webkit-text-stroke: 3px gold;
-        text-shadow: 0 3px #8b7702;
+    .product-details-container > p.ingredients {
+        width: 50% !important;
     }
 }
 
@@ -2366,20 +2394,23 @@ form.review-form div.card-footer {
         padding-right: 1rem !important;
         font-size: 2.2rem !important;
     }
-}
 
-@media screen and (max-width: 540px) {
-    .fave-text {
-        font-size: 1.5rem !important;
-        line-height: 27px !important;
-        padding-top: 0.7rem !important;
-        padding-bottom: 0.5rem !important;
+    .favourite-btn-container, .favourite-btn-container-alt {
+        top: -80px !important;
+        right: -120px !important;
+    } 
+
+    .lit-fave-star-colour {
+        font-size: 2rem !important;
+        -webkit-text-stroke: 4px #E4A11B;
+        top: 20px !important;
+        right: -45px !important;
     }
-    
-    .lit-fave-star-colour-profile {
-        font-size: 1.3rem !important;
-        -webkit-text-stroke: 3px gold;
-        text-shadow: 0 3px #8b7702;
+
+    .default-fave-star-colour {
+        font-size: 2rem !important;
+        top: 20px !important;
+        right: -45px !important;
     }
 }
 
@@ -2524,6 +2555,14 @@ form.review-form div.card-footer {
     div.summary-section {
         padding-bottom: 2.3rem !important;
     }
+
+    i.small-star {
+        display: none !important;
+    }
+
+    div.description-container {
+        margin-top: 0 !important;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -2543,6 +2582,10 @@ form.review-form div.card-footer {
 @media screen and (max-width: 465px) {
     a.page-link, span.page-link {
         font-size: 1rem !important;
+    }
+
+    i.medium-star {
+        display: none !important;
     }
 }
 
@@ -2573,6 +2616,14 @@ form.review-form div.card-footer {
 
     .message-container-mobile {
         width: 300px !important;
+    }
+
+    i.big-star, div.star-col {
+        display: none !important;
+    }
+
+    div.current-fave-lead-col {
+        width: 100% !important;
     }
 }
 
@@ -2789,6 +2840,10 @@ form.review-form div.card-footer {
     div.profile-page-headings h2.text-end {
         font-size: 1.8rem !important;
         line-height: 30px !important;
+    }
+
+    .favourite-btn-container, .favourite-btn-container-alt {
+        top: -90px !important;
     }
 }
 

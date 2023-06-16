@@ -24,39 +24,40 @@
 
     <div class="container">
 
-        {% if request.user.user_profile.favourite_menu_item %}
+        {% if request.user.userprofile.favourite_menu_item %}
         <div class="row mb-5">
 
+            
             <div class="col-12 d-flex justify-content-center">
                 <div class="favourite-image-container d-flex align-items-center">
-                    {% if request.user.user_profile.favourite_menu_item.image %}
-                    <img class="img-fluid fave-image ms-1" src="{{ request.user.user_profile.favourite_menu_item.full_image.url }}" alt="{{ request.user.user_profile.favourite_menu_item.name }}">   
+                    {% if request.user.userprofile.favourite_menu_item.image %}
+                    <a href="{% url 'menu_item_detail' request.user.userprofile.favourite_menu_item.id %}"><img class="img-fluid fave-image ms-1" src="{{ request.user.userprofile.favourite_menu_item.full_image.url }}" alt="{{ request.user.userprofile.favourite_menu_item.name }}"></a>   
                     {% else %}
-                    <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ request.user.user_profile.favourite_menu_item.name }}">
+                    <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ request.user.userprofile.favourite_menu_item.name }}">
                     {% endif %}
                 </div>
-                <div class="position-absolute colour-band"></div>
             </div>
+           
 
             <div class="col-12">
-                <h2 class="fave-text pt-2 px-3 text-center">Your current favourite is the 
-                    <br>
-                    <i class="fas fa-star lit-fave-star-colour-profile"></i>
-                    {{ request.user.user_profile.favourite_menu_item }}
-                    <i class="fas fa-star lit-fave-star-colour-profile"></i>
-                </h2>
+                <div class="row fave-text px-3">
+                    <div class="col-3 text-center d-flex justify-content-center stars-col">
+                        <i class="fas fa-star lit-fave-star-colour-profile px-1 pt-4 small-star"></i>
+                        <i class="fas fa-star lit-fave-star-colour-profile px-1 pt-4 medium-star"></i>
+                        <i class="fas fa-star lit-fave-star-colour-profile px-1 pt-4 big-star"></i>
+                    </div>
+                    <div class="col-6 current-fave-lead-col">
+                        <h2 class="pt-3 px-3 text-center current-fave-lead">Current favourite:</h2>
+                    </div>
+                    <div class="col-3 text-center d-flex justify-content-center stars-col">
+                        <i class="fas fa-star lit-fave-star-colour-profile px-1 pt-4 big-star"></i>
+                        <i class="fas fa-star lit-fave-star-colour-profile px-1 pt-4 medium-star"></i>
+                        <i class="fas fa-star lit-fave-star-colour-profile px-1 pt-4 small-star"></i>
+                    </div>
+                    <div class="col-12"><h2 class="text-center current-fave-item">{{ request.user.userprofile.favourite_menu_item }}</h2></div>
+                </div>
             </div>
 
-            <div class="d-none d-flex justify-content-center">
-                <div class="favourite-image-container d-flex align-items-center">
-                    {% if request.user.user_profile.favourite_menu_item.image %}
-                    <img class="img-fluid fave-image ms-1" src="{{ request.user.user_profile.favourite_menu_item.full_image.url }}" alt="{{ request.user.user_profile.favourite_menu_item.name }}">   
-                    {% else %}
-                    <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ request.user.user_profile.favourite_menu_item.name }}">
-                    {% endif %}
-                </div>
-                <div class="position-absolute colour-band"></div>
-            </div>
         </div>
         {% endif %}
 

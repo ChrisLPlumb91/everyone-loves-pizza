@@ -43,8 +43,8 @@
             <div class="col-6 g-0 {% if menu_item.category.name == 'sides' %} sides-details-col {% else %}pizza-details-col{% endif %}">
                 
                 <div class="product-details-container b-5 position-relative z-1 overflow-hidden mt-5 bg-white me-5 {% if menu_item.category.name == 'sides'%}product-details-container-sides{% endif %}">
-                    <div class="position-absolute z-2 favourite-btn-container {% if request.user.user_profile.favourite_menu_item == menu_item %} favourite-btn-container-alt {% endif %}">
-                        {% if request.user.user_profile.favourite_menu_item != menu_item %}
+                    <div class="position-absolute z-2 favourite-btn-container {% if request.user.userprofile.favourite_menu_item == menu_item %} favourite-btn-container-alt {% endif %}">
+                        {% if request.user.userprofile.favourite_menu_item != menu_item %}
                         <a href="{% url 'favourite_item' menu_item.id %}" class="position-absolute">
                             <i class="fas fa-star default-fave-star-colour z-2 position-absolute favourite-star" id="favourite-star"></i>
                         </a>
@@ -187,6 +187,9 @@
                 </div>
             </div>
             {% endfor %}
+            {% if not reviews %}
+            <p class="text-center no-reviews-text mt-4">No reviews yet...</p>
+            {% endif %}
         </div>
 
         <nav aria-label="Page navigation mt-5">
