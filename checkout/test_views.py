@@ -1,7 +1,6 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404, redirect, reverse
-from django.test.client import RequestFactory
 
 from django.conf import settings
 from menu.models import Category, MenuItem
@@ -33,8 +32,6 @@ class TestCheckoutViews(TestCase):
         cls.user_1.delete()
 
     def setUp(self):
-        self.factory = RequestFactory()
-
         self.client.login(username=self.user_1.username,
                           password='test')
 
@@ -100,8 +97,6 @@ class TestCheckoutViews(TestCase):
                                         'redirect_url':
                                         f'/menu/{self.menu_item_1.id}/'
                                       })
-        url_2 = reverse('checkout')
-        response_2 = self.client.get(url_2)
 
         stripe_public_key = settings.STRIPE_PUBLIC_KEY
         stripe_secret_key = settings.STRIPE_SECRET_KEY
