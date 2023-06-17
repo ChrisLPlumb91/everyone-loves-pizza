@@ -39,8 +39,6 @@ class TestHomeViews(TestCase):
                                     has_sizes=self.has_sizes,
                                     price=self.price)
 
-        menu_item = get_object_or_404(MenuItem, pk=1)
-
     def tearDown(self):
         self.client.logout()
         menu_items = MenuItem.objects.all()
