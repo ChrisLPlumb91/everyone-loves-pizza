@@ -46,6 +46,7 @@ class TestHomeViews(TestCase):
         menu_items = MenuItem.objects.all()
         for item in menu_items:
             item.delete()
+        self.category.delete()
 
     def test_view_home_page(self):
         response = self.client.get('/')

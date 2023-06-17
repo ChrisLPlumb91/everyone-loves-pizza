@@ -206,8 +206,7 @@ def favourite_item(request, menu_item_id):
                              f'which has un-favourited ' +
                              f'the {current_favourite}')
 
-    return redirect(reverse('menu_item_detail', args=[menu_item_id])
-                    + '?source=management')
+    return redirect(reverse('menu_item_detail', args=[menu_item_id]))
 
 
 @login_required

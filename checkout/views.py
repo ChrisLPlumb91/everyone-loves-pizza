@@ -176,6 +176,7 @@ def checkout_success(request, order_number):
         email will be sent to {order.email}.')
 
     if 'cart' in request.session:
+        print('deleting cart')
         del request.session['cart']
 
     template = 'checkout/checkout_success.html'
