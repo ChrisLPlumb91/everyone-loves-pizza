@@ -51,6 +51,11 @@ def menu(request):
                        Q(description__icontains=query))
             menu_items = menu_items.filter(queries)
 
+    if 'source' in request.GET:
+        from_management = True
+    else:
+        from_management = False
+
     current_sorting = f'{sort}_{direction}'
 
     context = {
@@ -59,6 +64,7 @@ def menu(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'from_management': from_management,
     }
 
     return render(request, 'menu/menu.html', context)
@@ -161,12 +167,18 @@ def menu_item_detail(request, menu_item_id):
 
         review_form = ReviewForm()
 
+        if 'source' in request.GET:
+            from_management = True
+        else:
+            from_management = False
+
         context = {
             'menu_item': menu_item,
             'reviews': page_obj,
             'review_form': review_form,
             'review_counts': review_counts,
             'rating': average_rating,
+            'from_management': from_management,
         }
 
         return render(request, 'menu/menu_item_detail.html', context)
@@ -194,7 +206,8 @@ def favourite_item(request, menu_item_id):
                              f'which has un-favourited ' +
                              f'the {current_favourite}')
 
-    return redirect(reverse('menu_item_detail', args=[menu_item_id]))
+    return redirect(reverse('menu_item_detail', args=[menu_item_id])
+                    + '?source=management')
 
 
 @login_required
@@ -206,10 +219,12 @@ def add_menu_item(request):
 
     if request.method == 'POST':
         form = MenuItemForm(request.POST, request.FILES)
+
         if form.is_valid():
             menu_item = form.save()
             messages.success(request, 'Successfully added menu item!')
-            return redirect(reverse('menu_item_detail', args=[menu_item.id]))
+            return redirect(reverse('menu_item_detail', args=[menu_item.id]) +
+                            '?source=management')
         else:
             messages.error(request, 'Failed to add menu item. ' +
                            'Please ensure the form is valid.')
@@ -237,7 +252,8 @@ def edit_menu_item(request, menu_item_id):
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully updated menu item!')
-            return redirect(reverse('menu_item_detail', args=[menu_item.id]))
+            return redirect(reverse('menu_item_detail', args=[menu_item.id]) +
+                            '?source=management')
         else:
             messages.error(request, 'Failed to update menu item. ' +
                            'Please ensure the form is valid.')
@@ -259,9 +275,9 @@ def delete_menu_item(request, menu_item_id):
     """ Delete an item from the menu """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('home'))
+        return redirect(reverse('home') + '?source=management')
 
     menu_item = get_object_or_404(MenuItem, pk=menu_item_id)
     menu_item.delete()
     messages.success(request, 'Menu item deleted!')
-    return redirect(reverse('menu'))
+    return redirect(reverse('menu') + '?source=management')

@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        {% if grand_total and not on_profile_page and not on_contact_page %}
+        {% if grand_total and not on_profile_page and not on_contact_page and not from_management %}
             <p class="logo-font bg-white text-black py-1 cart-count">Your Cart ({{ menu_item_count }})</p>
             <hr class="message-count-hr">
             <div class="bag-notification-wrapper">
