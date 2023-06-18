@@ -15,73 +15,74 @@ class TestProfileViews(TestCase):
                                               email='test@test.com',
                                               password='test',)
 
-        cls.user_1.userprofile.default_phone_number = 123456789
-        cls.user_1.userprofile.default_street_address1 = 'Test street 1'
-        cls.user_1.userprofile.default_street_address2 = 'Test street 2'
-        cls.user_1.userprofile.default_town_or_city = 'Test town city'
-        cls.user_1.userprofile.default_county = 'Test county'
-        cls.user_1.userprofile.default_postcode = 'Test postcode'
-        cls.user_1.userprofile.default_country = 'IE'
-
-        cls.category_names = ['pizza', 'sides']
-        cls.friendly_names = ['Pizza', 'Sides']
-
-        cls.category_1 = Category.objects.create(name=cls.category_names[0],
-                                                 friendly_name=cls
-                                                 .friendly_names[0])
-
-        cls.category_2 = Category.objects.create(name=cls.category_names[1],
-                                                 friendly_name=cls
-                                                 .friendly_names[1])
-
-        cls.item_names = ['Test pizza', 'Test side']
-        cls.calories = ['Test 1', 'Test 2']
-        cls.has_sizes = [True, False]
-        cls.prices = [10.00, 5.00]
-
-        cls.menu_item_1 = MenuItem.objects.create(category=cls.category_1,
-                                                  name=cls.item_names[0],
-                                                  calories=cls.calories[0],
-                                                  has_sizes=cls.has_sizes[0],
-                                                  price=cls.prices[0])
-
-        cls.menu_item_2 = MenuItem.objects.create(category=cls.category_2,
-                                                  name=cls.item_names[1],
-                                                  calories=cls.calories[1],
-                                                  has_sizes=cls.has_sizes[1],
-                                                  price=cls.prices[1])
-
-        cls.order = Order.objects.create(order_number=123212352,
-                                         user_profile=cls.user_1.userprofile,
-                                         full_name='Test',
-                                         email=cls.user_1.email,
-                                         phone_number='26127127',
-                                         country='IE',
-                                         postcode='Test',
-                                         town_or_city='Test',
-                                         street_address1='Test',
-                                         street_address2='Test',
-                                         county='Test',
-                                         delivery_cost=1.00,
-                                         order_total=10.00,
-                                         grand_total=11.00,
-                                         original_bag='Test',
-                                         stripe_pid='Test')
-
     @classmethod
     def tearDownClass(cls):
         cls.user_1.delete()
-        cls.category_1.delete()
-        cls.category_2.delete()
-        cls.menu_item_1.delete()
-        cls.menu_item_2.delete()
 
     def setUp(self):
         self.client.login(username=self.user_1.username,
                           password='test')
 
+        self.user_1.userprofile.default_phone_number = 123456789
+        self.user_1.userprofile.default_street_address1 = 'Test street 1'
+        self.user_1.userprofile.default_street_address2 = 'Test street 2'
+        self.user_1.userprofile.default_town_or_city = 'Test town city'
+        self.user_1.userprofile.default_county = 'Test county'
+        self.user_1.userprofile.default_postcode = 'Test postcode'
+        self.user_1.userprofile.default_country = 'IE'
+
+        self.category_names = ['pizza', 'sides']
+        self.friendly_names = ['Pizza', 'Sides']
+
+        self.category_1 = Category.objects.create(name=self.category_names[0],
+                                                  friendly_name=self
+                                                  .friendly_names[0])
+
+        self.category_2 = Category.objects.create(name=self.category_names[1],
+                                                  friendly_name=self
+                                                  .friendly_names[1])
+
+        self.item_names = ['Test pizza', 'Test side']
+        self.calories = ['Test 1', 'Test 2']
+        self.has_sizes = [True, False]
+        self.prices = [10.00, 5.00]
+
+        self.menu_item_1 = MenuItem.objects.create(category=self.category_1,
+                                                   name=self.item_names[0],
+                                                   calories=self.calories[0],
+                                                   has_sizes=self.has_sizes[0],
+                                                   price=self.prices[0])
+
+        self.menu_item_2 = MenuItem.objects.create(category=self.category_2,
+                                                   name=self.item_names[1],
+                                                   calories=self.calories[1],
+                                                   has_sizes=self.has_sizes[1],
+                                                   price=self.prices[1])
+
+        self.order = Order.objects.create(order_number=123212352,
+                                          user_profile=self.user_1.userprofile,
+                                          full_name='Test',
+                                          email=self.user_1.email,
+                                          phone_number='26127127',
+                                          country='IE',
+                                          postcode='Test',
+                                          town_or_city='Test',
+                                          street_address1='Test',
+                                          street_address2='Test',
+                                          county='Test',
+                                          delivery_cost=1.00,
+                                          order_total=10.00,
+                                          grand_total=11.00,
+                                          original_bag='Test',
+                                          stripe_pid='Test')
+
     def tearDown(self):
         self.client.logout()
+        self.category_1.delete()
+        self.category_2.delete()
+        self.menu_item_1.delete()
+        self.menu_item_2.delete()
+        self.order.delete()
 
     def test_get_profile_page(self):
         url_1 = reverse('profile')

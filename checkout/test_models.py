@@ -14,36 +14,39 @@ class TestCheckoutModels(TestCase):
                                               email='test@test.com',
                                               password='test')
 
-        cls.user_1.userprofile.default_phone_number = 123456789
-        cls.user_1.userprofile.default_street_address1 = 'Test street 1'
-        cls.user_1.userprofile.default_street_address2 = 'Test street 2'
-        cls.user_1.userprofile.default_town_or_city = 'Test town city'
-        cls.user_1.userprofile.default_county = 'Test county'
-        cls.user_1.userprofile.default_postcode = 'Test postcode'
-        cls.user_1.userprofile.default_country = 'IE'
-
-        cls.menu_item = MenuItem.objects.create(price=12.00)
-
-        cls.order = Order.objects.create(order_number='32342384723853',
-                                         user_profile=cls.user_1.userprofile,
-                                         full_name='Test',
-                                         email=cls.user_1.email,
-                                         phone_number='1231321321',
-                                         country=cls.user_1.
-                                         userprofile.default_country,
-                                         town_or_city='Test',
-                                         street_address1='Test',
-                                         delivery_cost=1.00,
-                                         order_total=10.00,
-                                         grand_total=11.00,
-                                         original_bag='Test',
-                                         stripe_pid='Test')
-
     @classmethod
     def tearDownClass(cls):
         cls.user_1.delete()
-        cls.menu_item.delete()
-        cls.order.delete()
+
+    def setUp(self):
+        self.user_1.userprofile.default_phone_number = 123456789
+        self.user_1.userprofile.default_street_address1 = 'Test street 1'
+        self.user_1.userprofile.default_street_address2 = 'Test street 2'
+        self.user_1.userprofile.default_town_or_city = 'Test town city'
+        self.user_1.userprofile.default_county = 'Test county'
+        self.user_1.userprofile.default_postcode = 'Test postcode'
+        self.user_1.userprofile.default_country = 'IE'
+
+        self.menu_item = MenuItem.objects.create(price=12.00)
+
+        self.order = Order.objects.create(order_number='32342384723853',
+                                          user_profile=self.user_1.userprofile,
+                                          full_name='Test',
+                                          email=self.user_1.email,
+                                          phone_number='1231321321',
+                                          country=self.user_1.
+                                          userprofile.default_country,
+                                          town_or_city='Test',
+                                          street_address1='Test',
+                                          delivery_cost=1.00,
+                                          order_total=10.00,
+                                          grand_total=11.00,
+                                          original_bag='Test',
+                                          stripe_pid='Test')
+
+    def tearDown(self):
+        self.menu_item.delete()
+        self.order.delete()
 
     def test_order_model(self):
         order = Order.objects.create(order_number='32342384723853',

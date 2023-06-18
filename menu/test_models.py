@@ -11,12 +11,15 @@ class TestMenuModels(TestCase):
                                                    email='test@test.com',
                                                    password='test')
 
-        cls.menu_item = MenuItem.objects.create(price=12.00)
-
     @classmethod
     def tearDownClass(cls):
         cls.user_1.delete()
-        cls.menu_item.delete()
+
+    def setUp(self):
+        self.menu_item = MenuItem.objects.create(price=12.00)
+
+    def tearDown(self):
+        self.menu_item.delete()
 
     def test_category_model(self):
         category = Category.objects.create(name='test_category_2',
@@ -26,6 +29,8 @@ class TestMenuModels(TestCase):
         self.assertEqual(category.friendly_name, 'Test Category 2')
         self.assertTrue(Category.objects.filter(name='test_category_2')
                         .exists())
+
+        category.delete()
 
     def test_menu_item_model(self):
         menu_item = MenuItem.objects.create(price=10.00)
@@ -37,6 +42,8 @@ class TestMenuModels(TestCase):
         menu_item.name = 'Test Menu Item'
         self.assertEqual(menu_item.__str__(), 'Test Menu Item')
 
+        menu_item.delete()
+
     def test_review_model(self):
         review = Review.objects.create(menu_item=self.menu_item,
                                        poster=self.user_1)
@@ -47,3 +54,5 @@ class TestMenuModels(TestCase):
                          f'and reads as follows: "{review.review}".')
         self.assertTrue(Review.objects.filter(menu_item=self.menu_item)
                         .exists())
+
+        review.delete()

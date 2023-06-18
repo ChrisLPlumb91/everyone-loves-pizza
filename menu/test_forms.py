@@ -46,7 +46,7 @@ class TestMenuForms(TestCase):
         self.assertTrue(form_1.is_valid())
         self.assertEqual(form_1.cleaned_data['price'], 10.00)
 
-        form_1.save()
+        first_item = form_1.save()
         self.assertTrue(MenuItem.objects.filter(name='Test')
                         .exists())
 
@@ -67,11 +67,14 @@ class TestMenuForms(TestCase):
         self.assertTrue(form_2.is_valid())
         self.assertEqual(form_2.cleaned_data['price'], 12.00)
 
-        form_2.save()
-        self.assertEqual(menu_item.price, 12.00)
+        another_menu_item = form_2.save()
+        self.assertEqual(another_menu_item.price, 12.00)
 
         empty_form = MenuItemForm()
         self.assertFalse(empty_form.is_valid())
+
+        first_item.delete()
+        another_menu_item.delete()
 
     def test_review_form(self):
         data_1 = {
@@ -88,7 +91,7 @@ class TestMenuForms(TestCase):
         new_review.menu_item = self.menu_item
         new_review.poster = self.user_1
 
-        new_review.save()
+        first_review = new_review.save()
         self.assertTrue(Review.objects.filter(review='Test')
                         .exists())
 
@@ -107,9 +110,11 @@ class TestMenuForms(TestCase):
         self.assertTrue(form_2.is_valid())
         self.assertEqual(form_2.cleaned_data['rating'], 3)
 
-        form_2.save()
+        another_review = form_2.save()
 
-        self.assertEqual(review.rating, 3)
+        self.assertEqual(another_review.rating, 3)
 
         empty_form = ReviewForm()
         self.assertFalse(empty_form.is_valid())
+
+        another_review.delete()

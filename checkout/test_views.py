@@ -19,14 +19,6 @@ class TestCheckoutViews(TestCase):
                                               email='test@test.com',
                                               password='test',)
 
-        cls.user_1.userprofile.default_phone_number = 123456789
-        cls.user_1.userprofile.default_street_address1 = 'Test street 1'
-        cls.user_1.userprofile.default_street_address2 = 'Test street 2'
-        cls.user_1.userprofile.default_town_or_city = 'Test town city'
-        cls.user_1.userprofile.default_county = 'Test county'
-        cls.user_1.userprofile.default_postcode = 'Test postcode'
-        cls.user_1.userprofile.default_country = 'IE'
-
     @classmethod
     def tearDownClass(cls):
         cls.user_1.delete()
@@ -34,6 +26,14 @@ class TestCheckoutViews(TestCase):
     def setUp(self):
         self.client.login(username=self.user_1.username,
                           password='test')
+
+        self.user_1.userprofile.default_phone_number = 123456789
+        self.user_1.userprofile.default_street_address1 = 'Test street 1'
+        self.user_1.userprofile.default_street_address2 = 'Test street 2'
+        self.user_1.userprofile.default_town_or_city = 'Test town city'
+        self.user_1.userprofile.default_county = 'Test county'
+        self.user_1.userprofile.default_postcode = 'Test postcode'
+        self.user_1.userprofile.default_country = 'IE'
 
         self.category_names = ['pizza', 'sides']
         self.friendly_names = ['Pizza', 'Sides']
