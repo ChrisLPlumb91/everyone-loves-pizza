@@ -26,8 +26,8 @@ class MenuItem(models.Model):
                                  blank=True,
                                  on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
-    description = models.TextField(null=True, blank=True, default=0)
-    ingredients = models.TextField(null=True, blank=True, default=0)
+    description = models.TextField(blank=True, default='')
+    ingredients = models.TextField(blank=True, default='')
     calories = models.CharField(max_length=25)
     has_sizes = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
@@ -41,7 +41,7 @@ class MenuItem(models.Model):
 
 
 class Review(models.Model):
-    menu_item = models.ForeignKey('MenuItem', null=False, blank=False,
+    menu_item = models.ForeignKey(MenuItem, null=False, blank=False,
                                   on_delete=models.CASCADE,
                                   related_name='item_reviews')
     poster = models.ForeignKey(User, on_delete=models.CASCADE,
@@ -53,4 +53,4 @@ class Review(models.Model):
     def __str__(self):
         return (f'This {self.rating}-star review was posted by ' +
                 f'{self.poster} on {self.created_on}, ' +
-                f'reads as follows: "{self.review}".')
+                f'and reads as follows: "{self.review}".')

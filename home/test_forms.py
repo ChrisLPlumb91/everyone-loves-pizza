@@ -20,13 +20,29 @@ class TestHomeForm(TestCase):
                                                       reason=1,
                                                       user_msg='Test')
 
-        data = {'reason': 2, 'user_msg': 'Test 2'}
+        data_1 = {'reason': 2, 'user_msg': 'Test 2'}
 
-        form = CustomerMessageForm(data, instance=customer_msg)
+        form_1 = CustomerMessageForm(data_1, instance=customer_msg)
 
-        self.assertTrue(form.is_valid())
-        self.assertEqual(form.cleaned_data['user_msg'], 'Test 2')
-        self.assertEqual(form.fields['user_msg'].label, 'Message')
+        self.assertTrue(form_1.is_valid())
+        self.assertEqual(form_1.cleaned_data['user_msg'], 'Test 2')
+        self.assertEqual(form_1.fields['user_msg'].label, 'Message')
+
+        form_1.save()
+        self.assertEqual(customer_msg.user_msg, 'Test 2')
+
+        data_2 = {'reason': 3, 'user_msg': 'Test 3'}
+
+        form_2 = CustomerMessageForm(data_2)
+
+        self.assertTrue(form_2.is_valid())
+        self.assertEqual(form_2.cleaned_data['user_msg'], 'Test 3')
+
+        new_msg = form_2.save(commit=False)
+        new_msg.customer = self.user_1
+        new_msg.save()
+        self.assertTrue(CustomerMessage.objects.filter(user_msg='Test 3')
+                        .exists())
 
         empty_form = CustomerMessageForm()
         self.assertFalse(empty_form.is_valid())

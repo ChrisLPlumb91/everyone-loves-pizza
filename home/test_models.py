@@ -22,4 +22,6 @@ class TestHomeModel(TestCase):
         self.assertEqual(customer_msg.__str__(), f'The user {self.user_1} ' +
                          f'sent a message to the staff on ' +
                          f'{customer_msg.created_on} ' +
-                         f'for the following reason: {customer_msg.reason}')
+                         f'for the following reason: ' +
+                         f'{customer_msg.get_reason_display()}')
+        self.assertTrue(CustomerMessage.objects.filter(reason=1).exists())
