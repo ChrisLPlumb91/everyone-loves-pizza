@@ -434,6 +434,11 @@ div.edit-delete-options {
     box-shadow: 0 10px #dc3545 inset, 0 -10px #dc3545 inset;
 }
 
+.update-remove-container {
+    background: #38761d !important;
+    box-shadow: 0 10px #cc0000 inset, 0 -10px #cc0000 inset;
+}
+
 div.superuser-zone > h3, .row.superuser-zone h3 {
     font-size: 2.2rem !important;
     opacity: 0.5;
@@ -449,12 +454,21 @@ div.superuser-zone > h3, .row.superuser-zone h3 {
     font-size: 1.5rem !important;
 }
 
-div.superuser-zone > a.superuser-option, div.superuser-zone a.superuser-option {
+div.superuser-zone > a.superuser-option, div.superuser-zone a.superuser-option, div.update-remove-container > a.superuser-option {
     color: #f5f5f5 !important;
     text-shadow:0 2px #000;
     text-decoration: none;
     z-index: 1 !important;
     position: relative;
+}
+
+div.update-remove-container > a.superuser-option {
+    color: #f19832 !important;
+    text-shadow:0 2px #cc0000;
+}
+
+div.update-remove-container > a.superuser-option:hover {
+    color: #1eec71 !important;
 }
 
 .row.superuser-zone a.superuser-option {
@@ -682,7 +696,7 @@ td {
     margin-top: 3.5rem !important;
 }
 
-.cart-form-group, .superuser-zone-cart {
+.cart-form-group, .update-remove-container {
     width: 55% !important;
 }
 
@@ -844,13 +858,13 @@ button.review-submit-btn, button.msg-submit-btn {
     font-weight: bolder;
 }
 
-.add-to-cart-btn, .secure-checkout-button, .complete-order-btn, .update-info-btn, .login-btn, .signup-btn, .logout-btn, .update-or-add-btn, a.functioning-btn, button.review-submit-btn, button.msg-submit-btn {
+.add-to-cart-btn, .secure-checkout-button, .complete-order-btn, .update-info-btn, .login-btn, .signup-btn, .logout-btn, .password-reset-btn, .update-or-add-btn, a.functioning-btn, button.review-submit-btn, button.msg-submit-btn {
     background: #14A44D !important;
     color:#f5f5f5 !important;
     text-shadow: 0 2px #000;
 }
 
-.add-to-cart-btn:hover, .secure-checkout-button:hover, .complete-order-btn:hover, .update-info-btn:hover, .login-btn:hover, button.signup-btn:hover, .logout-btn:hover, .update-or-add-btn:hover, a.functioning-btn:hover, button.review-submit-btn:hover, button.msg-submit-btn:hover {
+.add-to-cart-btn:hover, .secure-checkout-button:hover, .complete-order-btn:hover, .update-info-btn:hover, .login-btn:hover, button.signup-btn:hover, .logout-btn:hover, .password-reset-btn:hover, .update-or-add-btn:hover, a.functioning-btn:hover, button.review-submit-btn:hover, button.msg-submit-btn:hover {
     background: #1eec71 !important;
     color:#000 !important;
     text-shadow: none;
@@ -859,6 +873,18 @@ button.review-submit-btn, button.msg-submit-btn {
 
 .login-btn, .signup-btn, .logout-btn {
     font-size: 2rem !important;
+    line-height: 35px !important;
+    border: none !important;
+}
+
+.password-reset-btn {
+    font-size: 1.3rem !important;
+    line-height: 35px !important;
+    border: none !important;
+}
+
+.password-reset-btn {
+    font-size: 1.5rem !important;
     line-height: 35px !important;
     border: none !important;
 }
@@ -1035,7 +1061,7 @@ div.card.rating-border-1 h2, div.card.message-border-3 h2 {
     background: #E4A11B !important;
 }
 
-.toast-header.error {
+.toast-header.danger {
     background: #DC4C64 !important;
 }
 
@@ -1483,7 +1509,7 @@ i.big-star {
         width: 60% !important;
     }
 
-    td > div.superuser-zone {
+    td > div.superuser-zone, td > div.update-remove-container {
         width: 60% !important;
     }
 
@@ -1588,7 +1614,7 @@ i.big-star {
         width: 70% !important;
     }
 
-    td > div.superuser-zone {
+    td > div.superuser-zone, td > div.update-remove-container {
         width: 70% !important;
     }
 
@@ -1835,7 +1861,7 @@ i.big-star {
         margin-top: 1rem !important;
     }
 
-    div.superuser-zone {
+    div.superuser-zone, div.update-remove-container {
         text-align: center !important;
     }
 
