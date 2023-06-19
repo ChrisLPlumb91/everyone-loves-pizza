@@ -31,9 +31,11 @@
             <div class="col-12 d-flex justify-content-center">
                 <div class="favourite-image-container d-flex align-items-center">
                     {% if request.user.userprofile.favourite_menu_item.image %}
-                    <a href="{% url 'menu_item_detail' request.user.userprofile.favourite_menu_item.id %}"><img class="img-fluid fave-image ms-1" src="{{ request.user.userprofile.favourite_menu_item.full_image.url }}" alt="{{ request.user.userprofile.favourite_menu_item.name }}"></a>   
+                    <a href="{% url 'menu_item_detail' request.user.userprofile.favourite_menu_item.id %}" aria-label="Go to the page for the {{ request.user.userprofile.favourite_menu_item.name }}">
+                        <img class="img-fluid fave-image ms-1" src="{{ request.user.userprofile.favourite_menu_item.full_image.url }}" alt="An image of the {{ request.user.userprofile.favourite_menu_item.name }}, your current favourite.">
+                    </a>   
                     {% else %}
-                    <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ request.user.userprofile.favourite_menu_item.name }}">
+                    <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="A placeholder image for the {{ request.user.userprofile.favourite_menu_item.name }}, your current favourite.">
                     {% endif %}
                 </div>
             </div>
@@ -89,7 +91,7 @@
                                 <tr>
                                     <td>
                                         <a href="{% url 'order_history' order.order_number %}"
-                                        title="{{ order.order_number }}" class="order-number-link">
+                                        title="{{ order.order_number }}" class="order-number-link" aria-label="Go to the summary page for an order made on {{ order.created_on }}.">
                                             {{ order.order_number|truncatechars:6 }}
                                         </a>
                                     </td>
@@ -120,7 +122,7 @@
 
         <div class="text-center mb-2">
             {% for key, value in review_counts.items %}
-            <a href="{% url 'profile' %}?rating_word={{ key }}{% if key != 'All' %}!{% endif %}" class="{{ key|lower }} review-words">{{ key }}{% if forloop.counter != 1 %}!{% endif %} ({{ value }}){% if forloop.counter != 6 %},{% endif %}</a>
+            <a href="{% url 'profile' %}?rating_word={{ key }}{% if key != 'All' %}!{% endif %}" class="{{ key|lower }} review-words" aria-label="Filter your reviews.">{{ key }}{% if forloop.counter != 1 %}!{% endif %} ({{ value }}){% if forloop.counter != 6 %},{% endif %}</a>
             {% if forloop.counter|divisibleby:2 %}
             <div class="d-sm-none d-block my-0 mx-0 h-0"></div>
             {% endif %}
@@ -143,7 +145,7 @@
                     </div>
                     <div class="card-footer review-footer">
                         <p class="small poster-text mb-0">Review of the <strong>{{ review.menu_item.name }}</strong> Posted on {{ review.created_on }}</p>
-                        <a href="{% url 'menu_item_detail' review.menu_item.id %}">Go to the <strong>{{ review.menu_item.name }}</strong> page</a>
+                        <a href="{% url 'menu_item_detail' review.menu_item.id %}" aria-label="Go to the page for the {{ review.menu_item.name }}.">Go to the <strong>{{ review.menu_item.name }}</strong> page</a>
                     </div>
                 </div>
             </div>
@@ -155,15 +157,15 @@
 
                 {% if reviews.has_previous %}
                 <li class="page-item mx-1">
-                    <a href="?page=1" class="page-link btn functioning-btn-alt d-sm-block d-none">&laquo; first</a>
-                    <a href="?page=1" class="page-link btn functioning-btn-alt d-sm-none d-block">&laquo;&laquo;</a>
+                    <a href="?page=1" class="page-link btn functioning-btn-alt d-sm-block d-none" aria-label="Go to the first page of reviews you wrote.">&laquo; first</a>
+                    <a href="?page=1" class="page-link btn functioning-btn-alt d-sm-none d-block" aria-label="Go to the first page of reviews you wrote.">&laquo;&laquo;</a>
                 </li>
                 <li class="page-item mx-1">
                     <a href="?page={{ reviews.previous_page_number }}" class="page-link btn functioning-btn d-sm-block d-none"
-                        aria-label="Go to the previous page of reviews.">&laquo; PREV
+                        aria-label="Go to the previous page of reviews you wrote.">&laquo; PREV
                     </a>
                     <a href="?page={{ reviews.previous_page_number }}" class="page-link btn functioning-btn d-sm-none d-block"
-                        aria-label="Go to the previous page of reviews.">&laquo;
+                        aria-label="Go to the previous page of reviews you wrote.">&laquo;
                     </a>
                 </li>
                 {% else %}
@@ -184,17 +186,17 @@
                 {% if reviews.has_next %}
                 <li class="page-item mx-1">
                     <a href="?page={{ reviews.next_page_number }}" class="page-link btn functioning-btn d-sm-block d-none"
-                        aria-label="Go to the next page of reviews.">
+                        aria-label="Go to the next page of reviews you wrote.">
                         NEXT &raquo;
                     </a>
                     <a href="?page={{ reviews.next_page_number }}" class="page-link btn functioning-btn d-sm-none d-block"
-                        aria-label="Go to the next page of reviews.">
+                        aria-label="Go to the next page of reviews you wrote.">
                         &raquo;
                     </a>
                 </li>
                 <li class="page-item mx-1">
-                    <a href="?page={{ reviews.paginator.num_pages }}" class="page-link btn functioning-btn-alt d-sm-block d-none">last &raquo;</a>
-                    <a href="?page={{ reviews.paginator.num_pages }}" class="page-link btn functioning-btn-alt d-sm-none d-block">&raquo;&raquo;</a>
+                    <a href="?page={{ reviews.paginator.num_pages }}" class="page-link btn functioning-btn-alt d-sm-block d-none" aria-label="Go to the last page of reviews you wrote.">last &raquo;</a>
+                    <a href="?page={{ reviews.paginator.num_pages }}" class="page-link btn functioning-btn-alt d-sm-none d-block" aria-label="Go to the last page of reviews you wrote.">&raquo;&raquo;</a>
                 </li>
                 {% else %}
                 <li class="page-item mx-1">
@@ -220,7 +222,7 @@
 
         <div class="text-center mb-2">
             {% for key, value in user_message_counts.items %}
-            <a href="{% url 'profile' %}?reason_words={{ key|replace_spaces }}" class="{{ key|replace_spaces|lower }} reason-words">{{ key }} ({{ value }}){% if forloop.counter != 5 %},{% endif %}</a>
+            <a href="{% url 'profile' %}?reason_words={{ key|replace_spaces }}" class="{{ key|replace_spaces|lower }} reason-words" aria-label="Filter the private messages you wrote to staff.">{{ key }} ({{ value }}){% if forloop.counter != 5 %},{% endif %}</a>
             {% if forloop.counter|divisibleby:2 %}
             <div class="d-lg-none d-md-block my-0 mx-0 h-0"></div>
             {% endif %}
@@ -240,7 +242,7 @@
                     <div class="card-body px-4">
                         <p class="name-ellipsis-alt my-0 message-preview">{{ user_message.user_msg }}</p>
                         <p class="collapse" id="collapse-message-{{ user_message.id }}">{{ user_message.user_msg }}</p>
-                        <a class="text-end inline-block message-expand-link" data-bs-toggle="collapse" href="#collapse-message-{{ user_message.id }}" role="button" aria-expanded="false" aria-controls="collapse-message-{{ user_message.id }}">Full message &raquo;</a>
+                        <a class="text-end inline-block message-expand-link" data-bs-toggle="collapse" href="#collapse-message-{{ user_message.id }}" role="button" aria-expanded="false" aria-controls="collapse-message-{{ user_message.id }}" aria-label="Expand and collapse the body of this message that you wrote.">Full message &raquo;</a>
                     </div>
                     <div class="card-footer text-end">{{ user_message.created_on }}</div>
                 </div>
@@ -253,15 +255,15 @@
 
                 {% if user_messages.has_previous %}
                 <li class="page-item mx-1">
-                    <a href="?msg_page=1" class="page-link btn functioning-btn-alt d-sm-block d-none">&laquo; first</a>
-                    <a href="?msg_page=1" class="page-link btn functioning-btn-alt d-sm-none d-block">&laquo;&laquo;</a>
+                    <a href="?msg_page=1" class="page-link btn functioning-btn-alt d-sm-block d-none" aria-label="Go to the first page of private messages that you sent to staff.">&laquo; first</a>
+                    <a href="?msg_page=1" class="page-link btn functioning-btn-alt d-sm-none d-block" aria-label="Go to the first page of private messages that you sent to staff.">&laquo;&laquo;</a>
                 </li>
                 <li class="page-item mx-1">
                     <a href="?msg_page={{ user_messages.previous_page_number }}" class="page-link btn functioning-btn d-sm-block d-none"
-                        aria-label="Go to the previous page of messages.">&laquo; PREV
+                        aria-label="Go to the previous page of private messages that you sent to staff.">&laquo; PREV
                     </a>
                     <a href="?msg_page={{ user_messages.previous_page_number }}" class="page-link btn functioning-btn d-sm-none d-block"
-                        aria-label="Go to the previous page of messages.">&laquo;
+                        aria-label="Go to the previous page of private messages that you sent to staff.">&laquo;
                     </a>
                 </li>
                 {% else %}
@@ -270,10 +272,10 @@
                     <span href="?msg_page=1" class="page-link btn non-functioning-btn d-sm-none d-block">&laquo;&laquo;</span>
                 </li>
                 <li class="page-item mx-1">
-                    <span class="page-link btn non-functioning-btn d-sm-block d-none" aria-label="Go to the previous page of messages.">
+                    <span class="page-link btn non-functioning-btn d-sm-block d-none">
                         &laquo; PREV
                     </span>
-                    <span class="page-link btn non-functioning-btn d-sm-none d-block" aria-label="Go to the previous page of messages.">
+                    <span class="page-link btn non-functioning-btn d-sm-none d-block">
                         &laquo;
                     </span>
                 </li>
@@ -282,17 +284,17 @@
                 {% if user_messages.has_next %}
                 <li class="page-item mx-1">
                     <a href="?msg_page={{ user_messages.next_page_number }}" class="page-link btn functioning-btn d-sm-block d-none"
-                        aria-label="Go to the next page of messages.">
+                        aria-label="Go to the next page of private messages that you wrote to staff.">
                         NEXT &raquo;
                     </a>
                     <a href="?msg_page={{ user_messages.next_page_number }}" class="page-link btn functioning-btn d-sm-none d-block"
-                        aria-label="Go to the next page of messages.">
+                        aria-label="Go to the next page of private messages that you wrote to staff.">
                         &raquo;
                     </a>
                 </li>
                 <li class="page-item mx-1">
-                    <a href="?msg_page={{ user_messages.paginator.num_pages }}" class="page-link btn functioning-btn-alt d-sm-block d-none">last &raquo;</a>
-                    <a href="?msg_page={{ user_messages.paginator.num_pages }}" class="page-link btn functioning-btn-alt d-sm-none d-block">&raquo;&raquo;</a>
+                    <a href="?msg_page={{ user_messages.paginator.num_pages }}" class="page-link btn functioning-btn-alt d-sm-block d-none" aria-label="Go to the last page of private messages that you wrote to staff.">last &raquo;</a>
+                    <a href="?msg_page={{ user_messages.paginator.num_pages }}" class="page-link btn functioning-btn-alt d-sm-none d-block" aria-label="Go to the last page of private messages that you wrote to staff.">&raquo;&raquo;</a>
                 </li>
                 {% else %}
                 <li class="page-item mx-1">
@@ -314,7 +316,7 @@
     </section>
 
     <div class="btt-button shadow-sm rounded-0">
-        <a class="btt-link d-flex h-100">
+        <a class="btt-link d-flex h-100" aria-label="Go to the top of your profile page.">
             <i class="fas fa-arrow-up mx-auto my-auto"></i>
         </a>
     </div>

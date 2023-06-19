@@ -37,7 +37,7 @@
         <div id="topnav" class="row d-none d-lg-flex">
 
             <div class="col-12 col-lg-4 py-1 py-lg-0 text-center text-lg-left align-self-center">
-                <a href="/" class="nav-link main-logo-link">
+                <a href="/" class="nav-link main-logo-link" aria-label="everyone loves pizza, the name of the restaurant. Go to the home page.">
                     <h2 class="logo-font my-0 ps-3">everyone.loves(pizza);</h2>
                 </a>
             </div>
@@ -60,7 +60,7 @@
             <div class="col-12 col-lg-2 py-1 py-lg-0 align-self-center">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
-                        <a class="nav-link nav-link-user" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                        <a class="nav-link nav-link-user" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button" aria-label="Expand or collapse the user options dropdown menu.">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg"></i></div>
                                 <p class="my-0">{% if request.user.is_authenticated %}{{ request.user.username }}{% else %}My Account{% endif %}</p>
@@ -69,19 +69,19 @@
                         <div class="dropdown-menu border-0 user-options-dropdown" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <a href="{% url 'add_menu_item' %}" class="dropdown-item menu-management-link">Menu Management</a>
+                                    <a href="{% url 'add_menu_item' %}" class="dropdown-item menu-management-link" aria-label="Go to the add item page.">Menu Management</a>
                                 {% endif %}
-                                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                <a href="{% url 'profile' %}" class="dropdown-item" aria-label="Go to your profile page">My Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item" aria-label="Go to the log out page.">Logout</a>
                             {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                <a href="{% url 'account_signup' %}" class="dropdown-item" aria-label="Go to the sign up page.">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item" aria-label="Go to the log in page.">Login</a>
                             {% endif %}
                         </div>
                     </li>
                     <li class="list-inline-item position-relative">
                         
-                        <a class="{% if grand_total %}text-info font-weight-bold{% endif %} nav-link nav-link-cart" href="{% url 'view_cart' %}">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% endif %} nav-link nav-link-cart" href="{% url 'view_cart' %}" aria-label="Go to your shopping cart.">
                             <div class="text-center">
                                 <div><i class="fa-solid fa-cart-shopping"></i></div>
                                 <p class="my-0">
@@ -116,7 +116,16 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row position-relative">
+            <h2 class="position-absolute name-alt mt-3 text-center">everyone.loves(pizza);</h2>
+
+            <h2 class="position-absolute name-alt text-center top-part-of-name">everyone</h2>
+            <h2 class="position-absolute name-alt mt-3 text-center bottom-part-of-name">.loves(pizza);</h2>
+
+            <h2 class="position-absolute name-alt text-center top-part-of-name-alt">everyone</h2>
+            <h2 class="position-absolute name-alt text-center middle-part-of-name">.loves</h2>
+            <h2 class="position-absolute name-alt text-center bottom-part-of-name-alt">(pizza);</h2>
+
             <nav class="navbar navbar-expand-lg navbar-light w-100">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -145,7 +154,7 @@
 
         <div class="text-center row pt-2 d-flex footer-text-container">
             <div class="col-12">
-                <p class="mb-1"><a href="{% url 'contact_us' %}" class="footer-link">Contact us</a> | <a href="{% url 'home'%}#about-us" class="footer-link">About us</a></p>
+                <p class="mb-1"><a href="{% url 'contact_us' %}" class="footer-link" aria-label="Go to the contact us page.">Contact us</a> | <a href="{% url 'home'%}#about-us" class="footer-link" aria-label="Go to the about section of the home page.">About us</a></p>
             </div>
         </div>
             

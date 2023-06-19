@@ -211,14 +211,14 @@
         <div class="row mt-4">
 			<div class="col-12 col-lg-6 offset-lg-3 text-center">
                 {% if from_profile %}
-                    <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-2">
+                    <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-2" aria-label="Go back to your profile.">
                         <span class="icon mr-2">
                             <i class="fas fa-angle-left"></i>
                         </span>
                         <span class="text-uppercase">Back to Profile</span>
                     </a>
                 {% else %}
-                    <a href="{% url 'menu' %}" class="btn mt-2 mb-4 deals-btn py-3 shadow">
+                    <a href="{% url 'menu' %}" class="btn mt-2 mb-4 deals-btn py-3 shadow" aria-label="Go back to the menu to continue browsing.">
                         <span class="text-uppercase">Now check out the latest deals!</span>
                     </a>
                 {% endif %}

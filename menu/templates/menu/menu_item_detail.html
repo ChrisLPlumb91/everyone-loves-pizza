@@ -19,9 +19,9 @@
                 <div class="outer-ring text-center my-5 d-flex align-items-center ms-5">
                     <div class="pizza-image-container bg-white mx-3 overflow-hidden text-center">
                         {% if menu_item.image %}
-                        <img src="{{ menu_item.full_image.url }}" alt="{{ menu_item.name }}" class="mt-4 img-fluid">
+                        <img src="{{ menu_item.full_image.url }}" alt="An image of the {{ menu_item.name }} pizza" class="mt-4 img-fluid">
                         {% else %}
-                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ menu_item.name }}">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="A placeholder image for the {{ menu_item.name }} pizza.">
                         {% endif %}
                     </div>
                 </div>
@@ -31,9 +31,9 @@
                 <div class="outer-box text-center my-5 d-flex align-items-center ms-5">
                     <div class="side-image-container bg-white mx-3 overflow-hidden text-center">
                         {% if menu_item.image %}
-                        <img src="{{ menu_item.full_image.url }}" alt="{{ menu_item.name }}" class="mt-4 img-fluid">
+                        <img src="{{ menu_item.full_image.url }}" alt="An image of the {{ menu_item.name }} side dish" class="mt-4 img-fluid">
                         {% else %}
-                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ menu_item.name }}">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="A placeholder image for the {{ menu_item.name }} side dish.">
                         {% endif %}
                     </div>
                 </div>
@@ -45,11 +45,11 @@
                 <div class="product-details-container b-5 position-relative z-1 overflow-hidden mt-5 bg-white me-5 {% if menu_item.category.name == 'sides'%}product-details-container-sides{% endif %}">
                     <div class="position-absolute z-2 favourite-btn-container {% if request.user.userprofile.favourite_menu_item == menu_item %} favourite-btn-container-alt {% endif %}">
                         {% if request.user.userprofile.favourite_menu_item != menu_item %}
-                        <a href="{% url 'favourite_item' menu_item.id %}" class="position-absolute">
+                        <a href="{% url 'favourite_item' menu_item.id %}" class="position-absolute" aria-label="Favourite the {{ menu_item.name }}.">
                             <i class="fas fa-star default-fave-star-colour z-2 position-absolute favourite-star" id="favourite-star"></i>
                         </a>
                         {% else %}
-                        <a href="{% url 'favourite_item' menu_item.id %}" class="position-absolute">
+                        <a href="{% url 'favourite_item' menu_item.id %}" class="position-absolute" aria-label="Un-favourite the {{ menu_item.name }}.">
                             <i class="fas fa-star lit-fave-star-colour z-2 position-absolute favourite-star" id="favourite-star"></i>
                         </a>
                         {% endif %}
@@ -64,7 +64,7 @@
 
                     {% if menu_item.category %}
                     <p class="small mt-1 mb-0 ps-3">
-                        <a class="text-muted" href="{% url 'menu' %}?category={{ menu_item.category.name }}">
+                        <a class="text-muted" href="{% url 'menu' %}?category={{ menu_item.category.name }}" aria-label="Go the menu page for {{ menu_item.category.name }}.">
                             <i class="fas fa-tag mr-1"></i>{{ menu_item.category.friendly_name }}
                         </a>
                     </p>
@@ -122,7 +122,7 @@
 
                             <div class="col{% if s %}-12 mt-2{% endif %}">
 
-                                <a href="{% url 'menu' %}" class="btn shadow mt-3 mb-2 keep-shopping-btn ms-3 {% if menu_item.category.name == 'sides' %}ks-btn-sides{% endif %}">
+                                <a href="{% url 'menu' %}" class="btn shadow mt-3 mb-2 keep-shopping-btn ms-3 {% if menu_item.category.name == 'sides' %}ks-btn-sides{% endif %}" aria-label="Go back to the menu page.">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left chevron-icon"></i>
                                     </span>
@@ -134,9 +134,9 @@
                                 {% if request.user.is_superuser %}
                                 <div class="text-end superuser-zone position-relative">
                                     <h3 class="text-info text-start position-absolute mt-1 ms-2">Superuser zone</h3>
-                                    <a href="{% url 'edit_menu_item' menu_item.id %}" class="btn px-0 d-inline-block superuser-option">Edit</a>
+                                    <a href="{% url 'edit_menu_item' menu_item.id %}" class="btn px-0 d-inline-block superuser-option" aria-label="Go to the edit page for the {{ menu_item.name }}.">Edit</a>
                                     <span class="text-dark position-relative"> | </span>
-                                    <a class="btn me-3 px-0 d-inline-block superuser-option" href="{% url 'delete_menu_item' menu_item.id %}">Delete</a>
+                                    <a class="btn me-3 px-0 d-inline-block superuser-option" href="{% url 'delete_menu_item' menu_item.id %}" aria-label="Delete the {{ menu_item.name }}.">Delete</a>
                                 </div>
                                 {% endif %}
 
@@ -160,7 +160,7 @@
 
         <div class="text-center mb-2">
             {% for key, value in review_counts.items %}
-            <a href="{% url 'menu_item_detail' menu_item.id %}?rating_word={{ key }}{% if key != 'All' %}!{% endif %}" class="{{ key|lower }} review-words">{{ key }}{% if forloop.counter != 1 %}!{% endif %} ({{ value }}){% if forloop.counter != 6 %},{% endif %}</a>
+            <a href="{% url 'menu_item_detail' menu_item.id %}?rating_word={{ key }}{% if key != 'All' %}!{% endif %}" class="{{ key|lower }} review-words" aria-label="Filter the reviews for the {{ menu_item.name }}.">{{ key }}{% if forloop.counter != 1 %}!{% endif %} ({{ value }}){% if forloop.counter != 6 %},{% endif %}</a>
             {% if forloop.counter|divisibleby:2 %}
             <div class="d-sm-none d-block my-0 mx-0 h-0"></div>
             {% endif %}
@@ -197,15 +197,15 @@
 
                 {% if reviews.has_previous %}
                 <li class="page-item mx-1">
-                    <a href="?page=1" class="page-link btn functioning-btn-alt d-sm-block d-none">&laquo; first</a>
-                    <a href="?page=1" class="page-link btn functioning-btn-alt d-sm-none d-block">&laquo;&laquo;</a>
+                    <a href="?page=1" class="page-link btn functioning-btn-alt d-sm-block d-none" aria-label="Go to the first page of reviews for the {{ menu_item.name }}.">&laquo; first</a>
+                    <a href="?page=1" class="page-link btn functioning-btn-alt d-sm-none d-block" aria-label="Go to the first page of reviews for the {{ menu_item.name }}.">&laquo;&laquo;</a>
                 </li>
                 <li class="page-item mx-1">
                     <a href="?page={{ reviews.previous_page_number }}" class="page-link btn functioning-btn d-sm-block d-none"
-                        aria-label="Go to the previous page of bulletins.">&laquo; PREV
+                        aria-label="Go to the previous page of reviews for the {{ menu_item.name }}..">&laquo; PREV
                     </a>
                     <a href="?page={{ reviews.previous_page_number }}" class="page-link btn functioning-btn d-sm-none d-block"
-                        aria-label="Go to the previous page of bulletins.">&laquo;
+                        aria-label="Go to the previous page of reviews for the {{ menu_item.name }}..">&laquo;
                     </a>
                 </li>
                 {% else %}
@@ -214,10 +214,10 @@
                     <span href="?page=1" class="page-link btn non-functioning-btn d-sm-none d-block">&laquo;&laquo;</span>
                 </li>
                 <li class="page-item mx-1">
-                    <span class="page-link btn non-functioning-btn d-sm-block d-none" aria-label="Go to the previous page of bulletins.">
+                    <span class="page-link btn non-functioning-btn d-sm-block d-none">
                         &laquo; PREV
                     </span>
-                    <span class="page-link btn non-functioning-btn d-sm-none d-block" aria-label="Go to the previous page of bulletins.">
+                    <span class="page-link btn non-functioning-btn d-sm-none d-block">
                         &laquo;
                     </span>
                 </li>
@@ -226,17 +226,17 @@
                 {% if reviews.has_next %}
                 <li class="page-item mx-1">
                     <a href="?page={{ reviews.next_page_number }}" class="page-link btn functioning-btn d-sm-block d-none"
-                        aria-label="Go to the next page of bulletins.">
+                        aria-label="Go to the next page of reviews for the {{ menu_item.name }}..">
                         NEXT &raquo;
                     </a>
                     <a href="?page={{ reviews.next_page_number }}" class="page-link btn functioning-btn d-sm-none d-block"
-                        aria-label="Go to the next page of bulletins.">
+                        aria-label="Go to the next page of reviews for the {{ menu_item.name }}..">
                         &raquo;
                     </a>
                 </li>
                 <li class="page-item mx-1">
-                    <a href="?page={{ reviews.paginator.num_pages }}" class="page-link btn functioning-btn-alt d-sm-block d-none">last &raquo;</a>
-                    <a href="?page={{ reviews.paginator.num_pages }}" class="page-link btn functioning-btn-alt d-sm-none d-block">&raquo;&raquo;</a>
+                    <a href="?page={{ reviews.paginator.num_pages }}" class="page-link btn functioning-btn-alt d-sm-block d-none" aria-label="Go to the last page of reviews for the {{ menu_item.name }}..">last &raquo;</a>
+                    <a href="?page={{ reviews.paginator.num_pages }}" class="page-link btn functioning-btn-alt d-sm-none d-block" aria-label="Go to the last page of reviews for the {{ menu_item.name }}..">&raquo;&raquo;</a>
                 </li>
                 {% else %}
                 <li class="page-item mx-1">
@@ -295,7 +295,7 @@
     {% endif %}
 
     <div class="btt-button shadow-sm rounded-0">
-        <a class="btt-link d-flex h-100">
+        <a class="btt-link d-flex h-100" aria-label="Go to the top of the {{ menu_item.name }} page.">
             <i class="fas fa-arrow-up mx-auto my-auto"></i>
         </a>
     </div>

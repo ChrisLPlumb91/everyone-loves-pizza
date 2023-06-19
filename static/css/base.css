@@ -44,6 +44,12 @@ p {
     text-shadow: 0 2px #000;
 }
 
+h2.name-alt {
+    color: #00000027 !important;
+    display: none;
+    font-size: 3.5rem !important;
+}
+
 #topnav > div.col-12 {
     margin: 1rem 0 !important;
 }
@@ -263,9 +269,14 @@ div.account-col a.signup-link:hover, div.account-col a.forgotpass-link:hover, di
     padding: 0 0 0 20px !important;
 }
 
-.information p, .blurb p {
+.information p {
     font-size: 2.3rem !important;
     line-height: 45px;
+}
+
+.blurb p {
+    font-size: 2rem !important;
+    line-height: 27px;
 }
 
 .photo-and-map-containers {
@@ -1465,6 +1476,11 @@ i.big-star {
         display: block !important;
     }
 
+    .blurb p {
+        font-size: 1.5rem !important;
+        line-height: 17px;
+    }
+
     .map-container {
         width: 100% !important;
         height: 100% !important;
@@ -1727,6 +1743,19 @@ i.big-star {
         font-size: 2rem;
     }
 
+    h2.name-alt {
+        display: block;
+        z-index: 10 !important;
+    }
+
+    h2.top-part-of-name, h2.bottom-part-of-name, h2.top-part-of-name-alt, h2.bottom-part-of-name-alt, h2.middle-part-of-name {
+        display: none !important;
+    }
+
+    .list-inline-item, .navbar-toggler {
+        z-index: 11 !important;
+    }
+
     .nav-link {
         padding: 0.15rem;
     }
@@ -1790,7 +1819,7 @@ i.big-star {
         margin: 0 3rem !important;
     }
 
-    .blurb p, .information p {
+    .information p {
         font-size: 2rem !important;
         line-height: 30px !important;
     }
@@ -2086,7 +2115,7 @@ i.big-star {
 }
 
 @media screen and (max-width: 767px) {
-    .blurb p, .information p {
+    .information p {
         font-size: 1.8rem !important;
     }
 
@@ -2246,6 +2275,12 @@ i.big-star {
     }
 }
 
+@media screen and (max-width: 670px) {
+    h2.name-alt {
+        font-size: 3rem !important;
+    }
+}
+
 @media screen and (max-width: 650px) {
     li.mobile-search, li.mobile-profile, li.mobile-cart, nav.navbar > button.navbar-toggler {
         margin: 0 1rem !important;
@@ -2255,6 +2290,13 @@ i.big-star {
 @media screen and (max-width: 645px) {
     .menu-name-text {
         font-size: 1.9rem !important;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    h2.name-alt {
+        font-size: 2.5rem !important;
+        margin-top: 1.5rem !important;
     }
 }
 
@@ -2544,6 +2586,22 @@ i.big-star {
     }
 }
 
+@media screen and (max-width: 510px) {
+    h2.name-alt {
+        display: none !important;
+    }
+
+    h2.top-part-of-name, h2.bottom-part-of-name {
+        display: block !important;
+        z-index: 10 !important;
+        margin-top: 0 !important;
+    }
+
+    h2.bottom-part-of-name {
+        top: 40px;
+    }
+}
+
 @media screen and (max-width: 507px) {
     label.form-check-label {
         font-size: 1.3rem !important;
@@ -2737,7 +2795,7 @@ i.big-star {
 }
 
 @media screen and (max-width: 414px) {
-    .blurb p, .information p {
+    .information p {
         font-size: 1.5rem !important;
         line-height: 25px !important;
     }
@@ -2933,6 +2991,51 @@ i.big-star {
     }
 }
 
+@media screen and (max-width: 340px) {
+    div.line-break-div {
+        display: block !important;
+        width: 100%;
+    }
+
+    li.mobile-search,  nav.navbar > button.navbar-toggler {
+        margin: 0 2rem !important;
+    }
+
+    /* li.mobile-profile, li.mobile-cart, */
+
+    li.mobile-profile {
+        margin-right: 1.5rem !important;
+        margin-left: 0 !important;
+    }
+
+    li.mobile-cart {
+        margin: 0 1.5rem !important;
+    }
+
+    h2.top-part-of-name, h2.bottom-part-of-name {
+        display: none !important;
+    }
+
+    h2.top-part-of-name-alt, h2.bottom-part-of-name-alt, h2.middle-part-of-name {
+        display: block !important;
+        z-index: 10 !important;
+    }
+
+    h2.top-part-of-name-alt {
+        margin-top: 1rem !important;
+    }
+
+    h2.middle-part-of-name {
+        margin-top: 0 !important;
+        top: 55px;
+    }
+
+    h2.bottom-part-of-name-alt {
+        margin-top: 0 !important;
+        top: 90px;
+    }
+}
+
 @media screen and (max-width: 337px) {
     .menu-name-text {
         font-size: 2rem !important;
@@ -3013,10 +3116,6 @@ i.big-star {
 }
 
 @media screen and (max-width: 322px) {
-    li.mobile-search, li.mobile-profile, li.mobile-cart, nav.navbar > button.navbar-toggler {
-        margin: 0 2rem !important;
-    }
-
     .message-container-mobile {
         width: 210px !important;
     }
