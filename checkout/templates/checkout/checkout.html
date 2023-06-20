@@ -4,210 +4,267 @@
 {% load crispy_forms_tags %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
 {% block page_header %}
-    <div class="container header-container my-sm-3 my-5">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container my-sm-3 my-5">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
 
-    <h2 class="logo-font mb-4 jumbotron-heading checkout-heading ps-4">Checkout</h2>
+<h2 class="logo-font mb-4 jumbotron-heading checkout-heading ps-4">Checkout</h2>
 
-    <div class="container">
-        <div class="row about-section">
-            <div class="col-12 col-lg-6 order-lg-last my-3 g-0">
-                <p class="text-center checkout-headings">Order Summary ({{ menu_item_count }} items)</p>
-                <hr>
-                <div class="row d-sm-flex d-none">
-                    <div class="col-7 offset-2">
-                        <p class="mb-1 mt-0 summary-headings">Item</p>
-                    </div>
-                    <div class="col-3 text-right">
-                        <p class="mb-1 mt-0 summary-headings">Subtotal</p>
-                    </div>
+<div class="container">
+    <div class="row about-section">
+        <div class="col-12 col-lg-6 order-lg-last my-3 g-0">
+            <p class="text-center checkout-headings">Order Summary ({{ menu_item_count }} items)</p>
+            <hr>
+            <div class="row d-sm-flex d-none">
+                <div class="col-7 offset-2">
+                    <p class="mb-1 mt-0 summary-headings">Item</p>
                 </div>
-                <div class="row g-0">
-                    <div class="col-12 order-scroll gx-5">
-                        {% for item in cart_items %}
-                        <div class="row item-row">
-                            <div class="col-2 mb-1 position-relative d-sm-block d-none">
-                                <div class="cart-image-container cart-image-container-small d-flex align-items-center">
-                                    <a href="{% url 'menu_item_detail' item.menu_item.id %}" class="item-page-link-image" aria-label="Go to the page for the {{ item.menu_item.name }}.">
-                                        {% if item.menu_item.image %}
-                                            <img class="img-fluid cart-image cart-image-small ms-1" src="{{ item.menu_item.full_image.url }}" alt="An image of the {{ menu_item.name }}.">
-                                        {% else %}
-                                            <img class="img-fluid cart-image cart-image-small ms-1" src="{{ MEDIA_URL }}noimage.png" alt="A placeholder image for the {{ menu_item.name }}.">
-                                        {% endif %}
-                                    </a>
-                                </div>
-                                <div class="position-absolute colour-band colour-band-small"></div>
-                            </div>
-                            <div class="col-sm-7 col-12 position-relative">
-
-                                <div class="cart-image-container cart-image-container-small d-sm-none d-flex align-items-center">
-                                    <a href="{% url 'menu_item_detail' item.menu_item.id %}" class="item-page-link-image" aria-label="Go to the page for the {{ item.menu_item.name }}.">
-                                        {% if item.menu_item.image %}
-                                            <img class="img-fluid cart-image cart-image-small ms-1" src="{{ item.menu_item.full_image.url }}" alt="An image of the {{ item.menu_item.name }}.">
-                                        {% else %}
-                                            <img class="img-fluid cart-image cart-image-small ms-1" src="{{ MEDIA_URL }}noimage.png" alt="A placeholder image for the {{ item.menu_item.name }}.">
-                                        {% endif %}
-                                    </a>
-                                </div>
-
-                                <div class="position-absolute colour-band colour-band-small d-sm-none d-block"></div>
-
-                                <p class="my-0 info-name info-name-small text-center">{{ item.menu_item.name }}</p>
-                                <p class="ms-5 my-0 small info-size info-size-cart">Size: {% if item.menu_item.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
-                                <p class="ms-5 my-0 info-qty info-qty-cart">Qty: {{ item.quantity }}</p>
-                                <p class="mb-0 mt-5 info-price info-price-cart d-sm-none d-block">€{{ item.menu_item.price | calc_subtotal:item.quantity }}</p>
-                            </div>
-                            <div class="col-3 d-sm-block d-none">
-                                <p class="mb-0 mt-5 info-price info-price-cart">€{{ item.menu_item.price | calc_subtotal:item.quantity }}</p>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-                <hr class="my-2">
-                <div class="row text-end jumbotron-heading py-2 totals-container g-0 me-3">
-                    <div class="col-lg-7 offset-lg-2 mt-3 col-12">
-                        <p class="my-0 totals costs d-lg-block d-inline">Order Total:</p>
-                        <p class="my-0 totals costs d-lg-none d-inline">€{{ total | floatformat:2 }}</p>
-                        <br class="d-lg-none d-block">
-                        <p class="my-0 totals costs d-lg-block d-inline">Delivery:</p>
-                        <p class="my-0 totals costs d-lg-none d-inline">€{{ delivery | floatformat:2 }}</p>
-                        <br class="d-lg-none d-block">
-                        <p class="my-1 totals d-lg-block d-inline"><strong>Grand Total:</strong></p>
-                        <p class="my-0 totals d-lg-none d-inline"><strong>€{{ grand_total | floatformat:2 }}</strong></p>
-                    </div>
-                    <div class="col-lg-3 mt-3 ps-4 text-start d-lg-block d-none">
-                        <p class="my-0 totals costs">€{{ total | floatformat:2 }}</p>
-                        <p class="my-0 totals costs">€{{ delivery | floatformat:2 }}</p>
-                        <p class="my-0 totals"><strong>€{{ grand_total | floatformat:2 }}</strong></p>
-                    </div>
+                <div class="col-3 text-right">
+                    <p class="mb-1 mt-0 summary-headings">Subtotal</p>
                 </div>
             </div>
+            <div class="row g-0">
+                <div class="col-12 order-scroll gx-5">
+                    {% for item in cart_items %}
+                    <div class="row item-row">
+                        <div class="col-2 mb-1 position-relative d-sm-block d-none">
+                            <div class="cart-image-container cart-image-container-small d-flex align-items-center">
+                                <a href="{% url 'menu_item_detail' item.menu_item.id %}" class="item-page-link-image"
+                                    aria-label="Go to the page for the {{ item.menu_item.name }}.">
+                                    {% if item.menu_item.image %}
+                                    <img class="img-fluid cart-image cart-image-small ms-1"
+                                        src="{{ item.menu_item.full_image.url }}"
+                                        alt="An image of the {{ menu_item.name }}.">
+                                    {% else %}
+                                    <img class="img-fluid cart-image cart-image-small ms-1"
+                                        src="{{ MEDIA_URL }}noimage.png"
+                                        alt="A placeholder image for the {{ menu_item.name }}.">
+                                    {% endif %}
+                                </a>
+                            </div>
+                            <div class="position-absolute colour-band colour-band-small"></div>
+                        </div>
+                        <div class="col-sm-7 col-12 position-relative">
 
-            
+                            <div
+                                class="cart-image-container cart-image-container-small d-sm-none d-flex align-items-center">
+                                <a href="{% url 'menu_item_detail' item.menu_item.id %}" class="item-page-link-image"
+                                    aria-label="Go to the page for the {{ item.menu_item.name }}.">
+                                    {% if item.menu_item.image %}
+                                    <img class="img-fluid cart-image cart-image-small ms-1"
+                                        src="{{ item.menu_item.full_image.url }}"
+                                        alt="An image of the {{ item.menu_item.name }}.">
+                                    {% else %}
+                                    <img class="img-fluid cart-image cart-image-small ms-1"
+                                        src="{{ MEDIA_URL }}noimage.png"
+                                        alt="A placeholder image for the {{ item.menu_item.name }}.">
+                                    {% endif %}
+                                </a>
+                            </div>
 
-            <div class="col-12 col-lg-6 my-3">
-                <p class="text-center checkout-headings enter-details">Please enter your details so we can deliver your order!</p>
-                <hr>
-                <form action="{% url 'checkout' %}" method="POST" id="payment-form" class="payment-form">
-                    {% csrf_token %}
-                    <fieldset class="rounded px-3 mb-3 ms-1">
-                        <legend class="fieldset-label px-2 w-auto">Details</legend>
-                        {{ order_form.full_name | as_crispy_field }}
-                        {{ order_form.email | as_crispy_field }}
-                    </fieldset>
-                    <fieldset class="rounded px-3 mb-3 ms-1">
-                        <legend class="fieldset-label px-2 w-auto">Delivery</legend>
-                        {{ order_form.phone_number | as_crispy_field }}
-                        {{ order_form.street_address1 | as_crispy_field }}
-                        {{ order_form.street_address2 | as_crispy_field }}
-                        {{ order_form.town_or_city | as_crispy_field }}
-                        {{ order_form.county | as_crispy_field }}
-                        {{ order_form.postcode | as_crispy_field }}
-                        {{ order_form.country | as_crispy_field }}
-                        <div class="form-check form-check-inline mr-0">
-							{% if user.is_authenticated %}
-								<label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
-                                <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
-							{% else %}
-								<label class="form-check-label" for="id-save-info">
-                                    <a class="text-info" href="{% url 'account_signup' %}" aria-label="Cannot save delivery information. Go to the sign up page to create an account if you do not have one.">Create an account</a> or 
-                                    <a class="text-info" href="{% url 'account_login' %}" aria-label="Cannot save delivery information. Go to the log in page to sign in to your account if you have one.">login</a> to save this information
-                                </label>
-							{% endif %}
-						</div>
-                    </fieldset>
-                    <fieldset class="px-3 ms-1">
-                        <legend class="fieldset-label px-2 w-auto">Payment</legend>
-                        <!-- A Stripe card element will go here -->
-                        <div class="mb-3" id="card-element"></div>
-                        <!-- Used to display form errors -->
-                        <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
-                        <!-- Pass the client secret to the view so we can get the payment intent id -->
-                        <input type="hidden" value="{{ client_secret }}" name="client_secret">
-                    </fieldset>
+                            <div class="position-absolute colour-band colour-band-small d-sm-none d-block"></div>
 
-                    <div class="submit-button text-start mt-2 mb-2 ms-1">                    
-						<a href="{% url 'view_cart' %}" class="btn adjust-bag-btn ms-3 shadow" aria-label="Go to your shopping cart to make adjustments if you need to.">
-							<span class="icon">
-								<i class="fas fa-chevron-left"></i>
-							</span>
-							<span class="font-weight-bold">Adjust Cart</span>
-						</a>
-						<button id="submit-button" class="btn complete-order-btn me-3 float-end shadow">
-							<span class="font-weight-bold">Complete Order</span>
-							<span class="icon">
-								<i class="fas fa-lock"></i>
-							</span>
-						</button>
-						<p class="mt-3 mb-0 me-3 text-end charge-warning">
-							<span class="icon">
-								<i class="text-danger big-icon fas fa-exclamation-circle"></i>
-							</span>
-							<span>Your card will be charged <strong class="text-danger final-charge">€{{ grand_total|floatformat:2 }}</strong></span>
-						</p>
-					</div>
-                </form>
+                            <p class="my-0 info-name info-name-small text-center">{{ item.menu_item.name }}</p>
+                            <p class="ms-5 my-0 small info-size info-size-cart">Size:
+                                {% if item.menu_item.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+                            <p class="ms-5 my-0 info-qty info-qty-cart">Qty: {{ item.quantity }}</p>
+                            <p class="mb-0 mt-5 info-price info-price-cart d-sm-none d-block">
+                                €{{ item.menu_item.price | calc_subtotal:item.quantity }}</p>
+                        </div>
+                        <div class="col-3 d-sm-block d-none">
+                            <p class="mb-0 mt-5 info-price info-price-cart">
+                                €{{ item.menu_item.price | calc_subtotal:item.quantity }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <hr class="my-2">
+            <div class="row text-end jumbotron-heading py-2 totals-container g-0 me-3">
+                <div class="col-lg-7 offset-lg-2 mt-3 col-12">
+                    <p class="my-0 totals costs d-lg-block d-inline">Order Total:</p>
+                    <p class="my-0 totals costs d-lg-none d-inline">€{{ total | floatformat:2 }}</p>
+                    <br class="d-lg-none d-block">
+                    <p class="my-0 totals costs d-lg-block d-inline">Delivery:</p>
+                    <p class="my-0 totals costs d-lg-none d-inline">€{{ delivery | floatformat:2 }}</p>
+                    <br class="d-lg-none d-block">
+                    <p class="my-1 totals d-lg-block d-inline"><strong>Grand Total:</strong></p>
+                    <p class="my-0 totals d-lg-none d-inline"><strong>€{{ grand_total | floatformat:2 }}</strong></p>
+                </div>
+                <div class="col-lg-3 mt-3 ps-4 text-start d-lg-block d-none">
+                    <p class="my-0 totals costs">€{{ total | floatformat:2 }}</p>
+                    <p class="my-0 totals costs">€{{ delivery | floatformat:2 }}</p>
+                    <p class="my-0 totals"><strong>€{{ grand_total | floatformat:2 }}</strong></p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="btt-button shadow-sm rounded-0">
-        <a class="btt-link d-flex h-100" aria-label="Go to the top of the checkout page.">
-            <i class="fas fa-arrow-up mx-auto my-auto"></i>
-        </a>
-    </div>
 
-    <div id="loading-overlay">
-        <h1 class="text-light logo-font loading-spinner">
-            <span class="icon">
-                <i class="fa-solid fa-pizza-slice fa-spin fa-3x"></i>
-            </span>
-        </h1>
+
+        <div class="col-12 col-lg-6 my-3">
+            <p class="text-center checkout-headings enter-details">Please enter your details so we can deliver your
+                order!</p>
+            <hr>
+            <form action="{% url 'checkout' %}" method="POST" id="payment-form" class="payment-form">
+                {% csrf_token %}
+                <fieldset class="rounded px-3 mb-3 ms-1">
+                    <legend class="fieldset-label px-2 w-auto">Details</legend>
+                    {{ order_form.full_name | as_crispy_field }}
+                    {{ order_form.email | as_crispy_field }}
+                </fieldset>
+                <fieldset class="rounded px-3 mb-3 ms-1">
+                    <legend class="fieldset-label px-2 w-auto">Delivery</legend>
+                    {{ order_form.phone_number | as_crispy_field }}
+                    {{ order_form.street_address1 | as_crispy_field }}
+                    {{ order_form.street_address2 | as_crispy_field }}
+                    {{ order_form.town_or_city | as_crispy_field }}
+                    {{ order_form.county | as_crispy_field }}
+                    {{ order_form.postcode | as_crispy_field }}
+                    {{ order_form.country | as_crispy_field }}
+                    <div class="form-check form-check-inline mr-0">
+                        {% if user.is_authenticated %}
+                        <label class="form-check-label" for="id-save-info">Save this delivery information to my
+                            profile</label>
+                        <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info"
+                            checked>
+                        {% else %}
+                        <label class="form-check-label" for="id-save-info">
+                            <a class="text-info" href="{% url 'account_signup' %}"
+                                aria-label="Cannot save delivery information. Go to the sign up page to create an account if you do not have one.">Create
+                                an account</a> or
+                            <a class="text-info" href="{% url 'account_login' %}"
+                                aria-label="Cannot save delivery information. Go to the log in page to sign in to your account if you have one.">login</a>
+                            to save this information
+                        </label>
+                        {% endif %}
+                    </div>
+                </fieldset>
+                <fieldset class="px-3 ms-1">
+                    <legend class="fieldset-label px-2 w-auto">Payment</legend>
+                    <!-- A Stripe card element will go here -->
+                    <div class="mb-3" id="card-element"></div>
+                    <!-- Used to display form errors -->
+                    <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                    <!-- Pass the client secret to the view so we can get the payment intent id -->
+                    <input type="hidden" value="{{ client_secret }}" name="client_secret">
+                </fieldset>
+
+                <div class="submit-button text-start mt-2 mb-2 ms-1">
+                    <a href="{% url 'view_cart' %}" class="btn adjust-bag-btn ms-3 shadow"
+                        aria-label="Go to your shopping cart to make adjustments if you need to.">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="font-weight-bold">Adjust Cart</span>
+                    </a>
+                    <button id="submit-button" class="btn complete-order-btn me-3 float-end shadow">
+                        <span class="font-weight-bold">Complete Order</span>
+                        <span class="icon">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </button>
+                    <p class="mt-3 mb-0 me-3 text-end charge-warning">
+                        <span class="icon">
+                            <i class="text-danger big-icon fas fa-exclamation-circle"></i>
+                        </span>
+                        <span>Your card will be charged <strong
+                                class="text-danger final-charge">€{{ grand_total|floatformat:2 }}</strong></span>
+                    </p>
+                </div>
+            </form>
+        </div>
     </div>
+</div>
+
+<div class="btt-button shadow-sm rounded-0">
+    <a class="btt-link d-flex h-100" aria-label="Go to the top of the checkout page.">
+        <i class="fas fa-arrow-up mx-auto my-auto"></i>
+    </a>
+</div>
+
+<div id="loading-overlay">
+    <h1 class="text-light logo-font loading-spinner">
+        <span class="icon">
+            <i class="fa-solid fa-pizza-slice fa-spin fa-3x"></i>
+        </span>
+    </h1>
+</div>
 
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-    {{ client_secret|json_script:"id_client_secret" }}
-    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 
-    <script>
-        var itemRows = $('.item-row');
+<script>
+    var itemRows = $('.item-row');
 
+    for (let i = 0; i < itemRows.length; i++) {
+        if ($(itemRows[i]).find('.info-size').text() !== 'Size: N/A') {
+
+            var itemSizeText = $(itemRows[i]).find('.info-size').text();
+            var itemSizeInt = parseInt(itemSizeText.slice(6));
+
+            var qtyText = $(itemRows[i]).find('.info-qty').text();
+            var qtyInt = parseInt(qtyText.slice(5));
+
+            var subtotalInt = qtyInt * itemSizeInt;
+            $(itemRows[i]).find('.info-price').text(`€${subtotalInt}.00`);
+        }
+
+        var itemName = $(itemRows[i]).find('.info-name')
+
+        if ($(itemName).text().length > 20) {
+            $(itemName).addClass('js-added-font-size-decrease-alt');
+            if ($('body').innerWidth() <= 362) {
+                $(itemName).addClass('name-ellipsis');
+            }
+        } else if ($(itemName).text().length === 20) {
+            if ($('body').innerWidth() <= 362) {
+                $(itemName).addClass('name-ellipsis');
+            }
+        }
+
+        var itemSize = $(itemRows[i]).find('.info-size');
+
+        if ($(itemSize).text() === 'Size: N/A') {
+            console.log(`Item with N/A size found: ${itemName.text()}`);
+            if ($('body').innerWidth() <= 288) {
+                console.log(`Body element size currently less than or equal to 288 pixels.`);
+                $(itemSize).text('S: N/A');
+            }
+        }
+
+        var itemQty = $(itemRows[i]).find('.info-qty');
+
+        if ($(itemName).innerHeight() >= 50 && $(window).innerWidth() <= 334) {
+            $(itemSize).addClass('mt-3');
+            $(itemQty).addClass('mt-2');
+            $(itemQty).addClass('mb-1');
+        } else {
+            $(itemSize).removeClass('mt-3');
+            $(itemQty).removeClass('mt-2');
+            $(itemQty).removeClass('mb-1');
+        }
+    }
+
+    $(window).resize(function () {
         for (let i = 0; i < itemRows.length; i++) {
-            if ($(itemRows[i]).find('.info-size').text() !== 'Size: N/A') {
 
-                var itemSizeText = $(itemRows[i]).find('.info-size').text();
-                var itemSizeInt = parseInt(itemSizeText.slice(6));
+            var itemName = $(itemRows[i]).find('.info-name');
 
-                var qtyText = $(itemRows[i]).find('.info-qty').text();
-                var qtyInt = parseInt(qtyText.slice(5));
-            
-                var subtotalInt = qtyInt * itemSizeInt;    
-                $(itemRows[i]).find('.info-price').text(`€${subtotalInt}.00`);
-            } 
-
-            var itemName = $(itemRows[i]).find('.info-name')
-
-            if ($(itemName).text().length > 20) {
-                $(itemName).addClass('js-added-font-size-decrease-alt');
-                if ($('body').innerWidth() <= 362) {
-                    $(itemName).addClass('name-ellipsis');
-                }
-            } else if ($(itemName).text().length === 20) {
+            if ($(itemName).text().length >= 20) {
                 if ($('body').innerWidth() <= 362) {
                     $(itemName).addClass('name-ellipsis');
                 }
@@ -216,11 +273,11 @@
             var itemSize = $(itemRows[i]).find('.info-size');
 
             if ($(itemSize).text() === 'Size: N/A') {
-                console.log(`Item with N/A size found: ${itemName.text()}`);
-                if ($('body').innerWidth() <= 288) {
-                    console.log(`Body element size currently less than or equal to 288 pixels.`);
+                if ($('body').innerWidth() <= 326) {
                     $(itemSize).text('S: N/A');
                 }
+            } else if ($('body').innerWidth() > 326 && $(itemSize).text() === 'S: N/A') {
+                $(itemSize).text('Size: N/A');
             }
 
             var itemQty = $(itemRows[i]).find('.info-qty');
@@ -235,40 +292,6 @@
                 $(itemQty).removeClass('mb-1');
             }
         }
-
-        $(window).resize(function() {
-            for (let i = 0; i < itemRows.length; i++) {
-
-                var itemName = $(itemRows[i]).find('.info-name');
-
-                if ($(itemName).text().length >= 20) {
-                    if ($('body').innerWidth() <= 362) {
-                        $(itemName).addClass('name-ellipsis');
-                    }
-                }
-
-                var itemSize = $(itemRows[i]).find('.info-size');
-
-                if ($(itemSize).text() === 'Size: N/A') {
-                    if ($('body').innerWidth() <= 326) {
-                        $(itemSize).text('S: N/A');
-                    }
-                } else if ($('body').innerWidth() > 326 && $(itemSize).text() === 'S: N/A') {
-                    $(itemSize).text('Size: N/A');
-                }
-
-                var itemQty = $(itemRows[i]).find('.info-qty');
-
-                if ($(itemName).innerHeight() >= 50 && $(window).innerWidth() <= 334) {
-                    $(itemSize).addClass('mt-3');
-                    $(itemQty).addClass('mt-2');
-                    $(itemQty).addClass('mb-1');
-                } else {
-                    $(itemSize).removeClass('mt-3');
-                    $(itemQty).removeClass('mt-2');
-                    $(itemQty).removeClass('mb-1');
-                }
-            }        
-        })
-    </script>
+    })
+</script>
 {% endblock %}

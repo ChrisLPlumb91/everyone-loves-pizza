@@ -2,32 +2,41 @@
     <hr>
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link mr-5" href="{% url 'home' %}" id="home-link" aria-label="Go to the home page."><i class="fas fa-home small"></i>
+            <a class="logo-font font-weight-bold nav-link mr-5" href="{% url 'home' %}" id="home-link"
+                aria-label="Go to the home page."><i class="fas fa-home small"></i>
                 Home
             </a>
         </li>
         <li class="nav-item dropdown full-menu-dropdown">
-            <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="full-menu-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Expand or collapse the menu dropdown.">
+            <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="full-menu-link" data-bs-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false" aria-label="Expand or collapse the menu dropdown.">
                 <i class="fas fa-map"></i> Full Menu
             </a>
             <div class="dropdown-menu border-0 text-center categories-container" aria-labelledby="full-menu-link">
-                <a href="{% url 'menu' %}?sort=price&direction=asc" class="dropdown-item" aria-label="Go to the menu page sorted by price.">By Price</a>
-                <a href="{% url 'menu' %}?sort=category&direction=asc" class="dropdown-item" aria-label="Go to the menu page sorted by category.">By Category</a>
-                <a href="{% url 'menu' %}" class="dropdown-item" aria-label="Go to the unsorted menu page.">All Menu Items</a>
+                <a href="{% url 'menu' %}?sort=price&direction=asc" class="dropdown-item"
+                    aria-label="Go to the menu page sorted by price.">By Price</a>
+                <a href="{% url 'menu' %}?sort=category&direction=asc" class="dropdown-item"
+                    aria-label="Go to the menu page sorted by category.">By Category</a>
+                <a href="{% url 'menu' %}" class="dropdown-item" aria-label="Go to the unsorted menu page.">All Menu
+                    Items</a>
             </div>
         </li>
 
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link mr-5" href="{% url 'menu' %}?category=pizzas" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Go to the pizza menu.">
+            <a class="logo-font font-weight-bold nav-link mr-5" href="{% url 'menu' %}?category=pizzas"
+                id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                aria-label="Go to the pizza menu.">
                 <i class="fas fa-pizza-slice"></i> Pizza
             </a>
         </li>
 
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link mr-5" href="{% url 'menu' %}?category=sides" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Go to the sides menu.">
+            <a class="logo-font font-weight-bold nav-link mr-5" href="{% url 'menu' %}?category=sides"
+                id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                aria-label="Go to the sides menu.">
                 <i class="fa-solid fa-bowl-food"></i> Sides
             </a>
         </li>
-    
+
     </ul>
 </div>

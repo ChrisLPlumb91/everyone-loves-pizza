@@ -295,6 +295,11 @@ div.account-col a.login-link:hover {
     color:#14A44D !important;
 }
 
+p.invalid-feedback > strong {
+    color: #000 !important;
+    font-size: 1.5rem !important;
+}
+
 .information,
 .photo {
     padding: 0 0 0 20px !important;
@@ -673,7 +678,8 @@ td {
 }
 
 .cart-image,
-.fave-image {
+.fave-image,
+.cart-img-link {
     height: 200px !important;
     width: 200px !important;
     border-radius: 50% !important;
@@ -1561,6 +1567,22 @@ i.medium-star {
 
 i.big-star {
     font-size: 3rem !important;
+}
+
+div.product-details-container > div.shift-favourite-button-down {
+    top: -49px !important;
+}
+
+div.product-details-container > div.shift-favourite-button-down-more {
+    top: -28px !important;
+}
+
+div.product-details-container > div.shift-favourite-button-down-even-more {
+    top: -9px !important;
+}
+
+div.product-details-container > div.shift-favourite-button-down-even-more-alt {
+    top: 10px !important;
 }
 
 @media screen and (max-width: 1520px) {

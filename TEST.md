@@ -997,6 +997,7 @@ This particular testing involved trying every link and URL on the site to ensure
 
 ### Shopping cart
 <ul>
+    <li>An item's image directs the user to that item's page when clicked (mobile and desktop).</li>
     <li>The minus quantity button decrements the quantity by 1 unless it is at 1 (mobile and desktop).</li>
     <li>The plus quantity button increments the quantity by 1 unless it is at 99 (mobile and desktop).</li>
     <li>The update button changes the quantity of a given item to the amount set in the quantity field, reloading the shopping cart (mobile and desktop).</li>
@@ -1117,12 +1118,144 @@ This particular testing involved trying every link and URL on the site to ensure
 <br>
 
 <hr>
+
+## Form Testing
+
+<hr>
+There are 11 forms on this site: The sign up form, the log in form, the password reset email form, the password change form, the review form, the contact us form, the delivery information form, the payment form, the default delivery information form, the add item form, and the edit item form. I tested each one to ensure that they all submit as they should, and that it isn't possible to submit them if they are incomplete, or supplied with the wrong kind of data.
+<hr>
+
+### Sign up form (logged out only)
+
+<ul>
+    <li>Cannot be submitted until a valid value has been entered into each field.</li>
+    <li>All fields completed but one or both email fields do not match email format - form will not submit.</li>
+    <li>All fields completed but username is already taken - form will not submit.</li>
+    <li>All fields completed but username is 4 characters or less - form will not submit.</li>
+    <li>All fields completed but email addresses do not match - form will not submit.</li>
+    <li>All fields completed but passwords do not match - form will not submit.</li>
+    <li>All fields completed but passwords are too common / short - form will not submit.</li>
+</ul>
+
+<br>
+
+### Log in form (logged out only)
+
+<ul>
+    <li>Cannot be submitted until a valid value has been entered into each field.</li>
+    <li>All fields completed but email field's value does not match email format - form will not submit.</li>
+    <li>All fields completed but email address entered does not exist in database - form will not submit.</li>
+    <li>All fields completed but username does not exist in database - form will not submit.</li>
+    <li>All fields completed but password is incorrect - form will not submit.</li>
+    <li>Remember Me checkbox checked before logging in - login information will be stored in cookies so that the user will still be logged in if they open and close their browser.</li>
+</ul>
+
+<br>
+
+### Password reset email form (logged out only)
+
+<ul>
+    <li>Email address entered does not match email format - form will not submit.</li>
+    <li>Email address entered does not exist in database - form will not submit.</li>
+</ul>
+
+<br>
+
+### Password change form (logged out only)
+
+<ul>
+    <li>The passwords entered are too short - form will not submit.</li>
+    <li>The passwords entered do not match - form will not submit.</li>
+    <li>The passwords entered are too common - form will not submit.</li>
+</ul>
+
+<br>
+
+### Quantity and size form (menu item page)
+<ul>
+    <li>Both of the fields in this form are dropdown menus - size and quantity. Neither contain options that cannot be submitted, so it is therefore impossible for this form to fail to submit.</li>
+</ul>
+
+<br>
+
+### Review form (logged in only)
+
+<ul>
+    <li>A rating from the dropdown menu must be selected, and a review must be written, for the form to submit</li>
+    <li>The "Niente..." option in the dropdown menu is selected but the review field has text - form will not submit.</li>
+</ul>
+
+<br>
+
+### Contact us form (logged in only)
+
+<ul>
+    <li>A rating from the dropdown menu must be selected, and a message must be written, for the form to submit</li>
+    <li>The "Choose a reason" option in the dropdown menu is selected but the review field has text - form will not submit.</li>
+</ul>
+
+<br>
+
+### Quantity form (shopping cart page)
+<ul>
+    <li>The quantity selector field in this form does not contain any options that cannot be submitted. Therefore, it is not possible for submission of this form to fail.</li>
+</ul>
+
+<br>
+
+### Delivery information form (checkout page)
+
+<ul>
+    <li>The following fields are mandatory: Full name, email address, phone number, street address 1, town or city, and country. The form will submit if all of these fields are completed with valid data (along with the payment form; see below). Street address 2, county, state or locality, and postal code can all be left blank, and the form will still submit</li>
+    <li>The form will submit if the email address you provide is not the one you registered with.</li>
+    <li>Email address entered does not match email format - form will not submit.</li>
+</ul>
+
+<br>
+
+### Payment form (checkout page)
+
+<ul>
+    <li>The payment form must be completed in addition to the delivery information form in order for the entire checkout page form to successfully submit. You must enter a valid card number, a valid expiry date, a CVC number, and a ZIP code. The form alerts you in real-time if the card number you are entering is invalid.</li>
+</ul>
+
+<br>
+
+### Default delivery information form (profile page / logged in only)
+
+<ul>
+    <li>None of the fields on this form are mandatory. A blank form can be submitted. This will be reflected in the delivery information form at the checkout page.</li>
+</ul>
+
+<br>
+
+### Add item form (logged in as superuser only)
+
+<ul>
+    <li>The name, calories, and price fields are mandatory, but the description, ingredients, and image fields are optional. The form can be submitted without filling in said optional fields. Any of the options in the category and has sizes dropdown menus can be submitted.</li>
+    <li>There are no limits to what size the images can be, but a warning message will appear when you select one that contains the suggested dimensions.</li>
+</ul>
+
+<br>
+
+### Edit item form (logged in as superuser only)
+
+<ul>
+    <li>The name, calories, and price fields are mandatory, but the description, ingredients, and image fields are optional. The form can be submitted without filling in said optional fields. Any of the options in the category and has sizes dropdown menus can be submitted. Existing optional values can be removed, and the form will still submit successfully.</li>
+    <li>There are no limits to what size the images can be, but a warning message will appear when you select one that contains the suggested dimensions.</li>
+</ul>
+
+<br>
+
+<hr>
+
 ## Validator Results
+
 <hr>
 
 ### W3C (HTML validation)
 <br>
-Index page (not logged in): <img src="static/images/index-not-logged-in-validated.png" alt="An image of base.html / index.html (not logged in) passing validation.">
+Inde\x page (not logged in): <img src="static/images/index-not-logged-in-validated.png" alt="An image of base.html / index.html (not logged in) passing validation.">
 Index page (logged in): <img src="static/images/index-logged-in-validated.png" alt="An image of base.html / index.html (logged in) passing validation.">
 Bulletin page (not logged in): <img src="static/images/bulletin-page-not-logged-in-validated.png" alt="An image of base.html / bulletin.html (not logged in) passing validation.">
 Bulletin page (logged in): <img src="static/images/bulletin-page-logged-in-validated.png" alt="An image of base.html / bulletin.html (logged in) passing validation.">

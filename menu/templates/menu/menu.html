@@ -11,7 +11,8 @@
     <div class="row mt-1">
         <div class="col text-center">
             {% for c in current_categories %}
-            <a class="category-badge text-decoration-none" href="{% url 'menu' %}?category={{ c.name }}" aria-label="Go to the {{ c.name }} menu.">
+            <a class="category-badge text-decoration-none" href="{% url 'menu' %}?category={{ c.name }}"
+                aria-label="Go to the {{ c.name }} menu.">
                 <span
                     class="p-2 mt-2 text-black rounded-0 border border-dark category-badge">{{ c.friendly_name }}</span>
             </a>
@@ -19,11 +20,12 @@
             <hr class="mb-1" style="color:#f19832;">
         </div>
     </div>
-            
+
     <div class="row">
         <div class="menu-container col-10 offset-1">
             <div class="row mt-1 mb-2">
-                <div class="col-12 my-auto order-md-last d-flex justify-content-center justify-content-md-end {% if search_term %}col-md-5{% else %}col-md-6{% endif %}">
+                <div
+                    class="col-12 my-auto order-md-last d-flex justify-content-center justify-content-md-end {% if search_term %}col-md-5{% else %}col-md-6{% endif %}">
                     <div class="sort-select-wrapper text-end">
                         <select id="sort-selector"
                             class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
@@ -44,10 +46,13 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-12 search-results-container order-md-first {% if search_term %}col-md-7{% else %}col-md-6{% endif %}">
-                    <p class="search-results-num mt-3 text-center text-md-left jumbotron-heading d-inline-block px-2 {% if search_term or current_categories or current_sorting != 'None_None' %}search-results-with-link{%endif%}">
+                <div
+                    class="col-12 search-results-container order-md-first {% if search_term %}col-md-7{% else %}col-md-6{% endif %}">
+                    <p
+                        class="search-results-num mt-3 text-center text-md-left jumbotron-heading d-inline-block px-2 {% if search_term or current_categories or current_sorting != 'None_None' %}search-results-with-link{%endif%}">
                         {% if search_term or current_categories or current_sorting != 'None_None' %}
-                        <span><a href="{% url 'menu' %}" class="menu-home-link" aria-label="Go to the menu page.">Menu Home</a> | </span>
+                        <span><a href="{% url 'menu' %}" class="menu-home-link" aria-label="Go to the menu page.">Menu
+                                Home</a> | </span>
                         {% endif %}
                         {{ menu_items|length }} menu item{% if not search_term %}s{% elif search_term %}(s) found for
                         "{{ search_term }}"{% endif %}
@@ -63,332 +68,485 @@
 
                 <!-- Iterating through menu items -->
                 {% for menu_item in menu_items %}
-                    <!-- This if executes if sorting has been applied, and iterates through and displays each and every menu item (pizzas and sides) in the order of the applied sort. -->
-                    {% if current_sorting != 'None_None' %}
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 {% if search_term or current_categories or current_sorting != 'None_None' %}mt-4{% endif %}">
-                        <div class="card h-100 border-0">
+                <!-- This if executes if sorting has been applied, and iterates through and displays each and every menu item (pizzas and sides) in the order of the applied sort. -->
+                {% if current_sorting != 'None_None' %}
+                <div
+                    class="col-sm-6 col-md-6 col-lg-4 col-xl-3 {% if search_term or current_categories or current_sorting != 'None_None' %}mt-4{% endif %}">
+                    <div class="card h-100 border-0">
 
-                            <div class="card-body pb-0">
+                        <div class="card-body pb-0">
 
-                                <div class="row">
-                                    <div class="col">
-                                        {% if menu_item.image %}
-                                        <a href="{% url 'menu_item_detail' menu_item.id %}"
-                                            class="d-inline-block float-end {% if menu_item.category.name == 'pizzas' %}pizza-image-link{% else %}side-image-link{% endif %}" aria-label="Go to the page for the {{ menu_item.name }}.">
-                                            <img src="{{ menu_item.image.url }}" alt="An image of the {{ menu_item.name }}" class="img-fluid {% if menu_item.category.name == 'sides' %}mb-3{% endif %}">
-                                        </a>
-                                        {% else %}
-                                        <a href="{% url 'menu_item_detail' menu_item.id %}" aria-label="Go to the page for the {{ menu_item.name }}.">
-                                            <img src="{{ MEDIA_URL }}noimage.png" alt="A placeholder image for the {{ menu_item.name }}." class="img-fluid">
-                                        </a>
-                                        {% endif %}
+                            <div class="row">
+                                <div class="col">
+                                    {% if menu_item.image %}
+                                    <a href="{% url 'menu_item_detail' menu_item.id %}"
+                                        class="d-inline-block float-end {% if menu_item.category.name == 'pizzas' %}pizza-image-link{% else %}side-image-link{% endif %}"
+                                        aria-label="Go to the page for the {{ menu_item.name }}.">
+                                        <img src="{{ menu_item.image.url }}" alt="An image of the {{ menu_item.name }}"
+                                            class="img-fluid {% if menu_item.category.name == 'sides' %}mb-3{% endif %}">
+                                    </a>
+                                    {% else %}
+                                    <a href="{% url 'menu_item_detail' menu_item.id %}"
+                                        aria-label="Go to the page for the {{ menu_item.name }}.">
+                                        <img src="{{ MEDIA_URL }}noimage.png"
+                                            alt="A placeholder image for the {{ menu_item.name }}." class="img-fluid">
+                                    </a>
+                                    {% endif %}
 
-                                        <h3 class="d-inline-block float-start menu-name-text">{{ menu_item.name }}</h3>
-                                    </div>
+                                    <h3 class="d-inline-block float-start menu-name-text">{{ menu_item.name }}</h3>
                                 </div>
-                                
-                                <hr class="name-ingredients-divider">
-                                <p class="d-inline-block mb-0 menu-ingredients-text">{{ menu_item.ingredients }} <small class="float-end">({{ menu_item.calories }})</small></p>
-                                <hr>
-
                             </div>
 
-                            <div class="card-footer bg-white pt-0 border-0 text-left">
+                            <hr class="name-ingredients-divider">
+                            <p class="d-inline-block mb-0 menu-ingredients-text">{{ menu_item.ingredients }} <small
+                                    class="float-end">({{ menu_item.calories }})</small></p>
+                            <hr>
 
-                                <div class="row">
-                                    <div class="col">
-                                        {% if menu_item.category.name == 'pizzas' %}
-                                        <small>Starting from €{{ menu_item.price }}</small>
-                                        {% else %}
-                                        <small>€{{ menu_item.price }} each</small>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col">
-                                        {% if menu_item.category %}
-                                        <p class="small mt-1 mb-0">
-                                            <a class="text-muted"
-                                                href="{% url 'menu' %}?category={{ menu_item.category.name }}" aria-label="Go to the menu for {{ menu_item.category.name }}.">
-                                                <i class="fas fa-tag mr-1"></i>{{ menu_item.category.friendly_name }}
-                                            </a>
-                                        </p>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                                        
-                                <div class="row">
-                                    <div class="col">
-                                        {% if menu_item.rating %}
-                                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ menu_item.rating }} /
-                                            5</small>
-                                        {% else %}
-                                        <small class="text-muted">No Rating</small>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                                             
-                                <div class="row">
-                                    <div class="col">
-                                        <a href="{% url 'menu_item_detail' menu_item.id %}" class="btn btn-lg order-button shadow" aria-label="Go to the page for the {{ menu_item.name }}.">Order now</a>
-                                    </div>
-                                </div>
+                        </div>
 
-                                {% if request.user.is_superuser %}
-                                <div class="row mt-2 superuser-zone position-relative">
-                                    <div class="col edit-delete-options d-flex align-items-center">
-                                        <h3 class="text-info text-start position-absolute mt-1">Superuser zone</h3>
-                                        <a href="{% url 'edit_menu_item' menu_item.id %}" class="superuser-option pe-1" aria-label="Go to the edit page for the {{ menu_item.name }}.">Edit</a> |
-                                        <a class="text-danger superuser-option ps-1" href="{% url 'delete_menu_item' menu_item.id %}" aria-label="Delete the {{ menu_item.name }}.">Delete</a>  
-                                    </div>
-                                </div>
-                                {% endif %}
+                        <div class="card-footer bg-white pt-0 border-0 text-left">
 
+                            <div class="row">
+                                <div class="col">
+                                    {% if menu_item.category.name == 'pizzas' %}
+                                    <small>Starting from €{{ menu_item.price }}</small>
+                                    {% else %}
+                                    <small>€{{ menu_item.price }} each</small>
+                                    {% endif %}
+                                </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    {% if menu_item.category %}
+                                    <p class="small mt-1 mb-0">
+                                        <a class="text-muted"
+                                            href="{% url 'menu' %}?category={{ menu_item.category.name }}"
+                                            aria-label="Go to the menu for {{ menu_item.category.name }}.">
+                                            <i class="fas fa-tag mr-1"></i>{{ menu_item.category.friendly_name }}
+                                        </a>
+                                    </p>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    {% if menu_item.rating %}
+                                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ menu_item.rating }} /
+                                        5</small>
+                                    {% else %}
+                                    <small class="text-muted">No Rating</small>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <a href="{% url 'menu_item_detail' menu_item.id %}"
+                                        class="btn btn-lg order-button shadow"
+                                        aria-label="Go to the page for the {{ menu_item.name }}.">Order now</a>
+                                </div>
+                            </div>
+
+                            {% if request.user.is_superuser %}
+                            <div class="row mt-2 superuser-zone position-relative">
+                                <div class="col edit-delete-options d-flex align-items-center">
+                                    <h3 class="text-info text-start position-absolute mt-1">Superuser zone</h3>
+                                    <a href="{% url 'edit_menu_item' menu_item.id %}" class="superuser-option pe-1"
+                                        aria-label="Go to the edit page for the {{ menu_item.name }}.">Edit</a> |
+                                    <a class="text-danger superuser-option ps-1"
+                                        href="{% url 'delete_menu_item' menu_item.id %}"
+                                        aria-label="Delete the {{ menu_item.name }}.">Delete</a>
+                                </div>
+                            </div>
+                            {% endif %}
+
                         </div>
                     </div>
+                </div>
 
-                    {% if forloop.counter|divisibleby:1 and current_sorting != 'None_None' %}
-                    <div class="col-12 d-sm-none">
-                        <hr style="color:#f19832;">
-                    </div>
-                    {% endif %}
-                    {% if forloop.counter|divisibleby:2 and current_sorting != 'None_None' %}
-                    <div class="col-12 d-none d-sm-block d-md-block d-lg-none">
-                        <hr style="color:#f19832;">
-                    </div>
-                    {% endif %}
-                    {% if forloop.counter|divisibleby:3 and current_sorting != 'None_None' %}
-                    <div class="col-12 d-none d-lg-block d-xl-none">
-                        <hr style="color:#f19832;">
-                    </div>
-                    {% endif %}
-                    {% if forloop.counter|divisibleby:4 and current_sorting != 'None_None' %}
-                    <div class="col-12 d-none d-xl-block">
-                        <hr style="color:#f19832;">
-                    </div>
-                    {% endif %}
+                {% if forloop.counter|divisibleby:1 and current_sorting != 'None_None' %}
+                <div class="col-12 d-sm-none">
+                    <hr style="color:#f19832;">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:2 and current_sorting != 'None_None' %}
+                <div class="col-12 d-none d-sm-block d-md-block d-lg-none">
+                    <hr style="color:#f19832;">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:3 and current_sorting != 'None_None' %}
+                <div class="col-12 d-none d-lg-block d-xl-none">
+                    <hr style="color:#f19832;">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:4 and current_sorting != 'None_None' %}
+                <div class="col-12 d-none d-xl-block">
+                    <hr style="color:#f19832;">
+                </div>
+                {% endif %}
 
-                    <!-- This elif executes if no sort has been applied, and if the category name of the current menu item is pizzas. They will display below the pizzas heading. -->
-                    {% elif menu_item.category.name == 'pizzas' and current_sorting == 'None_None' %}
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 {% if search_term or current_categories or current_sorting != 'None_None' %}mt-4{% endif %}">
-                        <div class="card h-100 border-0">
+                <!-- This elif executes if no sort has been applied, and if the category name of the current iteration's menu item in the is 'pizzas'. They will display below the pizzas heading. -->
+                {% elif menu_item.category.name == 'pizzas' and current_sorting == 'None_None' %}
+                <div
+                    class="col-sm-6 col-md-6 col-lg-4 col-xl-3 {% if search_term or current_categories or current_sorting != 'None_None' %}mt-4{% endif %}">
+                    <div class="card h-100 border-0">
 
-                            <div class="card-body pb-0">
+                        <div class="card-body pb-0">
 
-                                <div class="row">
-                                    <div class="col">
-                                        {% if menu_item.image %}
-                                        <a href="{% url 'menu_item_detail' menu_item.id %}"
-                                            class="d-inline-block float-end pizza-image-link" aria-label="Go to the page for the {{ menu_item.name }} pizza.">
-                                            <img src="{{ menu_item.image.url }}" alt="An image of the {{ menu_item.name }} pizza" class="img-fluid">
-                                        </a>
-                                        {% else %}
-                                        <a href="{% url 'menu_item_detail' menu_item.id %}" aria-label="Go to the page for the {{ menu_item.name }} pizza.">
-                                            <img src="{{ MEDIA_URL }}noimage.png" alt="A placeholder image for the {{ menu_item.name }} pizza." class="img-fluid">
-                                        </a>
-                                        {% endif %}
+                            <div class="row">
+                                <div class="col">
+                                    {% if menu_item.image %}
+                                    <a href="{% url 'menu_item_detail' menu_item.id %}"
+                                        class="d-inline-block float-end pizza-image-link"
+                                        aria-label="Go to the page for the {{ menu_item.name }} pizza.">
+                                        <img src="{{ menu_item.image.url }}"
+                                            alt="An image of the {{ menu_item.name }} pizza" class="img-fluid">
+                                    </a>
+                                    {% else %}
+                                    <a href="{% url 'menu_item_detail' menu_item.id %}"
+                                        aria-label="Go to the page for the {{ menu_item.name }} pizza.">
+                                        <img src="{{ MEDIA_URL }}noimage.png"
+                                            alt="A placeholder image for the {{ menu_item.name }} pizza."
+                                            class="img-fluid">
+                                    </a>
+                                    {% endif %}
 
-                                        <h3 class="d-inline-block float-start menu-name-text">{{ menu_item.name }}</h3>
-                                    </div>
+                                    <h3 class="d-inline-block float-start menu-name-text">{{ menu_item.name }}</h3>
                                 </div>
-                                
-                                <hr class="name-ingredients-divider">
-                                <p class="d-inline-block mb-0 menu-ingredients-text">{{ menu_item.ingredients }} <small class="float-end">({{ menu_item.calories }})</small></p>
-                                <hr>
-
                             </div>
 
-                            <div class="card-footer bg-white pt-0 border-0 text-left">
+                            <hr class="name-ingredients-divider">
+                            <p class="d-inline-block mb-0 menu-ingredients-text">{{ menu_item.ingredients }} <small
+                                    class="float-end">({{ menu_item.calories }})</small></p>
+                            <hr>
 
-                                <div class="row">
-                                    <div class="col">
-                                        <small>Starting from €{{ menu_item.price }}</small>
-                                    </div>
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col">
-                                        {% if menu_item.category %}
-                                        <p class="small mt-1 mb-0">
-                                            <a class="text-muted"
-                                                href="{% url 'menu' %}?category={{ menu_item.category.name }}" aria-label="Go to the pizza menu.">
-                                                <i class="fas fa-tag mr-1"></i>{{ menu_item.category.friendly_name }}
-                                            </a>
-                                        </p>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                                        
-                                <div class="row">
-                                    <div class="col">
-                                        {% if menu_item.rating %}
-                                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ menu_item.rating }} /
-                                            5</small>
-                                        {% else %}
-                                        <small class="text-muted">No Rating</small>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col">
-                                        <a href="{% url 'menu_item_detail' menu_item.id %}" class="btn btn-lg order-button shadow" aria-label="Go to the page for the {{ menu_item.name }} pizza.">Order now</a>
-                                    </div>
-                                </div>
+                        </div>
 
-                                {% if request.user.is_superuser %}
-                                <div class="row mt-2 superuser-zone position-relative">
-                                    <div class="col edit-delete-options d-flex align-items-center">
-                                        <h3 class="text-info text-start position-absolute mt-1">Superuser zone</h3>
-                                        <a href="{% url 'edit_menu_item' menu_item.id %}" class="superuser-option pe-1" aria-label="Go to the edit page for the {{ menu_item.name }} pizza.">Edit</a> |
-                                        <a class="text-danger superuser-option ps-1" href="{% url 'delete_menu_item' menu_item.id %}" aria-label="Delete the {{ menu_item.name }} pizza.">Delete</a>  
-                                    </div>
-                                </div>
-                                {% endif %}
+                        <div class="card-footer bg-white pt-0 border-0 text-left">
 
+                            <div class="row">
+                                <div class="col">
+                                    <small>Starting from €{{ menu_item.price }}</small>
+                                </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    {% if menu_item.category %}
+                                    <p class="small mt-1 mb-0">
+                                        <a class="text-muted"
+                                            href="{% url 'menu' %}?category={{ menu_item.category.name }}"
+                                            aria-label="Go to the pizza menu.">
+                                            <i class="fas fa-tag mr-1"></i>{{ menu_item.category.friendly_name }}
+                                        </a>
+                                    </p>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    {% if menu_item.rating %}
+                                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ menu_item.rating }} /
+                                        5</small>
+                                    {% else %}
+                                    <small class="text-muted">No Rating</small>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <a href="{% url 'menu_item_detail' menu_item.id %}"
+                                        class="btn btn-lg order-button shadow"
+                                        aria-label="Go to the page for the {{ menu_item.name }} pizza.">Order now</a>
+                                </div>
+                            </div>
+
+                            {% if request.user.is_superuser %}
+                            <div class="row mt-2 superuser-zone position-relative">
+                                <div class="col edit-delete-options d-flex align-items-center">
+                                    <h3 class="text-info text-start position-absolute mt-1">Superuser zone</h3>
+                                    <a href="{% url 'edit_menu_item' menu_item.id %}" class="superuser-option pe-1"
+                                        aria-label="Go to the edit page for the {{ menu_item.name }} pizza.">Edit</a> |
+                                    <a class="text-danger superuser-option ps-1"
+                                        href="{% url 'delete_menu_item' menu_item.id %}"
+                                        aria-label="Delete the {{ menu_item.name }} pizza.">Delete</a>
+                                </div>
+                            </div>
+                            {% endif %}
+
                         </div>
                     </div>
+                </div>
 
-                    {% if forloop.counter|divisibleby:1 and not search_term and not current_categories and current_sorting == 'None_None' %}
-                    <div class="col-12 d-sm-none d-block">
-                        <hr style="color:#f19832;">
+                {% if forloop.counter|divisibleby:1 and not search_term and not current_categories and current_sorting == 'None_None' %}
+                <div class="col-12 d-sm-none d-block">
+                    <hr style="color:#f19832;">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:2 and not search_term and not current_categories and current_sorting == 'None_None' %}
+                <div class="col-12 d-none d-sm-block d-md-block d-lg-none">
+                    <hr style="color:#f19832;">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:3 and not search_term and not current_categories and current_sorting == 'None_None' %}
+                <div class="col-12 d-none d-lg-block d-xl-none">
+                    <hr style="color:#f19832;">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:4 and not search_term and not current_categories and current_sorting == 'None_None' %}
+                <div class="col-12 d-none d-xl-block">
+                    <hr style="color:#f19832;">
+                </div>
+                {% endif %}
+
+                <!-- This elif executes if no sort has been applied, and if the category name of the current iteration's menu item in the is 'sides', and if 'sides' is one of the selected categories. -->
+                {% elif menu_item.category.name == 'sides' and current_sorting == 'None_None' and 'sides' in category_list %}
+                <div
+                    class="col-sm-6 col-md-6 col-lg-4 col-xl-3 {% if search_term or current_categories or current_sorting != 'None_None' %}mt-4{% endif %}">
+                    <div class="card h-100 border-0">
+
+                        <div class="card-body pb-0">
+
+                            <div class="row">
+                                <div class="col">
+                                    {% if menu_item.image %}
+                                    <a href="{% url 'menu_item_detail' menu_item.id %}"
+                                        class="d-inline-block float-end pizza-image-link"
+                                        aria-label="Go to the page for the {{ menu_item.name }} pizza.">
+                                        <img src="{{ menu_item.image.url }}"
+                                            alt="An image of the {{ menu_item.name }} pizza" class="img-fluid">
+                                    </a>
+                                    {% else %}
+                                    <a href="{% url 'menu_item_detail' menu_item.id %}"
+                                        aria-label="Go to the page for the {{ menu_item.name }} pizza.">
+                                        <img src="{{ MEDIA_URL }}noimage.png"
+                                            alt="A placeholder image for the {{ menu_item.name }} pizza."
+                                            class="img-fluid">
+                                    </a>
+                                    {% endif %}
+
+                                    <h3 class="d-inline-block float-start menu-name-text">{{ menu_item.name }}</h3>
+                                </div>
+                            </div>
+
+                            <hr class="name-ingredients-divider">
+                            <p class="d-inline-block mb-0 menu-ingredients-text">{{ menu_item.ingredients }} <small
+                                    class="float-end">({{ menu_item.calories }})</small></p>
+                            <hr>
+
+                        </div>
+
+                        <div class="card-footer bg-white pt-0 border-0 text-left">
+
+                            <div class="row">
+                                <div class="col">
+                                    <small>Starting from €{{ menu_item.price }}</small>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    {% if menu_item.category %}
+                                    <p class="small mt-1 mb-0">
+                                        <a class="text-muted"
+                                            href="{% url 'menu' %}?category={{ menu_item.category.name }}"
+                                            aria-label="Go to the pizza menu.">
+                                            <i class="fas fa-tag mr-1"></i>{{ menu_item.category.friendly_name }}
+                                        </a>
+                                    </p>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    {% if menu_item.rating %}
+                                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ menu_item.rating }} /
+                                        5</small>
+                                    {% else %}
+                                    <small class="text-muted">No Rating</small>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <a href="{% url 'menu_item_detail' menu_item.id %}"
+                                        class="btn btn-lg order-button shadow"
+                                        aria-label="Go to the page for the {{ menu_item.name }} pizza.">Order now</a>
+                                </div>
+                            </div>
+
+                            {% if request.user.is_superuser %}
+                            <div class="row mt-2 superuser-zone position-relative">
+                                <div class="col edit-delete-options d-flex align-items-center">
+                                    <h3 class="text-info text-start position-absolute mt-1">Superuser zone</h3>
+                                    <a href="{% url 'edit_menu_item' menu_item.id %}" class="superuser-option pe-1"
+                                        aria-label="Go to the edit page for the {{ menu_item.name }} pizza.">Edit</a> |
+                                    <a class="text-danger superuser-option ps-1"
+                                        href="{% url 'delete_menu_item' menu_item.id %}"
+                                        aria-label="Delete the {{ menu_item.name }} pizza.">Delete</a>
+                                </div>
+                            </div>
+                            {% endif %}
+
+                        </div>
                     </div>
-                    {% endif %}
-                    {% if forloop.counter|divisibleby:2 and not search_term and not current_categories and current_sorting == 'None_None' %}
-                    <div class="col-12 d-none d-sm-block d-md-block d-lg-none">
-                        <hr style="color:#f19832;">
-                    </div>
-                    {% endif %}
-                    {% if forloop.counter|divisibleby:3 and not search_term and not current_categories and current_sorting == 'None_None' %}
-                    <div class="col-12 d-none d-lg-block d-xl-none">
-                        <hr style="color:#f19832;">
-                    </div>
-                    {% endif %}
-                    {% if forloop.counter|divisibleby:4 and not search_term and not current_categories and current_sorting == 'None_None' %}
-                    <div class="col-12 d-none d-xl-block">
-                        <hr style="color:#f19832;">
-                    </div>
-                    {% endif %}
-   
-                    {% endif %}
+                </div>
+
+                {% if forloop.counter|divisibleby:1 and not search_term and not current_categories and current_sorting == 'None_None' %}
+                <div class="col-12 d-sm-none d-block">
+                    <hr style="color:#f19832;">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:2 and not search_term and not current_categories and current_sorting == 'None_None' %}
+                <div class="col-12 d-none d-sm-block d-md-block d-lg-none">
+                    <hr style="color:#f19832;">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:3 and not search_term and not current_categories and current_sorting == 'None_None' %}
+                <div class="col-12 d-none d-lg-block d-xl-none">
+                    <hr style="color:#f19832;">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:4 and not search_term and not current_categories and current_sorting == 'None_None' %}
+                <div class="col-12 d-none d-xl-block">
+                    <hr style="color:#f19832;">
+                </div>
+                {% endif %}
+
+                {% endif %}
 
                 {% endfor %}
             </div>
 
             <div class="row mb-5">
                 <!-- Displaying heading for sides section if no search term, no category selected, or no sort applied -->
+
                 {% if not search_term and not current_categories and current_sorting == 'None_None' %}
                 <h2 class="jumbotron-heading py-2 ms-3 menu-heading">Sides</h2>
                 {% endif %}
 
                 <!-- Iterating through the menu items and only displaying those items whose category is sides, because this is the sides section. -->
-                {% for side in sides %}   
-                    {% if side.category.name == 'sides' and current_sorting == 'None_None' %}
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 {% if search_term or current_categories or current_sorting != 'None_None' %}mt-4{% endif %}">
-                        <div class="card h-100 border-0">
+                {% for side in sides %}
+                {% if side.category.name == 'sides' and current_sorting == 'None_None' and not current_categories %}
+                <div
+                    class="col-sm-6 col-md-6 col-lg-4 col-xl-3 {% if search_term or current_categories or current_sorting != 'None_None' %}mt-4{% endif %}">
+                    <div class="card h-100 border-0">
 
-                            <div class="card-body pb-0">
+                        <div class="card-body pb-0">
 
-                                <div class="row">
-                                    <div class="col">
-                                        {% if side.image %}
-                                        <a href="{% url 'menu_item_detail' side.id %}"
-                                            class="d-inline-block float-end side-image-link" aria-label="Go to the page for the {{ side.name }} side dish.">
-                                            <img src="{{ side.image.url }}" alt="An image of the {{ side.name }} side dish" class="img-fluid mb-3">
-                                        </a>
-                                        {% else %}
-                                        <a href="{% url 'menu_item_detail' side.id %}" aria-label="Go to the page for the {{ side.name }} side-dish.">
-                                            <img src="{{ MEDIA_URL }}noimage.png" alt="A placeholder image for the {{ side.name }} side dish." class="mb-3">
-                                        </a>
-                                        {% endif %}
+                            <div class="row">
+                                <div class="col">
+                                    {% if side.image %}
+                                    <a href="{% url 'menu_item_detail' side.id %}"
+                                        class="d-inline-block float-end side-image-link"
+                                        aria-label="Go to the page for the {{ side.name }} side dish.">
+                                        <img src="{{ side.image.url }}" alt="An image of the {{ side.name }} side dish"
+                                            class="img-fluid mb-3">
+                                    </a>
+                                    {% else %}
+                                    <a href="{% url 'menu_item_detail' side.id %}"
+                                        aria-label="Go to the page for the {{ side.name }} side-dish.">
+                                        <img src="{{ MEDIA_URL }}noimage.png"
+                                            alt="A placeholder image for the {{ side.name }} side dish." class="mb-3">
+                                    </a>
+                                    {% endif %}
 
-                                        <h3 class="d-inline-block float-start menu-name-text">{{ side.name }}</h3>
-                                    </div>
+                                    <h3 class="d-inline-block float-start menu-name-text">{{ side.name }}</h3>
                                 </div>
-                                
-                                <hr class="name-ingredients-divider">
-                                <p class="d-inline-block mb-0 menu-ingredients-text">{{ side.ingredients }} <small class="float-end">({{ side.calories }})</small></p>
-                                <hr>
-
                             </div>
 
-                            <div class="card-footer bg-white pt-0 border-0 text-left">
+                            <hr class="name-ingredients-divider">
+                            <p class="d-inline-block mb-0 menu-ingredients-text">{{ side.ingredients }} <small
+                                    class="float-end">({{ side.calories }})</small></p>
+                            <hr>
 
-                                <div class="row">
-                                    <div class="col">
-                                        <small>€{{ side.price }} each</small>
-                                    </div>
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col">
-                                        {% if side.category %}
-                                        <p class="small mt-1 mb-0">
-                                            <a class="text-muted"
-                                                href="{% url 'menu' %}?category={{ side.category.name }}" aria-label="Go to the sides menu.">
-                                                <i class="fas fa-tag mr-1"></i>{{ side.category.friendly_name }}
-                                            </a>
-                                        </p>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                                        
-                                <div class="row">
-                                    <div class="col">
-                                        {% if side.rating %}
-                                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ side.rating }} /
-                                            5</small>
-                                        {% else %}
-                                        <small class="text-muted">No Rating</small>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col">
-                                        <a href="{% url 'menu_item_detail' side.id %}" class="btn btn-lg order-button shadow" aria-label="Go to the page for the {{ side.name }} side dish.">Order now</a>
-                                    </div>
-                                </div>
+                        </div>
 
-                                {% if request.user.is_superuser %}
-                                <div class="row mt-2 superuser-zone position-relative">
-                                    <div class="col edit-delete-options d-flex align-items-center">
-                                        <h3 class="text-info text-start position-absolute mt-1">Superuser zone</h3>
-                                        <a href="{% url 'edit_menu_item' side.id %}" class="superuser-option pe-1" aria-label="Go to the edit page for the {{ side.name }} side dish.">Edit</a> |
-                                        <a class="text-danger superuser-option ps-1" href="{% url 'delete_menu_item' side.id %}" aria-label="Delete the {{ side.name }} side dish.">Delete</a>  
-                                    </div>
-                                </div>
-                                {% endif %}
+                        <div class="card-footer bg-white pt-0 border-0 text-left">
 
+                            <div class="row">
+                                <div class="col">
+                                    <small>€{{ side.price }} each</small>
+                                </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    {% if side.category %}
+                                    <p class="small mt-1 mb-0">
+                                        <a class="text-muted" href="{% url 'menu' %}?category={{ side.category.name }}"
+                                            aria-label="Go to the sides menu.">
+                                            <i class="fas fa-tag mr-1"></i>{{ side.category.friendly_name }}
+                                        </a>
+                                    </p>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    {% if side.rating %}
+                                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ side.rating }} /
+                                        5</small>
+                                    {% else %}
+                                    <small class="text-muted">No Rating</small>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <a href="{% url 'menu_item_detail' side.id %}"
+                                        class="btn btn-lg order-button shadow"
+                                        aria-label="Go to the page for the {{ side.name }} side dish.">Order now</a>
+                                </div>
+                            </div>
+
+                            {% if request.user.is_superuser %}
+                            <div class="row mt-2 superuser-zone position-relative">
+                                <div class="col edit-delete-options d-flex align-items-center">
+                                    <h3 class="text-info text-start position-absolute mt-1">Superuser zone</h3>
+                                    <a href="{% url 'edit_menu_item' side.id %}" class="superuser-option pe-1"
+                                        aria-label="Go to the edit page for the {{ side.name }} side dish.">Edit</a> |
+                                    <a class="text-danger superuser-option ps-1"
+                                        href="{% url 'delete_menu_item' side.id %}"
+                                        aria-label="Delete the {{ side.name }} side dish.">Delete</a>
+                                </div>
+                            </div>
+                            {% endif %}
+
                         </div>
                     </div>
+                </div>
 
-                    {% if forloop.counter|divisibleby:1 and not search_term and not current_categories and current_sorting == 'None_None' %}
-                    <div class="col-12 d-sm-none d-block">
-                        <hr style="color:#f19832;">
-                    </div>
-                    {% endif %}
-                    {% if forloop.counter|divisibleby:2 and not search_term and not current_categories and current_sorting == 'None_None' %}
-                    <div class="col-12 d-none d-sm-block d-md-block d-lg-none">
-                        <hr style="color:#f19832;">
-                    </div>
-                    {% endif %}
-                    {% if forloop.counter|divisibleby:3 and not search_term and not current_categories and current_sorting == 'None_None' %}
-                    <div class="col-12 d-none d-lg-block d-xl-none">
-                        <hr style="color:#f19832;">
-                    </div>
-                    {% endif %}
-                    {% if forloop.counter|divisibleby:4 and not search_term and not current_categories and current_sorting == 'None_None' %}
-                    <div class="col-12 d-none d-xl-block">
-                        <hr style="color:#f19832;">
-                    </div>
-                    {% endif %}
+                {% if forloop.counter|divisibleby:1 and not search_term and not current_categories and current_sorting == 'None_None' %}
+                <div class="col-12 d-sm-none d-block">
+                    <hr style="color:#f19832;">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:2 and not search_term and not current_categories and current_sorting == 'None_None' %}
+                <div class="col-12 d-none d-sm-block d-md-block d-lg-none">
+                    <hr style="color:#f19832;">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:3 and not search_term and not current_categories and current_sorting == 'None_None' %}
+                <div class="col-12 d-none d-lg-block d-xl-none">
+                    <hr style="color:#f19832;">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:4 and not search_term and not current_categories and current_sorting == 'None_None' %}
+                <div class="col-12 d-none d-xl-block">
+                    <hr style="color:#f19832;">
+                </div>
+                {% endif %}
 
-                    {% endif %}
+                {% endif %}
 
                 {% endfor %}
             </div>

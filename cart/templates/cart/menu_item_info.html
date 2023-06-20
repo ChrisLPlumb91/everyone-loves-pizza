@@ -1,5 +1,6 @@
 <p class="my-0 info-name">{{ item.menu_item.name }}</p>
-<p class="my-0 info-size"><strong>Size: </strong>{% if item.menu_item.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+<p class="my-0 info-size"><strong>Size:
+    </strong>{% if item.menu_item.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
 
 <span class="mb-0 d-lg-none info-price-lead"><strong>Price: </strong></span>
 <p class="mb-0 info-price d-lg-none d-inline">€{{ item.menu_item.price }}</p>
@@ -10,22 +11,20 @@
         <div class="input-group cart-input-group">
 
             <div class="input-group-prepend">
-                <button class="decrement-qty btn rounded-0" 
-                    data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                <button class="decrement-qty btn rounded-0" data-item_id="{{ item.item_id }}"
+                    id="decrement-qty_{{ item.item_id }}">
                     <span class="icon">
                         <i class="fas fa-minus"></i>
                     </span>
                 </button>
             </div>
 
-            <input class="form-control qty_input py-0 ps-4" type="number"
-                name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                data-item_id="{{ item.item_id }}"
-                id="id_qty_{{ item.item_id }}">
+            <input class="form-control qty_input py-0 ps-4" type="number" name="quantity" value="{{ item.quantity }}"
+                min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
 
             <div class="input-group-append">
-                <button class="increment-qty btn rounded-0"
-                    data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                <button class="increment-qty btn rounded-0" data-item_id="{{ item.item_id }}"
+                    id="increment-qty_{{ item.item_id }}">
                     <span class="icon">
                         <i class="fas fa-plus"></i>
                     </span>
@@ -33,14 +32,17 @@
             </div>
 
             {% if item.menu_item.has_sizes %}
-                <input type="hidden" name="menu_item_size" value="{{ item.size }}">
+            <input type="hidden" name="menu_item_size" value="{{ item.size }}">
             {% endif %}
 
         </div>
     </div>
 </form>
 <div class="text-end superuser-zone update-remove-container position-relative w-50 px-1 d-lg-none">
-    <a class="update-link cart-update-link superuser-option float-start" aria-label="Update the quantity of {{ item.name }} in your cart."><small>Update</small></a>
+    <a class="update-link cart-update-link superuser-option float-start"
+        aria-label="Update the quantity of {{ item.name }} in your cart."><small>Update</small></a>
     <span class="text-dark position-relative pe-1"> | </span>
-    <a class="remove-item cart-remove-item superuser-option" id="remove_{{ item.item_id }}" data-menu_item_size="{{ item.size }}" aria-label="Remove the {{ item.name }} from your cart."><small>Remove</small></a>
+    <a class="remove-item cart-remove-item superuser-option" id="remove_{{ item.item_id }}"
+        data-menu_item_size="{{ item.size }}"
+        aria-label="Remove the {{ item.name }} from your cart."><small>Remove</small></a>
 </div>

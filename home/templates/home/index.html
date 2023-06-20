@@ -2,141 +2,163 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container my-sm-3 my-5">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container my-sm-3 my-5">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <section class="container my-5 py-5 jumbotron first-section">
-        <div class="row">
-            <div class="col-12 text-center g-0">
-                <h1 class="display-4 logo-font jumbotron-heading my-0 pt-2">
-                    The pizza of the future
-                </h1>
-                <div class="my-5">
-                    <h4>
-                        <a href="{% url 'menu' %}" class="menu-button btn btn-lg text-uppercase py-3" aria-label="Go to the menu page.">
-                            <p class="my-5 pt-1 jumbotron-heading">Menu</p>
-                        </a>
-                    </h4>
-                </div>
+<section class="container my-5 py-5 jumbotron first-section">
+    <div class="row">
+        <div class="col-12 text-center g-0">
+            <h1 class="display-4 logo-font jumbotron-heading my-0 pt-2">
+                The pizza of the future
+            </h1>
+            <div class="my-5">
+                <h4>
+                    <a href="{% url 'menu' %}" class="menu-button btn btn-lg text-uppercase py-3"
+                        aria-label="Go to the menu page.">
+                        <p class="my-5 pt-1 jumbotron-heading">Menu</p>
+                    </a>
+                </h4>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="container my-5 about-section" id="about-us">
-        <div class="row">
-            <div class="col-12 g-0">
-                <h2 class="text-center mt-3 mb-1 jumbotron-heading">About us</h2>
-                <hr>
-            </div>
+<section class="container my-5 about-section" id="about-us">
+    <div class="row">
+        <div class="col-12 g-0">
+            <h2 class="text-center mt-3 mb-1 jumbotron-heading">About us</h2>
+            <hr>
         </div>
-        
-        <div class="row mb-3 align-items-center">
-        
-            <div class="col-6 photo">
-                <div class="d-inline-block photo-and-map-containers photo-container">
-                    <img src="{{ MEDIA_URL }}pizza-restaurant-photo.jpg" class="photo-and-map img-fluid" alt="An image of the interior of the restaurant">
-                </div>  
-            </div>
-
-            <div class="d-sm-none d-block"></div>
-
-            <div class="col-6 blurb">
-                <div class="photo-and-map-containers blurb-container">
-                    <div class="jumbotron-heading pt-3 pb-1">
-                        <p class="px-3 blurb-text mb-2">
-                            everyone.loves(pizza); is a forward-thinking, co-operatively owned pizza place in Dublin City. Our doors are open
-                            to everyone and anyone, but our location makes us perfectly positioned to serve those working nearby in the IT
-                            and tech sectors. Like our friends in the world of software and tech, we are always looking to the future,
-                            and so our menu is 100% plant-based.  
-                        </p>
-                        <p class="px-3 blurb-text">
-                            However, don't feel intimidated if you're not tech-savvy. Pizza is one of the great levellers - everyone loves it!
-                            So swing by, take a seat, and enjoy the company of fellow pizza-lovers!
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row mb-3">
-
-            <div class="col-6 information">
-                <div class="photo-and-map-containers text-center info-container">
-
-                    <div class="jumbotron-heading">
-                        <p class="ms-4 mt-5 mb-0">Opening hours: 1pm - 11pm</p>
-                        <p class="ms-4 mb-0">1 Pie Street, Dublin</p>
-                        <p class="ms-4 mb-0">Phone: 01 987 6543</p>
-                        <p class="ms-4 mb-0">Delivery: 5pm to 10:30pm</p>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="d-sm-none d-block"></div>
-
-            <div class="col-6">
-                <div class="photo-and-map-containers map-container">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.8782446737746!2d-6.266868683965103!3d53.34543568248024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e9cb559ea73%3A0x2600c7a819c83012!2sTemple%20Bar%2C%20Dublin!5e0!3m2!1sen!2sie!4v1658604787994!5m2!1sen!2sie"
-                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                        class="photo-and-map"></iframe>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="container my-5 featured-section">
-        <div class="row">
-            <div class="col-12 g-0">
-                <h2 class="text-center mt-3 mb-1 jumbotron-heading featured-heading">Featured pizzas</h2>
-                <hr>
-            </div>
-        </div> 
-        
-        <div class="row pizzas-container">
-            {% for featured_pizza in featured_pizzas %}
-            <div class="col-6 col-lg-3">
-                <div class="card mb-5">
-                    <div class="card-body">
-                        
-                        {% if featured_pizza.image %}
-                        <a href="{% url 'menu_item_detail' featured_pizza.id %}" aria-label="Go to the page for the {{ featured_pizza.name }} pizza.">
-                            <img src="{{ featured_pizza.image.url }}" alt="An image of the {{ featured_pizza.name }} pizza" class="img-fluid">
-                        </a>
-                        {% else %}
-                        <a href="{% url 'menu_item_detail' featured_pizza.id %}" aria-label="Go to the page for the {{ featured_pizza.name }} pizza.">
-                            <img src="{{ MEDIA_URL }}noimage.png" alt="An placeholder image for the {{ featured_pizza.name }} pizza" class="img-fluid">
-                        </a>
-                        {% endif %}
-
-                        <h3 class="name-text">{{ featured_pizza.name }}</h3>
-                        <hr>
-                        <p class="ingredients-text">{{ featured_pizza.ingredients }} <small class="float-end">({{ featured_pizza.calories }})</small></p>
-                        <hr>
-                    </div>
-                    <div class="card-footer">
-                        <small class="price-text">Starting from €{{ featured_pizza.price }}</small>
-                        <a href="{% url 'menu_item_detail' featured_pizza.id %}" class="btn btn-lg featured-order-button shadow" aria-label="Go to the page for the {{ featured_pizza.name }} pizza.">Order now</a>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-
-    </section>
-
-    <div class="btt-button shadow-sm rounded-0">
-        <a class="btt-link d-flex h-100" aria-label="Go to the top of the home page.">
-            <i class="fas fa-arrow-up mx-auto my-auto"></i>
-        </a>
     </div>
 
+    <div class="row mb-3 align-items-center">
+
+        <div class="col-6 photo">
+            <div class="d-inline-block photo-and-map-containers photo-container">
+                <img src="{{ MEDIA_URL }}pizza-restaurant-photo.jpg" class="photo-and-map img-fluid"
+                    alt="An image of the interior of the restaurant">
+            </div>
+        </div>
+
+        <div class="d-sm-none d-block"></div>
+
+        <div class="col-6 blurb">
+            <div class="photo-and-map-containers blurb-container">
+                <div class="jumbotron-heading pt-3 pb-1">
+                    <p class="px-3 blurb-text mb-2">
+                        everyone.loves(pizza); is a forward-thinking, co-operatively owned pizza place in Dublin City.
+                        Our doors are open
+                        to everyone and anyone, but our location makes us perfectly positioned to serve those working
+                        nearby in the IT
+                        and tech sectors. Like our friends in the world of software and tech, we are always looking to
+                        the future,
+                        and so our menu is 100% plant-based.
+                    </p>
+                    <p class="px-3 blurb-text">
+                        However, don't feel intimidated if you're not tech-savvy. Pizza is one of the great levellers -
+                        everyone loves it!
+                        So swing by, take a seat, and enjoy the company of fellow pizza-lovers!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row mb-3">
+
+        <div class="col-6 information">
+            <div class="photo-and-map-containers text-center info-container">
+
+                <div class="jumbotron-heading">
+                    <p class="ms-4 mt-5 mb-0">Opening hours: 1pm - 11pm</p>
+                    <p class="ms-4 mb-0">1 Pie Street, Dublin</p>
+                    <p class="ms-4 mb-0">Phone: 01 987 6543</p>
+                    <p class="ms-4 mb-0">Delivery: 5pm to 10:30pm</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="d-sm-none d-block"></div>
+
+        <div class="col-6">
+            <div class="photo-and-map-containers map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.8782446737746!2d-6.266868683965103!3d53.34543568248024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e9cb559ea73%3A0x2600c7a819c83012!2sTemple%20Bar%2C%20Dublin!5e0!3m2!1sen!2sie!4v1658604787994!5m2!1sen!2sie"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    class="photo-and-map"></iframe>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="container my-5 featured-section">
+    <div class="row">
+        <div class="col-12 g-0">
+            <h2 class="text-center mt-3 mb-1 jumbotron-heading featured-heading">Featured pizzas</h2>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row pizzas-container">
+        {% for featured_pizza in featured_pizzas %}
+        <div class="col-6 col-lg-3">
+            <div class="card mb-5">
+                <div class="card-body">
+
+                    {% if featured_pizza.image %}
+                    <a href="{% url 'menu_item_detail' featured_pizza.id %}"
+                        aria-label="Go to the page for the {{ featured_pizza.name }} pizza.">
+                        <img src="{{ featured_pizza.image.url }}" alt="An image of the {{ featured_pizza.name }} pizza"
+                            class="img-fluid">
+                    </a>
+                    {% else %}
+                    <a href="{% url 'menu_item_detail' featured_pizza.id %}"
+                        aria-label="Go to the page for the {{ featured_pizza.name }} pizza.">
+                        <img src="{{ MEDIA_URL }}noimage.png"
+                            alt="An placeholder image for the {{ featured_pizza.name }} pizza" class="img-fluid">
+                    </a>
+                    {% endif %}
+
+                    <h3 class="name-text">{{ featured_pizza.name }}</h3>
+                    <hr>
+                    <p class="ingredients-text">{{ featured_pizza.ingredients }} <small
+                            class="float-end">({{ featured_pizza.calories }})</small></p>
+                    <hr>
+                </div>
+                <div class="card-footer">
+                    <small class="price-text">Starting from €{{ featured_pizza.price }}</small>
+                    <a href="{% url 'menu_item_detail' featured_pizza.id %}"
+                        class="btn btn-lg featured-order-button shadow"
+                        aria-label="Go to the page for the {{ featured_pizza.name }} pizza.">Order now</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</section>
+
+<div class="btt-button shadow-sm rounded-0">
+    <a class="btt-link d-flex h-100" aria-label="Go to the top of the home page.">
+        <i class="fas fa-arrow-up mx-auto my-auto"></i>
+    </a>
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0)
+    })
+</script>
 {% endblock %}

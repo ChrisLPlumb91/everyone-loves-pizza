@@ -12,7 +12,8 @@ from menu.models import MenuItem
 class UserProfile(models.Model):
     """
     A user profile model for maintaining default
-    delivery information and order history
+    delivery information, order history, review history,
+    and private message history.
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE,
                                 related_name='userprofile')

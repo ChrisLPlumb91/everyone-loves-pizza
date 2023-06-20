@@ -9,7 +9,8 @@
 {% block inner_content %}
 <h2 class="jumbotron-heading text-center">{% trans "Sign Up" %}</h2>
 
-<p class="lh-1 text-black login-text text-center">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}" class="login-link">sign in</a>.{% endblocktrans %}</p>
+<p class="lh-1 text-black login-text text-center">{% blocktrans %}Already have an account? Then please <a
+    href="{{ login_url }}" class="login-link">sign in</a>.{% endblocktrans %}</p>
 
 <form class="signup text-center px-2" id="signup_form" method="post" action="{% url 'account_signup' %}">
   {% csrf_token %}

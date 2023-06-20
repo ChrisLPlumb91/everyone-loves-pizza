@@ -79,11 +79,11 @@ class TestCartViews(TestCase):
 
         url_2 = reverse('add_to_cart', args=[self.menu_item_2.id])
         response_2 = self.client.post(url_2,
-                                    {
+                                      {
                                         'quantity': 3,
                                         'redirect_url':
                                         f'/menu/{self.menu_item_2.id}/'
-                                    })
+                                      })
 
         self.assertEqual(response_2.status_code, 302)
         self.assertRedirects(response_2, f'/menu/{self.menu_item_2.id}/')

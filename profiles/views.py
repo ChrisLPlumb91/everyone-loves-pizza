@@ -15,7 +15,11 @@ from checkout.models import Order
 
 @login_required
 def profile(request):
-    """ Display the user's profile. """
+    """
+    Display the user's profile, including their favourite item,
+    their default delivery information, their order history,
+    their review history, and their private message history.
+    """
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
@@ -183,6 +187,10 @@ def profile(request):
 
 @login_required
 def order_history(request, order_number):
+    """
+    Display the summary page for a given order placed by the user
+    in the past.
+    """
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (

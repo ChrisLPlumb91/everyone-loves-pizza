@@ -30,7 +30,7 @@
 {{ block.super }}
 <script>
     let reasonSelected = $('#id_reason').val();
-    
+
     if (!reasonSelected) {
         $('#id_reason').css('color', '#929292');
         $('#id_reason option').css('color', '#000');
@@ -40,11 +40,11 @@
         $('#id_reason option').css('color', '#000');
         $('#id_reason option:first-child').css('color', '#929292');
     }
-        
-    $('#id_reason').change(function() {
+
+    $('#id_reason').change(function () {
         reasonSelected = $(this).val();
-    
-        if(!reasonSelected) {
+
+        if (!reasonSelected) {
             $(this).css('color', '#929292');
         } else {
             $(this).css('color', '#000');

@@ -3,55 +3,65 @@
 {% load crispy_forms_tags %}
 
 {% block page_header %}
-    <div class="container header-container my-sm-3 my-5">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container my-sm-3 my-5">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
 
-    <div class="row g-0 manage-page-headings">
-        <div class="col-6"><h2 class="logo-font mt-4 mb-4 superuser-heading ps-4 menu-management-text">Menu Management</h2></div>
-        <div class="col-6"><h2 class="logo-font mt-4 mb-4 superuser-heading text-end pe-4 edit-item-text">Edit Item</h2></div>  
+<div class="row g-0 manage-page-headings">
+    <div class="col-6">
+        <h2 class="logo-font mt-4 mb-4 superuser-heading ps-4 menu-management-text">Menu Management</h2>
     </div>
-    <hr>
+    <div class="col-6">
+        <h2 class="logo-font mt-4 mb-4 superuser-heading text-end pe-4 edit-item-text">Edit Item</h2>
+    </div>
+</div>
+<hr>
 
-    <div class="container">
+<div class="container">
 
-        <div class="row mb-5 menu-manage-container pt-3">
-            <div class="col-10 offset-1">
-                <form method="POST" action="{% url 'edit_menu_item' menu_item.id %}" class="form mb-2 menu-manage-form" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {% for field in form %}
-                        {% if field.name == 'image' or field.name == 'full_image' %}
-                            {{ field }} 
-                        {% else %}
-                            {{ field | as_crispy_field }}
-                        {% endif %}
-                    {% endfor %}
-                    <div class="text-end mb-3 manage-btns-container">
-                        <a class="btn cancel-btn edit-page-cancel-btn" href="{% url 'menu' %}" aria-label="Exit the edit item page and go to the menu page.">Cancel</a>
-                        <button class="btn update-or-add-btn edit-page-update-btn" type="submit">Update Menu Item</button>
-                    </div>
-                </form>
-            </div>            
+    <div class="row mb-5 menu-manage-container pt-3">
+        <div class="col-10 offset-1">
+            <form method="POST" action="{% url 'edit_menu_item' menu_item.id %}" class="form mb-2 menu-manage-form"
+                enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+                {% if field.name == 'image' or field.name == 'full_image' %}
+                {{ field }}
+                {% else %}
+                {{ field | as_crispy_field }}
+                {% endif %}
+                {% endfor %}
+                <div class="text-end mb-3 manage-btns-container">
+                    <a class="btn cancel-btn edit-page-cancel-btn" href="{% url 'menu' %}"
+                        aria-label="Exit the edit item page and go to the menu page.">Cancel</a>
+                    <button class="btn update-or-add-btn edit-page-update-btn" type="submit">Update Menu Item</button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript">
-         $('#image').change(function() {
-            var file = $('#image')[0].files[0];
-            $('#filename-image').text(`Image will be set to: ${file.name}. Ensure that this image is 276x420 in size, and if it is for a pizza, it should depict half a pizza on a white background.`);
-        });
+{{ block.super }}
+<script type="text/javascript">
+    $('#image').change(function () {
+        var file = $('#image')[0].files[0];
+        $('#filename-image').text(
+            `Image will be set to: ${file.name}. Ensure that this image is 276x420 in size, and if it is for a pizza, it should depict half a pizza on a white background.`
+            );
+    });
 
-        $('#full_image').change(function() {
-            var file = $('#full_image')[0].files[0];
-            $('#filename-full_image').text(`Full image will be set to: ${file.name}. Ensure that this image is 470x470 in size, and if it is for a pizza, it should depict a full pizza on a white background.`);
-        });
-    </script>
+    $('#full_image').change(function () {
+        var file = $('#full_image')[0].files[0];
+        $('#filename-full_image').text(
+            `Full image will be set to: ${file.name}. Ensure that this image is 470x470 in size, and if it is for a pizza, it should depict a full pizza on a white background.`
+            );
+    });
+</script>
 {% endblock %}

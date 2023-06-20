@@ -8,6 +8,7 @@ REASONS = (('', 'Choose a reason'), (1, 'Giving feedback'),
 
 
 class CustomerMessage(models.Model):
+    """ A model representing private messages sent by users to the staff."""
     customer = models.ForeignKey(User, on_delete=models.CASCADE,
                                  related_name='customer_messages')
     reason = models.IntegerField(choices=REASONS, default=0)

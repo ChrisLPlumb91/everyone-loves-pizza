@@ -19,6 +19,7 @@ def menu(request):
     categories = None
     sort = None
     direction = None
+    category_list = []
 
     if request.GET:
         if 'sort' in request.GET:
@@ -39,6 +40,9 @@ def menu(request):
             categories = request.GET['category'].split(',')
             menu_items = menu_items.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
+
+            for category in categories:
+                category_list.append(category.name)
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -63,6 +67,7 @@ def menu(request):
         'sides': sides,
         'search_term': query,
         'current_categories': categories,
+        'category_list': category_list,
         'current_sorting': current_sorting,
         'from_management': from_management,
     }
@@ -71,7 +76,10 @@ def menu(request):
 
 
 def menu_item_detail(request, menu_item_id):
-    """ A view to show individual menu_item details """
+    """
+    A view to show individual menu item details, as well as any reviews
+    posted to an item's page.
+    """
 
     if request.method == 'POST':
         if request.user.is_authenticated:
