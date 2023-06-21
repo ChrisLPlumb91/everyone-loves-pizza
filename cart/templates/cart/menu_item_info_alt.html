@@ -11,20 +11,20 @@
         <div class="input-group cart-input-group">
 
             <div class="input-group-prepend">
-                <button class="decrement-qty-small btn rounded-0" data-item_id_small="{{ item.item_id }}"
-                    id="decrement-qty_{{ item.item_id }}_small">
+                <button class="decrement-qty-smaller btn rounded-0" data-item_id_smaller="{{ item.item_id }}"
+                    id="decrement-qty_{{ item.item_id }}_smaller">
                     <span class="icon">
                         <i class="fas fa-minus"></i>
                     </span>
                 </button>
             </div>
 
-            <input class="form-control qty_input_small py-0 ps-4" type="number" name="quantity" value="{{ item.quantity }}"
-                min="1" max="99" data-item_id_small="{{ item.item_id }}" id="id_qty_{{ item.item_id }}_small">
+            <input class="form-control qty_input_smaller py-0 ps-4" type="number" name="quantity" value="{{ item.quantity }}"
+                min="1" max="99" data-item_id_smaller="{{ item.item_id }}" id="id_qty_{{ item.item_id }}_smaller">
 
             <div class="input-group-append">
-                <button class="increment-qty-small btn rounded-0" data-item_id_small="{{ item.item_id }}"
-                    id="increment-qty_{{ item.item_id }}_small">
+                <button class="increment-qty-smaller btn rounded-0" data-item_id_smaller="{{ item.item_id }}"
+                    id="increment-qty_{{ item.item_id }}_smaller">
                     <span class="icon">
                         <i class="fas fa-plus"></i>
                     </span>
@@ -42,7 +42,7 @@
     <a class="update-link cart-update-link superuser-option float-start"
         aria-label="Update the quantity of {{ item.name }} in your cart."><small>Update</small></a>
     <span class="text-dark position-relative pe-1"> | </span>
-    <a class="remove-item cart-remove-item superuser-option" id="remove_{{ item.item_id }}_small"
+    <a class="remove-item cart-remove-item superuser-option" id="remove_{{ item.item_id }}_smaller"
         data-menu_item_size="{{ item.size }}"
         aria-label="Remove the {{ item.name }} from your cart."><small>Remove</small></a>
 </div>

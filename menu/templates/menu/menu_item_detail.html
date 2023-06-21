@@ -239,8 +239,8 @@
             </li>
             {% else %}
             <li class="page-item mx-1">
-                <span href="?page=1" class="page-link btn non-functioning-btn d-sm-block d-none">&laquo; first</span>
-                <span href="?page=1" class="page-link btn non-functioning-btn d-sm-none d-block">&laquo;&laquo;</span>
+                <span class="page-link btn non-functioning-btn d-sm-block d-none">&laquo; first</span>
+                <span class="page-link btn non-functioning-btn d-sm-none d-block">&laquo;&laquo;</span>
             </li>
             <li class="page-item mx-1">
                 <span class="page-link btn non-functioning-btn d-sm-block d-none">
@@ -338,20 +338,20 @@
 {{ block.super }}
 {% include 'menu/includes/quantity_input_script.html' %}
 
-<script type="text/javascript">
+<script>
     $('.btt-link').click(function (e) {
         window.scrollTo(0, 0)
     })
 </script>
 
-<script type="text/javascript">
+<script>
     $('#id_menu_item_size').change(function (e) {
         var size = $(this).val();
         $('.price').text(`€${size}.00`);
     })
 </script>
 
-<script type="text/javascript">
+<script>
     var reviews = $('.review-card');
 
     for (i = 0; i < reviews.length; i++) {

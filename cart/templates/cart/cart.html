@@ -45,15 +45,13 @@
                         {% include "cart/menu_item_image.html" %}
                     </div>
                     <div class="col-6 info-container-cart">
-                        {% include "cart/menu_item_info.html" %}
+                        {% include "cart/menu_item_info_alt.html" %}
                     </div>
                     <div class="col-12 col-sm-6 order-sm-last info-subtotal-grid">
                         <span><strong>Subtotal: </strong></span>
                         <p class="d-inline">€{{ item.menu_item.price | calc_subtotal:item.quantity }}</p>
                     </div>
-                    <div class="col-12 col-sm-6">
-                        {% include "cart/quantity_form.html" %}
-                    </div>
+                    
                 </div>
                 <div class="row">
                     <div class="col">
@@ -102,6 +100,7 @@
                             <p class="mb-0 info-subtotal d-lg-block d-none">
                                 €{{ item.menu_item.price | calc_subtotal:item.quantity }}</p>
                         </td>
+                        <td></td>
                     </tr>
                     {% endfor %}
                 </table>
@@ -141,14 +140,14 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
+<script>
     $('.btt-link').click(function (e) {
         window.scrollTo(0, 0)
     })
 </script>
 {% include 'menu/includes/quantity_input_script.html' %}
 
-<script type="text/javascript">
+<script>
     // Update quantity on click
     $('.update-link').click(function (e) {
         var form = $(this).parent().prev('.update-form');

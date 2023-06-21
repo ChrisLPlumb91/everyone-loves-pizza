@@ -28,11 +28,9 @@
 
 </li>
 
-<div class="d-none line-break-div"></div>
-
 <li class="list-inline-item dropdown mobile-profile">
 
-    <a class="nav-link d-block d-lg-none nav-link-user" href="#" id="user-options" data-bs-toggle="dropdown"
+    <a class="nav-link d-block d-lg-none nav-link-user" href="#" id="user-options-mobile" data-bs-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false" aria-label="Expand or collapse the user options dropdown menu.">
         <div class="text-center">
             <div><i class="fas fa-user fa-lg"></i></div>
@@ -41,7 +39,7 @@
         </div>
     </a>
 
-    <div class="dropdown-menu border-0 user-options-dropdown-mobile" aria-labelledby="user-options">
+    <div class="dropdown-menu border-0 user-options-dropdown-mobile" aria-labelledby="user-options-mobile">
         {% if request.user.is_authenticated %}
         {% if request.user.is_superuser %}
         <a href="{% url 'add_menu_item' %}" class="dropdown-item menu-management-link-mobile"

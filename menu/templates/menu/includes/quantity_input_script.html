@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<script>
 
     // Disable +/- buttons outside 1-99 range
     function handleEnableDisable(itemId) {
@@ -40,5 +40,93 @@
        $(closestInput).val(currentValue - 1);
        var itemId = $(this).data('item_id');
        handleEnableDisable(itemId);
+    });
+</script>
+
+<script>
+    // Disable +/- buttons outside 1-99 range
+    function handleEnableDisableSmall(itemId) {
+        var currentValue = parseInt($(`#id_qty_${itemId}_small`).val());
+        var minusDisabled = currentValue < 2;
+        var plusDisabled = currentValue > 98;
+        $(`#decrement-qty_${itemId}_small`).prop('disabled', minusDisabled);
+        $(`#increment-qty_${itemId}_small`).prop('disabled', plusDisabled);
+    }
+
+    // Ensure proper enabling/disabling of all inputs on page load
+    var allQtyInputs = $('.qty_input_small');
+    for(var i = 0; i < allQtyInputs.length; i++){
+        var itemId = $(allQtyInputs[i]).data('item_id_small');
+        handleEnableDisableSmall(itemId);
+    }
+
+    // Check enable/disable every time the input is changed
+    $('.qty_input_small').change(function() {
+        var itemId = $(this).data('item_id_small');
+        handleEnableDisableSmall(itemId);
+    });
+
+    // Increment quantity
+    $('.increment-qty_small').click(function(e) {
+       e.preventDefault();
+       var closestInput = $(this).closest('.input-group').find('.qty_input_small')[0];
+       var currentValue = parseInt($(closestInput).val());
+       $(closestInput).val(currentValue + 1);
+       var itemId = $(this).data('item_id_small');
+       handleEnableDisableSmall(itemId);
+    });
+
+    // Decrement quantity
+    $('.decrement-qty_small').click(function(e) {
+       e.preventDefault();
+       var closestInput = $(this).closest('.input-group').find('.qty_input_small')[0];
+       var currentValue = parseInt($(closestInput).val());
+       $(closestInput).val(currentValue - 1);
+       var itemId = $(this).data('item_id_small');
+       handleEnableDisableSmall(itemId);
+    });
+</script>
+
+<script>
+    // Disable +/- buttons outside 1-99 range
+    function handleEnableDisableSmall(itemId) {
+        var currentValue = parseInt($(`#id_qty_${itemId}_small`).val());
+        var minusDisabled = currentValue < 2;
+        var plusDisabled = currentValue > 98;
+        $(`#decrement-qty_${itemId}_small`).prop('disabled', minusDisabled);
+        $(`#increment-qty_${itemId}_small`).prop('disabled', plusDisabled);
+    }
+
+    // Ensure proper enabling/disabling of all inputs on page load
+    var allQtyInputs = $('.qty_input_smaller');
+    for(var i = 0; i < allQtyInputs.length; i++){
+        var itemId = $(allQtyInputs[i]).data('item_id_smaller');
+        handleEnableDisableSmaller(itemId);
+    }
+
+    // Check enable/disable every time the input is changed
+    $('.qty_input_smaller').change(function() {
+        var itemId = $(this).data('item_id_smaller');
+        handleEnableDisableSmaller(itemId);
+    });
+
+    // Increment quantity
+    $('.increment-qty_smaller').click(function(e) {
+       e.preventDefault();
+       var closestInput = $(this).closest('.input-group').find('.qty_input_smaller')[0];
+       var currentValue = parseInt($(closestInput).val());
+       $(closestInput).val(currentValue + 1);
+       var itemId = $(this).data('item_id_smaller');
+       handleEnableDisableSmaller(itemId);
+    });
+
+    // Decrement quantity
+    $('.decrement-qty_smaller').click(function(e) {
+       e.preventDefault();
+       var closestInput = $(this).closest('.input-group').find('.qty_input_smaller')[0];
+       var currentValue = parseInt($(closestInput).val());
+       $(closestInput).val(currentValue - 1);
+       var itemId = $(this).data('item_id_smaller');
+       handleEnableDisableSmaller(itemId);
     });
 </script>

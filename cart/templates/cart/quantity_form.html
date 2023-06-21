@@ -1,4 +1,4 @@
-<form class="form update-form d-lg-block d-none" method="POST" action="{% url 'adjust_cart' item.item_id %}">
+<form class="form update-form d-lg-block d-none" method="POST" action="{% url 'adjust_cart' item.item_id %}"> <!-- This only displays on large screens -->
     {% csrf_token %}
     <div class="cart-form-group">
         <div class="input-group cart-input-group">

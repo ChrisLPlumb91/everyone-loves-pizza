@@ -1265,21 +1265,30 @@ Edit Comment page: <img src="static/images/edit-comment-page-validated.png" alt=
 Sign Up page: <img src="static/images/sign-up-page-validated.png" alt="An image of base_alt.html / signup.html passing validation.">
 Sign In page: <img src="static/images/sign-in-page-validated.png" alt="An image of base_alt.html / login.html passing validation.">
 Sign Out page: <img src="static/images/sign-out-page-validated.png" alt="An image of base_alt.html / logout.html passing validation.">
-<br>
-<hr>
+
 <br>
 
-### Jigsaw (CSS validation)
-<br>
-style.css validation: <img src="static/images/css-validated.png" alt="An image of style.css passing validation.">
-Warnings about use of vendor extensions: <img src="static/images/css-validated-warnings.png" alt="An image of warnings from the same results as the image above.">
-<br>
 <hr>
+
+### Jigsaw (CSS validation)
+
+<hr>
+
+<br>
+
+base.css validation: <img src="media/jigsaw-css-validation-base-css.png" alt="An image of base.css passing validation.">
+base.css validation warnings: <img src="media/jigsaw-css-validation-base-css-warnings.png" alt="An image of warnings from the same results as the image above.">
+checkout.css validation: <img src="media/jigsaw-css-validation-checkout-css.png" alt="An image of checkout.css passing validation.">
+checkout.css validation warnings: <img src="media/jigsaw-css-validation-checkout-css-warnings.png" alt="An image of warnings from the same results as the image above.">
+profile.css validation: <img src="media/jigsaw-css-validation-profile-css.png" alt="An image of profile.css passing validation.">
+
 <br>
 
 <hr>
 
 ## Coverage Report
+
 <hr>
+
 <br>
-<img src="static/images/coverage-report.png" alt="An image of the coverage report for my app's Python code.">
+<img src="media/coverage-report.png" alt="An image of the coverage report for my app's Python code.">

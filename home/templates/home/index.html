@@ -20,7 +20,7 @@
                 <h4>
                     <a href="{% url 'menu' %}" class="menu-button btn btn-lg text-uppercase py-3"
                         aria-label="Go to the menu page.">
-                        <p class="my-5 pt-1 jumbotron-heading">Menu</p>
+                        <span class="my-5 pt-1 jumbotron-heading d-inline-block">Menu</span>
                     </a>
                 </h4>
             </div>
@@ -156,7 +156,7 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
+<script>
     $('.btt-link').click(function (e) {
         window.scrollTo(0, 0)
     })
