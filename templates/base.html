@@ -191,7 +191,9 @@
         </div>
 
         <p class="mb-3 text-center lh-1">
-            <a class="footer-link" data-bs-toggle="collapse" href="#collapse-subscribe" role="button" aria-expanded="false" aria-controls="collapse-subscribe" aria-label="Expand and collapse the subscription form.">Subscribe</a>
+            <a class="footer-link d-flex align-items-center justify-content-center" id="subscribe-link" data-bs-toggle="collapse" href="#collapse-subscribe" role="button" aria-expanded="false" aria-controls="collapse-subscribe" aria-label="Expand and collapse the subscription form.">
+                Subscribe <i class="fa-solid fa-chevron-down px-2" id="collapse-expand-chevron"></i>
+            </a>
         </p>
 
         <div class="row mb-5 text-center collapse" id="collapse-subscribe">    
@@ -287,6 +289,23 @@
             ftypes[5] = 'birthday';
         }(jQuery));
         var $mcj = jQuery.noConflict(true);
+    </script>
+
+    <script>
+        $('#subscribe-link').click(function() {
+            var collapseExpandChevron = $('#collapse-expand-chevron');
+            console.log(collapseExpandChevron)
+
+            if (collapseExpandChevron.hasClass('fa-chevron-down')) {
+                console.log('has down chevron; replacing with up chevron');
+                collapseExpandChevron.removeClass('fa-chevron-down');
+                collapseExpandChevron.addClass('fa-chevron-up');
+            } else if (collapseExpandChevron.hasClass('fa-chevron-up')) {
+                console.log('has down chevron; replacing with up chevron');
+                collapseExpandChevron.removeClass('fa-chevron-up');
+                collapseExpandChevron.addClass('fa-chevron-down');
+            }
+        })
     </script>
 
     {% endblock %}

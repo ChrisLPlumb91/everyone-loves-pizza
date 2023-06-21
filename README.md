@@ -62,7 +62,7 @@ The header has a slightly different appearance on mobile screens. The bottom par
 
 <strong>2. Site footer with social media links and contact us page link</strong>
 
-The footer is less busy than the header. It contains icon links to Facebook, Youtube, Instagram, and Twitter, as well as a link to the About section of the home page, and a link to the Contact Us form page:
+The footer is less busy than the header. It contains icon links to Facebook, Youtube, Instagram, and Twitter, as well as a link to the About section of the home page, a link to the Contact Us form page, and a link that expands a Mailchimp email subscription form:
 
 <img src="media/screenshot-footer.png" alt="An image of the site footer.">
 <img src="media/screenshot-contact-us-page.png" alt="An image of the Contact Us page and its form.">
