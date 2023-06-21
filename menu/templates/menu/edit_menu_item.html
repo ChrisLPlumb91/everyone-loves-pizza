@@ -49,7 +49,7 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
+<script>
     $('#image').change(function () {
         var file = $('#image')[0].files[0];
         $('#filename-image').text(
@@ -63,5 +63,12 @@
             `Full image will be set to: ${file.name}. Ensure that this image is 470x470 in size, and if it is for a pizza, it should depict a full pizza on a white background.`
             );
     });
+</script>
+
+<script>
+    var images = $('img');
+
+    $(images[0]).attr('alt', 'This is a thumbnail of the image for this item that will appear on the menu page.');
+    $(images[1]).attr('alt', 'This is a thumbnail of the image for this item that will appear on its individual page.');
 </script>
 {% endblock %}
