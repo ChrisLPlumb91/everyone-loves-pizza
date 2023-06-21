@@ -34,8 +34,9 @@
         aria-haspopup="true" aria-expanded="false" aria-label="Expand or collapse the user options dropdown menu.">
         <div class="text-center">
             <div><i class="fas fa-user fa-lg"></i></div>
-            <p class="my-0">{% if request.user.is_authenticated %}{{ request.user.username }}{% else %}My
-                Account{% endif %}</p>
+            <p class="my-0">
+                {% if request.user.is_authenticated %}{{ request.user.username }}{% else %}Account{% endif %}
+            </p>
         </div>
     </a>
 

@@ -802,130 +802,153 @@ This particular testing involved trying every link and URL on the site to ensure
     <li>The Contact Us link in the page footer directs the user to the Contact Us page from the edit item page (logged in) (mobile and desktop).</li>
     <li>The Contact Us link in the page footer directs the user to the Contact Us page from the order history page (logged in) (mobile and desktop).</li>
     <li><strong>ABOUT US</strong></li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the home page (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the menu page (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the menu page (search term) (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the menu page (sorted) (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from a menu item page (pizza) (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from a menu item page (side) (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the shopping cart (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the checkout page (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the checkout success page (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the user profile page (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the login page (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the sign up page (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the logout page (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the contact us page (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the add item page (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the edit item page (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the order history page (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the sign up email notification page (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the sign up email confirmation page (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the password reset email form page (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the password reset email notification page (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the password reset change password page (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the password reset password changed notification page (logged in) (mobile and desktop).</li>
-    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the order history page (logged in) (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the home page (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the menu page (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the menu page (search term) (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the menu page (sorted) (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from a menu item page (pizza) (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from a menu item page (side) (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the shopping cart (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the checkout page (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the checkout success page (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the user profile page (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the login page (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the sign up page (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the logout page (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the contact us page (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the add item page (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the edit item page (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the order history page (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the sign up email notification page (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the sign up email confirmation page (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the password reset email form page (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the password reset email notification page (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the password reset change password page (mobile and desktop).</li>
+    <li>The About Us link in the page footer directs the user to the About Us section of the home page from the password reset password changed notification page (mobile and desktop).</li>
+    <li><strong>SUBSCRIBE</strong></li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from the home page (mobile and desktop).</li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from the menu page (mobile and desktop).</li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from the menu page (search term) (mobile and desktop).</li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from the menu page (sorted) (mobile and desktop).</li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from a menu item page (pizza) (mobile and desktop).</li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from a menu item page (side) (mobile and desktop).</li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from the shopping cart (mobile and desktop).</li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from the checkout page (mobile and desktop).</li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from the checkout success page (mobile and desktop).</li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from the user profile page (mobile and desktop).</li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from the login page (mobile and desktop).</li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from the sign up page (mobile and desktop).</li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from the logout page (mobile and desktop).</li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from the contact us page (mobile and desktop).</li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from the add item page (mobile and desktop).</li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from the edit item page (mobile and desktop).</li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from the order history page (mobile and desktop).</li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from the sign up email notification page (mobile and desktop).</li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from the email confirmation page (mobile and desktop).</li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from the password reset email form (mobile and desktop).</li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from the password reset email notification page (mobile and desktop).</li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from the password reset change password page (mobile and desktop).</li>
+    <li>The Subscribe link in the page footer expands and collapses the Mailchimp email subscription form from the password reset password changed notification page (mobile and desktop).</li>
     <li><strong>FACEBOOK</strong></li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the home page (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the menu page (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the menu page (search term) (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the menu page (sorted) (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from a menu item page (pizza) (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from a menu item page (side) (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the shopping cart (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the checkout page (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the checkout success page (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the user profile page (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the login page (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the sign up page (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the logout page (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the contact us page (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the add item page (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the edit item page (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the order history page (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the sign up email notification page (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the sign up email confirmation page (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the password reset email form page (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the password reset email notification page (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the password reset change password page (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the password reset password changed notification page (logged in) (mobile and desktop).</li>
-    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the order history page (logged in) (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the home page (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the menu page (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the menu page (search term) (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the menu page (sorted) (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from a menu item page (pizza) (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from a menu item page (side) (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the shopping cart (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the checkout page (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the checkout success page (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the user profile page (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the login page (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the sign up page (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the logout page (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the contact us page (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the add item page (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the edit item page (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the order history page (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the sign up email notification page (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the sign up email confirmation page (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the password reset email form page (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the password reset email notification page (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the password reset change password page (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the password reset password changed notification page (mobile and desktop).</li>
+    <li>The Facebook link in the page footer directs the user to the site's Facebook page from the order history page (mobile and desktop).</li>
     <li><strong>TWITTER</strong></li>
-    <li>The Twitter link in the page footer directs the user to Twitter from the home page (logged in) (mobile and desktop).</li>
-    <li>The Twitter link in the page footer directs the user to Twitter from the menu page (logged in) (mobile and desktop).</li>
-    <li>The Twitter link in the page footer directs the user to Twitter from the menu page (search term) (logged in) (mobile and desktop).</li>
-    <li>The Twitter link in the page footer directs the user to Twitter from the menu page (sorted) (logged in) (mobile and desktop).</li>
-    <li>The Twitter link in the page footer directs the user to Twitter from a menu item page (pizza) (logged in) (mobile and desktop).</li>
-    <li>The Twitter link in the page footer directs the user to Twitter from a menu item page (side) (logged in) (mobile and desktop).</li>
-    <li>The Twitter link in the page footer directs the user to Twitter from the shopping cart (logged in) (mobile and desktop).</li>
-    <li>The Twitter link in the page footer directs the user to Twitter from the checkout page (logged in) (mobile and desktop).</li>
-    <li>The Twitter link in the page footer directs the user to Twitter from the checkout success page (logged in) (mobile and desktop).</li>
-    <li>The Twitter link in the page footer directs the user to Twitter from the user profile page (logged in) (mobile and desktop).</li>
-    <li>The Twitter link in the page footer directs the user to Twitter from the login page (logged in) (mobile and desktop).</li>
-    <li>The Twitter link in the page footer directs the user to Twitter from the sign up page (logged in) (mobile and desktop).</li>
-    <li>The Twitter link in the page footer directs the user to Twitter from the logout page (logged in) (mobile and desktop).</li>
-    <li>The Twitter link in the page footer directs the user to Twitter from the contact us page (logged in) (mobile and desktop).</li>
-    <li>The Twitter link in the page footer directs the user to Twitter from the add item page (logged in) (mobile and desktop).</li>
-    <li>The Twitter link in the page footer directs the user to Twitter from the edit item page (logged in) (mobile and desktop).</li>
-    <li>The Twitter link in the page footer directs the user to Twitter from the order history page (logged in) (mobile and desktop).</li>
-    <li>The Twitter link in the page footer directs the user to Twitter from the sign up email notification page (logged in) (mobile and desktop).</li>
-    <li>The Twitter link in the page footer directs the user to Twitter from the sign up email confirmation page (logged in) (mobile and desktop).</li>
-    <li>The Twitter link in the page footer directs the user to Twitter from the password reset email form page (logged in) (mobile and desktop).</li>
-    <li>The Twitter link in the page footer directs the user to Twitter from the password reset email notification page (logged in) (mobile and desktop).</li>
-    <li>The Twitter link in the page footer directs the user to Twitter from the password reset change password page (logged in) (mobile and desktop).</li>
-    <li>The Twitter link in the page footer directs the user to Twitter from the password reset password changed notification page (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the order history page (logged in) (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from the home page (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from the menu page (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from the menu page (search term) (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from the menu page (sorted) (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from a menu item page (pizza) (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from a menu item page (side) (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from the shopping cart (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from the checkout page (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from the checkout success page (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from the user profile page (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from the login page (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from the sign up page (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from the logout page (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from the contact us page (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from the add item page (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from the edit item page (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from the order history page (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from the sign up email notification page (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from the sign up email confirmation page (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from the password reset email form page (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from the password reset email notification page (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from the password reset change password page (mobile and desktop).</li>
+    <li>The Twitter link in the page footer directs the user to Twitter from the password reset password changed notification page (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the order history page (mobile and desktop).</li>
     <li><strong>YOUTUBE</strong></li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the home page (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the menu page (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the menu page (search term) (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the menu page (sorted) (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from a menu item page (pizza) (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from a menu item page (side) (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the shopping cart (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the checkout page (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the checkout success page (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the user profile page (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the login page (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the sign up page (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the logout page (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the contact us page (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the add item page (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the edit item page (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the order history page (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the sign up email notification page (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the sign up email confirmation page (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the password reset email form page (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the password reset email notification page (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the password reset change password page (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the password reset password changed notification page (logged in) (mobile and desktop).</li>
-    <li>The Youtube link in the page footer directs the user to Youtube from the order history page (logged in) (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the home page (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the menu page (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the menu page (search term) (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the menu page (sorted) (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from a menu item page (pizza) (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from a menu item page (side) (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the shopping cart (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the checkout page (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the checkout success page (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the user profile page (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the login page (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the sign up page (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the logout page (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the contact us page (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the add item page (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the edit item page (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the order history page (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the sign up email notification page (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the sign up email confirmation page (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the password reset email form page (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the password reset email notification page (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the password reset change password page (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the password reset password changed notification page (mobile and desktop).</li>
+    <li>The Youtube link in the page footer directs the user to Youtube from the order history page (mobile and desktop).</li>
     <li><strong>INSTAGRAM</strong></li>
-    <li>The Instagram link in the page footer directs the user to Instagram from the home page (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from the menu page (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from the menu page (search term) (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from the menu page (sorted) (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from a menu item page (pizza) (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from a menu item page (side) (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from the shopping cart (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from the checkout page (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from the checkout success page (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from the user profile page (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from the login page (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from the sign up page (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from the logout page (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from the contact us page (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from the add item page (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from the edit item page (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from the order history page (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from the sign up email notification page (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from the sign up email confirmation page (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from the password reset email form page (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from the password reset email notification page (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from the password reset change password page (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from the password reset password changed notification page (logged in) (mobile and desktop).</li>
-    <li>The Instagram link in the page footer directs the user to Instagram from the order history page (logged in) (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from the home page (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from the menu page (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from the menu page (search term) (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from the menu page (sorted) (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from a menu item page (pizza) (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from a menu item page (side) (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from the shopping cart (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from the checkout page (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from the checkout success page (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from the user profile page (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from the login page (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from the sign up page (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from the logout page (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from the contact us page (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from the add item page (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from the edit item page (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from the order history page (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from the sign up email notification page (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from the sign up email confirmation page (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from the password reset email form page (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from the password reset email notification page (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from the password reset change password page (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from the password reset password changed notification page (mobile and desktop).</li>
+    <li>The Instagram link in the page footer directs the user to Instagram from the order history page (mobile and desktop).</li>
 </ul>
 
 <br>
@@ -1122,7 +1145,7 @@ This particular testing involved trying every link and URL on the site to ensure
 ## Form Testing
 
 <hr>
-There are 11 forms on this site: The sign up form, the log in form, the password reset email form, the password change form, the review form, the contact us form, the delivery information form, the payment form, the default delivery information form, the add item form, and the edit item form. I tested each one to ensure that they all submit as they should, and that it isn't possible to submit them if they are incomplete, or supplied with the wrong kind of data.
+There are 12 forms on this site: The sign up form, the log in form, the password reset email form, the password change form, the review form, the contact us form, the delivery information form, the payment form, the default delivery information form, the add item form, the edit item form, and the Mailchimp subscribe form. I tested each one to ensure that they all submit as they should, and that it isn't possible to submit them if they are incomplete, or supplied with the wrong kind of data.
 <hr>
 
 ### Sign up form (logged out only)
@@ -1245,6 +1268,14 @@ There are 11 forms on this site: The sign up form, the log in form, the password
 <ul>
     <li>The name, calories, and price fields are mandatory, but the description, ingredients, and image fields are optional. The form can be submitted without filling in said optional fields. Any of the options in the category and has sizes dropdown menus can be submitted. Existing optional values can be removed, and the form will still submit successfully.</li>
     <li>There are no limits to what size the images can be, but a warning message will appear when you select one that contains the suggested dimensions.</li>
+</ul>
+
+<br>
+
+### Mailhimp subscription form
+
+<ul>
+    <li>Whether the email address field in this form is blank, filled in with an invalid email address, or filled in with a valid email address, submitting the form opens a Mailchimp page in a new tab. The user is presented with another form, the email field of which will be pre-populated with whatever they entered into the email address field. If the email they provided is invalid, this second form will call attention to it.</li>
 </ul>
 
 <br>

@@ -320,8 +320,12 @@ The process I followed to deploy this project is as follows:
 
 Live links to this project:
 - Heroku app: 
-- Repository: 
-- Project board: 
+- Repository: https://github.com/ChrisLPlumb91/everyone-loves-pizza
+- Project board: https://github.com/users/ChrisLPlumb91/projects/6
+- Facebook page (screenshots below): https://www.facebook.com/profile.php?id=100093539901239
+<img src="media/screenshot-facebook-page-top.png" alt="An image of the top of everyone.loves(pizza);'s Facebook page.">
+<img src="media/screenshot-facebook-page-feed.png" alt="An image of the feed of everyone.loves(pizza);'s Facebook page.">
+<img src="media/screenshot-facebook-page-about.png" alt="An image of the about section of everyone.loves(pizza);'s Facebook page.">
 <hr>
 
 ## Credits

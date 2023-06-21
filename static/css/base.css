@@ -1588,6 +1588,25 @@ div.product-details-container > div.shift-favourite-button-down-even-more-alt {
     top: 10px !important;
 }
 
+#mc_embed_signup {
+    background: #fff;
+    width: 600px;
+}
+
+#mc-embedded-subscribe-form {
+    border: 4px solid #f19832 !important;
+}
+
+#mc-embedded-subscribe {
+    clear: both;
+    width: auto;
+    display: inline-block !important;
+    margin-left: 0 !important;
+    margin-top: 1rem !important;
+}
+
+
+
 @media screen and (max-width: 1520px) {
     .row.superuser-zone {
         overflow: hidden !important;
@@ -2261,6 +2280,10 @@ div.product-details-container > div.shift-favourite-button-down-even-more-alt {
         top: 0 !important;
         right: -49px !important;
     }
+
+    #mc-embedded-subscribe-form {
+        width: 70% !important;
+    }
 }
 
 @media screen and (max-width: 804px) {
@@ -2697,6 +2720,10 @@ div.product-details-container > div.shift-favourite-button-down-even-more-alt {
         top: 20px !important;
         right: -45px !important;
     }
+
+    #mc-embedded-subscribe-form {
+        width: 80% !important;
+    }
 }
 
 @media screen and (max-width: 537px) {
@@ -2935,6 +2962,10 @@ div.product-details-container > div.shift-favourite-button-down-even-more-alt {
 
     div.current-fave-lead-col {
         width: 100% !important;
+    }
+
+    #mc-embedded-subscribe-form {
+        width: 90% !important;
     }
 }
 
@@ -3276,7 +3307,7 @@ div.product-details-container > div.shift-favourite-button-down-even-more-alt {
         font-size: 2rem !important;
     }
 
-    div.footer-text-container a {
+    div.footer-text-container a, .footer-link {
         font-size: 2rem !important;
     }
 }
@@ -3444,6 +3475,10 @@ div.product-details-container > div.shift-favourite-button-down-even-more-alt {
     .review-words {
         font-size: 1.4rem !important;
         line-height: 20px !important;
+    }
+
+    #mc-embedded-subscribe-form {
+        width: 95% !important;
     }
 }
 
