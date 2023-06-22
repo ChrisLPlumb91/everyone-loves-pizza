@@ -29,7 +29,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com', 'localhost']
+if 'DEVELOPMENT' in os.environ:
+    ALLOWED_HOSTS = ['localhost']
+else:
+    ALLOWED_HOSTS = ['clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com']
 
 
 # Application definition
