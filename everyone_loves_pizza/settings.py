@@ -32,6 +32,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 if 'DEVELOPMENT' in os.environ:
     ALLOWED_HOSTS = ['8000-chrislplumb-everyonelov-84huab44vp1.ws-eu100.gitpod.io']
 else:
+    print('heroku host')
     ALLOWED_HOSTS = ['clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com']
 
 
@@ -130,8 +131,9 @@ WSGI_APPLICATION = 'everyone_loves_pizza.wsgi.application'
 # }
 
 if 'DATABASE_URL' in os.environ:
+    print('elephantSQL database')
     DATABASES = {
-        'default': dj_database_url.parse('postgres://btfxutqj:xOWMqUa7LsiSmgQ-yqcDAeOcRuVQOPUu@lucky.db.elephantsql.com/btfxutqj')
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 else:
     DATABASES = {
@@ -179,7 +181,9 @@ USE_TZ = True
 DEFAULT_FROM_EMAIL = 'chrislplumb91@hotmail.com'
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
