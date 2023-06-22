@@ -1,1 +1,1 @@
-web: gunicorn everyone-loves-pizza.wsgi:application
+web: gunicorn everyone_loves_pizza.wsgi:application
