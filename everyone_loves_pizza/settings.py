@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 if 'DEVELOPMENT' in os.environ:
-    ALLOWED_HOSTS = ['localhost']
+    ALLOWED_HOSTS = ['8000-chrislplumb-everyonelov-84huab44vp1.ws-eu100.gitpod.io']
 else:
     ALLOWED_HOSTS = ['clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com']
 
