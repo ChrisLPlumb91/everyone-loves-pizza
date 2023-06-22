@@ -131,7 +131,6 @@ WSGI_APPLICATION = 'everyone_loves_pizza.wsgi.application'
 # }
 
 if 'DATABASE_URL' in os.environ:
-    print('elephantSQL database')
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
