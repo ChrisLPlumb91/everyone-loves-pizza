@@ -259,6 +259,16 @@ There are too many actions on the site that trigger messages to show / list here
 
 Note that the contents of your shopping cart will appear in some of the messages you receive, but not all of them. Whether or not this happens depends what page you are on when the message is generated.
 
+<br>
+
+<strong>12. Custom 404 page</strong>
+
+Finally, if the user navigates to a page that does not exist on the site, or to a page for an object that does not exist in the database, they will be presented with a custom 404 page:
+
+<img src="media/screenshot-custom-404-error-page.png" alt="An image of the custom 404 error page that appears if the user navigates to a page that does not exist on the site.">
+
+<br>
+
 <hr>
 
 ### Features yet to be implemented
@@ -292,7 +302,7 @@ The process I followed to deploy this project is as follows:
     <li>In my <em>GitPod workspace</em> for the project, I installed <em>dj_database_url</em> and <em>psycopg2</em>.</li>
     <li>I then used <em>pip3 freeze --local > requirements.txt</em> to update my <em>requirements.txt</em> file.</li>
     <li>In <em>settings.py</em> in my <em>Django files</em>, I added the following imports: <em>import os</em>, <em>import dj_database_url</em></li>
-    <li>Using the commands <em>python3 manage.py dumpdata > menu.Category</em> and <em>python3 manage.py dumpdata > menu.MenuItem</em>, I created <em>JSON</em> representations of my database's data.</li>
+    <li>Using the commands <em>python3 manage.py dumpdata menu.Category > categories.json</em> and <em>python3 manage.py dumpdata menu.MenuItem > menu_items.json</em>, I created <em>JSON</em> representations of my database's data.</li>
     <li>Still in <em>settings.py</em>, I temporarily commented out the existing <em>DATABASES</em> variable, and created a new one, setting it to <em>DATABASES = {
      'default': dj_database_url.parse('') }</em>, pasting the URL from step 3 between the single quotes. This wired my project to the database hosted by <em>ElephantSQL</em>.</li>
     <li>I ran the <em>makemigrations</em> and <em>migrate</em> commands from my workspace to apply my project's database schema to the <em>ElephantSQL</em> database.</li>
