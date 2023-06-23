@@ -2,8 +2,10 @@ from django.shortcuts import render
 
 
 def handler404(request, exception):
-    render(request, "errors/404.html", status=404)
+    response = render(request, "errors/404.html", status=404)
+    return response
 
 
 def handler500(request):
-    render(request, "errors/500.html", status=500)
+    response = render(request, "errors/500.html", status=500)
+    return response
