@@ -1609,7 +1609,9 @@ div.product-details-container > div.shift-favourite-button-down-even-more-alt {
     font-size: 1rem !important;
 }
 
-
+.privacy-policy-link {
+    font-size: 1.5rem !important;
+}
 
 @media screen and (max-width: 1520px) {
     .row.superuser-zone {

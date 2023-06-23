@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/cart/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/?sort=price&amp;direction=asc</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/?sort=category&amp;direction=asc</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/?category=pizzas</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/?category=sides</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/1/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/2/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/3/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/4/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=/contact_us/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/12/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/13/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/14/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/9/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/15/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/10/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/11/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/8/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/5/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/6/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/7/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=/menu/favourite/1/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/1/?rating_word=All</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/1/?rating_word=Disgustoso!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/1/?rating_word=Brutto!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/1/?rating_word=Bene!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/1/?rating_word=Eccellente!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/1/?rating_word=Fantastico!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=/menu/favourite/2/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/2/?rating_word=All</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/2/?rating_word=Fantastico!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/2/?rating_word=Eccellente!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/2/?rating_word=Bene!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/2/?rating_word=Brutto!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/2/?rating_word=Disgustoso!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/2/?page=2</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=/menu/favourite/3/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/3/?rating_word=All</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/3/?rating_word=Disgustoso!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/3/?rating_word=Brutto!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/3/?rating_word=Bene!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/3/?rating_word=Eccellente!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/3/?rating_word=Fantastico!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=/menu/favourite/4/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/4/?rating_word=All</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/4/?rating_word=Disgustoso!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/4/?rating_word=Brutto!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/4/?rating_word=Bene!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/4/?rating_word=Eccellente!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/4/?rating_word=Fantastico!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/signup/?next=%2Fcontact_us%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=/menu/favourite/12/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/12/?rating_word=All</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/12/?rating_word=Disgustoso!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/12/?rating_word=Brutto!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/12/?rating_word=Bene!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/12/?rating_word=Eccellente!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/12/?rating_word=Fantastico!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=/menu/favourite/13/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/13/?rating_word=All</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/13/?rating_word=Disgustoso!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/13/?rating_word=Brutto!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/13/?rating_word=Bene!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/13/?rating_word=Eccellente!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/13/?rating_word=Fantastico!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=/menu/favourite/14/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/14/?rating_word=All</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/14/?rating_word=Disgustoso!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/14/?rating_word=Brutto!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/14/?rating_word=Bene!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/14/?rating_word=Eccellente!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/14/?rating_word=Fantastico!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=/menu/favourite/9/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/9/?rating_word=All</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/9/?rating_word=Disgustoso!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/9/?rating_word=Brutto!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/9/?rating_word=Bene!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/9/?rating_word=Eccellente!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/9/?rating_word=Fantastico!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=/menu/favourite/15/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/15/?rating_word=All</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/15/?rating_word=Disgustoso!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/15/?rating_word=Brutto!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/15/?rating_word=Bene!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/15/?rating_word=Eccellente!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/15/?rating_word=Fantastico!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=/menu/favourite/10/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/10/?rating_word=All</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/10/?rating_word=Disgustoso!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/10/?rating_word=Brutto!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/10/?rating_word=Bene!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/10/?rating_word=Eccellente!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/10/?rating_word=Fantastico!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=/menu/favourite/11/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/11/?rating_word=All</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/11/?rating_word=Disgustoso!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/11/?rating_word=Brutto!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/11/?rating_word=Bene!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/11/?rating_word=Eccellente!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/11/?rating_word=Fantastico!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=/menu/favourite/8/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/8/?rating_word=All</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/8/?rating_word=Disgustoso!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/8/?rating_word=Brutto!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/8/?rating_word=Bene!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/8/?rating_word=Eccellente!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/8/?rating_word=Fantastico!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=/menu/favourite/5/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/5/?rating_word=All</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/5/?rating_word=Disgustoso!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/5/?rating_word=Brutto!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/5/?rating_word=Bene!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/5/?rating_word=Eccellente!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/5/?rating_word=Fantastico!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=/menu/favourite/6/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/6/?rating_word=All</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/6/?rating_word=Disgustoso!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/6/?rating_word=Brutto!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/6/?rating_word=Bene!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/6/?rating_word=Eccellente!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/6/?rating_word=Fantastico!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=/menu/favourite/7/</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/7/?rating_word=All</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/7/?rating_word=Disgustoso!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/7/?rating_word=Brutto!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/menu/7/?rating_word=Bene!</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/signup/?next=%2Fmenu%2Ffavourite%2F1%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/signup/?next=%2Fmenu%2Ffavourite%2F2%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/signup/?next=%2Fmenu%2Ffavourite%2F3%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/signup/?next=%2Fmenu%2Ffavourite%2F4%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=%2Fcontact_us%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/signup/?next=%2Fmenu%2Ffavourite%2F12%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/signup/?next=%2Fmenu%2Ffavourite%2F13%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/signup/?next=%2Fmenu%2Ffavourite%2F14%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/signup/?next=%2Fmenu%2Ffavourite%2F9%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/signup/?next=%2Fmenu%2Ffavourite%2F15%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/signup/?next=%2Fmenu%2Ffavourite%2F10%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/signup/?next=%2Fmenu%2Ffavourite%2F11%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/signup/?next=%2Fmenu%2Ffavourite%2F8%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/signup/?next=%2Fmenu%2Ffavourite%2F5%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/signup/?next=%2Fmenu%2Ffavourite%2F6%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/signup/?next=%2Fmenu%2Ffavourite%2F7%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=%2Fmenu%2Ffavourite%2F1%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=%2Fmenu%2Ffavourite%2F2%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=%2Fmenu%2Ffavourite%2F3%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=%2Fmenu%2Ffavourite%2F4%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=%2Fmenu%2Ffavourite%2F12%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=%2Fmenu%2Ffavourite%2F13%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=%2Fmenu%2Ffavourite%2F14%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=%2Fmenu%2Ffavourite%2F9%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=%2Fmenu%2Ffavourite%2F15%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=%2Fmenu%2Ffavourite%2F10%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=%2Fmenu%2Ffavourite%2F11%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=%2Fmenu%2Ffavourite%2F8%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=%2Fmenu%2Ffavourite%2F5%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=%2Fmenu%2Ffavourite%2F6%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://clp1991-everyone-loves-pizza-a520c76d55de.herokuapp.com/accounts/login/?next=%2Fmenu%2Ffavourite%2F7%2F</loc>
+  <lastmod>2023-06-22T22:34:30+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+
+
+</urlset>
