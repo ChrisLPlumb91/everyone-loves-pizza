@@ -30,5 +30,5 @@ urlpatterns = [
     path('profile/', include('profiles.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-urls.handler404 = 'everyone_loves_pizza.views.handler404'
-urls.handler500 = 'everyone_loves_pizza.views.handler500'
+handler404 = 'everyone_loves_pizza.views.handler404'
+handler500 = 'everyone_loves_pizza.views.handler500'
